@@ -3,7 +3,7 @@ import { Resend } from 'resend';
 import * as React from 'react';
 import EmailTemplate from '@/app/components/email-template';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(process.env.re_F4zsj9mH_65bKMwHCqETbQUVAtEM5g1aP);
 const fromEmail = process.env.FROM_EMAIL;
 
 export async function POST(req: Request, res: Response) {
