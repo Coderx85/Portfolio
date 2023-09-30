@@ -26,9 +26,12 @@ This project is a personal portfolio website created to showcase my projects, sk
 
 ## Technologies Used
 
-- **Next.js**
-- **TypeScript**
-- **Tailwind CSS**
+-
+- **Next.js**: A React-based framework for building modern web applications.
+- **TypeScript**: A statically typed superset of JavaScript that enhances code maintainability and reliability.
+- **Tailwind CSS**: A utility-first CSS framework for quickly building custom designs.
+- **heroicons/react**: A set of high-quality icons for use in web projects.
+- **react-type-animation**: A library for creating animated typewriter effects in React.
 
 ## Deployment
 
