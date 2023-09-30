@@ -9,7 +9,7 @@ const HeroSection = () => {
         <div className='grid grid-cols-1 sm:grid-cols-12'>
             <div className='col-span-7 place-self-center text-center sm:text-left font-extrabold'>
                 {/* <h1 className='text-white mb-4 text-4xl sm:text-5xl lg:text-6xl text-extrabold'> */}
-                <h1 className="text-white mb-4 text-2xl sm:text-5xl lg:text-6xl font-extrabold">
+                <h2 className="text-white mb-4 text-2xl sm:text-5xl lg:text-6xl font-extrabold">
                 Hello, Priyanshu here
                     <br/>
                     <span className="text-[#ff0000] bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600 ">
@@ -20,7 +20,7 @@ const HeroSection = () => {
                         // Same substring at the start will only be typed out once, initially
                         'Web Developer',
                         1000, // wait 1s before replacing "Mice" with "Hamsters"
-                        'M. L. Engineer',
+                        'M L Engineer',
                         1000,
                         'Prompt Engineer',
                         1000,
@@ -30,7 +30,7 @@ const HeroSection = () => {
                     // style={{ fontSize: '1em', display: 'inline-block' }}
                     repeat={Infinity}
                     />
-                </h1>
+                </h2>
                 <p className='text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl'> 
                 Adaptable Engineering student skilled in Python, MERN stack, and front-end technologies. 
                 Expanding expertise in Generative AI, seeking to innovate in tech solutions.
