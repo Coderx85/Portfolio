@@ -27,9 +27,13 @@ This project is a personal portfolio website created to showcase my projects, sk
 
 ## Technologies Used
 
-- **Next.js**: A React-based framework for building modern web applications.
-- **TypeScript**: A statically typed superset of JavaScript that enhances code maintainability and reliability.
-- **[Add other technologies used]**
+- **Next.js**
+- **TypeScript**
+- **Tailwind CSS**
+
+## Deployment
+
+The project is deployed and can be viewed live at [portfolio-085.vercel.app](https://portfolio-085.vercel.app/).
 
 ## Installation
 
