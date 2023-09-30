@@ -42,21 +42,6 @@ This project is a personal portfolio website created to showcase my projects, sk
 1. Start the development server: `npm run dev`
 2. Open your browser and go to `http://localhost:3000`
 
-## Screenshots
-
-![Screenshot 1](screenshot1.png)
-![Screenshot 2](screenshot2.png)
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-**Note**: Replace placeholders like `your-username`, `link-to-image.png`, `[Add other technologies used]`, `screenshot1.png`, and `screenshot2.png` with actual information relevant to your project.
-
-This template provides a professional structure for your README file, making it easy for visitors to understand the purpose and functionality of your "My Portfolio" project.
-
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
