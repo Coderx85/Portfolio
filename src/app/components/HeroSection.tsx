@@ -2,11 +2,38 @@
 import React from 'react'
 import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
+import SocialLink from './SocialLink';
 
 const HeroSection = () => {
-  return (
+
+    const downloadResume = () => {
+        const resumeUrl = '/Documents/Resume.pdf'; // Replace with the actual path
+        const link = document.createElement('a');
+        link.href = resumeUrl;
+        link.download = 'Priyanshhu\'s Resume.pdf'; // Set the desired file name
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      };
+
+    const leetcodeUrl = 'https://leetcode.com/Priyanshu085/';
+    const linkedinUrl = 'https://www.linkedin.com/in/priyanshu085/';
+    const githubUrl = 'https://github.com/Priyanshu085';
+    const googleDevUrl = 'https://g.dev/priyanshu085';
+    const gitlabUrl = 'https://gitlab.com/Priyanshu085';
+    // const unstopurl = 'https://unstop.com/Priyanshu085';
+
+    const leetcode = "Leetcode";
+    const linkedin = "LinkedIn"
+    const github = "GitHub";
+    const gitlab = "GitLab";
+    const google = "Google";
+    // const unstop = "Unstop";
+
+
+    return (
       <section>
-        <div className='grid grid-cols-1 sm:grid-cols-12'>
+        <div className='grid grid-cols-1 sm:grid-cols-12 mt-10'>
             <div className='col-span-7 place-self-center text-center sm:text-left font-extrabold'>
                 {/* <h1 className='text-white mb-4 text-4xl sm:text-5xl lg:text-6xl text-extrabold'> */}
                 <h2 className="text-white mb-4 text-2xl sm:text-5xl lg:text-6xl font-extrabold">
@@ -39,11 +66,14 @@ const HeroSection = () => {
                 {/* <button className="btn px-6 py-3 w-full sm:w-fit rounded-full mr-4 text-[#f1f1f1]">Hover me !
                     <div className='background'></div>
                 </button>        */}
-                    <button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-white text-black hover:bg-slate-200'>Hire Me</button>
-                    <button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-transparent text-white border border-white mt-3 hover:bg-slate-800'>Download CV</button>
+                    {/* <button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-white text-black hover:bg-slate-200'>Hire Me</button> */}
+                    <button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-transparent text-white border border-white mt-3 hover:bg-slate-800' onClick={downloadResume}>Download CV</button>
                 </div>
+                {/* Social Links Section */}
+
+
             </div>
-            <div className='col-span-5 self-place-center mt-4 lg:mt-0'>
+            <div className='col-span-5 mt-4 lg:mt-0'>
                 <div className='rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative'>
                     <Image 
                         src = "/images/hero-image.png"
@@ -55,6 +85,14 @@ const HeroSection = () => {
                 </div>
             </div>
         </div>
+            <div className='w-full grid grid-cols-2 text-white flex-col border-2'>
+                <SocialLink url={leetcodeUrl} icon={leetcode} />
+                <SocialLink url={linkedinUrl} icon={linkedin} />
+                <SocialLink url={githubUrl} icon={github} />
+                <SocialLink url={googleDevUrl} icon={google}/>
+                <SocialLink url={gitlabUrl} icon={gitlab}/>
+                {/* <SocialLink url={unstopurl} icon={unstop} /> */}
+            </div>
       </section>
   )
 }
