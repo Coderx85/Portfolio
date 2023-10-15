@@ -1,6 +1,6 @@
 # My Portfolio
 
-![Project Image](/public/screenshots/portfolio.png)
+![Project Image](/public/screenshots/Portfolio.png)
 
 > A personal portfolio website showcasing my projects and skills.
 
