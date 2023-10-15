@@ -50,4 +50,4 @@ The project is deployed and can be viewed live at [portfolio-085.vercel.app](htt
 2. Open your browser and go to `http://localhost:3000`
 
 ## License
-MIT License [LICENSE]
+[MIT License](LICENSE)
