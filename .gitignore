@@ -40,6 +40,3 @@ next-env.d.ts
 /src/app/app/send/route.ts
 /src/app/components/EmailSection.tsx
 /src/app/components/email-template.tsx
-
-#Personal Documents
-/public/screenshots/
