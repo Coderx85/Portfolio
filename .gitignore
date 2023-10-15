@@ -42,4 +42,4 @@ next-env.d.ts
 /src/app/components/email-template.tsx
 
 #Personal Documents
-/src/app/Documents
+/public/screenshots/

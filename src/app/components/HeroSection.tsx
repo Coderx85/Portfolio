@@ -7,7 +7,7 @@ import SocialLink from './SocialLink';
 const HeroSection = () => {
 
     const downloadResume = () => {
-        const resumeUrl = '/Documents/Resume.pdf'; // Replace with the actual path
+        const resumeUrl = 'https://drive.google.com/file/d/1nQRXXpt6eaZVFVgNpnMuv1kq9JAcxeo9/view?usp=drivesdk'; // Replace with the actual path
         const link = document.createElement('a');
         link.href = resumeUrl;
         link.download = 'Priyanshhu\'s Resume.pdf'; // Set the desired file name
@@ -67,7 +67,9 @@ const HeroSection = () => {
                     <div className='background'></div>
                 </button>        */}
                     {/* <button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-white text-black hover:bg-slate-200'>Hire Me</button> */}
-                    <button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-transparent text-white border border-white mt-3 hover:bg-slate-800' onClick={downloadResume}>Download CV</button>
+                    <button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-transparent text-white border border-white mt-3 hover:bg-slate-700' onClick={downloadResume}>
+                        Checkout My CV
+                    </button>
                 </div>
                 {/* Social Links Section */}
 
