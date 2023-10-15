@@ -12,6 +12,7 @@
 - [Installation](#installation)
 - [Deployment](#deployment)
 - [Usage](#usage)
+- [License](#license)
 
 ## Description
 
@@ -47,3 +48,6 @@ The project is deployed and can be viewed live at [portfolio-085.vercel.app](htt
 
 1. Start the development server: `npm run dev`
 2. Open your browser and go to `http://localhost:3000`
+
+## License
+MIT License
