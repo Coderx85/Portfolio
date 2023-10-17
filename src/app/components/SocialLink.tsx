@@ -18,7 +18,7 @@ const SocialLink = ({ url, icon }: IconProps) => {
         width={35} 
         height={35}
       />
-        <p className='md:text-xl md:font-semibold text-sm'>
+        <p className=' hidden md:text-xl md:font-semibold '>
         {icon}
         </p>
       </Link>

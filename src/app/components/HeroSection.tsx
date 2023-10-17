@@ -21,20 +21,17 @@ const HeroSection = () => {
     const githubUrl = 'https://github.com/Priyanshu085';
     const googleDevUrl = 'https://g.dev/priyanshu085';
     const gitlabUrl = 'https://gitlab.com/Priyanshu085';
-    // const unstopurl = 'https://unstop.com/Priyanshu085';
 
     const leetcode = "Leetcode";
     const linkedin = "LinkedIn"
     const github = "GitHub";
     const gitlab = "GitLab";
     const google = "Google";
-    // const unstop = "Unstop";
-
 
     return (
       <section>
-        <div className='grid grid-cols-1 sm:grid-cols-12 mt-10'>
-            <div className='col-span-7 place-self-center text-center sm:text-left font-extrabold'>
+        <div className=' mt-16 flex md:flex-row flex-col-reverse '>
+            <div className='col-span-7 place-self-center text-center sm:text-left font-extrabold sm:flex-row-reverse'>
                 {/* <h1 className='text-white mb-4 text-4xl sm:text-5xl lg:text-6xl text-extrabold'> */}
                 <h2 className="text-white mb-4 text-2xl sm:text-5xl lg:text-6xl font-extrabold">
                 Hello, Priyanshu here
@@ -75,7 +72,7 @@ const HeroSection = () => {
 
 
             </div>
-            <div className='col-span-5 mt-4 lg:mt-0'>
+            <div className='col-span-5 mt-4 pl-8 lg:mt-0'>
                 <div className='rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative'>
                     <Image 
                         src = "/images/hero-image.png"
@@ -87,7 +84,9 @@ const HeroSection = () => {
                 </div>
             </div>
         </div>
-            <div className='w-full grid grid-cols-2 text-white flex-col border-2'>
+            <div className='w-full mt-4 grid grid-cols-5  border-white rounded-lg text-white flex-col border-2
+                            md:grid-cols-2 md:text-left
+            '>
                 <SocialLink url={leetcodeUrl} icon={leetcode} />
                 <SocialLink url={linkedinUrl} icon={linkedin} />
                 <SocialLink url={githubUrl} icon={github} />
