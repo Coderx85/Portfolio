@@ -1,74 +1,8 @@
 "use client"
 import React, { useState } from 'react'
 import ProjectCard from './ProjectCard'
+import { Project_Data } from '../../../constants/contants'
 import ProjectTag from './ProjectTag'
-
-interface Project{
-    id: number,
-    title: string,
-    description: string,
-    image: string,
-    tag: string[],
-    gitUrl: string,
-    previewUrl: string,
-}
-
-const Project_Data: Project[] = [
-    {
-        id: 1,
-        title: "Glitch Xpert",
-        description: "lorem20",
-        image: "/images/projects/1.png",
-        tag: ["All", "Web"],
-        gitUrl: "/",
-        previewUrl: "/",
-    },
-    {
-        id: 2,
-        title: "Threads+",
-        description: "lorem20",
-        image: "/images/projects/2.png",
-        tag: ["All", "Web"],
-        gitUrl: "/",
-        previewUrl: "/",
-    },
-    {
-        id: 3,
-        title: "Glitch Xpert",
-        description: "lorem20",
-        image: "/images/projects/3.png",
-        tag: ["All", "Web"],
-        gitUrl: "/",
-        previewUrl: "/",
-    },
-    {
-        id: 4,
-        title: "Glitch Xpert",
-        description: "lorem20",
-        image: "/images/projects/4.png",
-        tag: ["All", "Web"],
-        gitUrl: "/",
-        previewUrl: "/",
-    },
-    {
-        id: 5,
-        title: "Glitch Xpert",
-        description: "lorem20",
-        image: "/images/projects/5.png",
-        tag: ["Web"],
-        gitUrl: "/",
-        previewUrl: "/",
-    },
-    {
-        id: 6,
-        title: "Glitch Xpert",
-        description: "lorem20",
-        image: "/images/projects/6.png",
-        tag: ["All", "Web"],
-        gitUrl: "/",
-        previewUrl: "/",
-    }
-]
 
 const ProjectSection = () => {
     const [tab ,setTab] = useState("All");
