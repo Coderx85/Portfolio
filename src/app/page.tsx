@@ -9,7 +9,7 @@ import ProjectSection from "./components/ProjectSection";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col bg-[#121212] ">
+    <main className="flex min-h-screen flex-col bg-[#121212] overflow-auto scrollbar-hide h-[300px]">
       <Navbar/>
       <div className="container mx-auto px-12 py-4">
         <HeroSection />

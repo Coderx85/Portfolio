@@ -18,7 +18,9 @@ const SocialLink = ({ url, icon }: IconProps) => {
         width={35} 
         height={35}
       />
+        <p className='md:text-xl md:font-semibold text-sm'>
         {icon}
+        </p>
       </Link>
     </div>
   );
