@@ -2,12 +2,7 @@
 import React, {useTransition, useState} from 'react'
 import Image from 'next/image'
 import TabButton from './TabButton'
-
-interface DataMenu{
-    title: string, 
-    id: string,
-    content: React.ReactNode
-}
+import { DataMenu } from '../../../types'
 
 const Data_Item: DataMenu[] = [
     {
@@ -103,8 +98,6 @@ const AboutSection = () => {
                     >{" "}
                         Certifications{" "}
                     </TabButton>
-                    {/* <span>Education</span> */}
-                    {/* <span>Experience</span> */}
                 </div>
                 <div className='mt-8'>{Data_Item.find((e) => e.id == tab)?.content}</div>
             </div>

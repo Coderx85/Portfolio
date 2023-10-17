@@ -1,11 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-
-interface IconProps {
-  url: string;
-  icon: string; 
-}
+import { IconProps } from '../../../types';
 
 const SocialLink = ({ url, icon }: IconProps) => {
   

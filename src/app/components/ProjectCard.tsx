@@ -1,15 +1,7 @@
 import React from 'react'
 import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-
-interface Card{
-    title: string,
-    imgUrl: string,
-    description: string,
-    // tag: string[],
-    gitUrl: string,
-    previewUrl: string,
-}
+import { Card } from '../../../types';
 
 const ProjectCard = ({imgUrl, title, description, gitUrl, previewUrl} : Card) => {
   return (

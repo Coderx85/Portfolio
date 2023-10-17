@@ -1,10 +1,8 @@
+import { Links } from "../../../types"
 import Navlink from "./Navlink"
-import { Links } from "./Navbar";
+// import { Links } from "./Navbar";
 
-// interface Links {
-//     title: string;
-//     path: string;
-// }
+
 
 const MenuOverlay = ({ links }: { links: Links[] }) => {
   return (

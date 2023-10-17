@@ -1,6 +1,5 @@
 import React from 'react'
 interface Tab{
-  // onClick: React.MouseEventHandler<HTMLButtonElement>,
   onClick: (selectTab: string) => void;
   tag: string;
   isSelected: boolean,
