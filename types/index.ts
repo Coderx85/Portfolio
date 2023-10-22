@@ -33,7 +33,7 @@ export interface ProjectProps{
 }
 
 export interface IconProps {
-  url: string;
+url: string;
   icon: string; 
 }
 

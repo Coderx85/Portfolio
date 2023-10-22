@@ -2,9 +2,9 @@
 import React, {useTransition, useState} from 'react'
 import Image from 'next/image'
 import TabButton from './TabButton'
-import { DataMenu } from '../../../types'
+import { DataMenuProps } from '../../../types'
 
-const Data_Item: DataMenu[] = [
+const Data_Item: DataMenuProps[] = [
     {
         title: "skills",
         id: "skills",
