@@ -6,7 +6,7 @@ import { IconProps } from '../../../types';
 const SocialLink = ({ url, icon }: IconProps) => {
   
   const imgurl = icon.toLowerCase();
-  console.log(imgurl);
+  // console.log(imgurl);
 
   return (
     <div className=' hover:bg-gray-700 cursor-pointer' >

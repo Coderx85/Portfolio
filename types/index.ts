@@ -1,10 +1,10 @@
-export interface DataMenu{
+export interface DataMenuProps{
   title: string, 
   id: string,
   content: React.ReactNode
 }
 
-export interface Links {
+export interface LinksProps {
   title: string,
   path: string,
 }
@@ -14,7 +14,7 @@ export interface NavlinksProps {
   title: string
 }
 
-export interface Card{
+export interface ProjectCardProp{
   title: string,
   imgUrl: string,
   description: string,
@@ -22,17 +22,15 @@ export interface Card{
   previewUrl: string,
 }
 
-export interface Project{
+export interface ProjectProps{
   id: number,
   title: string,
   description: string,
-  image: string,
+  imgUrl: string,
   tag: string[],
   gitUrl: string,
   previewUrl: string,
 }
-
-
 
 export interface IconProps {
   url: string;

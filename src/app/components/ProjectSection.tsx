@@ -39,12 +39,7 @@ const ProjectSection = () => {
         {filterProjects.map((project) => (
             <ProjectCard 
                 key={project.id}
-                title={project.title}
-                description={project.description}
-                imgUrl={project.image}
-                // tag={project.tag}
-                gitUrl={project.gitUrl}
-                previewUrl={project.previewUrl}
+                project={project}
             />
         ))}
         </div>

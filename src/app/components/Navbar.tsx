@@ -24,7 +24,7 @@ const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
 
   return (
-    <nav className="navbar text-white fixed bg-[#121212] z-10">
+    <nav className="navbar text-white fixe bg-[#121212] z-10">
       <div className="flex flex-wrap navbar items-center justify-between mx-auto px-4">
         <Link href={'/'} className="text-5xl text-white font-semibold">
           Portfolio
@@ -46,7 +46,7 @@ const Navbar = () => {
             </button>
           )}
         </div>
-        <div className="menu hidden md:block md:w-auto text-white" id="navbar">
+        <div className="menu hidden  md:block md:w-auto text-white" id="navbar">
           <ul className="flex p-4 md:p-0 md:flex-row space-x-8">
             {navLinks.map((link, index) => (
               <li key={index}>
