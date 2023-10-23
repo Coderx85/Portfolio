@@ -38,7 +38,7 @@ const ProjectDetails = ({project, isOpen ,closeModal}: ProjectDetailsProps) => {
               leaveFrom='opacity-100 scale-100'
               leaveTo='opacity-0 scale-95'
             >
-              <Dialog.Panel className='relative bg-slate-800 border-2 md:m-0 m-5 border-white w-[1200px] max-h-[90vh] overflow-y-auto transform rounded-2xl 
+              <Dialog.Panel className='relative bg-slate-800 border-2 md:m-0 m-5 border-white w-[1200px] max-h-[90vh] h-[90vh] md:h-fit overflow-y-auto transform rounded-2xl 
               p-6 text-left shadow-xl transition-all flex flex-col gap-5'>
                 <button
                   type='button'
@@ -61,7 +61,7 @@ const ProjectDetails = ({project, isOpen ,closeModal}: ProjectDetailsProps) => {
                           {project.title}
                         </h2>
                       </div>
-                      <div className='relative self-center md:w-[500px] md:h-96 h-48 w-[350px] place-self-center bg-slate-700 bg-no-repeat bg-cover bg-center rounded-lg'>
+                      <div className='relative self-center md:w-[500px] md:h-96 h-48 w-[300px] place-self-center bg-slate-700 bg-no-repeat bg-cover bg-center rounded-lg'>
                         <Image src={project.imgUrl} alt='project image' fill priority className='object-contain self-center sm:w-fit hover:cursor-pointer rounded-lg' />
                       </div>
                   </div>
