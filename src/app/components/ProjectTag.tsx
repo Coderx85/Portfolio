@@ -8,7 +8,7 @@ interface Tab{
 // Fix Project Section
 const ProjectTag = ({onClick, tag, isSelected}: Tab) => {
   const activeButton = isSelected 
-  ? "text-white bg-purple-500" 
+  ? "text-white bg-gray-900" 
   : "text-[#ADB7BE] border-slate-600";
 
   return (
