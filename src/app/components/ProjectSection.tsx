@@ -33,6 +33,12 @@ const ProjectSection = () => {
                 isSelected ={tab == "Web"}                
             />
 
+            <ProjectTag
+                onClick={handleTabChange}
+                tag='ML'
+                isSelected={ tab == "ML"}
+            />
+
             {/* <button className="rounded-full border-2 border-slate-600 hover:border-white px-5 py-3 text-xl cursor-pointer">Web</button>     */}
         </div>  
         <div className='grid md:grid-cols-3 gap-8 md:gap-12'>
