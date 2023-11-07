@@ -8,7 +8,10 @@ const SocialLink = ({ url, icon }: IconProps) => {
   const imgurl = icon.toLowerCase();
 
   return (
-    <div className=' hover:bg-gray-700 cursor-pointer' >
+    <div 
+      className=' hover:bg-gray-700 cursor-pointer' 
+      id='contact'
+    >
       <Link className="my-5 flex text-center flex-row items-center flex-nowrap text-xl" href={url} target="_blank" rel="noopener noreferrer">
       <Image 
         className="cursor-pointer m-5" 

@@ -7,7 +7,7 @@ import MenuOverlay from "./MenuOverlay";
 const navLinks = [
   {
     title: "About",
-    path: "#abouts",
+    path: "#about",
   },
   {
     title: "Projects",
@@ -46,11 +46,14 @@ const Navbar = () => {
             </button>
           )}
         </div>
-        <div className="menu hidden  md:block md:w-auto text-white" id="navbar">
-          <ul className="flex p-4 md:p-0 md:flex-row space-x-8">
+        <div 
+          className="menu hidden md:block md:w-auto text-white uppercase text-xl font-medium" 
+          id="navbar"
+        >
+          <ul className="flex p-4 md:p-0 md:flex-row space-x-8 ">
             {navLinks.map((link, index) => (
-              <li key={index}>
-                <Link href={link.path}>
+              <li key={index} className="hover:bg-white hover:text-black active:bg-white active:text-black ">
+                <Link href={link.path} className="hover:bg-white hover:text-black active:bg-white active:text-black focus:bg-white focus:text-black">
                   {link.title}
                 </Link>
               </li>
