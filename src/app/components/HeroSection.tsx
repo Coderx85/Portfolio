@@ -7,7 +7,7 @@ import SocialLink from './SocialLink';
 const HeroSection = () => {
 
     const downloadResume = () => {
-        const resumeUrl = 'https://drive.google.com/file/d/1nQRXXpt6eaZVFVgNpnMuv1kq9JAcxeo9/view?usp=drivesdk'; // Replace with the actual path
+        const resumeUrl = 'https://drive.google.com/file/d/1z5roD52FEh0OJrl5HMivcbI8KEE2u2hj/view?usp=sharing';
         const link = document.createElement('a');
         link.href = resumeUrl;
         link.download = 'Priyanshhu\'s Resume.pdf'; // Set the desired file name
@@ -21,12 +21,14 @@ const HeroSection = () => {
     const githubUrl = 'https://github.com/Priyanshu085';
     const googleDevUrl = 'https://g.dev/priyanshu085';
     const gitlabUrl = 'https://gitlab.com/Priyanshu085';
+    const emailUrl = 'mailto:abpriyanshu007@gmail.com';
 
     const leetcode = "Leetcode";
     const linkedin = "LinkedIn"
     const github = "GitHub";
     const gitlab = "GitLab";
     const google = "Google";
+    const email = "Email";
 
     return (
       <section>
@@ -103,7 +105,7 @@ const HeroSection = () => {
                 <SocialLink url={githubUrl} icon={github} />
                 <SocialLink url={googleDevUrl} icon={google}/>
                 <SocialLink url={gitlabUrl} icon={gitlab}/>
-                {/* <SocialLink url={unstopurl} icon={unstop} /> */}
+                <SocialLink url={emailUrl} icon={email} />
             </div>
       </section>
   )

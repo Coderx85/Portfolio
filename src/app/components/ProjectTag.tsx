@@ -5,7 +5,6 @@ interface Tab{
   isSelected: boolean,
 }
 
-// Fix Project Section
 const ProjectTag = ({onClick, tag, isSelected}: Tab) => {
   const activeButton = isSelected 
   ? "text-white bg-gray-900" 
