@@ -7,7 +7,7 @@ export const Project_Data: ProjectProps[] = [
     title: "readLites",
     description: "readLites makes reading fun and easy! It uses smart technology to show pictures and pick out important ideas from stories. This helps you understand and enjoy books better!",
     imgUrl: "/images/projects/1.png",
-    tag: ["All","Web"],
+    tag: ["All","ML"],
     gitUrl: "",
     previewUrl: "https://readlites-deepsolv.streamlit.app/",
   },
@@ -49,7 +49,7 @@ export const Project_Data: ProjectProps[] = [
   },
   {
       id: 6,
-      title: "MERN Blog",
+      title: "Bloggies",
       description: "lorem20",
       imgUrl: "/images/projects/6.png",
       tag: ["All"],

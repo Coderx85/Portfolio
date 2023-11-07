@@ -9,9 +9,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({project} : ProjectCardProps) => {
   
-  const [isOpen, setIsOpen] = useState(false)
-
-  // const bgimng = !project.imgUrl ? `https://github.com/Priyanshu085/${project.title}/blob/my/public/screenshots/bg.png`: project.imgUrl ;
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div>

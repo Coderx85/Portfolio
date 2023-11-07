@@ -16,11 +16,14 @@ const ProjectSection = () => {
     )
 
     return (
-    <section id="projects">
-        <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
+    <section>
+        <h2 
+            className="text-center text-4xl font-bold font-serif text-white my-4 md:mb-12"
+            id='projects'
+        >
             My Projects
         </h2>
-        <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
+        <div className="text-white flex flex-row justify-center items-center gap-5 uppercase py-5">
             <ProjectTag 
                 onClick ={handleTabChange}
                 tag = "All"
@@ -36,7 +39,7 @@ const ProjectSection = () => {
             <ProjectTag
                 onClick={handleTabChange}
                 tag='ML'
-                isSelected={ tab == "ML"}
+                isSelected={tab == "ML"}
             />
 
             {/* <button className="rounded-full border-2 border-slate-600 hover:border-white px-5 py-3 text-xl cursor-pointer">Web</button>     */}

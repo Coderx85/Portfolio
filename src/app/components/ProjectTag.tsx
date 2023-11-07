@@ -7,8 +7,8 @@ interface Tab{
 
 const ProjectTag = ({onClick, tag, isSelected}: Tab) => {
   const activeButton = isSelected 
-  ? "text-white bg-gray-900" 
-  : "text-[#ADB7BE] border-slate-600";
+  ? "bg-white border-2 text-black font-bold" 
+  : "text-white border-2 bg-gray-900";
 
   return (
     <button 
