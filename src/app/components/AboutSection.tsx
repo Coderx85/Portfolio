@@ -60,15 +60,14 @@ const AboutSection = () => {
     return (
     <section className='text-white'>
         <div className='md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16'>
-            <Image src="/images/about-image.png" width={500} height={500} alt='About-image' />
+            <Image src="/images/about-image.png" id='about' width={500} height={500} alt='About-image' />
             <div className='mt-4 md:mt-0 text-left flex flex-col h-full'>
                 <h2 className='text-4xl font-bold text-white mb-4'>About Me</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                    Hic eveniet quibusdam provident veniam nihil. 
-                    Expedita nobis optio soluta quae deleniti quis libero consequuntur nam, minima minus unde iure, 
-                    pariatur quaerat dicta voluptates consectetur, perspiciatis quo magnam? 
-                    Expedita atque eveniet, est dolores et explicabo quisquam quam iure suscipit corrupti natus culpa ea similique neque id alias? 
-                    Temporibus rerum repellat sint mollitia?
+                <p>
+                Hey there! I'm Priyanshu, a 3rd year engineering student with a focus on Data Science. 
+                Proficient in Python, MERN stack, and front-end technologies, I've embarked on a journey to create impactful tech solutions. 
+                From a Book Recommendation System to a Quora clone, I've delved into full-stack web development, blending creativity with code. 
+                Currently, I'm diving into Generative AI and Prompt Engineering, aiming to fuse these technologies into innovative projects.
                 </p>
                 <div className='flex flex-row mt-8'>
                     <TabButton 
