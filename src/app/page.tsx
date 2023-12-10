@@ -1,5 +1,3 @@
-// import Image from 'next/image'
-
 import AboutSection from "./components/AboutSection";
 // import EmailSection from "./components/EmailSection";
 import Footer from "./components/Footer";
