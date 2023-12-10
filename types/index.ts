@@ -20,6 +20,11 @@ export interface ProjectCardProp{
   description: string,
   gitUrl: string,
   previewUrl: string,
+  techStack: string[],
+  challengesFaced: string[],
+  lessonsLearned: string[],
+  contributionType: "Solo" | "Team",
+  duration: string,
 }
 
 export interface ProjectProps{
@@ -30,6 +35,11 @@ export interface ProjectProps{
   tag: string[],
   gitUrl: string,
   previewUrl: string,
+  techStack: string[], // List of technologies used in the project
+  challengesFaced: string[], // Challenges you faced during the project
+  lessonsLearned: string[], // Key lessons learned from the project
+  contributionType: "Solo" | "Team"; // Whether you worked on the project solo or in a team
+  duration: string; // Time taken to complete the project
 }
 
 export interface IconProps {

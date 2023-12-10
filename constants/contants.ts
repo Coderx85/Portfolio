@@ -10,6 +10,12 @@ export const Project_Data: ProjectProps[] = [
     tag: ["All","Web"],
     gitUrl: "",
     previewUrl: "https://matrix-hackbvp.vercel.app/",
+    techStack: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "TypeScript"],
+    challengesFaced: ["Challenge 1", "Challenge 2"],
+    lessonsLearned: ["Lesson 1", "Lesson 2"],
+    contributionType: "Team",
+    duration: "1 month",
+  
   },
   {
     id: 2,
@@ -19,6 +25,11 @@ export const Project_Data: ProjectProps[] = [
     tag: ["All","Web"],
     gitUrl: "",
     previewUrl: "",
+    techStack: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "TypeScript"],
+    challengesFaced: ["Challenge 1", "Challenge 2"],
+    lessonsLearned: ["Lesson 1", "Lesson 2"],
+    contributionType: "Solo",
+    duration: "2 week",
   },
   {
     id: 3,
@@ -28,6 +39,11 @@ export const Project_Data: ProjectProps[] = [
     tag: ["All"],
     gitUrl: "",
     previewUrl: "",
+    techStack: ["React", "Node.js", "Express", "MongoDB"],
+    challengesFaced: ["Challenge 1", "Challenge 2"],
+    lessonsLearned: ["Lesson 1", "Lesson 2"],
+    contributionType: "Solo",
+    duration: "1 month",
     },
   {
     id: 8,
@@ -37,6 +53,11 @@ export const Project_Data: ProjectProps[] = [
     tag: ["All","ML"],
     gitUrl: "",
     previewUrl: "https://readlites-deepsolv.streamlit.app/",
+    techStack: ["Python", "Streamlit", "Openai", "gtts"],
+    challengesFaced: ["Challenge 1", "Challenge 2"],
+    lessonsLearned: ["Lesson 1", "Lesson 2"],
+    contributionType: "Team",
+    duration: "1 month",
   },
   {
     id: 7,
@@ -46,6 +67,11 @@ export const Project_Data: ProjectProps[] = [
     tag: ["All","Web"],
     gitUrl: "",
     previewUrl: "https://nexdrive-085.vercel.app",
+    techStack: ["Next.js", "Tailwind CSS", "TypeScript", "Rapid API"],
+    challengesFaced: ["Challenge 1", "Challenge 2"],
+    lessonsLearned: ["Lesson 1", "Lesson 2"],
+    contributionType: "Solo",
+    duration: "2 weeks",
   },
   {
     id: 6,
@@ -55,6 +81,11 @@ export const Project_Data: ProjectProps[] = [
     tag: ["All","Web"],
     gitUrl: "",
     previewUrl: "https://prompthub-085.vercel.app",
+    techStack: ["Nextjs", "MongoDB", "Tailwind CSS", "TypeScript", "Authjs"],
+    challengesFaced: ["Challenge 1", "Challenge 2"],
+    lessonsLearned: ["Lesson 1", "Lesson 2"],
+    contributionType: "Solo",
+    duration: "1 month",
   },
   {
     id: 5,
@@ -64,6 +95,11 @@ export const Project_Data: ProjectProps[] = [
     tag: ["All","ML"],
     gitUrl: "",
     previewUrl: "https://smartreadme.streamlit.app/",
+    techStack: ["Python", "Streamlit", "Openai"],
+    challengesFaced: ["Challenge 1", "Challenge 2"],
+    lessonsLearned: ["Lesson 1", "Lesson 2"],
+    contributionType: "Solo",
+    duration: "1 month"
   },
   {
     id: 4,
@@ -73,6 +109,11 @@ export const Project_Data: ProjectProps[] = [
     tag: ["All","Web"],
     gitUrl: "",
     previewUrl: "",
+    techStack: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "TypeScript"],
+    challengesFaced: ["Challenge 1", "Challenge 2"],
+    lessonsLearned: ["Lesson 1", "Lesson 2"],
+    contributionType: "Solo",
+    duration: "1 month",
   },
 ]
 
