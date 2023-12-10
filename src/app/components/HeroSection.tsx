@@ -41,7 +41,7 @@ const HeroSection = () => {
                         <div className='w-1 sm:h-80 h-40 bg-gradient-to-b from-[#ff0000] '/>
                     </div>
                     <div className='float-right flex-row '>
-                        <h2 className="text-white mb-4 text-2xl sm:text-5xl lg:text-6xl font-extrabold">
+                        <h2 className="text-white mb-4 text-2xl sm:text-4xl lg:text-6xl font-extrabold">
                         Hello, Priyanshu here
                             <br/>
                             <span className="text-[#ff0000] bg-clip-text bg-gradient-to-b from-primary-400 to-secondary-600 ">
@@ -54,7 +54,7 @@ const HeroSection = () => {
                                 1000, // wait 1s before replacing "Mice" with "Hamsters"
                                 'M L Engineer',
                                 1000,
-                                'Prompt Engineer',
+                                'Coding Enthusiast',
                                 1000,
                             ]}
                             wrapper="span"
@@ -63,9 +63,9 @@ const HeroSection = () => {
                             repeat={Infinity}
                             />
                         </h2>
-                        <p className='text-[#ADB7BE] text-start text-base sm:text-lg mb-6 lg:text-xl'> 
-                        Adaptable Engineering student skilled in Python, MERN stack, and front-end technologies. 
-                        Expanding expertise in Generative AI, seeking to innovate in tech solutions.
+                        <p className='text-[#9d9d9d] text-start text-base sm:text-md mb-6 lg:text-xl'> 
+                            Adaptable Engineering student skilled in Python, MERN stack, and front-end technologies. 
+                            Expanding expertise in Generative AI, seeking to innovate in tech solutions.
                         </p>
                         <div>
                         {/* <button className="btn px-6 py-3 w-full sm:w-fit rounded-full mr-4 text-[#f1f1f1]">Hover me !
@@ -97,8 +97,8 @@ const HeroSection = () => {
         </div>
                 
         {/* Social Links Section */}
-            <div className='w-full mt-4 grid grid-cols-5  border-white rounded-lg text-white flex-col border-2
-                            md:grid-cols-2 md:text-left
+            <div className='w-full mt-14 grid grid-cols-6 border-[#ff0000] rounded-lg text-white flex-col border-2 gap-4 
+                md:grid-cols-2 md:text-left shadow-2xl shadow-gray-200
             '>
                 <SocialLink url={leetcodeUrl} icon={leetcode} />
                 <SocialLink url={linkedinUrl} icon={linkedin} />
