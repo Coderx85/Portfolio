@@ -42,3 +42,10 @@ export interface Tab {
     selectTab: React.MouseEventHandler<HTMLButtonElement>,
     children: React.ReactNode
 }
+
+export interface AchievementProps {
+  metric: string,
+  value: string,
+  postfix: string,
+  prefix?: string
+}
