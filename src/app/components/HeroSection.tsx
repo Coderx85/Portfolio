@@ -49,7 +49,7 @@ const HeroSection = () => {
                             <div className='w-1 sm:h-80 h-40 bg-gradient-to-b from-[#ff0000] '/>
                         </div>
                         <div className='float-right flex-row '>
-                            <h2 className="text-white mb-4 text-2xl sm:text-4xl lg:text-6xl font-extrabold">
+                            <h2 className="text-white mb-4 text-2xl sm:text-2=3xl lg:text-6xl font-extrabold">
                             Hello, Priyanshu here
                                 <br/>
                                 <span className="text-[#ff0000] bg-clip-text bg-gradient-to-b from-primary-400 to-secondary-600 ">
@@ -98,11 +98,11 @@ const HeroSection = () => {
                     className="col-span-4 place-self-center mt-4 lg:mt-0"
                 >
                     <div className='col-span-5 justify-center self-center'>
-                        <div className='rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] sm:w-[500px] sm:h-[500px] relative'>
+                        <div className='rounded-full bg-[#181818] w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] relative'>
                             <Image 
                                 src = "/images/hero-image.png"
-                                alt = 'Hero Image'
-                                className = 'absolute justify-center transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:w-[500px] '
+                                alt = 'Hero_Image'
+                                className = 'absolute justify-center transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 lg:w-[500px] '
                                 width={300}
                                 height={300}
                             />
@@ -113,7 +113,7 @@ const HeroSection = () => {
         </div>
         <AchievementsSection />
         {/* Social Links Section */}
-            <div className='w-full mt-14 grid grid-cols-6 border-[#ff0000] rounded-lg text-white flex-col border-2 gap-4 
+            <div className='mt-14 grid grid-cols-3 text-white flex-col border-2 gap-4 
                 md:grid-cols-2 md:text-left shadow-2xl shadow-gray-200
             '>
                 <SocialLink url={leetcodeUrl} icon={leetcode} />

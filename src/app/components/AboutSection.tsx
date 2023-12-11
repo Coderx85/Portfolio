@@ -50,6 +50,7 @@ const Data_Item: DataMenuProps[] = [
 const AboutSection = () => {
     const [tab, setTab] = useState("skills")
     const [isPending, startTransition] = useTransition();
+    const [menuOpen, setMenuOpen] = useState(true);
 
     const handleTabChange = (id: string) => {
         startTransition (() => {
@@ -68,42 +69,56 @@ const AboutSection = () => {
                 '>
                     About Me</h2>
                 <div className=' border-4 border-[#ff0000] py-7 px-7 rounded-3xl' id='about-text'>
-                    <p className='text-xl'>
-                        Hey there! I&apos;m Priyanshu, a 3rd year engineering student with a focus on Data Science. Proficient in Python, MERN stack, and front-end technologies, I&apos;ve embarked on a journey to create impactful tech solutions. 
-                        From a Book Recommendation System to a Quora clone, I&apos;ve delved into full-stack web development, blending creativity with code. 
+                    <p className='sm:text-xl text-xs'>
+                        Hey there! I&apos;m Priyanshu, a 3rd year engineering student with a focus on Data Science. 
+                        Proficient in Python, MERN stack, and front-end technologies, I&apos;ve embarked on a journey to create impactful tech solutions. 
                         Currently, I&apos;m diving into Generative AI and Prompt Engineering, aiming to fuse these technologies into innovative projects.
                     </p>
 
-                    <div className='flex flex-row mt-8'>
+                    {/* Mobile View */}
+                    <div className="lg:hidden block mt-4">
+                    <select
+                        value={tab}
+                        onChange={(e) => handleTabChange(e.target.value)}
+                        className="block w-full px-4 py-2 text-white bg-white border border-slate-200 rounded-md"
+                    >
+                        <option value="skills">Skills</option>
+                        <option value="education">Education</option>
+                        <option value="experience">Experience</option>
+                        <option value="certifications">Certifications</option>
+                    </select>
+                    </div>
+
+                    {/* Desktop View */}
+                    <div className='hidden lg:flex flex-row text-lg mt-4 space-x-4'>
                         <TabButton 
                             selectTab={() => handleTabChange("skills")} 
-                            active={tab == "skills"} 
-                        >{" "}
-                            Skills{" "}
+                            active={tab === "skills"} 
+                        >
+                            Skills
                         </TabButton>
-                        
                         <TabButton 
                             selectTab={() => handleTabChange("education")} 
-                            active={tab == "education"} 
-                        >{" "}
-                            Education{" "}
+                            active={tab === "education"} 
+                        >
+                            Education
                         </TabButton>
-                        
                         <TabButton 
                             selectTab={() => handleTabChange("experience")} 
-                            active={tab == "experience"} 
-                        >{" "}
-                            Experience{" "}
+                            active={tab === "experience"} 
+                        >
+                            Experience
                         </TabButton>
-
                         <TabButton 
                             selectTab={() => handleTabChange("certifications")} 
-                            active={tab == "certifications"} 
-                        >{" "}
-                            Certifications{" "}
+                            active={tab === "certifications"} 
+                        >
+                            Certifications
                         </TabButton>
                     </div>
-                    <div className='mt-8'>{Data_Item.find((e) => e.id == tab)?.content}</div>
+
+                    {/* Content */}
+                    <div className='mt-4'>{Data_Item.find((e) => e.id == tab)?.content}</div>
                 </div>
 
             </div>
