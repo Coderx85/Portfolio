@@ -75,7 +75,7 @@ const ProjectSection = () => {
             ))}
         </div>  
         
-        <div className='border-[#ff0000] border-4 rounded-2xl mt-5 p-10 '>
+        <div className='md:border-[#ff0000] md:border-4 rounded-2xl mt-5 p-10 '>
             <ul ref={ref} className="w-full rounded-xl grid md:grid-cols-2 gap-8 md:gap-12">
                 {filterProjects 
                     .sort((a, b) => b.id - a.id)
