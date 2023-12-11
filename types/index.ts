@@ -59,3 +59,8 @@ export interface AchievementProps {
   postfix: string,
   prefix?: string
 }
+
+export interface ProjectTagProps {
+  tag: string,
+  name: string
+}

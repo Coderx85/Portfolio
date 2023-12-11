@@ -56,7 +56,7 @@ const ProjectDetails = ({project, isOpen ,closeModal}: ProjectDetailsProps) => {
                   />
                 </button>
 
-                <div className="flex md:flex-row flex-col">
+                <div className="flex lg:flex-row flex-col">
                     <div className='flex-1 flex flex-col gap-3 mr-5 w-fit py-5 md:h-fit h-[800px] '>
                       <div className="flex-1 flex flex-col gap-2">
                         <h2 className='font-semibold text-[#ff0000] text-4xl capitalize'>
@@ -68,8 +68,8 @@ const ProjectDetails = ({project, isOpen ,closeModal}: ProjectDetailsProps) => {
                       </div>
                       <div className='flex grid-cols-3  gap-8 mt-5 '>
                     <Link href={!project.gitUrl?`https://github.com/Priyanshu085/${project.title}`:project.gitUrl} 
-                      className='w-fit text-right text-white border-2 border-[#ff0000] rounded-lg
-                      hover:bg-[#ff0000] hover:transition-all hover:duration-300 hover:font-semibold
+                      className='w-fit text-right text-white border-2 border-red-900 rounded-lg
+                      hover:bg-red-950 hover:transition-all hover:duration-300 hover:font-semibold
                       hover:ease-in-out hover:transform hover:scale-105 hover:text-black'
                       target='_blank'
                     >
@@ -82,8 +82,8 @@ const ProjectDetails = ({project, isOpen ,closeModal}: ProjectDetailsProps) => {
                     </Link>
                      {project.previewUrl?(
                         <Link href={project.previewUrl} 
-                          className='w-fit border-2 text-white border-[#ff0000] rounded-lg 
-                            hover:bg-[#ff0000] hover:transition-all hover:duration-300 hover:font-semibold 
+                          className='w-fit border-2 text-white border-red-950 rounded-lg 
+                            hover:bg-red-950 hover:transition-all hover:duration-300 hover:font-semibold 
                               hover:ease-in-out hover:transform hover:scale-105 hover:text-black'
                           target='_blank'
                         >
@@ -126,7 +126,7 @@ const ProjectDetails = ({project, isOpen ,closeModal}: ProjectDetailsProps) => {
                           <p className='text-xl mt-3'>
                             <FaClock className='inline-block mr-2' />
                             Duration: 
-                             {project.duration}
+                            <span className='text-xl font-bold text-[#ff0000]'> {project.duration} </span>
                           </p>
                         </div>
                         

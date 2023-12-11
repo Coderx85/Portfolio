@@ -4,6 +4,22 @@ import ProjectCard from './ProjectCard'
 import { Project_Data } from '../../../constants/contants'
 import ProjectTag from './ProjectTag'
 import { motion, useInView } from 'framer-motion'
+import { ProjectTagProps } from '../../../types'
+
+const project: ProjectTagProps[] = [
+    {
+        tag: "All",
+        name: "All Projects",
+    },
+    {
+        tag: "Web",
+        name: "Web Projects",
+    },
+    {
+        tag: "ML",
+        name: "ML Projects",
+    },
+]
 
 const ProjectSection = () => {
     const [tab ,setTab] = useState("All");
@@ -25,41 +41,41 @@ const ProjectSection = () => {
 
     return (
     <section className=''>
-        <h2 className='text-center text-5xl font-bold '>
+        <h2 className='text-center sm:text-5xl sm:mt-0 mt-10 text-4xl font-bold '>
             <a className="font-serif text-white my-4 md:mb-12
             hover:text-gray-900 "
             id='projects'>
                 My Projects
             </a>
         </h2>
-        <div 
-        className="text-white flex flex-row justify-center items-center gap-5 uppercase py-5
-            
-        ">
-            <ProjectTag 
-                onClick ={handleTabChange}
-                tag = "All"
-                name = "All Projects"
-                isSelected ={tab == "All"}                
-            />
 
-            <ProjectTag 
-                onClick ={handleTabChange}
-                tag = "Web"
-                name = "Web Projects"
-                isSelected ={tab == "Web"}                
-            />
+        <div className="md:hidden block mt-5">
+          <select
+            value={tab}
+            onChange={(e) => handleTabChange(e.target.value)}
+            className="block w-full mt-2 px-4 py-2 text-white bg-[#121212] border border-slate-200 rounded-md"
+          >
+            {project.map((project) => (
+              <option key={project.tag} value={project.tag}>
+                {project.name}
+              </option>
+            ))}
+          </select>
+        </div>
 
-            <ProjectTag
-                onClick={handleTabChange}
-                tag='ML'
-                name='ML Projects'
-                isSelected={tab == "ML"}
-            />
-
-            {/* <button className="rounded-full border-2 border-slate-600 hover:border-white px-5 py-3 text-xl cursor-pointer">Web</button>     */}
+        <div className="hidden text-white md:flex flex-row justify-center items-center gap-5 uppercase py-5">
+            {project.map((project, index) => (
+                <ProjectTag 
+                    key={index}
+                    onClick ={handleTabChange}
+                    tag = {project.tag}
+                    name = {project.name}
+                    isSelected ={tab == project.tag}                
+                />
+            ))}
         </div>  
-        <div className='border-[#ff0000] border-4 rounded-2xl p-10 '>
+        
+        <div className='border-[#ff0000] border-4 rounded-2xl mt-5 p-10 '>
             <ul ref={ref} className="w-full rounded-xl grid md:grid-cols-2 gap-8 md:gap-12">
                 {filterProjects 
                     .sort((a, b) => b.id - a.id)
