@@ -32,17 +32,16 @@ body {
 }
 
 html{
-  font-family: var(--font-inter);
-  /* font-family: 'Tilt Prism', sans-serif; */
-  /* url('../public/background.svg'); */
+  /* font-family: var(--font-inter); */
+  font-family:'Times New Roman', Times, serif;
 }
 
-/* #projects{
-  font-family: 'Tourney', sans-serif;
-} */
+#projects{
+  font-family: Georgia, serif
+}
 
 #about-text{
-  font-family: 'Tilt Prism', sans-serif;
+  font-family: 'Verdana', sans-serif;
 }
 
 .btn {
