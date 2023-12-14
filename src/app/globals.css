@@ -6,7 +6,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Borel&family=Josefin+Sans:wght@300&family=Noto+Serif+TC:wght@500&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap');
 
-
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -77,4 +76,16 @@ html{
   z-index: -1;
   border-radius: 5px;
   transition: all 0.3s;
+}
+
+.primary{
+  @apply text-[#166466]
+}
+
+.primary-bg{
+  @apply bg-[#166466]
+}
+
+.primary-bd{
+  @apply border-[#166466]
 }

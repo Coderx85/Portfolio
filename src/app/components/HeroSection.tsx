@@ -45,14 +45,14 @@ const HeroSection = () => {
                     <div className='flex justify-start items-start sm:text-left font-extrabold'>
                         {/* <h1 className='text-white mb-4 text-4xl sm:text-5xl lg:text-6xl text-extrabold'> */}
                         <div className='inline-flex float-left flex-col justify-center items-center mx-2'>
-                            <div className='w-5 h-5 rounded-full bg-[#ff0000]'/>
-                            <div className='w-1 sm:h-80 h-40 bg-gradient-to-b from-[#ff0000] '/>
+                            <div className='w-5 h-5 rounded-full bg-[#166466]'/>
+                            <div className='w-1 sm:h-80 h-40 bg-gradient-to-b from-[#166466] '/>
                         </div>
                         <div className='float-right flex-row '>
                             <h2 className="text-white mb-4 text-2xl sm:text-2=3xl lg:text-6xl font-extrabold">
                             Hello, Priyanshu here
                                 <br/>
-                                <span className="text-[#ff0000] bg-clip-text bg-gradient-to-b from-primary-400 to-secondary-600 ">
+                                <span className="primary bg-clip-text bg-gradient-to-b from-primary-400 to-secondary-600 ">
                                 I&apos;m a {" "}
                                 </span>  
                                 <TypeAnimation
@@ -80,7 +80,7 @@ const HeroSection = () => {
                                 <div className='background'></div>
                             </button>        */}
                                 {/* <button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-white text-black hover:bg-slate-200'>Hire Me</button> */}
-                                <button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-transparent text-white border border-white mt-3 hover:bg-slate-700' onClick={downloadResume}>
+                                <button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-transparent text-white border border-white mt-3 hover:bg-[#166466]' onClick={downloadResume}>
                                     Checkout My CV
                                 </button>
                             </div>

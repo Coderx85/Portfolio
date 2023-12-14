@@ -64,11 +64,11 @@ const AboutSection = () => {
             <Image src="/images/about-image.png" width={500} height={500} alt='About-image' />
             <div className='mt-8 md:mt-0 text-left flex flex-col h-full'>
                 <h2 className='
-                    text-4xl font-bold text-[#ff0000] mb-4 cursor-pointer
+                    text-4xl font-bold primary mb-4 cursor-pointer
                     hove:text-white 
                 '>
                     About Me</h2>
-                <div className=' border-4 border-[#ff0000] py-7 px-7 rounded-3xl' id='about-text'>
+                <div className=' border-4 primary-bd py-7 px-7 rounded-3xl' id='about-text'>
                     <p className='sm:text-xl text-xs'>
                         Hey there! I&apos;m Priyanshu, a 3rd year engineering student with a focus on Data Science. 
                         Proficient in Python, MERN stack, and front-end technologies, I&apos;ve embarked on a journey to create impactful tech solutions. 

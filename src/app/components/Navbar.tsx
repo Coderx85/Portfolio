@@ -52,7 +52,7 @@ const Navbar = () => {
         >
           <ul className="flex p-4 md:p-0 md:flex-row space-x-8 ">
             {navLinks.map((link, index) => (
-              <li key={index} className="hover:bg-white hover:text-black active:bg-white active:text-black ">
+              <li key={index} className="hover:primary-bg hover:text-black active:primary-bg active:text-black ">
                 <Link href={link.path} className="hover:bg-white hover:text-black active:bg-white active:text-black focus:bg-white focus:text-black">
                   {link.title}
                 </Link>

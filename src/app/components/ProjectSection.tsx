@@ -66,16 +66,16 @@ const ProjectSection = () => {
         <div className="hidden text-white md:flex flex-row justify-center items-center gap-5 uppercase py-5">
             {project.map((project, index) => (
                 <ProjectTag 
-                    key={index}
-                    onClick ={handleTabChange}
-                    tag = {project.tag}
-                    name = {project.name}
-                    isSelected ={tab == project.tag}                
+                    key= {index}
+                    onClick= {handleTabChange}
+                    tag= {project.tag}
+                    name= {project.name}
+                    isSelected= {tab == project.tag}                
                 />
             ))}
         </div>  
         
-        <div className='md:border-[#ff0000] md:border-4 rounded-2xl mt-5 p-10 '>
+        <div className='md:primary-bd md:border-4 rounded-2xl mt-5 p-10 '>
             <ul ref={ref} className="w-full rounded-xl grid md:grid-cols-2 gap-8 md:gap-12">
                 {filterProjects 
                     .sort((a, b) => b.id - a.id)

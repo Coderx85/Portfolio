@@ -9,7 +9,7 @@ const SocialLink = ({ url, icon }: IconProps) => {
 
   return (
     <div 
-      className=' hover:bg-red-900 cursor-pointer' 
+      className=' hover:bg-[#166466]  cursor-pointer' 
       id='contact'
     >
       <Link className="my-5 flex text-center flex-row items-center flex-nowrap text-xl" href={url} target="_blank" rel="noopener noreferrer">

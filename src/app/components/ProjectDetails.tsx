@@ -44,7 +44,7 @@ const ProjectDetails = ({project, isOpen ,closeModal}: ProjectDetailsProps) => {
               p-6 text-left shadow-2xl transition-all flex flex-col gap-5'>
                 <button
                   type='button'
-                  className='absolute top-0 right-0 z-20 w-fit p-2 bg-white hover:bg-[#ff0000] rounded-full'
+                  className='absolute top-0 right-0 z-20 w-fit p-2 bg-white hover:primary-bg rounded-full'
                   onClick={closeModal}
                 >
                   <Image
@@ -59,7 +59,7 @@ const ProjectDetails = ({project, isOpen ,closeModal}: ProjectDetailsProps) => {
                 <div className="flex lg:flex-row flex-col">
                     <div className='flex-1 flex flex-col gap-3 mr-5 w-fit py-5 md:h-fit h-[800px] '>
                       <div className="flex-1 flex flex-col gap-2">
-                        <h2 className='font-semibold text-[#ff0000] text-4xl capitalize'>
+                        <h2 className='font-semibold primary text-4xl capitalize'>
                           {project.title}
                         </h2>
                       </div>
@@ -69,7 +69,7 @@ const ProjectDetails = ({project, isOpen ,closeModal}: ProjectDetailsProps) => {
                       <div className='flex grid-cols-3  gap-8 mt-5 '>
                     <Link href={!project.gitUrl?`https://github.com/Priyanshu085/${project.title}`:project.gitUrl} 
                       className='w-fit text-right text-white border-2 border-red-900 rounded-lg
-                      hover:bg-red-950 hover:transition-all hover:duration-300 hover:font-semibold
+                      hover:bg-[#166466]  hover:transition-all hover:duration-300 hover:font-semibold
                       hover:ease-in-out hover:transform hover:scale-105 hover:text-black'
                       target='_blank'
                     >
@@ -83,7 +83,7 @@ const ProjectDetails = ({project, isOpen ,closeModal}: ProjectDetailsProps) => {
                      {project.previewUrl?(
                         <Link href={project.previewUrl} 
                           className='w-fit border-2 text-white border-red-950 rounded-lg 
-                            hover:bg-red-950 hover:transition-all hover:duration-300 hover:font-semibold 
+                            hover:bg-[#166466] hover:transition-all hover:duration-300 hover:font-semibold 
                               hover:ease-in-out hover:transform hover:scale-105 hover:text-black'
                           target='_blank'
                         >
@@ -103,10 +103,10 @@ const ProjectDetails = ({project, isOpen ,closeModal}: ProjectDetailsProps) => {
                     </div>
                   </div>
                   <div className='flex flex-col gap-2'>                    
-                      <div className='border-[#ff0000] border-2 mt-5 md:mt-0 p-5 rounded-lg min-w-[300px] py-5 w-full h-full text-white font-semibold'>
+                      <div className='primary-bd border-2 mt-5 md:mt-0 p-5 rounded-lg min-w-[300px] py-5 w-full h-full text-white font-semibold'>
                         {/* Project Description */}
                         <div>
-                          <h2 className='text-2xl underline text-white mb-2'>Description:</h2>
+                          <h2 className='text-2xl underline primary mb-2'>Description:</h2>
                           <p className='text-gray-400'>
                             {project.description} 
                           </p>
@@ -117,7 +117,7 @@ const ProjectDetails = ({project, isOpen ,closeModal}: ProjectDetailsProps) => {
                           <p className='text-xl mt-3'>
                             <FaTags className='inline-block mr-2' />
                             Project Type: 
-                          <span className='text-xl font-semibold text-[#ff0000]'> {project.contributionType}</span>
+                          <span className='text-xl font-semibold primary'> {project.contributionType}</span>
                           </p>
                         </div>
 
@@ -126,7 +126,7 @@ const ProjectDetails = ({project, isOpen ,closeModal}: ProjectDetailsProps) => {
                           <p className='text-xl mt-3'>
                             <FaClock className='inline-block mr-2' />
                             Duration: 
-                            <span className='text-xl font-bold text-[#ff0000]'> {project.duration} </span>
+                            <span className='text-xl font-bold primary'> {project.duration}</span>
                           </p>
                         </div>
                         
@@ -139,7 +139,7 @@ const ProjectDetails = ({project, isOpen ,closeModal}: ProjectDetailsProps) => {
                           </p>
                           <span className='mt-5 ml-7'>
                             {project.techStack.map((tech, index) => (
-                              <span key={index} className='inline-block bg-gray-200 text-gray-700 px-2 py-1 my-2 rounded-full mr-5'>
+                              <span key={index} className='inline-block bg-gray-200 primary px-2 py-1 my-2 rounded-full mr-5'>
                                 {tech}
                               </span>
                             ))}
@@ -157,7 +157,7 @@ const ProjectDetails = ({project, isOpen ,closeModal}: ProjectDetailsProps) => {
                             <span>
                               {project.challengesFaced.map((challenge, index) => (
                                 <ul key={index}>
-                                  <li  className='inline-block bg-red-200 text-red-950 p-2 my-1 rounded-lg ml-5 mr-2'>
+                                  <li  className='inline-block primary-bg text-red-950 p-2 my-1 rounded-lg ml-5 mr-2'>
                                     {challenge}
                                   </li>
                                 </ul>

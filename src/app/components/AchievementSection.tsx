@@ -41,27 +41,20 @@ const achievementsList: AchievementProps[] = [
 const AchievementsSection = () => {
   return (
     <div className="py-8 xl:gap-16 sm:py-16 xl:px-16 text-sm w-full ">
-      <div className="border-[#f00] w-full border-4 sm:gap-0 gap-14 grid md:grid-cols-5 grid-cols-2 rounded-lg py-8 px-10 sm:px-16 sm:flex flex-col sm:flex-row items-center justify-between">
+      <div className="primary-bd w-full bg-slate-100 border-4 sm:gap-0 gap-14 grid md:grid-cols-5 grid-cols-2 rounded-lg py-8 px-10 sm:px-16 sm:flex flex-col sm:flex-row items-center justify-between backdrop-filter backdrop-blur-md">
         {achievementsList.map((achievement, index) => {
           return (
             <div
               key={index}
               className="flex flex-col items-center gap-5 justify-center my-4 sm:my-0"
             >
-              <h2 className="text-[#ff0000] md:text-4xl text-lg font-bold flex flex-row">
+              <h2 className="primary md:text-4xl text-lg font-bold flex flex-row">
                 {achievement.prefix}
                 <AnimatedNumbers
                   includeComma
                   animateToNumber={parseInt(achievement.value)}
                   locale="en-US"
                   className="text-white md:text-4xl font-bold"
-                  // configs={(_: any, index: number) => {
-                  //   return {
-                  //     mass: 1,
-                  //     friction: 100,
-                  //     tensions: 140 * (index + 1),
-                  //   };
-                  // }}
                 />
                 {achievement.postfix}
               </h2>
