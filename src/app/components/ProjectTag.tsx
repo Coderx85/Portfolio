@@ -15,7 +15,7 @@ const ProjectTag = ({onClick, tag, isSelected, name}: Tab) => {
     <button 
       className= 
       {`${activeButton} rounded-xl border-2 px-5 py-3 text-xl cursor-pointer  
-      hover:primary-bg hover:text-black transform hover:scale-105 transition duration-300 ease-in-out
+      hover:bg-[#166466] hover:text-black transform hover:scale-105 transition duration-300 ease-in-out
       `} 
       onClick={() => onClick(tag)}>
       {name}

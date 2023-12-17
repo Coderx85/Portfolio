@@ -12,6 +12,10 @@ const Data_Item: DataMenuProps[] = [
                 <ul className='list-disc pl-2'>
                     <li>TypesScript</li>
                     <li>Next JS</li>
+                    <li>React</li>
+                    <li>Node JS</li>
+                    <li>Express JS</li>
+                    <li>Prompting</li>
                 </ul>
         ),
     },
@@ -30,8 +34,9 @@ const Data_Item: DataMenuProps[] = [
         id: "experience",
         content: (
             <ul className='list-disc pl-2'>
-                <li>Comapass Ambassador @IIT_Delhi_Rendezous</li>
-                <li>Hackathon Team Leader @Hack_BVP5.0</li>
+                <li>Excutive Member @[GDSC-GCET ML]</li>
+                <li>Ex-Comapass Ambassador @[IIT Delhi Rendezous]</li>
+                <li>Hackathon Team Leader @[Hack BVP5.0]</li>
             </ul>
         ),  
     },
@@ -40,8 +45,10 @@ const Data_Item: DataMenuProps[] = [
         id: "certifications",
         content: (
             <ul className='list-disc pl-2'>
-                <li>Generative AI [GoogleSkill Boost]</li>
-                <li>DevOps Fundamentals [Udemy]</li>
+                <li>Generative AI @[GoogleSkill Boost]</li>
+                <li>Prompting @[Deeplearning AI]</li>
+                <li></li>
+                <li>DevOps Fundamentals @[Udemy]</li>
             </ul>
         ),
     }
