@@ -68,13 +68,13 @@ const ProjectDetails = ({project, isOpen ,closeModal}: ProjectDetailsProps) => {
                       </div>
                       <div className='flex grid-cols-3  gap-8 mt-5 '>
                     <Link href={!project.gitUrl?`https://github.com/Priyanshu085/${project.title}`:project.gitUrl} 
-                      className='w-fit text-right text-white border-2 border-red-900 rounded-lg
+                      className='w-fit text-right text-white border-2 border-red-950 rounded-lg
                       hover:bg-[#166466]  hover:transition-all hover:duration-300 hover:font-semibold
                       hover:ease-in-out hover:transform hover:scale-105 hover:text-black'
                       target='_blank'
                     >
                       <div className='flex gap-2 py-2 px-4'>
-                        <Image src="/social/github.svg" alt={'GitHub Logo'} height={20} width={20}/>
+                        <Image src="/github.svg" alt={'GitHub Logo'} height={20} width={20}/>
                         <p className='md:block hidden'>
                           GitHub Link                        
                         </p>
