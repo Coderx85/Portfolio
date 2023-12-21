@@ -9,10 +9,10 @@ const Data_Item: DataMenuProps[] = [
         title: "skills",
         id: "skills",
         content: (
-                <ul className='list-disc pl-2'>
+                <ul className='list-disc pl-2 grid-cols-2 grid'>
                     <li>TypesScript</li>
                     <li>Next JS</li>
-                    <li>React</li>
+                    <li>Machine Learning</li>
                     <li>Node JS</li>
                     <li>Express JS</li>
                     <li>Prompting</li>
@@ -24,8 +24,8 @@ const Data_Item: DataMenuProps[] = [
         id: "education",
         content: (
             <ul className='list-disc pl-2'>
-                <li>B-Tech Computer Science</li>
-                <li>Intermediate</li>
+                <li>B-Tech Computer Science (2021-25)</li>
+                <li>Intermediate (2019-21)</li>
             </ul>
         ),
     },
@@ -35,7 +35,8 @@ const Data_Item: DataMenuProps[] = [
         content: (
             <ul className='list-disc pl-2'>
                 <li>Excutive Member @[GDSC-GCET ML]</li>
-                <li>Ex-Comapass Ambassador @[IIT Delhi Rendezous]</li>
+                <li>Open Source Contributor @[Hacktoberfest-23]</li>
+                <li>Ex-Comapass Ambassador @[IIT Delhi Rendezous 23]</li>
                 <li>Hackathon Team Leader @[Hack BVP5.0]</li>
             </ul>
         ),  
@@ -45,9 +46,9 @@ const Data_Item: DataMenuProps[] = [
         id: "certifications",
         content: (
             <ul className='list-disc pl-2'>
+                <li>Prompt Engineering @[Deeplearning AI]</li>
                 <li>Generative AI @[GoogleSkill Boost]</li>
-                <li>Prompting @[Deeplearning AI]</li>
-                <li></li>
+                {/* <li> </li> */}
                 <li>DevOps Fundamentals @[Udemy]</li>
             </ul>
         ),
