@@ -9,7 +9,8 @@ const SocialLink = ({ url, icon }: IconProps) => {
 
   return (
     <div 
-      className=' hover:bg-[#166466]  cursor-pointer' 
+      className=' hover:bg-[#3f4949]  cursor-pointer animate-pulse rounded-xl flex flex-col justify-center items-center p-5 transition-all duration-500 ease-in-out 
+      hover:scale-105 hover:shadow-gray-200 hover:cursor-pointern' 
       id='contact'
     >
       <Link className="my-5 flex text-center flex-row items-center flex-nowrap text-xl" href={url} target="_blank" rel="noopener noreferrer">
@@ -20,7 +21,7 @@ const SocialLink = ({ url, icon }: IconProps) => {
         width={35} 
         height={35}
       />
-        <p className='hidden md:block'>
+        <p className='hidden md:block text-[#166466] font-bold shadow-slate-200 '>
         {icon}
         </p>
       </Link>
