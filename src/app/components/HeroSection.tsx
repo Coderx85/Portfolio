@@ -22,15 +22,17 @@ const HeroSection = () => {
     const linkedinUrl = 'https://www.linkedin.com/in/priyanshu085/';
     const githubUrl = 'https://github.com/Priyanshu085';
     const googleDevUrl = 'https://g.dev/priyanshu085';
-    const gitlabUrl = 'https://gitlab.com/Priyanshu085';
+    // const gitlabUrl = 'https://gitlab.com/Priyanshu085';
     const emailUrl = 'mailto:abpriyanshu007@gmail.com';
+    const codechefUrl = 'https://www.codechef.com/users/priyanshux085';
 
     const leetcode = "Leetcode";
     const linkedin = "LinkedIn"
     const github = "GitHub";
-    const gitlab = "GitLab";
+    // const gitlab = "GitLab";
     const google = "Google";
     const email = "Email";
+    const codechef = "CodeChef";
 
     return (
       <section>
@@ -111,7 +113,10 @@ const HeroSection = () => {
                 </motion.div>
             </div>
         </div>
+        {/* Achieve,emt Section */}
         <AchievementsSection />
+
+
         {/* Social Links Section */}
             <div className='mt-14 grid grid-cols-3 text-white flex-col border-2 gap-4 
                 md:grid-cols-2 md:text-left shadow-2xl shadow-gray-200
@@ -120,8 +125,10 @@ const HeroSection = () => {
                 <SocialLink url={linkedinUrl} icon={linkedin} />
                 <SocialLink url={githubUrl} icon={github} />
                 <SocialLink url={googleDevUrl} icon={google}/>
-                <SocialLink url={gitlabUrl} icon={gitlab}/>
+                <SocialLink url={codechefUrl} icon={codechef}/>
+                {/* <SocialLink url={gitlabUrl} icon={gitlab}/> */}
                 <SocialLink url={emailUrl} icon={email} />
+
             </div>
       </section>
   )

@@ -40,7 +40,7 @@ const ProjectDetails = ({project, isOpen ,closeModal}: ProjectDetailsProps) => {
               leaveFrom='opacity-100 scale-100'
               leaveTo='opacity-0 scale-95'
             >
-              <Dialog.Panel className='relative bg-black border-2 md:m-0 m-5 w-fit md:w-[1200px] max-h-[90vh] h-[90vh] md:h-fit overflow-y-auto transform rounded-2xl 
+              <Dialog.Panel className='relative bg-black border-2 md:m-0 m-5 md:w-[1200px] max-h-[90vh] h-[90vh] md:h-fit overflow-y-auto transform rounded-2xl 
               p-6 text-left shadow-2xl transition-all flex flex-col gap-5'>
                 <button
                   type='button'
@@ -57,14 +57,14 @@ const ProjectDetails = ({project, isOpen ,closeModal}: ProjectDetailsProps) => {
                 </button>
 
                 <div className="flex lg:flex-row flex-col">
-                    <div className='flex-1 flex flex-col gap-3 mr-5 w-fit py-5 md:h-fit h-[800px] '>
+                    <div className='flex-1 flex flex-col gap-3 mr-5 py-5 md:h-fit h-[800px] '>
                       <div className="flex-1 flex flex-col gap-2">
                         <h2 className='font-semibold primary text-4xl capitalize'>
                           {project.title}
                         </h2>
                       </div>
-                      <div className='relative self-center md:w-[500px] md:h-96 h-48 w-[300px] place-self-center bg-slate-700 bg-no-repeat bg-cover bg-center rounded-lg'>
-                        <Image src={project.imgUrl} alt='project-image' fill priority className='object-contain self-center sm:w-fit hover:cursor-pointer rounded-lg' />
+                      <div className='relative self-center md:w-[500px] md:h-96 h-32 w-[250px] place-self-center bg-slate-700 bg-no-repeat bg-cover bg-center rounded-lg'>
+                        <Image src={project.imgUrl} alt='project-image' fill priority className='object-contain md:w-fit md:h-fit h-20 w-[150px] self-center sm:w-fit hover:cursor-pointer rounded-lg' />
                       </div>
                       <div className='flex grid-cols-3  gap-8 mt-5 '>
                     <Link href={!project.gitUrl?`https://github.com/Priyanshu085/${project.title}`:project.gitUrl} 
@@ -103,7 +103,7 @@ const ProjectDetails = ({project, isOpen ,closeModal}: ProjectDetailsProps) => {
                     </div>
                   </div>
                   <div className='flex flex-col gap-2'>                    
-                      <div className='primary-bd border-2 mt-5 md:mt-0 p-5 rounded-lg min-w-[300px] py-5 w-full h-full text-white font-semibold'>
+                      <div className='primary-bd border-2 mt-5 md:mt-0 p-5 rounded-lg  py-5 w-full h-full text-white font-semibold'>
                         {/* Project Description */}
                         <div>
                           <h2 className='text-2xl underline primary mb-2'>Description:</h2>
