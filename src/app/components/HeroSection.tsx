@@ -5,6 +5,53 @@ import { TypeAnimation } from 'react-type-animation';
 import SocialLink from './SocialLink';
 import AchievementsSection from './AchievementSection';
 import { motion } from 'framer-motion';
+import { SocialLinksProps } from '../../../types';
+
+const socialLinks: SocialLinksProps[] = [
+    // Connection Based
+    {
+      name: "Email",
+      url: "mailto:qbpriyanshu007@gmail.com",
+      icon: "Email",
+    },
+    {
+        name: "LinkedIn",
+      url: "https://www.linkedin.com/in/priyanshu085/",
+      icon: "Linkedin",
+    },
+    {
+        name: "Twitter",
+        url: "https://twitter.com/Priyanshu0x85",
+      icon: "Twitter",
+    },
+    {
+        name: "Instagram",
+      url: "https://www.instagram.com/priyanshu085/",
+      icon: "Instagram",
+    },
+    // Achievement Based
+    {
+      name: "Github",
+      url: "https://gitub.com/Priyanshu085",
+      icon: "Github",
+    },
+    {
+      name: "CodeChef",
+      url: "https://www.codechef.com/users/priyanshux085",
+      icon: "CodeChef",
+    },
+    {
+        name: "Leetcode",
+        url: "https://leetcode.com/Priyanshu085/",
+        icon: "Leetcode",
+    },
+    {
+        name: "Google",
+        url: "https://g.dev/priyanshu085",
+        icon: "Google",
+    }
+
+  ]
 
 const HeroSection = () => {
 
@@ -17,22 +64,6 @@ const HeroSection = () => {
         link.click();
         document.body.removeChild(link);
       };
-
-    const leetcodeUrl = 'https://leetcode.com/Priyanshu085/';
-    const linkedinUrl = 'https://www.linkedin.com/in/priyanshu085/';
-    const githubUrl = 'https://github.com/Priyanshu085';
-    const googleDevUrl = 'https://g.dev/priyanshu085';
-    // const gitlabUrl = 'https://gitlab.com/Priyanshu085';
-    const emailUrl = 'mailto:abpriyanshu007@gmail.com';
-    const codechefUrl = 'https://www.codechef.com/users/priyanshux085';
-
-    const leetcode = "Leetcode";
-    const linkedin = "LinkedIn"
-    const github = "GitHub";
-    // const gitlab = "GitLab";
-    const google = "Google";
-    const email = "Email";
-    const codechef = "CodeChef";
 
     return (
       <section>
@@ -119,15 +150,11 @@ const HeroSection = () => {
 
         {/* Social Links Section */}
             <div className='mt-14 grid grid-cols-3 text-white flex-col border-2 gap-4 
-                md:grid-cols-2 md:text-left shadow-2xl shadow-gray-200
+                md:grid-cols-4 md:text-left shadow-2xl shadow-gray-200
             '>
-                <SocialLink url={leetcodeUrl} icon={leetcode} />
-                <SocialLink url={linkedinUrl} icon={linkedin} />
-                <SocialLink url={githubUrl} icon={github} />
-                <SocialLink url={googleDevUrl} icon={google}/>
-                <SocialLink url={codechefUrl} icon={codechef}/>
-                {/* <SocialLink url={gitlabUrl} icon={gitlab}/> */}
-                <SocialLink url={emailUrl} icon={email} />
+                {socialLinks.map((socialLink, index) => (
+                    <SocialLink key={index} url={socialLink.url} icon={socialLink.icon} />
+                ))}
 
             </div>
       </section>

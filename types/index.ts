@@ -64,3 +64,9 @@ export interface ProjectTagProps {
   tag: string,
   name: string
 }
+
+export interface SocialLinksProps {
+  name: string,
+  url: string,
+  icon: string
+}

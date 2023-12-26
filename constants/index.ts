@@ -174,3 +174,38 @@ export const navLinks = [
     }
   ]
   
+export const socialLinks = [
+    {
+      name: "Github",
+      url: "https://gitub.com/Priyanshu085",
+      icon: "github",
+    },
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/priyanshu085/",
+      icon: "linkedin",
+    },
+    {
+      name: "Twitter",
+      url: "https://twitter.com/Priyanshu0x85",
+      icon: "twitter",
+    },
+    {
+      name: "Instagram",
+      url: "https://www.instagram.com/priyanshu085/",
+      icon: "instagram",
+    },
+    {
+      name: "Mail",
+      url: "mailto:qbpriyanshu007@gmail.com",
+      icon: "mail",
+    },
+    {
+      name: "CodeChef",
+      url: "https://www.codechef.com/users/priyanshux085",
+      icon: "codechef",
+    },
+    {
+      
+    }
+  ]
