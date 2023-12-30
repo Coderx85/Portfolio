@@ -202,7 +202,7 @@ export const socialLinks = [
     },
     {
       name: "CodeChef",
-      url: "https://www.codechef.com/users/priyanshux085",
+      url: "",
       icon: "codechef",
     },
     {
