@@ -4,7 +4,6 @@ import { SocialLinksProps } from "../../../types";
 import Link from "next/link";
 import Image from "next/image";
 
-const EmailSection = () => {
 
 const icons: SocialLinksProps[] = [
   {    
@@ -28,6 +27,7 @@ const icons: SocialLinksProps[] = [
     url: "",
   }
 ];
+const EmailSection = () => {
 
 return (
   <section
