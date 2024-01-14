@@ -7,7 +7,7 @@ import AchievementsSection from './AchievementSection';
 import { motion } from 'framer-motion';
 import { SocialLinksProps } from '../../../types';
 
-const socialLinks: SocialLinksProps[] = [
+export const socialLinks: SocialLinksProps[] = [
     // Connection Based
     {
       name: "Email",
