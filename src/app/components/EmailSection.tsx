@@ -4,27 +4,26 @@ import { SocialLinksProps } from "../../../types";
 import Link from "next/link";
 import Image from "next/image";
 
-
 const icons: SocialLinksProps[] = [
   {    
     name: "Email",
     icon: "/social/email.svg",
-    url: "",
+    url: "mailto:qbpriyanshu007@gmail.com",
   }, 
   {
     name: "Linkedin",
     icon: "/social/linkedin.svg",
-    url: "",
+    url: "https://www.linkedin.com/in/priyanshu085/",
   },
   {
     name: "Twitter",
     icon: "/social/twitter.svg",
-    url: "",
+    url: "https://twitter.com/Priyanshu0x85",
   },
   {
     name: "Instagram",
     icon: "/social/instagram.svg",
-    url: "",
+    url: "https://gitub.com/Priyanshu085",
   }
 ];
 const EmailSection = () => {
@@ -49,7 +48,7 @@ return (
       <div className="socials flex flex-row gap-5">
         {/* <div className="gap-5"> */}
         {icons.map((link, index) => (
-          <Link href= {link.url} className="shadow-xl gap-1">
+          <Link key={index} href= {link.url} className="shadow-xl gap-1">
             <Image src={link.icon} width={35} height={35} className=" rounded-full shadow-2xl shadow-red-500 bg-gradient-to-b" alt={""} />
           </Link>
         ))}
@@ -61,7 +60,7 @@ return (
       <form className="flex flex-col">
         <div className="mb-6 ">
           <label
-            htmlFor="email"
+            // htmlFor="email"
             className="text-white block mb-2 text-sm font-medium"
           >
             Your email
@@ -76,7 +75,7 @@ return (
         </div>
         <div className="mb-6">
           <label
-            htmlFor="subject"
+            // htmlFor="subject"
             className="text-white block text-sm mb-2 font-medium"
           >
             Subject
@@ -91,7 +90,7 @@ return (
         </div>
         <div className="mb-6">
           <label
-            htmlFor="message"
+            // htmlFor="message"
             className="text-white block text-sm mb-2 font-medium"
           >
             Message
