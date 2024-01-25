@@ -201,12 +201,12 @@ export const socialLinks = [
     },
     {
       name: "Twitter",
-      url: "https://twitter.com/Priyanshu0x85",
+      url: "https://twitter.com/Priyanshux085",
       icon: "twitter",
     },
     {
       name: "Instagram",
-      url: "https://www.instagram.com/priyanshu085/",
+      url: "https://www.instagram.com/priyanshux085/",
       icon: "instagram",
     },
     {

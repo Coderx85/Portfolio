@@ -2,10 +2,10 @@
 import React from 'react'
 import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
-import SocialLink from './SocialLink';
-import AchievementsSection from './AchievementSection';
 import { motion } from 'framer-motion';
 import { SocialLinksProps } from '../../../types';
+import AchievementsSection from './AchievementSection';
+import SocialLink from './SocialLink';
 
 export const socialLinks: SocialLinksProps[] = [
     // Connection Based
@@ -21,12 +21,12 @@ export const socialLinks: SocialLinksProps[] = [
     },
     {
         name: "Twitter",
-        url: "https://twitter.com/Priyanshu0x85",
+        url: "https://twitter.com/Priyanshux085",
       icon: "Twitter",
     },
     {
         name: "Instagram",
-      url: "https://www.instagram.com/priyanshu085/",
+      url: "https://www.instagram.com/priyanshux085/",
       icon: "Instagram",
     },
     // Achievement Based
