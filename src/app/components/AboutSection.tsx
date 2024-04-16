@@ -10,18 +10,12 @@ const Data_Item: DataMenuProps[] = [
         id: "skills",
         content: (
                 <ul className='list-disc pl-2 grid-cols-2 grid'>
-                    <li>Machine Learning</li>
-                    <li>Python</li>
                     <li>TypesScript</li>
                     <li>Next JS</li>
+                    <li>Machine Learning</li>
                     <li>Node JS</li>
                     <li>Express JS</li>
-                    <li>Mongo DB</li>
-                    <li>SQL</li>
-                    {/* <li>Prompting</li> */}
-                    {/* <li>React JS</li> */}
-                    <li>Deep Learning</li>
-                    <li>Tensorflow</li>
+                    <li>Prompting</li>
                 </ul>
         ),
     },
@@ -94,7 +88,7 @@ const AboutSection = () => {
                     <select
                         value={tab}
                         onChange={(e) => handleTabChange(e.target.value)}
-                        className="block w-full px-4 py-2 text-white bg-white border border-slate-200 rounded-md transition-5s"
+                        className="block w-full px-4 py-2 text-white bg-white border border-slate-200 rounded-md"
                     >
                         <option value="skills">Skills</option>
                         <option value="education">Education</option>
@@ -104,7 +98,7 @@ const AboutSection = () => {
                     </div>
 
                     {/* Desktop View */}
-                    <div className='hidden lg:flex flex-row text-lg mt-4 space-x-4 transition-all'>
+                    <div className='hidden lg:flex flex-row text-lg mt-4 space-x-4'>
                         <TabButton 
                             selectTab={() => handleTabChange("skills")} 
                             active={tab === "skills"} 

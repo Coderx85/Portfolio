@@ -1,3 +1,5 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
 # dependencies
 /node_modules
 /.pnp
@@ -34,4 +36,7 @@ next-env.d.ts
 
 .vercel
 
-/src/app/api/send
+#Remove Files
+/src/app/app/send/route.ts
+/src/app/components/EmailSection.tsx
+/src/app/components/email-template.tsx

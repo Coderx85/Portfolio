@@ -157,20 +157,6 @@ export const Project_Data: ProjectProps[] = [
     contributionType: "Solo",
     duration: "1 week",
   },
-  {
-    id: 12,
-    title: "EE_DeepLearning",
-    description: "This repository contains code and notes related to my learning journey in deep learning. I use it to track my progress, store code snippets, and document key concepts in Notion.",
-    imgUrl: "/images/projects/12.png",
-    tag: ["All","ML"],
-    gitUrl: "https://github.com/Priyanshu085/EE_DeepLearning",
-    previewUrl: "https://priyanshu085.github.io/EE_DeepLearning/",
-    techStack: ["Python", "Tensorflow", "Keras", "Pytorch"],
-    challengesFaced: ["Finding the worthy playlist", "Finding the right communities to explore DL"],
-    lessonsLearned: ["Lesson 1", "Lesson 2"],
-    contributionType: "Solo",
-    duration: "50 Days",
-  }
 ]
 
 export const navLinks = [
@@ -201,12 +187,12 @@ export const socialLinks = [
     },
     {
       name: "Twitter",
-      url: "https://twitter.com/Priyanshux085",
+      url: "https://twitter.com/Priyanshu0x85",
       icon: "twitter",
     },
     {
       name: "Instagram",
-      url: "https://www.instagram.com/priyanshux085/",
+      url: "https://www.instagram.com/priyanshu085/",
       icon: "instagram",
     },
     {
