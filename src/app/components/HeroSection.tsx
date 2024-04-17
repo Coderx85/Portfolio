@@ -10,35 +10,35 @@ import { SocialLinksProps } from '../../../types';
 const socialLinks: SocialLinksProps[] = [
     // Connection Based
     {
-      name: "Email",
-      url: "mailto:qbpriyanshu007@gmail.com",
-      icon: "Email",
+        name: "Email",
+        url: "mailto:abpriyanshu007@gmail.com",
+        icon: "Email",
     },
     {
         name: "LinkedIn",
-      url: "https://www.linkedin.com/in/priyanshu085/",
-      icon: "Linkedin",
+        url: "https://www.linkedin.com/in/priyanshu085/",
+        icon: "Linkedin",
     },
     {
         name: "Twitter",
         url: "https://twitter.com/Priyanshu0x85",
-      icon: "Twitter",
+        icon: "Twitter",
     },
     {
         name: "Instagram",
-      url: "https://www.instagram.com/priyanshu085/",
-      icon: "Instagram",
+        url: "https://www.instagram.com/priyanshu085/",
+        icon: "Instagram",
     },
     // Achievement Based
     {
-      name: "Github",
-      url: "https://gitub.com/Priyanshu085",
-      icon: "Github",
+        name: "Github",
+        url: "https://gitub.com/Priyanshu085",
+        icon: "Github",
     },
     {
-      name: "CodeChef",
-      url: "https://www.codechef.com/users/priyanshux085",
-      icon: "CodeChef",
+        name: "CodeChef",
+        url: "https://www.codechef.com/users/priyanshux85",
+        icon: "CodeChef",
     },
     {
         name: "Leetcode",

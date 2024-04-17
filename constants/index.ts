@@ -177,7 +177,7 @@ export const navLinks = [
 export const socialLinks = [
     {
       name: "Github",
-      url: "https://gitub.com/Priyanshu085",
+      url: "https://github.com/Priyanshu085",
       icon: "github",
     },
     {

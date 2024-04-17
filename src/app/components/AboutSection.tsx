@@ -34,9 +34,10 @@ const Data_Item: DataMenuProps[] = [
         id: "experience",
         content: (
             <ul className='list-disc pl-2'>
-                <li>Excutive Member @[GDSC-GCET ML]</li>
+                {/* <li>Excutive Member @[GDSC-GCET ML]</li> */}
+                <li>Intern @[Tublian]</li>
                 <li>Open Source Contributor @[Hacktoberfest-23]</li>
-                <li>Ex-Comapass Ambassador @[IIT Delhi Rendezous 23]</li>
+                {/* <li>Ex-Comapass Ambassador @[IIT Delhi Rendezous 23]</li> */}
                 <li>Hackathon Team Leader @[Hack BVP5.0]</li>
             </ul>
         ),  
