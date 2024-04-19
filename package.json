@@ -8,6 +8,11 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "author": {
+    "name": "Priyanshu",
+    "email": "abpriyanshu085@gmail.com"
+  },
+  "license": "MIT", 
   "dependencies": {
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
