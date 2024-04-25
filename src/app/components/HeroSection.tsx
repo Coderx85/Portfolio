@@ -133,9 +133,10 @@ const HeroSection = () => {
                     <div className='col-span-5 justify-center self-center'>
                         <div className='rounded-full bg-[#181818] w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] relative'>
                             <Image 
-                                src = "/images/hero-image.png"
-                                alt = 'Hero_Image'
-                                className = 'absolute justify-center transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 lg:w-[500px] '
+                                // src = "/images/hero-image.png"
+                                src= "/images/hero.png"
+                                alt = 'Hero_Image'  
+                                className = 'absolute justify-center transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 lg:w-[500px] rounded-full'
                                 width={300}
                                 height={300}
                             />
