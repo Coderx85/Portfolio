@@ -21,12 +21,12 @@ const socialLinks: SocialLinksProps[] = [
     },
     {
         name: "Twitter",
-        url: "https://twitter.com/Priyanshu0x85",
+        url: "https://twitter.com/Priyanshux085",
         icon: "Twitter",
     },
     {
         name: "Instagram",
-        url: "https://www.instagram.com/priyanshu085/",
+        url: "https://www.instagram.com/priyanshux085/",
         icon: "Instagram",
     },
     // Achievement Based
