@@ -1,10 +1,10 @@
 "use client"
 import React, { useRef, useState } from 'react'
 import ProjectCard from './ProjectCard'
-import { Project_Data } from '../../../constants'
+import { Project_Data } from '../constants'
 import ProjectTag from './ProjectTag'
 import { motion, useInView } from 'framer-motion'
-import { ProjectTagProps } from '../../../types'
+import { ProjectTagProps } from '../types'
 
 const project: ProjectTagProps[] = [
     {

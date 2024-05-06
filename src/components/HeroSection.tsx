@@ -5,7 +5,7 @@ import { TypeAnimation } from 'react-type-animation';
 import SocialLink from './SocialLink';
 import AchievementsSection from './AchievementSection';
 import { motion } from 'framer-motion';
-import { SocialLinksProps } from '../../../types';
+import { SocialLinksProps } from '../types';
 
 const socialLinks: SocialLinksProps[] = [
     // Connection Based

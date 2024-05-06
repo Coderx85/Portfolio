@@ -3,7 +3,7 @@ import React from "react";
 // import LinkedinIcon from "../../../public/linkedin-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
-import { SocialLinksProps } from "../../../types";
+import { SocialLinksProps } from "../types";
 
 const socialLinks: SocialLinksProps[] = [
   {

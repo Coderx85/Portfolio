@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { Dialog, Transition } from "@headlessui/react";
-import { ProjectCardProp } from '../../../types';
+import { ProjectCardProp } from '../types';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaTools, FaTags, FaClock, FaExclamationCircle, FaLightbulb } from 'react-icons/fa';

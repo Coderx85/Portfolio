@@ -1,4 +1,4 @@
-import { LinksProps } from "../../../types"
+import { LinksProps } from "../types"
 import Navlink from "./Navlink"
 // import { Links } from "./Navbar";
 

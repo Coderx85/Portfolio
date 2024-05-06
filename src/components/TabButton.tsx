@@ -1,5 +1,5 @@
 import React from 'react'
-import { Tab } from '../../../types'
+import { Tab } from '../types'
 import { motion } from 'framer-motion';
 
 const variants = {

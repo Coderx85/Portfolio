@@ -12,10 +12,10 @@
     "name": "Priyanshu",
     "email": "abpriyanshu085@gmail.com"
   },
-  "license": "MIT", 
+  "license": "MIT",
   "dependencies": {
     "@headlessui/react": "^1.7.17",
-    "@heroicons/react": "^2.0.18",
+    "@heroicons/react": "^2.1.3",
     "@primer/octicons-react": "^19.8.0",
     "@react-email/render": "^0.0.10",
     "@types/node": "20.6.3",
