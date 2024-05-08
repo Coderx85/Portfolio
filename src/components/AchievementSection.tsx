@@ -41,7 +41,7 @@ const achievementsList: AchievementProps[] = [
 const AchievementsSection = () => {
   return (
     <div className="py-8 xl:gap-16 sm:py-16 xl:px-16 text-sm w-full ">
-      <div className="primary-bd w-full bg-slate-100 border-4 sm:gap-0 gap-14 grid md:grid-cols-5 grid-cols-2 rounded-lg py-8 px-10 sm:px-16 sm:flex flex-col sm:flex-row items-center justify-between backdrop-filter backdrop-blur-md">
+      <div className="primary-bd w-full bg-gray-900 border-4 sm:gap-0 gap-14 grid md:grid-cols-5 grid-cols-2 rounded-lg py-8 px-10 sm:px-16 sm:flex flex-col sm:flex-row items-center justify-between backdrop-filter backdrop-blur-md">
         {achievementsList.map((achievement, index) => {
           return (
             <div
