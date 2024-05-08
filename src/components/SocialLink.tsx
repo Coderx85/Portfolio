@@ -21,7 +21,7 @@ const SocialLink = ({ url, icon }: IconProps) => {
         width={35} 
         height={35}
       />
-        <p className='hidden md:block text-[#166466] font-bold shadow-slate-200 '>
+        <p className='hidden md:block font-bold shadow-slate-200 '>
         {icon}
         </p>
       </Link>
