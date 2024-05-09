@@ -18,7 +18,7 @@ const achievementsList: AchievementProps[] = [
   },
   {
     metric: "🧠 Solved",
-    value: "300",
+    value: "350",
     postfix: "+",
   },
   {
@@ -28,7 +28,7 @@ const achievementsList: AchievementProps[] = [
   },
   {
     metric: "🌐 Contributed",
-    value: "2",
+    value: "5",
     postfix: "+",
   },
   {

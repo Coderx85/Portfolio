@@ -246,13 +246,13 @@ export const navLinks = [
   
 export const socialLinks = [
     {
-      name: "Github",
+      name: "GitHub",
       url: "https://github.com/Priyanshu085",
       icon: "github",
     },
     {
       name: "LinkedIn",
-      url: "https://www.linkedin.com/in/priyanshu085/",
+      url: "https://www.linkedin.com/in/Priyanshu085/",
       icon: "linkedin",
     },
     {
