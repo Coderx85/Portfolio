@@ -226,6 +226,20 @@ export const Project_Data: ProjectProps[] = [
     lessonsLearned: ["Lesson 1", "Lesson 2"],
     contributionType: "Solo",
     duration: "⚠️ Ongoing",
+  },
+  {
+    id: 17,
+    title: "Mitra-Bot",
+    description: " Welcome to Mitra Bot [Machine Interactive Tutor for Responsive Answers By Optimizing Technology] - your friendly AI-powered tutor 📚.",
+    imgUrl: "/images/projects/17.png",
+    tag: ["All","ML"],
+    gitUrl: "https://github.com/Priyanshu085/Mitra-Bot.git",
+    previewUrl: "",
+    techStack: ["Python", "groq", "llama-3-base"],
+    challengesFaced: ["Challenge 1", "Challenge 2"],
+    lessonsLearned: ["Lesson 1", "Lesson 2"],
+    contributionType: "Solo",
+    duration: "1 week",
   }
 ]
 
