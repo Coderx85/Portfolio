@@ -6,20 +6,6 @@ import { DataMenuProps } from '../types'
 
 const Data_Item: DataMenuProps[] = [
     {
-        title: "skills",
-        id: "skills",
-        content: (
-                <ul className='list-disc pl-2 grid-cols-2 grid'>
-                    <li>TypesScript</li>
-                    <li>Next JS</li>
-                    <li>Machine Learning</li>
-                    <li>Node JS</li>
-                    <li>Express JS</li>
-                    <li>Prompting</li>
-                </ul>
-        ),
-    },
-    {
         title: "education",
         id: "education",
         content: (
@@ -91,7 +77,6 @@ const AboutSection = () => {
                         onChange={(e) => handleTabChange(e.target.value)}
                         className="block w-full px-4 py-2 text-white bg-white border border-slate-200 rounded-md"
                     >
-                        <option value="skills">Skills</option>
                         <option value="education">Education</option>
                         <option value="experience">Experience</option>
                         <option value="certifications">Certifications</option>
@@ -100,12 +85,6 @@ const AboutSection = () => {
 
                     {/* Desktop View */}
                     <div className='hidden lg:flex flex-row text-lg mt-4 space-x-4'>
-                        <TabButton 
-                            selectTab={() => handleTabChange("skills")} 
-                            active={tab === "skills"} 
-                        >
-                            Skills
-                        </TabButton>
                         <TabButton 
                             selectTab={() => handleTabChange("education")} 
                             active={tab === "education"} 

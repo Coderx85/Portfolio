@@ -1,5 +1,5 @@
-import { LinksProps } from "../types"
-import Navlink from "./Navlink"
+import { LinksProps } from "../../types"
+import Navlink from "../(navbar)/Navlink"
 // import { Links } from "./Navbar";
 
 
