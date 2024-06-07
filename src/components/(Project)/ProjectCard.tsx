@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react';
-import { ProjectCardProp } from '../types';
+import { ProjectCardProp } from '@/types';
 import ProjectDetails from './ProjectDetails';
 
 interface ProjectCardProps {
