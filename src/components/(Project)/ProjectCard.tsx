@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react';
 import { ProjectCardProp } from '@/types';
-import ProjectDetails from './ProjectDetails';
+import ProjectDetails from '@/components/(project)/ProjectDetails';
 
 interface ProjectCardProps {
   project: ProjectCardProp;
