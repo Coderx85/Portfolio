@@ -51,7 +51,7 @@ const AboutSection = () => {
                 '>
                     About Me</h2>
                 <div className=' border-4 primary-bd py-7 px-7 rounded-3xl' id='about-text'>
-                    <p className='md:text-xl text-xs'>
+                    <p className='md:text-md text-xs'>
                         Hey there! I&apos;m Priyanshu, a 3rd year engineering student with a focus on Data Science. 
                         Proficient in Python, MERN stack, and front-end technologies, I&apos;ve embarked on a journey to create impactful tech solutions. 
                         Currently, I&apos;m diving into Generative AI and Prompt Engineering, aiming to fuse these technologies into innovative projects.
@@ -70,7 +70,7 @@ const AboutSection = () => {
                     </div>
 
                     {/* Desktop View */}
-                    <div className='hidden lg:flex border-slate-800 flex-row text-lg mt-4 space-x-4'>
+                    <div className='hidden lg:flex border-slate-800 text-white bg-[#121212] flex-row text-lg mt-4 space-x-4'>
                         <TabButton 
                             selectTab={() => handleTabChange("education")} 
                             active={tab === "education"} 
