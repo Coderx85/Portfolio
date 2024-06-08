@@ -150,14 +150,14 @@ const HeroSection = () => {
 
 
         {/* Social Links Section */}
-            <div className='mt-14 grid grid-cols-3 text-white flex-col border-2 gap-4 
+            {/* <div className='mt-14 grid grid-cols-3 text-white flex-col border-2 gap-4 
                 md:grid-cols-4 md:text-left shadow-2xl shadow-gray-200
             '>
                 {socialLinks.map((socialLink, index) => (
                     <SocialLink key={index} url={socialLink.url} icon={socialLink.icon} />
                 ))}
 
-            </div>
+            </div> */}
       </section>
   )
 }

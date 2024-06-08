@@ -62,16 +62,15 @@ const AboutSection = () => {
                     <select
                         value={tab}
                         onChange={(e) => handleTabChange(e.target.value)}
-                        className="block w-full px-4 py-2 text-white bg-white border border-slate-200 rounded-md"
+                        className="block w-full px-4 py-2 text-white bg-white border border-slate-800 rounded-md"
                     >
                         <option value="education">Education</option>
-                        <option value="experience">Experience</option>
                         <option value="certifications">Certifications</option>
                     </select>
                     </div>
 
                     {/* Desktop View */}
-                    <div className='hidden lg:flex flex-row text-lg mt-4 space-x-4'>
+                    <div className='hidden lg:flex border-slate-800 flex-row text-lg mt-4 space-x-4'>
                         <TabButton 
                             selectTab={() => handleTabChange("education")} 
                             active={tab === "education"} 
