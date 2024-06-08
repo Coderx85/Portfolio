@@ -56,7 +56,11 @@ const EmailSection = () => {
               height={50}
               className="rounded-full cursor-pointer hover:scale-120 transform transition duration-300 ease-in-out"
             /> */}
-            {link.icon}
+            <div className="group relative">
+              <div className="flex items-center justify-center w-16 h-16 border-2 border-white bg-black text-white rounded-none group-hover:rounded-full group-hover:bg-white group-hover:text-black transition-all duration-300 ease-in-out">
+                {link.icon}
+              </div>
+            </div>
             </Link>
             ))  
           }
