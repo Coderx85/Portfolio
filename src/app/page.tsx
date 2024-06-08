@@ -1,4 +1,4 @@
-import Skills from "@/components/Skills";
+"use client"
 import AboutSection from "@/components/(about)/AboutSection";
 import EmailSection from "@/components/(footer)/EmailSection";
 import Footer from "@/components/(footer)/Footer";
