@@ -4,53 +4,53 @@ import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
 import AchievementsSection from './(about)/AchievementSection';
 import { motion } from 'framer-motion';
-import { SocialLinksProps } from '../types';
+// import { SocialLinksProps } from '../types';
 
-const socialLinks: SocialLinksProps[] = [
-    // Connection Based
-    {
-        name: "Email",
-        url: "mailto:abpriyanshu007@gmail.com",
-        icon: "Email",
-    },
-    {
-        name: "LinkedIn",
-        url: "https://www.linkedin.com/in/priyanshu085/",
-        icon: "Linkedin",
-    },
-    {
-        name: "Twitter",
-        url: "https://twitter.com/Priyanshux085",
-        icon: "Twitter",
-    },
-    {
-        name: "Instagram",
-        url: "https://www.instagram.com/priyanshux085/",
-        icon: "Instagram",
-    },
-    // Achievement Based
-    {
-        name: "Github",
-        url: "https://gitub.com/Priyanshu085",
-        icon: "Github",
-    },
-    {
-        name: "CodeChef",
-        url: "https://www.codechef.com/users/priyanshux85",
-        icon: "CodeChef",
-    },
-    {
-        name: "Leetcode",
-        url: "https://leetcode.com/Priyanshu085/",
-        icon: "Leetcode",
-    },
-    {
-        name: "Google",
-        url: "https://g.dev/priyanshu085",
-        icon: "Google",
-    }
+// const socialLinks: SocialLinksProps[] = [
+//     // Connection Based
+//     {
+//         name: "Email",
+//         url: "mailto:abpriyanshu007@gmail.com",
+//         icon: "Email",
+//     },
+//     {
+//         name: "LinkedIn",
+//         url: "https://www.linkedin.com/in/priyanshu085/",
+//         icon: "Linkedin",
+//     },
+//     {
+//         name: "Twitter",
+//         url: "https://twitter.com/Priyanshux085",
+//         icon: "Twitter",
+//     },
+//     {
+//         name: "Instagram",
+//         url: "https://www.instagram.com/priyanshux085/",
+//         icon: "Instagram",
+//     },
+//     // Achievement Based
+//     {
+//         name: "Github",
+//         url: "https://gitub.com/Priyanshu085",
+//         icon: "Github",
+//     },
+//     {
+//         name: "CodeChef",
+//         url: "https://www.codechef.com/users/priyanshux85",
+//         icon: "CodeChef",
+//     },
+//     {
+//         name: "Leetcode",
+//         url: "https://leetcode.com/Priyanshu085/",
+//         icon: "Leetcode",
+//     },
+//     {
+//         name: "Google",
+//         url: "https://g.dev/priyanshu085",
+//         icon: "Google",
+//     }
 
-  ]
+//   ]
 
 const HeroSection = () => {
 
