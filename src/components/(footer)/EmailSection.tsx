@@ -10,22 +10,22 @@ const socialLinks: SocialLinksProps[] = [
   {
       name: "LinkedIn",
       url: "https://www.linkedin.com/in/priyanshu085/",
-      icon: <FaLinkedin className="w-20 h-20" />,
+      icon: <FaLinkedin className="w-12 h-12" />,
   },
   {
       name: "Twitter",
       url: "https://twitter.com/Priyanshux085",
-      icon: <FaTwitter className="w-20 h-20"/>,
+      icon: <FaTwitter className="w-12 h-12"/>,
   },
   {
       name: "Instagram",
       url: "https://www.instagram.com/priyanshux085/",
-      icon: <FaInstagram className="w-20 h-20"/>,
+      icon: <FaInstagram className="w-12 h-12"/>,
   },
   {
       name: "Github",
       url: "https://github.com/Priyanshu085",
-      icon: <FaGithub className="w-20 h-20"/>,
+      icon: <FaGithub className="w-12 h-12"/>,
   }
 ]
 
@@ -57,7 +57,7 @@ const EmailSection = () => {
               className="rounded-full cursor-pointer hover:scale-120 transform transition duration-300 ease-in-out"
             /> */}
             <div className="group relative">
-              <span className="flex items-center justify-center w-20 h-20 border-2 border-white bg-black text-white rounded-none 
+              <span className="flex items-center justify-center w-16 h-16 border-2 border-white bg-black text-white rounded-none 
               group-hover:rounded-full group-hover:bg-white group-hover:text-black transition-all duration-1000 ease-in-out">
                 {link.icon}
               </span>
