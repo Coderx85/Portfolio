@@ -2,7 +2,7 @@ import { Exp_Data } from '@/constants';
 import { motion } from 'framer-motion';
 import React from 'react';
 
-const Timeline = () => {
+const ExpSection = () => {
   const experiences = Exp_Data; 
 
   return (
@@ -32,7 +32,7 @@ const Timeline = () => {
                 <p className="text-gray-500 mb-4">{exp.duration}</p>
                 <p>{exp.description}</p>
                 <div className="project-highlights mt-4 hidden md:visible">
-                  {exp.projects.map((project, index) => (
+                  {exp.projects && exp.projects.map((project, index) => (
                     <div key={index} className="project-highlight mb-2">
                       <h4 className="text-xl font-semibold">{project.name}</h4>
                       <p>{project.description}</p>
@@ -49,4 +49,4 @@ const Timeline = () => {
   );
 };
 
-export default Timeline;
+export default ExpSection;

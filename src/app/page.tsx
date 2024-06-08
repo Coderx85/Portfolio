@@ -5,6 +5,7 @@ import Footer from "@/components/(footer)/Footer";
 import HeroSection from "../components/HeroSection";
 import Navbar from "@/components/(navbar)/Navbar";
 import ProjectSection from "@/components/ProjectSection";
+import ExpSection from "@/components/Experience";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         {/* <Skills /> */}
+        <ExpSection />
         <ProjectSection />
         <EmailSection />
       </div>

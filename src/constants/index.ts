@@ -7,9 +7,6 @@ export const Exp_Data: ExpProps[] = [
     company: "JarGoan",
     duration: "05/2024 - Present",
     description: "Improved platform usability by 20.6%, increased user engagement by 26.53%, and led UI design initiatives.",
-    projects: [
-      { name: "UI Design Initiatives", description: "Led 5 UI design initiatives, resulting in significant platform usability improvements.", link: "https://www.jargoan.com/ui-design" }
-    ]
   },
   {
     id: 2,
@@ -17,40 +14,21 @@ export const Exp_Data: ExpProps[] = [
     company: "Tublian",
     duration: "05/2024 - Present",
     description: "Enhanced AI proficiency, crafted a chatbot increasing user interaction by 50%, and actively participated in AI sessions.",
-    projects: [
-      { name: "Chatbot Development", description: "Developed a chatbot using a large language model, improving user interaction.", link: "https://www.tublian.com/chatbot" }
-    ]
+  },
+  {
+    id: 3,
+    title: "Open Source Contributor",
+    company: "Tubalian",
+    duration: "09/2023 - 11/2023",
+    description: "Outperformed 91% of users, engaged in AI challenges, and enhanced AI technology proficiency by 30%.", 
   },
   {
     id: 4,
-    title: "Executive Committee Member",
-    company: "Google Developer Student Club (GDSC)",
-    duration: "11/2023 - Present",
-    description: "Directed AI/ML workshops, mentored junior members, and developed innovative projects, fostering a community of learners.",
-    projects: [
-      { name: "AI/ML Workshops", description: "Organized and led workshops focused on AI/ML.", link: "https://www.gdsc.com/ai-ml-workshops" }
-    ]
-  },
-  {
-    id: 5,
     title: "Open Source Contributor",
     company: "Hacktoberfest 2023",
     duration: "09/2023 - 10/2023",
     description: "Contributed 4 PRs accepted in open source projects, collaborated with global developers, improving community engagement.",
-    projects: [
-      { name: "Hacktoberfest Contributions", description: "Submitted and merged 4 PRs in various open source projects.", link: "https://hacktoberfest.com/pr-contributions" }
-    ]
   },
-  {
-    id: 6,
-    title: "Participant",
-    company: "Tubalian",
-    duration: "09/2023 - 11/2023",
-    description: "Outperformed 91% of users, engaged in AI challenges, and enhanced AI technology proficiency by 30%.",
-    projects: [
-      { name: "AI Challenges", description: "Participated and excelled in AI-related challenges.", link: "https://www.tublian.com/ai-challenges" }
-    ]
-  }
 ];
 
 // Project Data

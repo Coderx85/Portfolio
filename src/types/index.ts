@@ -60,7 +60,7 @@ export interface ExpProps{
   duration: string;
   description: string;
   location?: string;
-  projects: ExpProjectProps[];
+  projects?: ExpProjectProps[];
 }
 
 export interface ExpProjectProps{

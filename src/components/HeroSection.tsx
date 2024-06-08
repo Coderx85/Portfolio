@@ -56,7 +56,7 @@ const socialLinks: SocialLinksProps[] = [
 const HeroSection = () => {
 
     const downloadResume = () => {
-        const resumeUrl = 'https://drive.google.com/file/d/1z5roD52FEh0OJrl5HMivcbI8KEE2u2hj/view?usp=sharing';
+        const resumeUrl = 'https://drive.google.com/file/d/1_FgY1nV4EsYytOe0-YRZsQVTdfmU3bZZ/view?usp=sharing';
         const link = document.createElement('a');
         link.href = resumeUrl;
         link.download = 'Priyanshhu\'s Resume.pdf'; // Set the desired file name
