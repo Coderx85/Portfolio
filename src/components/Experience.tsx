@@ -6,14 +6,14 @@ const ExpSection = () => {
   const experiences = Exp_Data; 
 
   return (
-    <section id="experience" className="py-8 px-4 bg-gray-50">
+    <section id="experience" className="py-8 px-4">
       <h2 className="text-4xl font-bold text-center mb-8 text-black">Experience</h2>
       <div className="relative">
         <div className="absolute left-1/2 transform -translate-x-1/2 h-full border-l-4 border-[#A7BBC7]"></div>
         <div className="space-y-8">
           {experiences.map((exp, index) => (
             <div key={exp.id} className={`relative flex items-center ${index === 0 ? 'text-gray-700' : 'text-[#166466]'}`}>
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-white flex items-center justify-center">
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full flex items-center justify-center">
                 {index === 0 ? (
                   <div className="w-6 h-6 rounded-full bg-[#166466]"></div>
                 ) : (
