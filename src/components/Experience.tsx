@@ -12,7 +12,7 @@ const ExpSection = () => {
         <div className="absolute left-1/2 transform -translate-x-1/2 h-full border-l-4 border-[#A7BBC7]"></div>
         <div className="space-y-8">
           {experiences.map((exp, index) => (
-            <div key={exp.id} className={`relative flex flex-col md:flex-row items-center ${index === 0 ? 'text-gray-700' : 'text-[#166466]'}`}>
+            <div key={exp.id} className={`relative flex flex-col md:flex-row items-center ${index === 0 ? 'text-white' : 'text-[#166466]'}`}>
               <div className="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-white flex items-center justify-center">
                 {index === 0 ? (
                   <div className="w-6 h-6 rounded-full bg-[#166466]"></div>
