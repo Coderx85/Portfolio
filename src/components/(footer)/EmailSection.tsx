@@ -4,27 +4,28 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { SocialLinksProps } from "@/types"
+import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const socialLinks: SocialLinksProps[] = [
   {
       name: "LinkedIn",
       url: "https://www.linkedin.com/in/priyanshu085/",
-      icon: "Linkedin",
+      icon: <FaLinkedin />,
   },
   {
       name: "Twitter",
       url: "https://twitter.com/Priyanshux085",
-      icon: "Twitter",
+      icon: <FaTwitter />,
   },
   {
       name: "Instagram",
       url: "https://www.instagram.com/priyanshux085/",
-      icon: "Instagram",
+      icon: <FaInstagram />,
   },
   {
       name: "Github",
       url: "https://gitub.com/Priyanshu085",
-      icon: "Github",
+      icon: <FaGithub />,
   }
 ]
 
