@@ -280,6 +280,10 @@ export const navLinks: NavlinksProps[] = [
       href: "#abouts",
     },
     {
+      title: 'Experience',
+      href: '#experience'
+    },
+    {
       title: "Projects",
       href: '#projects',
     },
@@ -287,10 +291,6 @@ export const navLinks: NavlinksProps[] = [
       title: 'Contact',
       href: '#contact'
     },
-    {
-      title: 'Experience',
-      href: '#experience'
-    }
   ]
   
 export const socialLinks = [
