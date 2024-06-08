@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import { NavlinksProps } from '../types'
+import { NavlinksProps } from '@/types'
 
 const Navlink = (link: NavlinksProps) => {
   return (

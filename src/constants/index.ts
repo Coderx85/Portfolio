@@ -1,4 +1,57 @@
-import { ProjectProps } from "../types"
+import { NavlinksProps, ProjectProps, ExpProps } from "@/types/";
+
+export const Exp_Data: ExpProps[] = [
+  {
+    id: 1,
+    title: "Frontend Web Developer",
+    company: "JarGoan",
+    duration: "05/2024 - Present",
+    description: "Improved platform usability by 20.6%, increased user engagement by 26.53%, and led UI design initiatives.",
+    projects: [
+      { name: "UI Design Initiatives", description: "Led 5 UI design initiatives, resulting in significant platform usability improvements.", link: "https://www.jargoan.com/ui-design" }
+    ]
+  },
+  {
+    id: 2,
+    title: "AI Engineer",
+    company: "Tublian",
+    duration: "05/2024 - Present",
+    description: "Enhanced AI proficiency, crafted a chatbot increasing user interaction by 50%, and actively participated in AI sessions.",
+    projects: [
+      { name: "Chatbot Development", description: "Developed a chatbot using a large language model, improving user interaction.", link: "https://www.tublian.com/chatbot" }
+    ]
+  },
+  {
+    id: 4,
+    title: "Executive Committee Member",
+    company: "Google Developer Student Club (GDSC)",
+    duration: "11/2023 - Present",
+    description: "Directed AI/ML workshops, mentored junior members, and developed innovative projects, fostering a community of learners.",
+    projects: [
+      { name: "AI/ML Workshops", description: "Organized and led workshops focused on AI/ML.", link: "https://www.gdsc.com/ai-ml-workshops" }
+    ]
+  },
+  {
+    id: 5,
+    title: "Open Source Contributor",
+    company: "Hacktoberfest 2023",
+    duration: "09/2023 - 10/2023",
+    description: "Contributed 4 PRs accepted in open source projects, collaborated with global developers, improving community engagement.",
+    projects: [
+      { name: "Hacktoberfest Contributions", description: "Submitted and merged 4 PRs in various open source projects.", link: "https://hacktoberfest.com/pr-contributions" }
+    ]
+  },
+  {
+    id: 6,
+    title: "Participant",
+    company: "Tubalian",
+    duration: "09/2023 - 11/2023",
+    description: "Outperformed 91% of users, engaged in AI challenges, and enhanced AI technology proficiency by 30%.",
+    projects: [
+      { name: "AI Challenges", description: "Participated and excelled in AI-related challenges.", link: "https://www.tublian.com/ai-challenges" }
+    ]
+  }
+];
 
 // Project Data
 export const Project_Data: ProjectProps[] = [
@@ -243,18 +296,22 @@ export const Project_Data: ProjectProps[] = [
   }
 ]
 
-export const navLinks = [
+export const navLinks: NavlinksProps[] = [
     {
       title: "About",
-      path: "#abouts",
+      href: "#abouts",
     },
     {
       title: "Projects",
-      path: '#projects',
+      href: '#projects',
     },
     {
       title: 'Contact',
-      path: '#contact'
+      href: '#contact'
+    },
+    {
+      title: 'Experience',
+      href: '#experience'
     }
   ]
   
@@ -294,254 +351,254 @@ export const socialLinks = [
     }
   ]
 
-  export const Skill_data = [
-    {
-        skill_name: "Html 5",
-        Image: "/html.png",
-        width: 80,
-        height: 80,
-    },
-    {
-        skill_name: "Css",
-        Image: "/css.png",
-        width: 80,
-        height: 80,
-    },
-    {
-        skill_name: "Java Script",
-        Image: "/js.png",
-        width: 65,
-        height: 65,
-    },
-    {
-        skill_name: "Tailwind Css",
-        Image: "/tailwind.png",
-        width: 80,
-        height: 80,
-    },
-    {
-        skill_name: "React",
-        Image: "/react.png",
-        width: 80,
-        height: 80,
-    },
-    {
-        skill_name: "Redux",
-        Image: "/redux.png",
-        width: 80,
-        height: 80,
-    },
-    {
-        skill_name: "React Query",
-        Image: "/reactquery.png",
-        width: 80,
-        height: 80,
-    },
-    {
-        skill_name: "Type Script",
-        Image: "/ts.png",
-        width: 80,
-        height: 80,
-    },
-    {
-        skill_name: "Next js 13",
-        Image: "/next.png",
-        width: 80,
-        height: 80,
-    },
-    {
-        skill_name: "Framer Motion",
-        Image: "/framer.png",
-        width: 80,
-        height: 80,
-    },
-    {
-        skill_name: "Stripe Payment",
-        Image: "/stripe.webp",
-        width: 80,
-        height: 80,
-    },
-    {
-        skill_name: "Node js",
-        Image: "/node-js.png",
-        width: 80,
-        height: 80,
-    },
-    {
-        skill_name: "Mongo db",
-        Image: "/mongodb.png",
-        width: 40,
-        height: 40,
-    },
+//   export const Skill_data = [
+//     {
+//         skill_name: "Html 5",
+//         Image: "/html.png",
+//         width: 80,
+//         height: 80,
+//     },
+//     {
+//         skill_name: "Css",
+//         Image: "/css.png",
+//         width: 80,
+//         height: 80,
+//     },
+//     {
+//         skill_name: "Java Script",
+//         Image: "/js.png",
+//         width: 65,
+//         height: 65,
+//     },
+//     {
+//         skill_name: "Tailwind Css",
+//         Image: "/tailwind.png",
+//         width: 80,
+//         height: 80,
+//     },
+//     {
+//         skill_name: "React",
+//         Image: "/react.png",
+//         width: 80,
+//         height: 80,
+//     },
+//     {
+//         skill_name: "Redux",
+//         Image: "/redux.png",
+//         width: 80,
+//         height: 80,
+//     },
+//     {
+//         skill_name: "React Query",
+//         Image: "/reactquery.png",
+//         width: 80,
+//         height: 80,
+//     },
+//     {
+//         skill_name: "Type Script",
+//         Image: "/ts.png",
+//         width: 80,
+//         height: 80,
+//     },
+//     {
+//         skill_name: "Next js 13",
+//         Image: "/next.png",
+//         width: 80,
+//         height: 80,
+//     },
+//     {
+//         skill_name: "Framer Motion",
+//         Image: "/framer.png",
+//         width: 80,
+//         height: 80,
+//     },
+//     {
+//         skill_name: "Stripe Payment",
+//         Image: "/stripe.webp",
+//         width: 80,
+//         height: 80,
+//     },
+//     {
+//         skill_name: "Node js",
+//         Image: "/node-js.png",
+//         width: 80,
+//         height: 80,
+//     },
+//     {
+//         skill_name: "Mongo db",
+//         Image: "/mongodb.png",
+//         width: 40,
+//         height: 40,
+//     },
 
-];
+// ];
 
-export const Socials = [
-    {
-        name: "Instagram",
-        src: "/instagram.svg",
-    },
-    {
-        name: "Facebook",
-        src: "/facebook.svg",
-    },
-    {
-        name: "Discord",
-        src: "/discord.svg",
-    },
-];
+// export const Socials = [
+//     {
+//         name: "Instagram",
+//         src: "/instagram.svg",
+//     },
+//     {
+//         name: "Facebook",
+//         src: "/facebook.svg",
+//     },
+//     {
+//         name: "Discord",
+//         src: "/discord.svg",
+//     },
+// ];
 
-export const Frontend_skill = [
-    {
-        skill_name: "Html 5",
-        Image: "/html.png",
-        width: 80,
-        height: 80,
-    },
-    {
-        skill_name: "Css",
-        Image: "/css.png",
-        width: 80,
-        height: 80,
-    },
-    {
-        skill_name: "Java Script",
-        Image: "/js.png",
-        width: 65,
-        height: 65,
-    },
-    {
-        skill_name: "Tailwind Css",
-        Image: "/tailwind.png",
-        width: 80,
-        height: 80,
-    },
-    {
-        skill_name: "Material UI",
-        Image: "/mui.png",
-        width: 80,
-        height: 80,
-    },
-    {
-        skill_name: "React",
-        Image: "/react.png",
-        width: 80,
-        height: 80,
-    },
-    {
-        skill_name: "Redux",
-        Image: "/redux.png",
-        width: 80,
-        height: 80,
-    },
-    {
-        skill_name: "React Query",
-        Image: "/reactquery.png",
-        width: 80,
-        height: 80,
-    },
-    {
-        skill_name: "Type Script",
-        Image: "/ts.png",
-        width: 80,
-        height: 80,
-    },
-    {
-        skill_name: "Next js 13",
-        Image: "/next.png",
-        width: 80,
-        height: 80,
-    },
-];
+// export const Frontend_skill = [
+//     {
+//         skill_name: "Html 5",
+//         Image: "/html.png",
+//         width: 80,
+//         height: 80,
+//     },
+//     {
+//         skill_name: "Css",
+//         Image: "/css.png",
+//         width: 80,
+//         height: 80,
+//     },
+//     {
+//         skill_name: "Java Script",
+//         Image: "/js.png",
+//         width: 65,
+//         height: 65,
+//     },
+//     {
+//         skill_name: "Tailwind Css",
+//         Image: "/tailwind.png",
+//         width: 80,
+//         height: 80,
+//     },
+//     {
+//         skill_name: "Material UI",
+//         Image: "/mui.png",
+//         width: 80,
+//         height: 80,
+//     },
+//     {
+//         skill_name: "React",
+//         Image: "/react.png",
+//         width: 80,
+//         height: 80,
+//     },
+//     {
+//         skill_name: "Redux",
+//         Image: "/redux.png",
+//         width: 80,
+//         height: 80,
+//     },
+//     {
+//         skill_name: "React Query",
+//         Image: "/reactquery.png",
+//         width: 80,
+//         height: 80,
+//     },
+//     {
+//         skill_name: "Type Script",
+//         Image: "/ts.png",
+//         width: 80,
+//         height: 80,
+//     },
+//     {
+//         skill_name: "Next js 13",
+//         Image: "/next.png",
+//         width: 80,
+//         height: 80,
+//     },
+// ];
 
-export const Backend_skill = [
-    {
-        skill_name: "Node js",
-        Image: "/node-js.png",
-        width: 80,
-        height: 80,
-    },
-    {
-        skill_name: "Express js",
-        Image: "/express.png",
-        width: 80,
-        height: 80,
-    },
-    {
-        skill_name: "Mongo db",
-        Image: "/mongodb.png",
-        width: 40,
-        height: 40,
-    },
-    {
-        skill_name: "Fire base",
-        Image: "/Firebase.png",
-        width: 55,
-        height: 55,
-    },
-    {
-        skill_name: "Postger SQL",
-        Image: "/postger.png",
-        width: 70,
-        height: 70,
-    },
-    {
-        skill_name: "My SQL",
-        Image: "/mysql.png",
-        width: 70,
-        height: 70,
-    },
-    {
-        skill_name: "Prisma",
-        Image: "/prisma.webp",
-        width: 70,
-        height: 70,
-    },
-    {
-        skill_name: "Graphql",
-        Image: "/graphql.png",
-        width: 80,
-        height: 80,
-    },
-];
+// export const Backend_skill = [
+//     {
+//         skill_name: "Node js",
+//         Image: "/node-js.png",
+//         width: 80,
+//         height: 80,
+//     },
+//     {
+//         skill_name: "Express js",
+//         Image: "/express.png",
+//         width: 80,
+//         height: 80,
+//     },
+//     {
+//         skill_name: "Mongo db",
+//         Image: "/mongodb.png",
+//         width: 40,
+//         height: 40,
+//     },
+//     {
+//         skill_name: "Fire base",
+//         Image: "/Firebase.png",
+//         width: 55,
+//         height: 55,
+//     },
+//     {
+//         skill_name: "Postger SQL",
+//         Image: "/postger.png",
+//         width: 70,
+//         height: 70,
+//     },
+//     {
+//         skill_name: "My SQL",
+//         Image: "/mysql.png",
+//         width: 70,
+//         height: 70,
+//     },
+//     {
+//         skill_name: "Prisma",
+//         Image: "/prisma.webp",
+//         width: 70,
+//         height: 70,
+//     },
+//     {
+//         skill_name: "Graphql",
+//         Image: "/graphql.png",
+//         width: 80,
+//         height: 80,
+//     },
+// ];
 
-export const Full_stack = [
-    {
-        skill_name: "React Native",
-        Image: "/ReactNative .png",
-        width: 70,
-        height: 70,
-    },
-    {
-        skill_name: "Tauri",
-        Image: "/tauri.svg",
-        width: 70,
-        height: 70,
-    },
-    {
-        skill_name: "Docker",
-        Image: "/docker.webp",
-        width: 70,
-        height: 70,
-    },
+// export const Full_stack = [
+//     {
+//         skill_name: "React Native",
+//         Image: "/ReactNative .png",
+//         width: 70,
+//         height: 70,
+//     },
+//     {
+//         skill_name: "Tauri",
+//         Image: "/tauri.svg",
+//         width: 70,
+//         height: 70,
+//     },
+//     {
+//         skill_name: "Docker",
+//         Image: "/docker.webp",
+//         width: 70,
+//         height: 70,
+//     },
 
-    {
-        skill_name: "Figma",
-        Image: "/figma.png",
-        width: 50,
-        height: 50,
-    },
+//     {
+//         skill_name: "Figma",
+//         Image: "/figma.png",
+//         width: 50,
+//         height: 50,
+//     },
 
-];
+// ];
 
-export const Other_skill = [
-    {
-        skill_name: "Go",
-        Image: "/go.png",
-        width: 60,
-        height: 60,
-    },
-];
+// export const Other_skill = [
+//     {
+//         skill_name: "Go",
+//         Image: "/go.png",
+//         width: 60,
+//         height: 60,
+//     },
+// ];
 
 
 

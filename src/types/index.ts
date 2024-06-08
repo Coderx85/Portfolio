@@ -4,27 +4,9 @@ export interface DataMenuProps{
   content: React.ReactNode
 }
 
-export interface LinksProps {
-  title: string,
-  path: string,
-}
-
 export interface NavlinksProps {
   href: string,
   title: string
-}
-
-export interface ProjectCardProp{
-  title: string,
-  imgUrl: string,
-  description: string,
-  gitUrl: string,
-  previewUrl: string,
-  techStack: string[],
-  challengesFaced: string[],
-  lessonsLearned: string[],
-  contributionType: "Solo" | "Team",
-  duration: string,
 }
 
 export interface ProjectProps{
@@ -69,4 +51,20 @@ export interface SocialLinksProps {
   name: string,
   url: string,
   icon: string
+}
+
+export interface ExpProps{
+  id: number;
+  title: string;
+  company: string;
+  duration: string;
+  description: string;
+  location?: string;
+  projects: ExpProjectProps[];
+}
+
+export interface ExpProjectProps{
+  name: string;
+  description: string;
+  link: string;
 }

@@ -2,25 +2,11 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import MenuOverlay from "../(about)/MenuOverlay";
-
-const navLinks = [
-  {
-    title: "About",
-    path: "#about",
-  },
-  {
-    title: "Projects",
-    path: '#projects',
-  },
-  {
-    title: 'Contact',
-    path: '#contact'
-  }
-]
+import MenuOverlay from "@/components/(about)/MenuOverlay";
+import { navLinks } from "@/constants";
 
 const Navbar = () => {
-
+  const navlinks = navLinks;
   const [navbarOpen, setNavbarOpen] = useState(false)
 
   return (
@@ -53,7 +39,7 @@ const Navbar = () => {
           <ul className="flex p-4 md:p-0 md:flex-row space-x-8 ">
             {navLinks.map((link, index) => (
               <li key={index} className="active:text-black ">
-                <Link href={link.path} className="hover:bg-whit active:text-black focus:bg-white focus:text-black">
+                <Link href={link.href} className="hover:bg-whit active:text-black focus:bg-white focus:text-black">
                   {link.title}
                 </Link>
               </li>
@@ -61,7 +47,7 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      {navbarOpen ? <MenuOverlay links={navLinks} /> : null}
+      {navbarOpen ? <MenuOverlay /> : null}
     </nav>
   )
 }
