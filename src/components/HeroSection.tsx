@@ -2,7 +2,7 @@
 import React from 'react'
 import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
-import SocialLink from '../SocialLink';
+import SocialLink from '@/components/(footer)/SocialLink';
 import AchievementsSection from './(about)/AchievementSection';
 import { motion } from 'framer-motion';
 import { SocialLinksProps } from '../types';

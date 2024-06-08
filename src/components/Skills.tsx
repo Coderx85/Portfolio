@@ -1,90 +1,27 @@
-import { Backend_skill, Frontend_skill, Full_stack, Other_skill, Skill_data } from '@/constants'
-import React from 'react'
-import SkillsDataProvider from './SkillsDataProvider'
-import SkillText from './SkillText'
+import React from 'react';
+import { FaReact, FaNodeJs, FaPython } from 'react-icons/fa';
+
+const skills = [
+  { name: 'React', icon: <FaReact />, description: 'Proficient in building dynamic web applications using React.' },
+  { name: 'Node.js', icon: <FaNodeJs />, description: 'Experienced in building scalable backend services with Node.js.' },
+  { name: 'Python', icon: <FaPython />, description: 'Skilled in data analysis and machine learning with Python.' },
+];
 
 const Skills = () => {
-    return (
-        <section className='flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden pb-80 py-20'
-            id='skills'
-            style={{ transform: "scale(0.9)" }}
+  return (
+    <section id="skills" className="py-8 px-4">
+      <h2 className="text-4xl font-bold text-center mb-8">Skills</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {skills.map((skill, index) => (
+          <div key={index} className="skill-card p-4 border rounded-lg text-center">
+            <div className="text-6xl mb-4">{skill.icon}</div>
+            <h3 className="text-2xl font-semibold mb-2">{skill.name}</h3>
+            <p>{skill.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
 
-        >
-
-            <SkillText />
-            <div className='flex flex-row justify-around flex-wrap mt-4 gap-5 items-center'>
-                {Skill_data.map((image, index) => (
-                    <SkillsDataProvider
-                        key={index}
-                        src={image.Image}
-                        width={image.width}
-                        height={image.height}
-                        index={index}
-                    />
-                ))}
-            </div>
-            <div className='flex flex-row justify-around flex-wrap mt-4 gap-5 items-center'>
-                {Frontend_skill.map((image, index) => (
-                    <SkillsDataProvider
-                        key={index}
-                        src={image.Image}
-                        width={image.width}
-                        height={image.height}
-                        index={index}
-                    />
-                ))}
-            </div>
-            <div className='flex flex-row justify-around flex-wrap mt-4 gap-5 items-center'>
-                {Backend_skill.map((image, index) => (
-                    <SkillsDataProvider
-                        key={index}
-                        src={image.Image}
-                        width={image.width}
-                        height={image.height}
-                        index={index}
-                    />
-                ))}
-            </div>
-            <div className='flex flex-row justify-around flex-wrap mt-4 gap-5 items-center'>
-                {Full_stack.map((image, index) => (
-                    <SkillsDataProvider
-                        key={index}
-                        src={image.Image}
-                        width={image.width}
-                        height={image.height}
-                        index={index}
-                    />
-                ))}
-            </div>
-            <div className='flex flex-row justify-around flex-wrap mt-4 gap-5 items-center'>
-                {Other_skill.map((image, index) => (
-                    <SkillsDataProvider
-                        key={index}
-                        src={image.Image}
-                        width={image.width}
-                        height={image.height}
-                        index={index}
-                    />
-                ))}
-            </div>
-
-            <div className='w-full h-full absolute'>
-                <div className='w-full h-full z-[-10] opacity-30 absolute flex items-center justify-center bg-cover'>
-                    <video
-                        className='w-full h-auto'
-                        preload='false'
-                        playsInline
-                        loop
-                        muted
-                        autoPlay
-                        src='/cards-video.webm'
-
-                    />
-                </div>
-
-            </div>
-        </section>
-    )
-}
-
-export default Skills
+export default Skills;
