@@ -51,7 +51,7 @@ const AboutSection = () => {
                 '>
                     About Me</h2>
                 <div className=' border-4 primary-bd py-7 px-7 rounded-3xl' id='about-text'>
-                    <p className='md:text-md text-xs'>
+                    <p className='md:text-md text-sm'>
                         Hey there! I&apos;m Priyanshu, a 3rd year engineering student with a focus on Data Science. 
                         Proficient in Python, MERN stack, and front-end technologies, I&apos;ve embarked on a journey to create impactful tech solutions. 
                         Currently, I&apos;m diving into Generative AI and Prompt Engineering, aiming to fuse these technologies into innovative projects.
@@ -62,7 +62,7 @@ const AboutSection = () => {
                     <select
                         value={tab}
                         onChange={(e) => handleTabChange(e.target.value)}
-                        className="block w-full px-4 py-2 text-white bg-white border border-slate-800 rounded-md"
+                        className="block w-full px-4 py-2 text-white bg-[#121212] border border-slate-800 rounded-md"
                     >
                         <option value="education">Education</option>
                         <option value="certifications">Certifications</option>
