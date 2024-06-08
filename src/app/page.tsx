@@ -4,7 +4,7 @@ import EmailSection from "@/components/(footer)/EmailSection";
 import Footer from "@/components/(footer)/Footer";
 import HeroSection from "../components/HeroSection";
 import Navbar from "@/components/(navbar)/Navbar";
-import ProjectSection from "@/components/(project)/ProjectSection";
+import ProjectSection from "@/components/ProjectSection";
 
 export default function Home() {
   return (
