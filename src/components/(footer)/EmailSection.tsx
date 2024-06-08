@@ -49,13 +49,14 @@ const EmailSection = () => {
         <div className="socials flex flex-row gap-2">
           {socialLinks.map((link) => (
             <Link href={link.url} key={link.name}>
-            <Image
+            {/* <Image
               src={`/social/${link.icon}.svg`}
               alt={`${link.name} Icon`}
               width={50}
               height={50}
               className="rounded-full cursor-pointer hover:scale-120 transform transition duration-300 ease-in-out"
-            />
+            /> */}
+            {link.icon}
             </Link>
             ))  
           }
