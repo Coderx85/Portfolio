@@ -6,7 +6,7 @@ const ExpSection = () => {
   const experiences = Exp_Data; 
 
   return (
-    <section id="experience" className="py-8 px-4 bg-slate-700 border-[#166466] border-2">
+    <section id="experience" className="py-8 px-4 bg-slate-700 border-[#166466] border-2 my-10">
       <h2 className="text-4xl font-bold text-center mb-8 text-black">Experience</h2>
       <div className="relative">
         <div className="absolute left-1/2 transform -translate-x-1/2 h-full border-l-4 border-[#A7BBC7]"></div>
@@ -26,7 +26,7 @@ const ExpSection = () => {
                   className={`hidden md:block absolute top-1/2 transform -translate-y-1/2 ${index === 0 ? 'bg-[#166466] left-full' : index % 2 === 0 ? 'left-full' : 'right-full'} h-1 bg-white`}
                 ></motion.div>
               </div>
-              <div className={`mt-8 md:mt-2 ml-12 p-6 border w-full md:w-1/3 rounded-lg shadow-lg bg-[#001F3F] ${index === 0 ? 'bg-[#001F3F] text-white ml-auto mr-0' : index % 2 === 0 ? 'mr-0 ml-auto' : 'ml-0 mr-auto'}`}>
+              <div className={`mt-8 md:mt-2 ml-12 p-6 border w-full md:w-1/3 rounded-lg shadow-lg bg-[#001F3F] ${index === 0 ? 'bg-[#001F3F] ml-auto mr-0' : index % 2 === 0 ? 'mr-0 ml-auto' : 'ml-0 mr-auto'}`}>
                 <h3 className={`text-2xl font-semibold mb-2`}>{exp.title}</h3>
                 <p className="text-xl mb-2">{exp.company}</p>
                 <p className="text-gray-500 mb-4">{exp.duration}</p>
