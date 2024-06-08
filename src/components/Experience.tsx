@@ -23,7 +23,7 @@ const ExpSection = () => {
                   initial={{ width: 0 }}
                   animate={{ width: '500%' }}
                   transition={{ duration: 1 }}
-                  className={`hidden md:block absolute top-1/2 transform -translate-y-1/2 ${index === 0 ? 'bg-[#166466] left-full' : index % 2 === 0 ? 'left-full' : 'right-full'} h-1 bg-white`}
+                  className={`hidden lg:block absolute top-1/2 transform -translate-y-1/2 ${index === 0 ? 'bg-[#166466] left-full' : index % 2 === 0 ? 'left-full' : 'right-full'} h-1 bg-white`}
                 ></motion.div>
               </div>
               <div className={`mt-8 md:mt-2 ml-12 p-6 border w-full md:w-1/3 rounded-lg shadow-lg bg-[#001F3F] ${index === 0 ? 'bg-[#001F3F] ml-auto mr-0' : index % 2 === 0 ? 'mr-0 ml-auto' : 'ml-0 mr-auto'}`}>
