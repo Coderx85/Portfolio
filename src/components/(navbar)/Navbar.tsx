@@ -15,7 +15,7 @@ const Navbar = () => {
         <Link href={'/'} className="text-5xl text-white font-semibold">
           Portfolio
         </Link>
-        <div className="mobile-menu block md:hidden">
+        <div className="mobile-menu mt-8 block md:hidden">
           {!navbarOpen ? (
             <button
               onClick={() => setNavbarOpen(true)}
