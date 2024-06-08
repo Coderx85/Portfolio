@@ -50,7 +50,7 @@ export interface ProjectTagProps {
 export interface SocialLinksProps {
   name: string,
   url: string,
-  icon: string
+  icon: React.ReactNode | string
 }
 
 export interface ExpProps{
