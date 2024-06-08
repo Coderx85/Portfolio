@@ -3,8 +3,8 @@ import React, { useRef, useState } from 'react'
 import { Project_Data } from '@/constants'
 import { motion, useInView } from 'framer-motion'
 import { ProjectTagProps } from '@/types'
-import ProjectTag from './(project)/ProjectTag'
-import ProjectCard from './(project)/ProjectCard'
+import ProjectTag from './ProjectTag'
+import ProjectCard from './ProjectCard'
 
 const project: ProjectTagProps[] = [
     {
