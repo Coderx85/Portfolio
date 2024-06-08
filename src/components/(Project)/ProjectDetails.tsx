@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react'
 import { Dialog, Transition } from "@headlessui/react";
-import { ProjectCardProp } from '@/types';
+import { ProjectProps } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaTools, FaTags, FaClock, FaExclamationCircle, FaLightbulb } from 'react-icons/fa';
 
 interface ProjectDetailsProps{
-  project: ProjectCardProp;
+  project: ProjectProps;
   isOpen: boolean;
   closeModal: () => void;
 }

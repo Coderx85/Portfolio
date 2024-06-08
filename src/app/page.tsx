@@ -1,9 +1,10 @@
-import AboutSection from "../components/AboutSection";
-import EmailSection from "../components/EmailSection";
-import Footer from "../components/Footer";
+import Skills from "@/components/Skills";
+import AboutSection from "@/components/(about)/AboutSection";
+import EmailSection from "@/components/(footer)/EmailSection";
+import Footer from "@/components/(footer)/Footer";
 import HeroSection from "../components/HeroSection";
-import Navbar from "../components/Navbar";
-import ProjectSection from "../components/ProjectSection";
+import Navbar from "@/components/(navbar)/Navbar";
+import ProjectSection from "@/components/(project)/ProjectSection";
 
 export default function Home() {
   return (
@@ -12,6 +13,8 @@ export default function Home() {
       <div className="container mx-auto px-12 py-4">
         <HeroSection />
         <AboutSection />
+        <Skills />
+        
         <ProjectSection />
         <EmailSection />
       </div>

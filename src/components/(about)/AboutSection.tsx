@@ -1,8 +1,8 @@
 "use client"
 import React, {useTransition, useState} from 'react'
 import Image from 'next/image'
-import TabButton from './TabButton'
-import { DataMenuProps } from '../types'
+import TabButton from '@/components/(about)/TabButton'
+import { DataMenuProps } from '@/types'
 
 const Data_Item: DataMenuProps[] = [
     {
@@ -14,19 +14,6 @@ const Data_Item: DataMenuProps[] = [
                 <li>Intermediate (2019-21)</li>
             </ul>
         ),
-    },
-    {
-        title: "experience",
-        id: "experience",
-        content: (
-            <ul className='list-disc pl-2'>
-                {/* <li>Excutive Member @[GDSC-GCET ML]</li> */}
-                <li>Intern @[Tublian]</li>
-                <li>Open Source Contributor @[Hacktoberfest-23]</li>
-                {/* <li>Ex-Comapass Ambassador @[IIT Delhi Rendezous 23]</li> */}
-                <li>Hackathon Team Leader @[Hack BVP5.0]</li>
-            </ul>
-        ),  
     },
     {
         title: "certifications",
@@ -90,12 +77,6 @@ const AboutSection = () => {
                             active={tab === "education"} 
                         >
                             Education
-                        </TabButton>
-                        <TabButton 
-                            selectTab={() => handleTabChange("experience")} 
-                            active={tab === "experience"} 
-                        >
-                            Experience
                         </TabButton>
                         <TabButton 
                             selectTab={() => handleTabChange("certifications")} 
