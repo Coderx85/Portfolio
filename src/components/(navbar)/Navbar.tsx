@@ -4,16 +4,18 @@ import React, { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "@/components/(about)/MenuOverlay";
 import { navLinks } from "@/constants";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const navlinks = navLinks;
+  const pathname = usePathname();
   const [navbarOpen, setNavbarOpen] = useState(false)
 
   return (
-    <nav className="navbar text-white fixe bg-[#121212] z-10">
-      <div className="flex flex-wrap navbar items-center justify-between mx-auto px-4">
-        <Link href={'/'} className="text-5xl text-white font-semibold">
-          Portfolio
+    <nav className="navbar py-8 xl:12 text-white ">
+      <div className="container mx-auto flex justify-between items-center">
+        <Link href={'/'} className="text-3xl font-semibold">
+          Priyanshu <span className="text-accent">.</span>
         </Link>
         <div className="mobile-menu mt-8 block md:hidden">
           {!navbarOpen ? (
@@ -33,18 +35,18 @@ const Navbar = () => {
           )}
         </div>
         <div 
-          className="menu hidden md:block md:w-auto text-white uppercase text-xl font-medium" 
+          className="menu hidden xl:flex text-white uppercase items-center gap-8" 
           id="navbar"
         >
-          <ul className="flex p-4 md:p-0 md:flex-row space-x-8 ">
             {navLinks.map((link, index) => (
-              <li key={index} className="active:text-black ">
-                <Link href={link.href} className="hover:bg-whit active:text-black focus:bg-white focus:text-black">
-                  {link.title}
-                </Link>
-              </li>
+              <Link 
+                href={link.href} 
+                key={index}
+                className={`${link.href === pathname && 'text-accent border-accent border-b-4'} font-bold hover:text-[#166466] sm:text-xl transition-all166466`}
+              >
+                {link.title}
+              </Link>
             ))}
-          </ul>
         </div>
       </div>
       {navbarOpen ? <MenuOverlay /> : null}

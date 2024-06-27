@@ -2,6 +2,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import { AchievementProps } from "../../types";
+import CountUp from "react-countup";
 
 const AnimatedNumbers = dynamic(
   () => {
@@ -12,18 +13,13 @@ const AnimatedNumbers = dynamic(
 
 const achievementsList: AchievementProps[] = [
   {
-    metric: "📁 Projects",
+    metric: "📁 Completed Projects",
     value: "20",
     postfix: "+",
   },
   {
-    metric: "🧠 Solved",
+    metric: "🧠 Solved Questions",
     value: "350",
-    postfix: "+",
-  },
-  {
-    metric: "🚀 Hackathons",
-    value: "10",
     postfix: "+",
   },
   {
@@ -40,30 +36,50 @@ const achievementsList: AchievementProps[] = [
 
 const AchievementsSection = () => {
   return (
-    <div className="py-8 xl:gap-16 sm:py-16 xl:px-16 text-sm w-full ">
-      <div className="primary-bd w-full bg-gray-900 border-4 sm:gap-0 gap-14 grid md:grid-cols-5 grid-cols-2 rounded-lg py-8 px-10 sm:px-16 sm:flex flex-col sm:flex-row items-center justify-between backdrop-filter backdrop-blur-md">
-        {achievementsList.map((achievement, index) => {
-          return (
-            <div
-              key={index}
-              className="flex flex-col items-center gap-5 justify-center my-4 sm:my-0"
-            >
-              <h2 className="primary md:text-4xl text-lg font-bold flex flex-row">
-                {achievement.prefix}
-                <AnimatedNumbers
-                  includeComma
-                  animateToNumber={parseInt(achievement.value)}
-                  locale="en-US"
-                  className="text-white md:text-4xl font-bold"
+    <section className="pt-4 pb-12 xl:pt-2 xl:pb-0">
+      <div className="primary-bd container mx-auto">
+        <div className="flex flex-wrap gap-6 max-w-[80vw] mx-auto xl:max-w-none">
+          {achievementsList.map((achievement, index) => {
+              return (
+              <div
+                key={index}
+                className="flex flex-1 items-center gap-4 justify-center xl:justify-start"
+              >
+                {/* <h2 className="primary md:text-4xl text-lg font-bold flex flex-row"> */}
+                  {/* {achievement.prefix} */}
+                  {/* <AnimatedNumbers
+                    includeComma
+                    animateToNumber={parseInt(achievement.value)}
+                    transitions={(index) => {
+                      return {
+                        duration: 0.5 + index * 0.1,
+                        delay: 0.2 + index * 0.1,
+                        ease: "easeInOut",
+                      };
+                    }}
+                    locale="en-US"
+                    className="text-4xl xl:text-6xl font-extrabold"
+                  /> */}
+                  {/* {achievement.postfix} */}
+                {/* </h2> */}
+                {/* <p className={``}>{achievement.metric}</p> */}
+                <CountUp 
+                  end={parseInt(achievement.value+achievement.postfix)}
+                  duration={5}
+                  delay={2}
+                  className="text-4xl xl:text-6xl font-extrabold"
                 />
-                {achievement.postfix}
-              </h2>
-              <p className="text-[#ADB7BE] text-xs sm:text-base">{achievement.metric}</p>
-            </div>
-          );
-        })}
+                <p
+                  className={`text-white/80 ${achievement.metric.length > 15 ? 'max-w-[100px]' : 'max-w-[150px]'} leading-snug`}
+                >
+                  {achievement.metric}
+                </p>
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

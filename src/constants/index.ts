@@ -276,20 +276,28 @@ export const Project_Data: ProjectProps[] = [
 
 export const navLinks: NavlinksProps[] = [
     {
+      title: "Home",
+      href: "/",
+    },
+    {
+      title: "Resume",
+      href: "/resume",
+    },
+    {
       title: "About",
-      href: "#abouts",
+      href: "/about",
     },
     {
-      title: 'Experience',
-      href: '#experience'
+      title: 'Work',
+      href: '/work'
     },
     {
-      title: "Projects",
-      href: '#projects',
+      title: 'Service',
+      href: '/service'
     },
     {
       title: 'Contact',
-      href: '#contact'
+      href: '/contact'
     },
   ]
   

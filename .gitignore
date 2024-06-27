@@ -15,6 +15,7 @@
 # production
 /build
 
+/react-email-starter
 # misc
 .DS_Store
 *.pem
