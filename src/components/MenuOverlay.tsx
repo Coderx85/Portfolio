@@ -1,5 +1,5 @@
 import { navLinks } from "@/constants"
-import Navlink from "../(navbar)/Navlink"
+import Navlink from "@/components/Navlink"
 // import { Links } from "./Navbar";
 
 const links = navLinks

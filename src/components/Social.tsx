@@ -4,15 +4,13 @@ import {
   FaGithub,
   FaLinkedin,
   FaTwitter,
-  FaMailBulk,
-  FaInbox,
-
+  FaEnvelope,
  } from 'react-icons/fa'
 
 const SocialLink = [
   {
     name: "Email",
-    icon: <FaInbox />,
+    icon: <FaEnvelope />,
     url: "mailto:abpriyanshu007@gmail.com",
   },
   {

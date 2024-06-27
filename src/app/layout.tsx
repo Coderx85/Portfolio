@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { Inter, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import Navbar from '@/components/(navbar)/Navbar';
+import Navbar from '@/components/Navbar';
 import { Toaster } from '@/components/ui/toaster';
 
 const inter = JetBrains_Mono({ 

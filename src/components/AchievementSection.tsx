@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import dynamic from "next/dynamic";
-import { AchievementProps } from "../../types";
+import { AchievementProps } from "@/types";
 import CountUp from "react-countup";
 
 const AnimatedNumbers = dynamic(

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import MenuOverlay from "@/components/(about)/MenuOverlay";
+import MenuOverlay from "@/components/MenuOverlay";
 import { navLinks } from "@/constants";
 import { usePathname } from "next/navigation";
 
