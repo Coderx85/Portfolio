@@ -36,12 +36,13 @@ const Social = () => {
       {SocialLink.map((link, index) => (
         <Link 
           key={index} 
-          className='
-            flex items-center gap-2 rounded-full justify-center w-9 h-9 border-accent text-base border-2
-            hover:bg-accent hover:text-primary hover:transition-all duration-500'
+          className='flex items-center z-1 gap-2 rounded-full justify-center w-12 h-12 border-accent text-base border-2
+            hover:bg-accent hover:text-primary group hover:transition-all duration-500'
           href={link.url}
         >
-          {link.icon}
+          <span className='text-2xl group-hover:scale-110'>
+            {link.icon}
+          </span>
         </Link>
       ))}
     </div>

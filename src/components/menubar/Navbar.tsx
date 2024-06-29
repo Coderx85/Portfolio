@@ -1,10 +1,10 @@
 "use client"
 import Link from "next/link";
 import React, { useState } from "react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import MenuOverlay from "@/components/MenuOverlay";
+import MenuOverlay from "@/components/menubar/MenuOverlay";
 import { navLinks } from "@/constants";
 import { usePathname } from "next/navigation";
+import { FiCrosshair, FiMenu } from "react-icons/fi";
 
 const Navbar = () => {
   const navlinks = navLinks;
@@ -23,19 +23,19 @@ const Navbar = () => {
               onClick={() => setNavbarOpen(true)}
               className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
             >
-              <Bars3Icon className="h-5 w-5" />
+              <FiMenu className="h-5 w-5" />
             </button>
           ) : (
             <button
               onClick={() => setNavbarOpen(false)}
               className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
             >
-              <XMarkIcon className="h-5 w-5" />
+              <FiCrosshair className="h-5 w-5" />
             </button>
           )}
         </div>
         <div 
-          className="menu hidden xl:flex text-white uppercase items-center gap-8" 
+          className="menu hidden lg:flex text-white uppercase items-center gap-8" 
           id="navbar"
         >
             {navLinks.map((link, index) => (

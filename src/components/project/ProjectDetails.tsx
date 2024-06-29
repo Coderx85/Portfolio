@@ -3,7 +3,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { ProjectProps } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaTools, FaTags, FaClock, FaExclamationCircle, FaLightbulb } from 'react-icons/fa';
+import { FaTools, FaTags, FaClock, FaExclamationCircle } from 'react-icons/fa';
 
 interface ProjectDetailsProps{
   project: ProjectProps;
@@ -107,17 +107,17 @@ const ProjectDetails = ({project, isOpen ,closeModal}: ProjectDetailsProps) => {
                         {/* Project Description */}
                         <div>
                           <h2 className='text-2xl underline primary mb-2'>Description:</h2>
-                          <p className='text-gray-400'>
+                          <p className='text-accent' >
                             {project.description} 
                           </p>
                         </div>
                       
                         {/* Project Type */}
                         <div className='mt-3'>
-                          <p className='text-xl mt-3'>
+                          <p className='text-xlmt-3'>
                             <FaTags className='inline-block mr-2' />
                             Project Type: 
-                          <span className='text-xl font-semibold primary'> {project.contributionType}</span>
+                          <span className='text-xl font-semibold text-accent'> {project.contributionType}</span>
                           </p>
                         </div>
 
@@ -126,7 +126,7 @@ const ProjectDetails = ({project, isOpen ,closeModal}: ProjectDetailsProps) => {
                           <p className='text-xl mt-3'>
                             <FaClock className='inline-block mr-2' />
                             Duration: 
-                            <span className='text-xl font-bold primary'> {project.duration}</span>
+                            <span className='text-xl font-bold text-accent'> {project.duration}</span>
                           </p>
                         </div>
                         
@@ -135,11 +135,11 @@ const ProjectDetails = ({project, isOpen ,closeModal}: ProjectDetailsProps) => {
                         <div className='my-2'>
                           <p className='text-xl'>
                             <FaTools className='inline-block text-white mr-2' />
-                            <span className='text-white font-bold'>Technologies Used:</span><br/>
+                            <span className='font-bold'>Technologies Used:</span><br/>
                           </p>
                           <span className='mt-5 ml-7'>
                             {project.techStack.map((tech, index) => (
-                              <span key={index} className='inline-block bg-gray-200 primary px-2 py-1 my-2 rounded-full mr-5'>
+                              <span key={index} className='inline-block text-accent bg-zinc-950 px-2 py-1 my-2 rounded-full mr-5'>
                                 {tech}
                               </span>
                             ))}
@@ -152,12 +152,12 @@ const ProjectDetails = ({project, isOpen ,closeModal}: ProjectDetailsProps) => {
                           <div>
                             <p className='text-xl'>
                               <FaExclamationCircle className='inline-block mr-2' />
-                              <span className='text-white font-bold'>Challenges Encountered:</span>
+                              <span className='font-bold'>Challenges Encountered:</span>
                             </p>  
                             <span>
                               {project.challengesFaced.map((challenge, index) => (
-                                <ul key={index}>
-                                  <li  className='inline-block primary-bg text-red-950 p-2 my-1 rounded-lg ml-5 mr-2'>
+                                <ul key={index} className='list-disc'>
+                                  <li  className=' p-2 mt-1 list-item text-accent rounded-lg ml-5 mr-2'>
                                     {challenge}
                                   </li>
                                 </ul>

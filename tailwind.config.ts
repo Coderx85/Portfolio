@@ -12,10 +12,13 @@ const config = {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
+      padding: "15px",
+    },
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "960px",
+      xl: "1200px",
     },
     fontFamily: {
       primary: "var(--font-primary)",
@@ -23,32 +26,13 @@ const config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "hsl(var(--primary))",
+          DEFAULT: "#0f172a",
           foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
           DEFAULT: "#166466",
+          // DEFAULT: "#00ff99",
           foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
         },
       },
       borderRadius: {
@@ -71,6 +55,9 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
+  },
+  daisyui: {
+    themes: ["night"],
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config

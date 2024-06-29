@@ -3,8 +3,8 @@ import React, { useRef, useState } from 'react'
 import { Project_Data } from '@/constants'
 import { motion, useInView } from 'framer-motion'
 import { ProjectTagProps } from '@/types'
-import ProjectTag from './ProjectTag'
-import ProjectCard from './ProjectCard'
+import ProjectTag from '@/components/project/ProjectTag'
+import ProjectCard from '@/components/project/ProjectCard'
 
 const project: ProjectTagProps[] = [
     {
@@ -40,16 +40,15 @@ const ProjectSection = () => {
     };
 
     return (
-    <section className=''>
-        <h2 className='text-center sm:text-5xl sm:mt-0 mt-10 text-4xl font-bold '>
-            <a className="font-serif text-white my-4 md:mb-12
-            hover:text-gray-900 "
+    <section className='container'>
+        {/* <h2 className='text-center sm:text-5xl sm:mt-0 mt-10 text-4xl font-bold '>
+            <a className="font-serif text-white my-4 md:mb-12"
             id='projects'>
                 My Projects
             </a>
-        </h2>
+        </h2> */}
 
-        <div className="md:hidden block mt-5">
+        <div className="md:hidden block mt-5 text-white">
           <select
             value={tab}
             onChange={(e) => handleTabChange(e.target.value)}
@@ -75,7 +74,9 @@ const ProjectSection = () => {
             ))}
         </div>  
         
-        <div className='md:primary-bd md:border-4 rounded-2xl mt-5 p-10 '>
+        <div
+            className='md:primary-bd md:border-4 rounded-2xl mt-5 p-10 
+        '>
             <ul ref={ref} className="w-full rounded-xl grid md:grid-cols-2 gap-8 md:gap-12">
                 {filterProjects 
                     .sort((a, b) => b.id - a.id)
@@ -85,7 +86,7 @@ const ProjectSection = () => {
                             variants={cardVariants}
                             initial="initial"
                             animate={isInView ? "animate" : "initial"}
-                            transition={{ duration: 0.3, delay: index * 0.4 }}
+                            transition={{ duration: 1, delay: index * 1.0 }}
                         >
                             <ProjectCard 
                                 key={project.id}

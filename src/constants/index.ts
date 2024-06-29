@@ -1,7 +1,7 @@
 import { NavlinksProps, ProjectProps } from '../types'
 
 export const aboutData = {
-  title: 'education',
+  title: 'About Me',
   description: 'I have a B-Tech in Computer Science (2021-25) and Intermediate (2019-21).',
   info: [
     {
@@ -9,12 +9,12 @@ export const aboutData = {
       fieldValue: 'Priyanshu'
     },
     {
-      fieldName: 'Email',
-      fieldValue: 'work.priyanshu085@gmail.com'
-    },
-    {
       fieldName: 'Phone',
       fieldValue: '7071915785'
+    },
+    {
+      fieldName: 'Email',
+      fieldValue: 'work.priyanshu085@gmail.com'
     },
     {
       fieldName: 'Location',
@@ -102,50 +102,49 @@ export const Project_Data: ProjectProps[] = [
     lessonsLearned: ["Lesson 1", "Lesson 2"],
     contributionType: "Team",
     duration: "1 month",
-  
   },
-  {
-    id: 3,
-    title: "FileShare",
-    description: "The project is a user-friendly file-sharing platform. It's built with React on the frontend and Node.js with Express on the backend. Users can easily upload files, keep track of downloads, and retrieve them using convenient links. It's all about hassle-free file sharing!",
-    imgUrl: "/images/projects/7.png",
-    tag: ["All","Web"],
-    gitUrl: "",
-    previewUrl: "",
-    techStack: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "TypeScript"],
-    challengesFaced: ["Challenge 1", "Challenge 2"],
-    lessonsLearned: ["Lesson 1", "Lesson 2"],
-    contributionType: "Solo",
-    duration: "2 week",
-  },
-  {
-    id: 4,
-    title: "Bloggies",
-    description: "A Blogging platform built with React JS, MongoDB, and Tailwind CSS. It allows users to create, read, update, and delete blog posts. Users can also like and comment on posts.",
-    imgUrl: "/images/projects/6.png",
-    tag: ["All"],
-    gitUrl: "",
-    previewUrl: "",
-    techStack: ["React", "Node.js", "Express", "MongoDB"],
-    challengesFaced: ["Challenge 1", "Challenge 2"],
-    lessonsLearned: ["Lesson 1", "Lesson 2"],
-    contributionType: "Solo",
-    duration: "1 month",
-  },
-  {
-    id: 5,
-    title: "CodexSphere",
-    description: "CodexSphere is a web platform uniting book lovers. Built with React JS, MongoDB, and Tailwind CSS, it allows seamless management of personal book collections. Add, explore, and dive into a world of literature with CodexSphere - where your bookshelf transforms into a gateway to endless literary journeys",
-    imgUrl: "/images/projects/5.png",
-    tag: ["All","Web"],
-    gitUrl: "",
-    previewUrl: "",
-    techStack: ["React", "Node.js", "Express", "MongoDB"],
-    challengesFaced: ["Challenge 1", "Challenge 2"],
-    lessonsLearned: ["Lesson 1", "Lesson 2"],
-    contributionType: "Solo",
-    duration: "1 month",
-  },
+// {
+//   id: 3,
+//   title: "FileShare",
+//   description: "The project is a user-friendly file-sharing platform. It's built with React on the frontend and Node.js with Express on the backend. Users can easily upload files, keep track of downloads, and retrieve them using convenient links. It's all about hassle-free file sharing!",
+//   imgUrl: "/images/projects/7.png",
+//   tag: ["All","Web"],
+//   gitUrl: "",
+//   previewUrl: "",
+//   techStack: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "TypeScript"],
+//   challengesFaced: ["Challenge 1", "Challenge 2"],
+//   lessonsLearned: ["Lesson 1", "Lesson 2"],
+//   contributionType: "Solo",
+//   duration: "2 week",
+// },
+  // {
+  //   id: 4,
+  //   title: "Bloggies",
+  //   description: "A Blogging platform built with React JS, MongoDB, and Tailwind CSS. It allows users to create, read, update, and delete blog posts. Users can also like and comment on posts.",
+  //   imgUrl: "/images/projects/6.png",
+  //   tag: ["All"],
+  //   gitUrl: "",
+  //   previewUrl: "",
+  //   techStack: ["React", "Node.js", "Express", "MongoDB"],
+  //   challengesFaced: ["Challenge 1", "Challenge 2"],
+  //   lessonsLearned: ["Lesson 1", "Lesson 2"],
+  //   contributionType: "Solo",
+  //   duration: "1 month",
+  // },
+  // {
+  //   id: 5,
+  //   title: "CodexSphere",
+  //   description: "CodexSphere is a web platform uniting book lovers. Built with React JS, MongoDB, and Tailwind CSS, it allows seamless management of personal book collections. Add, explore, and dive into a world of literature with CodexSphere - where your bookshelf transforms into a gateway to endless literary journeys",
+  //   imgUrl: "/images/projects/5.png",
+  //   tag: ["All","Web"],
+  //   gitUrl: "",
+  //   previewUrl: "",
+  //   techStack: ["React", "Node.js", "Express", "MongoDB"],
+  //   challengesFaced: ["Challenge 1", "Challenge 2"],
+  //   lessonsLearned: ["Lesson 1", "Lesson 2"],
+  //   contributionType: "Solo",
+  //   duration: "1 month",
+  // },
   {
     id: 6,
     title: "SmartReadme",
@@ -230,48 +229,48 @@ export const Project_Data: ProjectProps[] = [
     contributionType: "Solo",
     duration: "1 week",
   },
-  {
-    id: 12,
-    title: "LeviLayer",
-    description: "This project provides an interactive dashboard for analyzing the different activation function in neural networks. LeviLayer is a novel activation function that has shown promising results in various deep learning tasks. With this dashboard, users can explore the behavior of LeviLayer and compare it with other popular activation functions.",
-    imgUrl: "/images/projects/13.png",
-    tag: ["All","ML"],
-    gitUrl: "https://github.com/Priyanshu085/LeviLayer.git",
-    previewUrl: "",
-    techStack: ["Python", "TensorFlow"],
-    challengesFaced: ["Challenge 1", "Challenge 2"],
-    lessonsLearned: ["Lesson 1", "Lesson 2"],
-    contributionType: "Solo",
-    duration: "1 week"
-  },
-  {
-    id: 13,
-    title: "StyleBlend",
-    description: "StyleBlend is a project for artistic style transfer using the VGG19 convolutional neural network architecture. It allows users to blend the content of one image with the style of another image, creating visually appealing compositions.",
-    imgUrl: "/images/projects/14.png",
-    tag: ["All","ML"],
-    gitUrl: "https://github.com/Priyanshu085/StyleBlend.git",
-    previewUrl: '',
-    techStack: ["Python", "TensorFlow", "Keras"],
-    challengesFaced: ["Challenge 1", "Challenge 2"],
-    lessonsLearned: ["Lesson 1", "Lesson 2"],
-    contributionType: "Solo",
-    duration: "1 week"
-  },
-  {
-    id: 14,
-    title: "Plant disease prediction",
-    description: "",
-    imgUrl: '',
-    tag: ["All","ML"],
-    gitUrl: "https://github/Priyanshu085/Plant-disease-prediction.git",
-    previewUrl: '',
-    techStack: ["Python", "TensorFlow", "Keras"],
-    challengesFaced: ["Challenge 1", "Challenge 2"],
-    lessonsLearned: ["Lesson 1", "Lesson 2"],
-    contributionType: "Solo",
-    duration: "1 week"
-  },
+  // {
+  //   id: 12,
+  //   title: "LeviLayer",
+  //   description: "This project provides an interactive dashboard for analyzing the different activation function in neural networks. LeviLayer is a novel activation function that has shown promising results in various deep learning tasks. With this dashboard, users can explore the behavior of LeviLayer and compare it with other popular activation functions.",
+  //   imgUrl: "/images/projects/13.png",
+  //   tag: ["All","ML"],
+  //   gitUrl: "https://github.com/Priyanshu085/LeviLayer.git",
+  //   previewUrl: "",
+  //   techStack: ["Python", "TensorFlow"],
+  //   challengesFaced: ["Challenge 1", "Challenge 2"],
+  //   lessonsLearned: ["Lesson 1", "Lesson 2"],
+  //   contributionType: "Solo",
+  //   duration: "1 week"
+  // },
+  // {
+  //   id: 13,
+  //   title: "StyleBlend",
+  //   description: "StyleBlend is a project for artistic style transfer using the VGG19 convolutional neural network architecture. It allows users to blend the content of one image with the style of another image, creating visually appealing compositions.",
+  //   imgUrl: "/images/projects/14.png",
+  //   tag: ["All","ML"],
+  //   gitUrl: "https://github.com/Priyanshu085/StyleBlend.git",
+  //   previewUrl: '',
+  //   techStack: ["Python", "TensorFlow", "Keras"],
+  //   challengesFaced: ["Challenge 1", "Challenge 2"],
+  //   lessonsLearned: ["Lesson 1", "Lesson 2"],
+  //   contributionType: "Solo",
+  //   duration: "1 week"
+  // },
+  // {
+  //   id: 14,
+  //   title: "Plant disease prediction",
+  //   description: "",
+  //   imgUrl: '',
+  //   tag: ["All","ML"],
+  //   gitUrl: "https://github/Priyanshu085/Plant-disease-prediction.git",
+  //   previewUrl: '',
+  //   techStack: ["Python", "TensorFlow", "Keras"],
+  //   challengesFaced: ["Challenge 1", "Challenge 2"],
+  //   lessonsLearned: ["Lesson 1", "Lesson 2"],
+  //   contributionType: "Solo",
+  //   duration: "1 week"
+  // },
   {
     id: 15,
     title: "CodexSphere",
@@ -338,3 +337,41 @@ export const navLinks: NavlinksProps[] = [
       href: '/contact'
     },
   ]
+
+export const educationData = {
+  title: 'education',
+  description: 'I have a B-Tech in Computer Science (2021-25) and Intermediate (2019-21).',
+  items: [
+    {
+      title: 'B-Tech Computer Science',
+      duration: '2021-25',
+    },
+    {
+      title: 'Intermediate',
+      duration: '2019-21',
+    }
+  ]
+}
+  
+export const services = [
+  {
+    num: "01",
+    title: "Full Stack Web Development",
+    description: "Create responsive and user-friendly interfaces, ensuring optimal performance and user experience.",
+  },
+  {
+    num: "02",
+    title: "Backend Development and Database Management",
+    description: "Develop robust backend systems to support your web applications and services.",
+  },
+  {
+    num: "03",
+    title: "DevOps Implementation",
+    description: "I can help you rank your website on the first page of Google.",
+  },
+  {
+    num: "04",
+    title: "UI/UX Design",
+    description: "Lead UI design initiatives to enhance platform usability and user satisfaction.",
+  }
+]

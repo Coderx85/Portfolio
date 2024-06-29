@@ -3,29 +3,7 @@ import { BsArrowDownRight } from 'react-icons/bs'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import React from 'react'
-
-const services = [
-  {
-    num: "01",
-    title: "Web Development",
-    description: "I can build a website for you using the latest technologies and frameworks.",
-  },
-  {
-    num: "02",
-    title: "Mobile Development",
-    description: "I can build a mobile app for you using the latest technologies and frameworks.",
-  },
-  {
-    num: "03",
-    title: "SEO",
-    description: "I can help you rank your website on the first page of Google.",
-  },
-  {
-    num: "04",
-    title: "Social Media Marketing",
-    description: "I can help you grow your business on social media.",
-  }
-]
+import { services } from '@/constants'
 
 const ServicePage = () => {
   return (
@@ -46,12 +24,19 @@ const ServicePage = () => {
                 className='flex flex-col gap-6 group justify-center flex-1:'
               >
                 <div className='w-full justify-between items-center flex'>
-                  <div className='text-5xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500'>{service.num}</div>
-                  <Link href={service.title}>
-                    <BsArrowDownRight />
+                  <div className='text-5xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500'>
+                    {service.num}
+                  </div>
+                  <Link 
+                    href={service.title}
+                    className='w-[70px] h-[70px] rounded-full bg-white group-hover:bg-accent transition-all duration-500 flex items-center justify-center text-black hover:-rotate-45 hover:scale-110'
+                  >
+                    <BsArrowDownRight className='text-black text-3xl'/>
                   </Link>
                 </div>
-                <h2>{service.title}</h2>
+                <h2
+                  className='text-4xl font-bold leading-none text-white group-hover:text-accent transition-all duration-500 ease-in-out'
+                >{service.title}</h2>
                 <p>{service.description}</p>
                 <div className='border-b border-white/80 w-full'></div>
               </div>
