@@ -29,7 +29,7 @@ const HeroSection = () => {
                     <h1 className='text-white text-4xl mb-4 sm:text-5xl lg:text-4xl text-extrabold'>
                         {"I'm "}
                         <FlipWords
-                            words={['Priyanshu', '@Priyanshu085']}
+                            words={['Priyanshu', '@Coderx85']}
                             duration={2000}
                             className='text-accent text-2xl/normal sm:text-3xl/normal md:text-4xl/normal lg:text-5xl/normal'
                         />

@@ -3,7 +3,8 @@ import { Dialog, Transition } from "@headlessui/react";
 import { ProjectProps } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaTools, FaTags, FaClock, FaExclamationCircle } from 'react-icons/fa';
+import { FaTools, FaTags, FaClock, FaExclamationCircle, FaGithub } from 'react-icons/fa';
+import { Crosshair, LucideView, PanelBottomClose } from 'lucide-react';
 
 interface ProjectDetailsProps{
   project: ProjectProps;
@@ -47,12 +48,10 @@ const ProjectDetails = ({project, isOpen ,closeModal}: ProjectDetailsProps) => {
                   className='absolute top-0 right-0 z-20 w-fit p-2 bg-white hover:primary-bg rounded-full'
                   onClick={closeModal}
                 >
-                  <Image
-                    src='/close.svg'
-                    alt='close'
+                  <PanelBottomClose 
                     width={20}
                     height={20}
-                    className='object-contain'
+                    className='bg-black'
                   />
                 </button>
 
@@ -67,14 +66,14 @@ const ProjectDetails = ({project, isOpen ,closeModal}: ProjectDetailsProps) => {
                         <Image src={project.imgUrl} alt='project-image' fill priority className='object-contain md:w-fit md:h-fit h-20 w-[150px] self-center sm:w-fit hover:cursor-pointer rounded-lg' />
                       </div>
                       <div className='flex grid-cols-3  gap-8 mt-5 '>
-                    <Link href={!project.gitUrl?`https://github.com/Priyanshu085/${project.title}`:project.gitUrl} 
-                      className='w-fit text-right text-white border-2 primary-bd rounded-lg
-                      hover:bg-[#166466]  hover:transition-all hover:duration-300 hover:font-semibold
+                    <Link href={!project.gitUrl?`https://github.com/Priyanshux085/${project.title}`:project.gitUrl} 
+                      className='w-fit text-right text-white border-2 primary-bd
+                      hover:bg-[#166466] rounded-full hover:transition-all hover:duration-300 hover:font-semibold
                       hover:ease-in-out hover:transform hover:scale-105 hover:text-black'
                       target='_blank'
                     >
-                      <div className='flex gap-2 py-2 px-4'>
-                        <Image src="/github.svg" alt={'GitHub Logo'} height={20} width={20}/>
+                      <div className='flex gap-2 object-center my-2 px-4'>
+                        <FaGithub className='content-center items-center' height={20} width={20}/>
                         <p className='md:block hidden'>
                           GitHub Link                        
                         </p>
@@ -82,16 +81,16 @@ const ProjectDetails = ({project, isOpen ,closeModal}: ProjectDetailsProps) => {
                     </Link>
                      {project.previewUrl?(
                         <Link href={project.previewUrl} 
-                          className='w-fit border-2 text-white primary-bd rounded-lg 
+                          className='w-fit border-2 text-white primary-bd rounded-full 
                             hover:bg-[#166466] hover:transition-all hover:duration-300 hover:font-semibold 
                               hover:ease-in-out hover:transform hover:scale-105 hover:text-black'
                           target='_blank'
                         >
                             <div className='flex gap-2 py-2 px-4'>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                              <path d="M19.5 6h-15v9h15V6z" />
-                              <path fillRule="evenodd" d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v11.25C1.5 17.16 2.34 18 3.375 18H9.75v1.5H6A.75.75 0 006 21h12a.75.75 0 000-1.5h-3.75V18h6.375c1.035 0 1.875-.84 1.875-1.875V4.875C22.5 3.839 21.66 3 20.625 3H3.375zm0 13.5h17.25a.375.375 0 00.375-.375V4.875a.375.375 0 00-.375-.375H3.375A.375.375 0 003 4.875v11.25c0 .207.168.375.375.375z" clipRule="evenodd" />
-                            </svg>
+                            <LucideView 
+                              className='items-center'
+                              height={20} width={20}
+                            />
                             <p className='md:block hidden'>
                               Preview Link
                             </p>
@@ -148,7 +147,7 @@ const ProjectDetails = ({project, isOpen ,closeModal}: ProjectDetailsProps) => {
                       </div>
 
                       {/* Challenges Encountered */}
-                        <div className='mt-3'>
+                        {/* <div className='mt-3'>
                           <div>
                             <p className='text-xl'>
                               <FaExclamationCircle className='inline-block mr-2' />
@@ -164,7 +163,7 @@ const ProjectDetails = ({project, isOpen ,closeModal}: ProjectDetailsProps) => {
                               ))}
                             </span>
                           </div>
-                        </div>
+                        </div> */}
 
                         {/* Lessons Learned */}
                         {/* <div>

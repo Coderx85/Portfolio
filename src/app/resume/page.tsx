@@ -279,7 +279,7 @@ const ResumePage = () => {
                     {skillsData.description}
                   </p> */}
                 </div>
-                <ul className='grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-[30px]'>
+                <ul className='grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-[30px]'>
                   {skillsData.items.map((item, index) => {
                     return (
                       <li

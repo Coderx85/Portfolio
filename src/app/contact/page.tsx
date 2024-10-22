@@ -26,7 +26,7 @@ const contactInfo = [
   },
   {
     title: 'LinkedIn',
-    description: 'Priyanshu085',
+    description: 'coderx85',
     icon: <FaLinkedin />
   }
 ]

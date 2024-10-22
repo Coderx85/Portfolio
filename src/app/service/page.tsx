@@ -31,7 +31,7 @@ const ServicePage = () => {
                     href={service.title}
                     className='w-[70px] h-[70px] rounded-full bg-white group-hover:bg-accent transition-all duration-500 flex items-center justify-center text-black hover:-rotate-45 hover:scale-110'
                   >
-                    <BsArrowDownRight className='text-black text-3xl'/>
+                    <BsArrowDownRight className='text-black fill-black text-3xl'/>
                   </Link>
                 </div>
                 <h2

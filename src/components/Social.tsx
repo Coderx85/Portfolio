@@ -11,12 +11,12 @@ const SocialLink = [
   {
     name: "Email",
     icon: <FaEnvelope />,
-    url: "mailto:abpriyanshu007@gmail.com",
+    url: "mailto:work.priyanshu085@gmail.com",
   },
   {
     name: "LinkedIn",
     icon: <FaLinkedin />,
-    url: "https://www.linkedin.com/in/priyanshu085/",
+    url: "https://www.linkedin.com/in/coderx85/",
   },
   {
     name: "Twitter",
@@ -26,7 +26,7 @@ const SocialLink = [
   {
     name: "Github",
     icon: <FaGithub />,
-    url: "https://gitub.com/Priyanshu085",
+    url: "https://github.com/coderx85",
   }
 ]
 
