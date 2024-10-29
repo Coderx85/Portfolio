@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react'
 import { Project_Data } from '@/constants'
 import { motion, useInView } from 'framer-motion'
 import { ProjectTagProps } from '@/types'
-// import ProjectTag from '@/components/project/ProjectTag'
+import ProjectTag from '@/components/project/ProjectTag'
 import ProjectCard from '@/components/project/ProjectCard'
 
 const project: ProjectTagProps[] = [
@@ -33,12 +33,12 @@ const ProjectSection = () => {
 
     return (
     <section className='container'>
-        {/* <h2 className='text-center sm:text-5xl sm:mt-0 mt-10 text-4xl font-bold '>
+        <h2 className='text-center sm:text-5xl sm:mt-0 mt-10 text-4xl font-bold '>
             <a className="font-serif text-white my-4 md:mb-12"
             id='projects'>
                 My Projects
             </a>
-        </h2> */}
+        </h2>
 
         <div className="md:hidden block mt-5 text-white">
           <select
@@ -54,7 +54,7 @@ const ProjectSection = () => {
           </select>
         </div>
 
-        {/* <div className="hidden text-white md:flex flex-row justify-center items-center gap-5 uppercase py-5">
+        <div className="hidden text-white md:flex flex-row justify-center items-center gap-5 uppercase py-5">
             {project.map((project, index) => (
                 <ProjectTag 
                     key= {index}
@@ -64,7 +64,7 @@ const ProjectSection = () => {
                     isSelected= {tab == project.tag}                
                 />
             ))}
-        </div>   */}
+        </div>  
         
         <div
             className='md:primary-bd md:border-4 rounded-2xl mt-5 p-10 
