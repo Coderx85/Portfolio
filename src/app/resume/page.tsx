@@ -228,10 +228,10 @@ const ResumePage = () => {
                           key={index}
                           className='bg-slate-900 items-center py-6 px-10 rounded-xl flex flex-col justify-center lg:items-start gap-1'
                         >
-                          <span className='text-accent'>{item.duration}</span>
+                          <span className='text-primary'>{item.duration}</span>
                           <h4 className='text-xl max-w-[300px] min-h-[60px] text-center lg:text-left'>{item.title}</h4>
                           <div className='flex items-center gap-3'>
-                            <span className='w-[6px] h-[6px] rounded-full bg-accent'></span>
+                            <span className='w-[6px] h-[6px] rounded-full bg-primary-'></span>
                             <p className='text-white/60'>{item.company}</p>
                           </div>
                           {/* <p>{item.description}</p> */}
@@ -259,7 +259,7 @@ const ResumePage = () => {
                           key={index}
                           className='bg-primary items-center py-6 px-10 rounded-xl flex flex-col justify-center lg:items-start gap-1'
                         >
-                          <span className='text-accent'>{item.duration}</span>
+                          <span className='text-primary'>{item.duration}</span>
                           <h4 className='text-xl max-w-[260px] min-h-[60px] text-center lg:text-left'>{item.title}</h4>
                         </li>
                       )
@@ -287,7 +287,7 @@ const ResumePage = () => {
                       >
                         <Card>
                           <CardHeader>
-                            <CardTitle className='mx-auto text-accent text-left'>{item.section}</CardTitle>
+                            <CardTitle className='mx-auto text-primary text-left'>{item.section}</CardTitle>
                           </CardHeader>
                           <CardContent
                             className='mx-auto w-full'
@@ -302,7 +302,7 @@ const ResumePage = () => {
                                     <TooltipProvider delayDuration={150}>
                                       <Tooltip>
                                         <TooltipTrigger className='w-full h-[50px] rounded-xl-row mx-auto flex justify-center items-center group'>
-                                          <div className='text-4xl group-hover:text-accent transition-all duration-300'>
+                                          <div className='text-4xl group-hover:text-primary transition-all duration-300'>
                                             {tech.icon}
                                           </div>
                                         </TooltipTrigger>
@@ -325,7 +325,7 @@ const ResumePage = () => {
                         <TooltipProvider delayDuration={100}>
                           <Tooltip>
                             <TooltipTrigger className='w-full h-[150px] bg-primary rounded-xl flex justify-center items-center group'>
-                              <div className='text-6xl group-hover:text-accent transition-all duration-300'>
+                              <div className='text-6xl group-hover:text-primary transition-all duration-300'>
                                 {item.icon}                                
                               </div>
                             </TooltipTrigger>

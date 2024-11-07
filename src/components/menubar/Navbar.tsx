@@ -7,15 +7,14 @@ import { usePathname } from "next/navigation";
 import { FiCrosshair, FiMenu } from "react-icons/fi";
 
 const Navbar = () => {
-  const navlinks = navLinks;
   const pathname = usePathname();
   const [navbarOpen, setNavbarOpen] = useState(false)
 
   return (
-    <nav className="navbar py-8 xl:12 text-white ">
+    <nav className="py-8 xl:12 text-white ">
       <div className="container mx-auto flex justify-between items-center">
-        <Link href={'/'} className="text-3xl font-semibold">
-          Priyanshu <span className="text-accent">.</span>
+        <Link href={'/'} className="text-3xl group font-semibold group-hover:text-accent">
+          Priyanshu <span className="text-accent group-hover:text-white">.</span>
         </Link>
         <div className="mobile-menu mt-8 block md:hidden">
           {!navbarOpen ? (
@@ -42,7 +41,7 @@ const Navbar = () => {
               <Link 
                 href={link.href} 
                 key={index}
-                className={`${link.href === pathname && 'text-accent border-accent border-b-4'} font-bold hover:text-[#166466] sm:text-xl transition-all166466`}
+                className={`${link.href === pathname && 'text-accent border-accent border-b-4'} font-bold hover:text-[#166466] sm:text-xl transition-all`}
               >
                 {link.title}
               </Link>

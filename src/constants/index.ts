@@ -14,7 +14,7 @@ export const aboutData = {
     },
     {
       fieldName: 'Email',
-      fieldValue: 'work.coderx85@gmail.com'
+      fieldValue: 'work.priyanshu085@gmail.com'
     },
     {
       fieldName: 'Location',
