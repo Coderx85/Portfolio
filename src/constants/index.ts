@@ -160,20 +160,6 @@ export const Project_Data: ProjectProps[] = [
     duration: "1 month"
   },
   {
-    id: 7,
-    title: "PromptHub",
-    description: "\"PromptHub\" is a web platform designed for sharing prompts. It provides a space for users to post and explore various prompts that can be used for creative writing, brainstorming, or any context that requires a starting point.",
-    imgUrl: "/images/projects/3.png",
-    tag: ["All","Web"],
-    gitUrl: "",
-    previewUrl: "https://prompthub-085.vercel.app",
-    techStack: ["Nextjs", "MongoDB", "Tailwind CSS", "TypeScript", "Authjs"],
-    challengesFaced: ["Challenge 1", "Challenge 2"],
-    lessonsLearned: ["Lesson 1", "Lesson 2"],
-    contributionType: "Solo",
-    duration: "1 month",
-  },
-  {
     id: 8,
     title: "NexDrive",
     description: "NexDrive is a dynamic car marketplace built with Next.js, Tailwind CSS, and TypeScript. Integrated with Rapid API for enhanced features and a user-friendly experience.",
@@ -201,8 +187,8 @@ export const Project_Data: ProjectProps[] = [
     contributionType: "Team",
     duration: "1 month",
   },
-  {
-    id: 10,
+  { 
+    id: 13,
     title: "GojoTalk",
     description: "GojoTalk: Experience 'Yōkoso'—Satoru Gojo's welcome in every interaction. Where intelligent conversations seamlessly blend with the essence of Japanese charisma, making each chat a dynamic and inviting experience.",
     imgUrl: "/images/projects/9.png",
@@ -233,7 +219,7 @@ export const Project_Data: ProjectProps[] = [
     id: 12,
     title: "LeviLayer",
     description: "This project provides an interactive dashboard for analyzing the different activation function in neural networks. LeviLayer is a novel activation function that has shown promising results in various deep learning tasks. With this dashboard, users can explore the behavior of LeviLayer and compare it with other popular activation functions.",
-    imgUrl: "/images/projects/13.png",
+    imgUrl: "",
     tag: ["All","ML"],
     gitUrl: "https://github.com/coderx85/LeviLayer.git",
     previewUrl: "",
@@ -244,10 +230,10 @@ export const Project_Data: ProjectProps[] = [
     duration: "1 week"
   },
   {
-    id: 13,
+    id: 14,
     title: "StyleBlend",
     description: "StyleBlend is a project for artistic style transfer using the VGG19 convolutional neural network architecture. It allows users to blend the content of one image with the style of another image, creating visually appealing compositions.",
-    imgUrl: "/images/projects/14.png",
+    imgUrl: "",
     tag: ["All","ML"],
     gitUrl: "https://github.com/coderx85/StyleBlend.git",
     previewUrl: '',
@@ -258,7 +244,7 @@ export const Project_Data: ProjectProps[] = [
     duration: "1 week"
   },
   {
-    id: 14,
+    id: 7,
     title: "Plant disease prediction",
     description: "",
     imgUrl: '',
@@ -285,6 +271,20 @@ export const Project_Data: ProjectProps[] = [
   //   contributionType: "Solo",
   //   duration: "1 month",
   // },
+   {
+    id: 15,
+    title: "PromptHub",
+    description: "\"PromptHub\" is a web platform designed for sharing prompts. It provides a space for users to post and explore various prompts that can be used for creative writing, brainstorming, or any context that requires a starting point.",
+    imgUrl: "/images/projects/3.png",
+    tag: ["All","Web"],
+    gitUrl: "",
+    previewUrl: "https://prompthub-085.vercel.app",
+    techStack: ["Nextjs", "MongoDB", "Tailwind CSS", "TypeScript", "Authjs"],
+    challengesFaced: ["Challenge 1", "Challenge 2"],
+    lessonsLearned: ["Lesson 1", "Lesson 2"],
+    contributionType: "Solo",
+    duration: "1 month",
+  },
   {
     id: 16,
     title: "DevnTalk",

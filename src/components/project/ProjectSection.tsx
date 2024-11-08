@@ -12,8 +12,8 @@ const project: ProjectTagProps[] = [
         name: "All Projects",
     },
     {
-        tag: "WeD",
-        name: "Web Dev",
+        tag: "Web",
+        name: "Web Dev.",
     },
     {
         tag: "ML",
@@ -41,11 +41,8 @@ const ProjectSection = () => {
 
     return (
     <section className='container'>
-        <h2 className='text-center sm:text-5xl sm:mt-0 mt-10 text-4xl font-bold '>
-            <a className="font-serif text-white my-4 md:mb-12"
-            id='projects'>
-                My Projects
-            </a>
+        <h2 className='font-bold text-outline space-x-1 tracking-[5px] text-transparent text-4xl uppercase border-white border-b-2 pb-2 sm:mt-0 mt-10'>
+            My Projects
         </h2>
 
         <div className="md:hidden block mt-5 text-white">
