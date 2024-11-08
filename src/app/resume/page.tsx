@@ -185,6 +185,7 @@ const ResumePage = () => {
           </TabsList>
 
           <div className="w-full min-h-[70vh]">
+            {/* About Section */}
             <TabsContent
               value='about'
               className='w-full text-center xl:text-left'
@@ -197,13 +198,14 @@ const ResumePage = () => {
                   {aboutData.description}
                 </p>
                 <ul className='grid grid-cols-1 xl:grid-cols-2 max-w-[850px] gap-y-4 gap-14 mx-auto xl:mx-0'>
+                  {/* About Section items */}
                   {aboutData.info.map((item, index) => {
                     return (
                       <li
                         key={index}
                         className='items-center flex justify-start gap-6 px-4 py-2'
                       >
-                        <span className='text-white/60'>{item.fieldName}</span>
+                        <span className='text-accent/90 font-bold'>{item.fieldName}</span>
                         <span className='text-lg'>{item.fieldValue}</span>
                       </li>
                     )
@@ -212,6 +214,7 @@ const ResumePage = () => {
               </div>
             </TabsContent>
 
+            {/* Experience Section */}
             <TabsContent value="experience" className='w-full'>
               <div className='flex flex-col gap-[30px] text-center xl:text-left'>
                 <h3 className='font-bold text-outline space-x-1 tracking-[5px] text-transparent text-4xl uppercase border-white border-b-2 pb-2'>
@@ -221,6 +224,7 @@ const ResumePage = () => {
                   {experienceData.description}
                 </p> */}
                 <ScrollArea className='h-[480px]'>
+                  {/* Experience items */}
                   <ul className='grid grid-cols-1 lg:grid-cols-2 gap-[30px]'>
                     {experienceData.items.map((item, index) => {
                       return (
@@ -228,10 +232,10 @@ const ResumePage = () => {
                           key={index}
                           className='bg-slate-900 items-center py-6 px-10 rounded-xl flex flex-col justify-center lg:items-start gap-1'
                         >
-                          <span className='text-primary'>{item.duration}</span>
+                          <span className='text-accent'>{item.duration}</span>
                           <h4 className='text-xl max-w-[300px] min-h-[60px] text-center lg:text-left'>{item.title}</h4>
                           <div className='flex items-center gap-3'>
-                            <span className='w-[6px] h-[6px] rounded-full bg-primary-'></span>
+                            <span className='w-[6px] h-[6px] rounded-full bg-accent-'></span>
                             <p className='text-white/60'>{item.company}</p>
                           </div>
                           {/* <p>{item.description}</p> */}
@@ -243,6 +247,7 @@ const ResumePage = () => {
               </div>
             </TabsContent>
 
+            {/* Education Section */}
             <TabsContent value="education">
               <div className='flex flex-col gap-[30px] text-center xl:text-left'>
                 <h3 className='font-bold text-outline space-x-1 tracking-[5px] text-transparent text-4xl uppercase border-white border-b-2 pb-2'>
@@ -252,14 +257,15 @@ const ResumePage = () => {
                   {educationData.description}
                 </p>
                 <ScrollArea className='h-[480px]'>
+                  {/* Education items */}
                   <ul className='grid grid-cols-1 lg:grid-cols-2 gap-[30px]'>
                     {educationData.items.map((item, index) => {
                       return (
                         <li
                           key={index}
-                          className='bg-primary items-center py-6 px-10 rounded-xl flex flex-col justify-center lg:items-start gap-1'
+                          className='bg-slate-900 items-center py-6 px-10 rounded-xl flex flex-col justify-center lg:items-start gap-1'
                         >
-                          <span className='text-primary'>{item.duration}</span>
+                          <span className='text-accent'>{item.duration}</span>
                           <h4 className='text-xl max-w-[260px] min-h-[60px] text-center lg:text-left'>{item.title}</h4>
                         </li>
                       )
@@ -269,6 +275,7 @@ const ResumePage = () => {
               </div>
             </TabsContent>
 
+            {/* Skills Section */}
             <TabsContent value="skills">
               <div className='flex flex-col gap-[30px] text-center lg:text-left'>
                 <div className='flex flex-col gap-[30px] text-center xl:text-left'>
@@ -285,9 +292,9 @@ const ResumePage = () => {
                       <li
                         key={index}
                       >
-                        <Card>
+                        <Card className='bg-slate-900'>
                           <CardHeader>
-                            <CardTitle className='mx-auto text-primary text-left'>{item.section}</CardTitle>
+                            <CardTitle className='mx-auto text-accent text-left'>{item.section}</CardTitle>
                           </CardHeader>
                           <CardContent
                             className='mx-auto w-full'
@@ -302,7 +309,7 @@ const ResumePage = () => {
                                     <TooltipProvider delayDuration={150}>
                                       <Tooltip>
                                         <TooltipTrigger className='w-full h-[50px] rounded-xl-row mx-auto flex justify-center items-center group'>
-                                          <div className='text-4xl group-hover:text-primary transition-all duration-300'>
+                                          <div className='text-4xl group-hover:text-accent transition-all duration-300'>
                                             {tech.icon}
                                           </div>
                                         </TooltipTrigger>
@@ -324,8 +331,8 @@ const ResumePage = () => {
                 {/* 
                         <TooltipProvider delayDuration={100}>
                           <Tooltip>
-                            <TooltipTrigger className='w-full h-[150px] bg-primary rounded-xl flex justify-center items-center group'>
-                              <div className='text-6xl group-hover:text-primary transition-all duration-300'>
+                            <TooltipTrigger className='w-full h-[150px] bg-accent rounded-xl flex justify-center items-center group'>
+                              <div className='text-6xl group-hover:text-accent transition-all duration-300'>
                                 {item.icon}                                
                               </div>
                             </TooltipTrigger>
