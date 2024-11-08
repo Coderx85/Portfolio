@@ -11,6 +11,14 @@ const project: ProjectTagProps[] = [
         tag: "All",
         name: "All Projects",
     },
+    {
+        tag: "WeD",
+        name: "Web Dev",
+    },
+    {
+        tag: "ML",
+        name: "Machine Learning",
+    }
 ]
 
 const ProjectSection = () => {
