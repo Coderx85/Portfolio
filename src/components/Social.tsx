@@ -5,6 +5,7 @@ import {
   FaLinkedin,
   FaTwitter,
   FaEnvelope,
+  FaReddit
  } from 'react-icons/fa'
 
 const SocialLink = [
@@ -27,6 +28,11 @@ const SocialLink = [
     name: "Github",
     icon: <FaGithub />,
     url: "https://github.com/coderx85",
+  },
+  {
+    name: "Reddit",
+    icon: <FaReddit />,
+    url: "https://www.reddit.com/user/coderx85",
   }
 ]
 
@@ -40,7 +46,7 @@ const Social = () => {
             hover:bg-accent hover:text-primary group hover:transition-all duration-500'
           href={link.url}
         >
-          <span className='text-2xl group-hover:scale-110'>
+          <span className='text-2xl group-hover:scale-150'>
             {link.icon}
           </span>
         </Link>
