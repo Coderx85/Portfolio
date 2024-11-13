@@ -14,13 +14,12 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-
 const skillsData = {
   title: 'skills',
   description: 'I am proficient in Python, MERN stack, and front-end technologies.',
   items: [
     {
-      section: 'Programming Languages',
+      section: 'Languages',
       techStack: [
         {
           title: 'TypeScript',
@@ -45,7 +44,7 @@ const skillsData = {
       ]
     },
     {
-      section: 'Frontend Development',
+      section: 'Frontend Dev',
       techStack: [
         {
           title: 'Next.js',
@@ -75,7 +74,30 @@ const skillsData = {
       ]
     },
     {
-      section: 'Backend Development',
+      section: 'DevOps & VCS',
+      techStack: [
+        {
+          title: 'Docker',
+          icon: <SiDocker />,
+          level: 'Intermediate'
+        },
+        {
+          title: 'Git',
+          icon: <SiGit />,
+          level: 'Intermediate'
+        },
+        {
+          title: 'Vercel',
+          icon: <SiGithubactions />,
+        },
+        {
+          title: 'Github',
+          icon: <SiGithub />,
+        }
+      ]
+    },
+    {
+      section: 'Backend Dev',
       techStack: [
         {
           title: 'Node.js',
@@ -115,36 +137,8 @@ const skillsData = {
       ]
     },
     {
-      section: 'DevOps & VCS',
-      techStack: [
-        {
-          title: 'Docker',
-          icon: <SiDocker />,
-          level: 'Intermediate'
-        },
-        {
-          title: 'Git',
-          icon: <SiGit />,
-          level: 'Intermediate'
-        },
-        {
-          title: 'Vercel',
-          icon: <SiGithubactions />,
-        },
-        {
-          title: 'Github',
-          icon: <SiGithub />,
-        }
-      ]
-    },
-    {
       section: 'Deployment',
       techStack: [
-        {
-          title: 'Vercel',
-          Icon: <SiVercel />,
-          level: 'Intermediate'
-        },
         {
           title: 'Streamlit',
           icon: <SiStreamlit />,
@@ -154,7 +148,12 @@ const skillsData = {
           title: 'Github Pages',
           icon: <SiGithubpages />,
           level: 'Intermediate'
-        }
+        },
+        {
+          title: 'Vercel',
+          Icon: <SiVercel />,
+          level: 'Intermediate'
+        },
       ]
     },
   ]
