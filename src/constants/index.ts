@@ -49,6 +49,7 @@ export const experienceData = {
       company: "JarGoan",
       duration: "05/2024 - 06/2024",
       description: "Improved platform usability by 20.6%, increased user engagement by 26.53%, and led UI design initiatives.",
+      linkedin: 'https://www.linkedin.com/company/Jargoan'
     },
     {
       id: 2,
@@ -56,13 +57,15 @@ export const experienceData = {
       company: "Tublian",
       duration: "04/2024 - 06/2024",
       description: "Enhanced AI proficiency, crafted a chatbot increasing user interaction by 50%, and actively participated in AI sessions.",
+      linkedin: 'https://www.linkedin.com/company/Tublian'
     },
     {
       id: 3,
       title: "Open Source Contributor",
-      company: "Tubalian",
+      company: "Tublian",
       duration: "09/2023 - 11/2023",
       description: "Outperformed 91% of users, engaged in AI challenges, and enhanced AI technology proficiency by 30%.", 
+      linkedin: 'https://www.linkedin.com/company/Tublian'
     },
     {
       id: 4,
@@ -70,6 +73,7 @@ export const experienceData = {
       company: "Hacktoberfest 2023",
       duration: "09/2023 - 10/2023",
       description: "Contributed 4 PRs accepted in open source projects, collaborated with global developers, improving community engagement.",
+      linkedin: 'https://www.linkedin.com/company/Hacktoberfest'
     }
   ]
 }
@@ -326,7 +330,20 @@ export const Project_Data: ProjectProps[] = [
     lessonsLearned: ["Lesson 1", "Lesson 2"],
     contributionType: "Solo",
     duration: "1 month",
-  }
+  },{
+    id:19,
+    title: "Project-B",
+    description: "",
+    imgUrl: "",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/coderx85/project_b.git",
+    previewUrl: "",
+    techStack: ["Next.js", "Tailwind CSS", "Appwrite"],
+    challengesFaced: [],
+    lessonsLearned: [],
+    contributionType: "Solo",
+    duration: "In Progress"
+    }
 
 ]
 
@@ -359,11 +376,13 @@ export const educationData = {
   items: [
     {
       title: 'B-Tech Computer Science',
-      duration: '2021-25',
+      duration: '2021 - Present',
+      institute: 'GCET, Noida'
     },
     {
       title: 'Intermediate',
-      duration: '2019-21',
+      duration: '2019 - 21',
+      institute: 'Avadh Collegiate, Lucknow'
     }
   ]
 }
