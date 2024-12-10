@@ -25,12 +25,12 @@ This project is a personal portfolio website created to showcase my projects, sk
 
 ## Deployment
 
-The project is deployed and can be viewed live at [portfolio-085.vercel.app](https://portfolio-085.vercel.app/).
+The project is deployed and can be viewed live at [coderx85.vercel.app](https://coderx85.vercel.app/).
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/your-username/my-portfolio.git`
-2. Navigate to the project directory: `cd my-portfolio`
+1. Clone the repository: `git clone https://github.com/Coderx85/portfolio.git`
+2. Navigate to the project directory: `cd portfolio-main`
 3. Install dependencies: `npm install`
 
 ## Usage
