@@ -332,17 +332,17 @@ export const Project_Data: ProjectProps[] = [
     duration: "1 month",
   },{
     id:19,
-    title: "Project-B",
-    description: "",
-    imgUrl: "",
+    title: "Bux",
+    description: "A storage management system. It is designed to help manage and organize storage units efficiently.",
+    imgUrl: "/images/projects/19.png",
     tag: ["All", "Web"],
-    gitUrl: "https://github.com/coderx85/project_b.git",
-    previewUrl: "",
-    techStack: ["Next.js", "Tailwind CSS", "Appwrite"],
+    gitUrl: "https://github.com/coderx85/bux.git",
+    previewUrl: "https://bux-storage.vercel.app/",
+    techStack: ["Next.js", "Appwrite", "Shadcn","Clerk.js"],
     challengesFaced: [],
     lessonsLearned: [],
     contributionType: "Solo",
-    duration: "In Progress"
+    duration: "2 weeks",
     }
 
 ]
