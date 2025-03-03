@@ -343,7 +343,33 @@ export const Project_Data: ProjectProps[] = [
     lessonsLearned: [],
     contributionType: "Solo",
     duration: "2 weeks",
-    }
+  },{
+    id:20,
+    title: "Fiverplus",
+    description: "",
+    imgUrl: "",
+    tag: ["All", "Web"],
+    gitUrl: "fiverplus",
+    previewUrl: "",
+    techStack: ["Next.js", "Appwrite", "Shadcn","Clerk.js", 'convex'],
+    challengesFaced: [],
+    lessonsLearned: [],
+    contributionType: "Solo",
+    duration: "3 weeks",
+  },{
+    id: 21,
+    title: "SensAI",
+    description: "SensAI is a web application designed to help users generate cover letters, manage their profiles, and prepare for interviews. The application leverages various modern web technologies and libraries to provide a seamless user experience.",
+    imgUrl: "/images/projects/21.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/Coderx85sensai.git",
+    previewUrl: "https://sensai-eta.vercel.app/",
+    techStack: ["Next.js", "Appwrite", "Shadcn","Clerk.js", 'Gemini AI'],
+    challengesFaced: [],
+    lessonsLearned: [],
+    contributionType: "Solo",
+    duration: "1 weeks",
+  }
 
 ]
 
