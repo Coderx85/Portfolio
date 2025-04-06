@@ -11,7 +11,8 @@ const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
 
   return (
-    <nav className="py-8 xl:12 text-white ">
+    <nav className="py-8 xl:12 text-white bg-grid-white/[0.2] bg-black relative">
+      {/* <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div> */}
       <div className="container mx-auto flex justify-between items-center">
         <Link href={'/'} className="text-3xl group font-semibold group-hover:text-accent">
           Priyanshu <span className="text-accent group-hover:text-white">.</span>

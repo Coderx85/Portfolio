@@ -1,25 +1,9 @@
 "use client"
 import React, { useRef, useState } from 'react'
-import { Project_Data } from '@/constants'
+import { project, Project_Data } from '@/constants'
 import { motion, useInView } from 'framer-motion'
-import { ProjectTagProps } from '@/types'
 import ProjectTag from '@/components/project/ProjectTag'
 import ProjectCard from '@/components/project/ProjectCard'
-
-const project: ProjectTagProps[] = [
-    {
-        tag: "All",
-        name: "All Projects",
-    },
-    {
-        tag: "Web",
-        name: "Web Dev.",
-    },
-    {
-        tag: "ML",
-        name: "Machine Learning",
-    }
-]
 
 const ProjectSection = () => {
     const [tab ,setTab] = useState("All");
