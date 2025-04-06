@@ -1,3 +1,5 @@
+import { IconType } from "react-icons/lib";
+
 export interface DataMenuProps{
   title: string, 
   id: string,
@@ -67,4 +69,19 @@ export interface ExpProjectProps{
   name: string;
   description: string;
   link: string;
+}
+
+export interface SkillProps{
+  title: string;
+  description: string;
+  items: {
+    section: string;
+    techStack: SkillItemProps[];
+  }[]
+}
+
+export interface SkillItemProps{
+  title: string;
+  icon: IconType;
+  level: 'Beginner' | 'Intermediate' | 'Advanced';
 }

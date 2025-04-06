@@ -2,162 +2,15 @@
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
-import { aboutData, educationData, experienceData } from '@/constants'
+import { aboutData, educationData, experienceData, skillsData } from '@/constants'
 import { motion } from 'framer-motion'
 import React from 'react'
-import { FaCss3, FaHtml5, FaJs, FaNodeJs, FaPython, FaReact } from 'react-icons/fa'
-import { SiAppwrite, SiCplusplus, SiDocker, SiExpress, SiGit, SiGithub, SiGithubactions, SiGithubpages, SiMongodb, SiNextdotjs, SiPhp, SiSqlite, SiStreamlit, SiTypescript, SiVercel, SiVite } from 'react-icons/si'
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-
-const skillsData = {
-  title: 'skills',
-  description: 'I am proficient in Python, MERN stack, and front-end technologies.',
-  items: [
-    {
-      section: 'Languages',
-      techStack: [
-        {
-          title: 'TypeScript',
-          icon: <SiTypescript />,
-          level: 'Advanced'
-        },
-        {
-          title: 'Python',
-          icon: <FaPython />,
-          level: 'Advanced'
-        },
-        {
-          title: 'C++',
-          icon: <SiCplusplus />,
-          level: 'Intermediate'
-        },
-        {
-          title: 'JavaScript',
-          icon: <FaJs />,
-          level: 'Intermediate'
-        },
-      ]
-    },
-    {
-      section: 'Frontend Dev',
-      techStack: [
-        {
-          title: 'Next.js',
-          icon: <SiNextdotjs />,
-          level: 'Advanced'
-        },
-        {
-          title: 'Vite.js',
-          icon: <SiVite />,
-          level: 'Advanced'
-        },
-        {
-          title: 'React.js',
-          icon: <FaReact />,
-          level: 'Intermediate'
-        },
-        {
-          title: 'Html',
-          icon: <FaHtml5 />,
-          level: 'Advanced'
-        },
-        {
-          title: 'Css',
-          icon: <FaCss3 />,
-          level: 'Advanced'
-        },
-      ]
-    },
-    {
-      section: 'DevOps & VCS',
-      techStack: [
-        {
-          title: 'Docker',
-          icon: <SiDocker />,
-          level: 'Intermediate'
-        },
-        {
-          title: 'Git',
-          icon: <SiGit />,
-          level: 'Intermediate'
-        },
-        {
-          title: 'Vercel',
-          icon: <SiGithubactions />,
-        },
-        {
-          title: 'Github',
-          icon: <SiGithub />,
-        }
-      ]
-    },
-    {
-      section: 'Backend Dev',
-      techStack: [
-        {
-          title: 'Node.js',
-          icon: <FaNodeJs />,
-          level: 'Intermediate'
-        },
-        {
-          title: 'Express.js',
-          icon: <SiExpress />,
-          level: 'Intermediate'
-        },
-        {
-          title: 'Php',
-          icon: <SiPhp />,
-          level: 'Intermediate'
-        },
-      ]
-    },
-    {
-      section: 'Database',
-      techStack: [
-        {
-          title: 'MongoDB',
-          icon: <SiMongodb />,
-          level: 'Intermediate'
-        },
-        {
-          title: 'Sql',
-          icon: <SiSqlite />,
-          level: 'Intermediate'
-        },
-        {
-          title: 'Appwrite',
-          icon: <SiAppwrite />,
-          level: 'Intermediate'
-        },
-      ]
-    },
-    {
-      section: 'Deployment',
-      techStack: [
-        {
-          title: 'Streamlit',
-          icon: <SiStreamlit />,
-          level: 'Intermediate'
-        },
-        {
-          title: 'Github Pages',
-          icon: <SiGithubpages />,
-          level: 'Intermediate'
-        },
-        {
-          title: 'Vercel',
-          Icon: <SiVercel />,
-          level: 'Intermediate'
-        },
-      ]
-    },
-  ]
-}
 
 const ResumePage = () => {
   return (
@@ -308,11 +161,9 @@ const ResumePage = () => {
                                     <TooltipProvider delayDuration={150}>
                                       <Tooltip>
                                         <TooltipTrigger className='w-full h-[50px] rounded-xl-row mx-auto flex justify-center items-center group'>
-                                          <div className='text-4xl group-hover:text-accent transition-all duration-300'>
-                                            {tech.icon}
-                                          </div>
+                                          <tech.icon className='text-4xl group-hover:text-accent transition-all duration-300'/>
                                         </TooltipTrigger>
-                                        <TooltipContent>
+                                        <TooltipContent className='backdrop-blur-xl'>
                                           <p>{tech.title}</p>
                                         </TooltipContent>
                                       </Tooltip>
