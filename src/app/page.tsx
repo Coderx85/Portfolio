@@ -8,6 +8,8 @@ import ProfilePicPage from '@/components/ProfilePic';
 import Link from 'next/link';
 import { FlipWords } from '@/components/animation/Flipword';
 import { motion } from 'framer-motion';
+import GitHubCalendar from 'react-github-calendar'
+import GitHubStats from '@/components/GitHubStats';
 
 const HeroSection = () => {
 
@@ -24,7 +26,7 @@ const HeroSection = () => {
                 {/* Text Section */}
                 <div className='text-center xl:text-left order-2 xl:order-none'>
                     <span className='text-lg my-4 xl:text-left'>
-                        Software Developer | Web Developer     
+                        Software Developer | Web Developer | Open Source Contributor    
                     </span>
                     <h1 className='text-white text-4xl mb-4 sm:text-5xl lg:text-4xl text-extrabold'>
                         {"I'm "}
@@ -34,15 +36,13 @@ const HeroSection = () => {
                             className='text-accent text-2xl/normal sm:text-3xl/normal md:text-4xl/normal lg:text-5xl/normal'
                         />
                     </h1>
-                    <p className='max-w-[500px] pt-2 my-4 text-white/80'> 
-                        A passionate web developer skilled in front-end and back-end technologies. With experience in React, Node.js, and DevOps tools, I've led UI design projects, enhanced user engagement, and streamlined workflows. I love contributing to open-source projects and continuously learning to drive innovative web solutions.
+                    <p className='max-w-[500px] pt-2 my-4 md:mx-0 mx-auto text-white/80'> 
+                        A passionate web developer skilled in front-end and back-end technologies. With experience in React, Node.js, and DevOps tools.
                     </p>
                     <div className='flex flex-col xl:flex-row gap-8 items-center'>
                         <Link 
                             href="/Resume.pdf" 
                             download="Resume/Priyanshu.pdf" 
-                            locale={false} 
-                            rel="noopener noreferrer" 
                             target="_blank" 
                             aria-label="Downlod Resume" 
                         > 
@@ -64,13 +64,21 @@ const HeroSection = () => {
                             </Button>
                         </Link>
                     </div>
-                    <div className='xl:mb-0 my-8'>
-                        <Social />
-                    </div>
+                    {/* <div className='p-4 my-4 border-4 bg-accent/15 border-accent overflow-x-auto rounded-xl'>
+                        <GitHubCalendar 
+                            username={'Coderx85'}
+                            blockSize={8}
+                            blockMargin={4}
+                            fontSize={12}
+                            colorScheme={'dark'}
+                        />
+                    </div> */}
+                    <GitHubStats />
                 </div>  
                 {/* Image Scetion */}
-                <div className='order-1 xl:order-none mb-8 xl:mb-0'>
+                <div className='order-1 xl:order-none mb-8 gap-2 xl:mb-0'>
                     <ProfilePicPage />
+                    <Social />
                 </div>
             </div>
         </div>
