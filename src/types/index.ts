@@ -11,19 +11,25 @@ export interface NavlinksProps {
   title: string
 }
 
+export interface TechStackItemProps {
+  [key: string]: IconType;
+}
+
+interface ChallengesProps {
+  title: string;
+  solution: string;
+}
+
 export interface ProjectProps{
   id: number,
   title: string,
   description: string,
   imgUrl: string,
-  tag: string[],
   gitUrl: string,
   previewUrl: string,
-  techStack: string[], // List of technologies used in the project
-  challengesFaced: string[], // Challenges you faced during the project
-  lessonsLearned: string[], // Key lessons learned from the project
-  contributionType: "Solo" | "Team"; // Whether you worked on the project solo or in a team
-  duration: string; // Time taken to complete the project
+  techStack: TechStackItemProps,
+  challengesFaced: ChallengesProps[],
+  lessonsLearned: string[],
 }
 
 export interface IconProps {

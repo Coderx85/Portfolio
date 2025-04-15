@@ -1,22 +1,12 @@
 "use client"
 import React, { useRef, useState } from 'react'
-import { project, Project_Data } from '@/constants'
+import { ProjectData } from '@/constants'
 import { motion, useInView } from 'framer-motion'
-import ProjectTag from '@/components/project/ProjectTag'
 import ProjectCard from '@/components/project/ProjectCard'
 
 const ProjectSection = () => {
-    const [tab ,setTab] = useState("All");
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
-
-    const handleTabChange = (selectTab: string) => {
-        setTab(selectTab);
-    };
-
-    const filterProjects = Project_Data.filter((project) => 
-        project.tag.includes(tab)
-    )
 
     const cardVariants = {
         initial: { y: 50, opacity: 0 },
@@ -28,38 +18,12 @@ const ProjectSection = () => {
         <h2 className='font-bold text-outline space-x-1 tracking-[5px] text-transparent text-4xl uppercase border-white border-b-2 pb-2 sm:mt-0 mt-10'>
             My Projects
         </h2>
-
-        <div className="md:hidden block mt-5 text-white">
-          <select
-            value={tab}
-            onChange={(e) => handleTabChange(e.target.value)}
-            className="block w-full mt-2 px-4 py-2 text-white bg-[#121212] border border-slate-200 rounded-md"
-          >
-            {project.map((project) => (
-              <option key={project.tag} value={project.tag}>
-                {project.name}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div className="hidden text-white md:flex flex-row justify-center items-center gap-5 uppercase py-5">
-            {project.map((project, index) => (
-                <ProjectTag 
-                    key= {index}
-                    onClick= {handleTabChange}
-                    tag= {project.tag}
-                    name= {project.name}
-                    isSelected= {tab == project.tag}                
-                />
-            ))}
-        </div>  
         
         <div
             className='md:primary-bd md:border-4 rounded-2xl mt-5 p-10 
         '>
             <ul ref={ref} className="w-full rounded-xl grid md:grid-cols-2 gap-8 md:gap-12">
-                {filterProjects 
+                {ProjectData 
                     .sort((a, b) => b.id - a.id)
                     .map((project, index) => (
                         <motion.li

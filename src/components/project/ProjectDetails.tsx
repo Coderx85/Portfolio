@@ -5,14 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   FaTools,
-  FaTags,
-  FaClock,
   FaExclamationCircle,
   FaGithub,
+  FaXing,
 } from "react-icons/fa";
-import { Crosshair, LucideView, PanelBottomClose } from "lucide-react";
+import { LucideView, X } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
-
 interface ProjectDetailsProps {
   project: ProjectProps;
   isOpen: boolean;
@@ -37,7 +35,7 @@ const ProjectDetails = ({
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 bg-black/75 bg-opacity-25" />
+            <div className="fixed inset-0 bg-black/5 bg-opacity-25" />
           </Transition.Child>
 
           <div className="fixed inset-0 overflow-y-auto backdrop-blur-md">
@@ -52,69 +50,52 @@ const ProjectDetails = ({
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel
-                  className="relative bg-gray-900 border-2 md:m-0 m-5 md:w-[1200px] max-h-[90vh] h-[90vh] md:h-fit overflow-y-auto transform rounded-2xl 
-              p-6 text-left shadow-2xl transition-all flex flex-col gap-5"
+                  className="relative bg-black border-2 rounded-xl md:m-0 m-5 md:w-[1200px] max-h-[90vh] h-[90vh] md:h-fit overflow-y-auto transform p-6 text-left shadow-2xl transition-all flex flex-col gap-5"
                 >
-                  <button
-                    type="button"
-                    className="absolute top-0 right-0 z-20 w-fit p-2 bg-white hover:primary-bg rounded-full"
-                    onClick={closeModal}
-                  >
-                    <PanelBottomClose
-                      width={20}
-                      height={20}
-                      className="bg-black"
-                    />
-                  </button>
+                  <X className="absolute top-2 right-2 text-white rounded-full hover:text-black p-4 hover:cursor-pointer" onClick={closeModal} />
 
-                  <div className="flex lg:flex-row flex-col">
+                  <div className="grid lg:grid-cols-2 flex-col">
                     <div className="flex-1 flex flex-col gap-3 mr-5 py-5 md:h-fit h-[800px] ">
                       {/* Section 01 */}
-                      <div className="flex-1 flex flex-col gap-2">
-                        <h2 className="font-semibold text-4xl capitalize">
+                      <div className="flex-1 flex flex-col gap-2 w-1/2">
+                        <h2 className="font-extrabold text-7xl capitalize">
                           {project.title}
                         </h2>
                       </div>
-                      <div className="relative self-center md:w-[500px] md:h-72 h-32 w-[250px] place-self-center bg-transparent bg-no-repeat bg-cover bg-center rounded-lg">
+                      <div className="relative md:w-[500px] md:h-72 h-32 w-[250px] bg-transparent bg-no-repeat bg-cover rounded-lg">
                         <Image
                           src={project.imgUrl || "/images/no-preview.png"}
                           alt="project-image"
                           fill
                           priority
-                          className="object-contain md:w-fit md:h-fit h-10 w-[150px] self-center sm:w-fit hover:cursor-pointer rounded-lg"
+                          className="object-contain md:w-fit md:h-fit h-10 w-[150px] sm:w-fit hover:cursor-pointer rounded-lg"
                         />
                       </div>
+
                       {/* Tech Stack */}
-                      <div className="mt-3">
-                          <div className="my-2">
-                            <p className="text-xl">
-                              <FaTools className="inline-block text-white mr-2" />
-                              <span className="font-bold">
-                                Technologies Used:
-                              </span>
-                              <br />
-                            </p>
-                            <span className="mt-5 ml-7">
-                              {project.techStack.map((tech, index) => (
-                                <span
-                                  key={index}
-                                  className="inline-block text-accent bg-zinc-950 px-2 py-1 my-2 rounded-full mr-5"
-                                >
-                                  {tech}
-                                </span>
-                              ))}
-                            </span>
-                          </div>
+                      <div className="hidden md:block mt-3">
+                        <p className="text-xl font-bold">
+                          <FaTools className="inline-block text-white mr-2" /> Technologies Used:
+                        </p>
+                        <div className="flex justify-stretch flex-wrap gap-2 text-white">
+                          {Object.entries(project.techStack).map(([name, Icon]) => 
+                            <div key={name} className="flex items-center animate-pulse bg-primary/25 max-w-max p-2 gap-2 rounded-xs">
+                              <Icon />
+                              <span>{name}</span>
+                            </div>
+                            )}
                         </div>
-                      <div className="flex grid-cols-3  gap-8 mt-5 ">
+                      </div>
+
+                      {/* Links */}
+                      <div className="flex grid-cols-3 gap-8 mt-5 ">
                         <Link
                           href={
                             !project.gitUrl
                               ? `https://github.com/Priyanshux085/${project.title}`
                               : project.gitUrl
                           }
-                          className="w-fit text-right text-white border-2 primary-bd
-                          hover:bg-[#166466] rounded-full hover:transition-all hover:duration-300 hover:font-semibold
+                          className="w-fit text-right text-white border-2 primary-bd hover:bg-[#166466] rounded-lg hover:transition-all hover:duration-300 hover:font-semibold
                           hover:ease-in-out hover:transform hover:scale-105 hover:text-black"
                           target="_blank"
                         >
@@ -130,7 +111,7 @@ const ProjectDetails = ({
                         {project.previewUrl ? (
                           <Link
                             href={project.previewUrl}
-                            className="w-fit border-2 text-white primary-bd rounded-full 
+                            className="w-fit border-2 text-white primary-bd rounded-lg 
                                 hover:bg-[#166466] hover:transition-all hover:duration-300 hover:font-semibold 
                                   hover:ease-in-out hover:transform hover:scale-105 hover:text-black"
                             target="_blank"
@@ -144,13 +125,11 @@ const ProjectDetails = ({
                               <p className="md:block hidden">Preview Link</p>
                             </div>
                           </Link>
-                        ) : (
-                          <div></div>
-                        )}
+                        ) : null}
                       </div>
                     </div>
                     <div className="flex flex-col gap-2">
-                      <div className="primary-bd border-2 mt-5 md:mt-0 p-5 rounded-lg  py-5 w-full h-full text-white font-semibold">
+                      <div className="primary-bd mt-5 md:mt-0 p-5 py-5 w-full h-full text-white font-semibold">
                         {/* Project Description */}
                         <div>
                           <h2 className="text-2xl underline primary mb-2">
@@ -160,27 +139,23 @@ const ProjectDetails = ({
                         </div>
 
                         {/* Challenges Encountered */}
-                        <div className='mt-3'>
-                          <div>
-                            <p className='text-xl'>
-                              <FaExclamationCircle className='inline-block mr-2' />
-                              <span className='font-bold'>Challenges Encountered:</span>
-                            </p>  
-                            <span>
-                              <Accordion type='single' collapsible>
-                              {project.challengesFaced.map((challenge, index) => (
-                                <AccordionItem key={index} value={"c-"+index}>
-                                  <AccordionTrigger>
-                                    {"Challenge "+index+":"}
-                                  </AccordionTrigger>
-                                  <AccordionContent>
-                                    {challenge}
-                                  </AccordionContent>
-                                  </AccordionItem>
-                              ))}
-                              </Accordion>
-                            </span>
-                          </div>
+                        <div className='hidden md:block mt-3'>
+                          <p className='text-xl'>
+                            <FaExclamationCircle className='inline-block mr-2' />
+                            <span className='font-bold'>Challenges Encountered:</span>
+                          </p>  
+                          <Accordion type='single' collapsible>
+                          {project.challengesFaced.map((challenge, index) => (
+                            <AccordionItem key={index} value={"c-"+index}>
+                              <AccordionTrigger className="text-lg">
+                                {index+1+"."+challenge.title}
+                              </AccordionTrigger>
+                              <AccordionContent>
+                                {challenge.solution}
+                              </AccordionContent>
+                              </AccordionItem>
+                          ))}
+                          </Accordion>
                         </div>
 
                         {/* Lessons Learned */}
