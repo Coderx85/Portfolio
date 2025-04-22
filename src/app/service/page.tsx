@@ -2,10 +2,14 @@
 import { BsArrowDownRight } from 'react-icons/bs'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { services } from '@/constants'
 
 const ServicePage = () => {
+  useEffect(() => {
+    document.title = 'Services | Portfolio'
+  }, [])
+
   return (
     <section className='min-h-[80vh] flex flex-col justify-center py-12 xl:py-0'>
       <div className='container mx-auto'>

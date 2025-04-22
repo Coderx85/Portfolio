@@ -18,6 +18,10 @@ import React, { useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const ResumePage = () => {
+  useEffect(() => {
+    document.title = "Resume | Portfolio";
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}

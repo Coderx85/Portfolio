@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -32,6 +32,10 @@ const contactInfo = [
 ]
 
 const ContactPage = () => {
+  useEffect(() => {
+    document.title = 'Contact | Portfolio'
+  }, [])
+
   const {toast} = useToast()
   const [formData, setFormData] = useState({
     name: "",
