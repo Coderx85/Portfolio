@@ -1,260 +1,294 @@
-import { SkillItemProps, SkillProps } from "@/types"
+import {
+  SiAppwrite,
+  SiCplusplus,
+  SiDocker,
+  SiExpress,
+  SiFastapi,
+  SiGit,
+  SiGithub,
+  SiGithubactions,
+  SiGithubpages,
+  SiKubernetes,
+  SiMongodb,
+  SiNextdotjs,
+  SiPhp,
+  SiPostgresql,
+  SiSqlite,
+  SiStreamlit,
+  SiTypescript,
+  SiVercel,
+  SiVite,
+} from "react-icons/si";
+import {
+  FaCss3,
+  FaHtml5,
+  FaJs,
+  FaNodeJs,
+  FaPython,
+  FaReact,
+} from "react-icons/fa";
+import { AbtData, EduProps, ExpProps, SkillProps } from "@/types";
 
-export const educationData = {
-  title: 'education',
-  description: 'I have a B-Tech in Computer Science (2021-25) and Intermediate (2019-21).',
+export const educationData: EduProps = {
+  title: "education",
+  description:
+    "I have a B-Tech in Computer Science (2021-25) and Intermediate (2019-21).",
   items: [
     {
-      title: 'B-Tech Computer Science',
-      duration: '2021 - Present',
-      institute: 'GCET, Noida'
+      title: "B-Tech Computer Science",
+      duration: "2021 - Present",
+      institute: "GCET, Noida",
     },
     {
-      title: 'Intermediate',
-      duration: '2019 - 21',
-      institute: 'Avadh Collegiate, Lucknow'
-    }
-  ]
-}
+      title: "Intermediate",
+      duration: "2019 - 21",
+      institute: "Avadh Collegiate, Lucknow",
+    },
+  ],
+};
 
-export const aboutData = {
-  title: 'About Me',
-  description: 'I have a B-Tech in Computer Science (2021-25) and Intermediate (2019-21).',
+export const aboutData: AbtData = {
+  title: "About Me",
+  description:
+    "I have a B-Tech in Computer Science (2021-25) and Intermediate (2019-21).",
   info: [
     {
-      fieldName: 'Name',
-      fieldValue: 'Priyanshu'
+      fieldName: "Name",
+      fieldValue: "Priyanshu",
     },
     {
-      fieldName: 'Phone',
-      fieldValue: '7071915785'
+      fieldName: "Phone",
+      fieldValue: "7071915785",
     },
     {
-      fieldName: 'Email',
-      fieldValue: 'work.priyanshu085@gmail.com'
+      fieldName: "Email",
+      fieldValue: "work.priyanshu085@gmail.com",
     },
     {
-      fieldName: 'Location',
-      fieldValue: 'India'
+      fieldName: "Location",
+      fieldValue: "India",
     },
     {
-      fieldName: 'Languages',
-      fieldValue: 'English, Hindi'
+      fieldName: "Languages",
+      fieldValue: "English, Hindi",
     },
     {
-      fieldName: 'Hobbies',
-      fieldValue: 'Coding, Reading'
-    },  
-    {
-      fieldName: 'Interests',
-      fieldValue: 'Data Science, AI'
+      fieldName: "Hobbies",
+      fieldValue: "Coding, Reading",
     },
     {
-      fieldName: 'Freelance',
-      fieldValue: 'Available'
-    }
-  ]
-}
+      fieldName: "Interests",
+      fieldValue: "Data Science, AI",
+    },
+    {
+      fieldName: "Freelance",
+      fieldValue: "Available",
+    },
+  ],
+};
 
-export const experienceData = {
-  title: 'experience',
-  description: 'I have worked as a web developer at XYZ company for 2 years.',
+export const experienceData: ExpProps = {
+  title: "experience",
+  description: "I have worked as a web developer at XYZ company for 2 years.",
   items: [
     {
       id: 1,
       title: "Frontend Web Intern",
       company: "JarGoan",
       duration: "05/2024 - 06/2024",
-      description: "Improved platform usability by 20.6%, increased user engagement by 26.53%, and led UI design initiatives.",
-      linkedin: 'https://www.linkedin.com/company/Jargoan'
+      description:
+        "Improved platform usability by 20.6%, increased user engagement by 26.53%, and led UI design initiatives.",
+      linkedin: "https://www.linkedin.com/company/Jargoan",
     },
     {
       id: 2,
       title: "AI Intern",
       company: "Tublian",
       duration: "04/2024 - 06/2024",
-      description: "Enhanced AI proficiency, crafted a chatbot increasing user interaction by 50%, and actively participated in AI sessions.",
-      linkedin: 'https://www.linkedin.com/company/Tublian'
+      description:
+        "Enhanced AI proficiency, crafted a chatbot increasing user interaction by 50%, and actively participated in AI sessions.",
+      linkedin: "https://www.linkedin.com/company/Tublian",
     },
     {
       id: 3,
       title: "Open Source Contributor",
       company: "Tublian",
       duration: "09/2023 - 11/2023",
-      description: "Outperformed 91% of users, engaged in AI challenges, and enhanced AI technology proficiency by 30%.", 
-      linkedin: 'https://www.linkedin.com/company/Tublian'
+      description:
+        "Outperformed 91% of users, engaged in AI challenges, and enhanced AI technology proficiency by 30%.",
+      linkedin: "https://www.linkedin.com/company/Tublian",
     },
     {
       id: 4,
       title: "Open Source Contributor",
       company: "Hacktoberfest 2023",
       duration: "09/2023 - 10/2023",
-      description: "Contributed 4 PRs accepted in open source projects, collaborated with global developers, improving community engagement.",
-      linkedin: 'https://www.linkedin.com/company/Hacktoberfest'
-    }
-  ]
-}
-
-import { SiAppwrite, SiCplusplus, SiDocker, SiExpress, SiFastapi, SiGit, SiGithub, SiGithubactions, SiGithubpages, SiKubernetes, SiMongodb, SiNextdotjs, SiPhp, SiPostgresql, SiSqlite, SiStreamlit, SiTypescript, SiVercel, SiVite } from 'react-icons/si'
-import { FaCss3, FaHtml5, FaJs, FaNodeJs, FaPython, FaReact } from 'react-icons/fa'
+      description:
+        "Contributed 4 PRs accepted in open source projects, collaborated with global developers, improving community engagement.",
+      linkedin: "https://www.linkedin.com/company/Hacktoberfest",
+    },
+  ],
+};
 
 export const skillsData: SkillProps = {
-  title: 'skills',
-  description: 'I am proficient in Python, MERN stack, and front-end technologies.',
+  title: "skills",
+  description:
+    "I am proficient in Python, MERN stack, and front-end technologies.",
   items: [
     {
-      section: 'Languages',
+      section: "Languages",
       techStack: [
         {
-          title: 'TypeScript',
+          title: "TypeScript",
           icon: SiTypescript,
-          level: 'Advanced'
+          level: "Advanced",
         },
         {
-          title: 'Python',
+          title: "Python",
           icon: FaPython,
-          level: 'Advanced'
+          level: "Advanced",
         },
         {
-          title: 'C++',
+          title: "C++",
           icon: SiCplusplus,
-          level: 'Intermediate'
+          level: "Intermediate",
         },
         {
-          title: 'JavaScript',
+          title: "JavaScript",
           icon: FaJs,
-          level: 'Intermediate'
+          level: "Intermediate",
         },
-      ]
+      ],
     },
     {
-      section: 'Frontend Dev',
+      section: "Frontend Dev",
       techStack: [
         {
-          title: 'Next.js',
+          title: "Next.js",
           icon: SiNextdotjs,
-          level: 'Advanced'
+          level: "Advanced",
         },
         {
-          title: 'Vite.js',
+          title: "Vite.js",
           icon: SiVite,
-          level: 'Advanced'
+          level: "Advanced",
         },
         {
-          title: 'React.js',
+          title: "React.js",
           icon: FaReact,
-          level: 'Intermediate'
+          level: "Intermediate",
         },
         {
-          title: 'Html',
+          title: "Html",
           icon: FaHtml5,
-          level: 'Advanced'
+          level: "Advanced",
         },
         {
-          title: 'Css',
+          title: "Css",
           icon: FaCss3,
-          level: 'Advanced'
+          level: "Advanced",
         },
-      ]
+      ],
     },
     {
-      section: 'DevOps & VCS',
+      section: "DevOps & VCS",
       techStack: [
         {
-          title: 'Github',
+          title: "Github",
           icon: SiGithub,
-          level: 'Intermediate'
+          level: "Intermediate",
         },
         {
-          title: 'Git',
+          title: "Git",
           icon: SiGit,
-          level: 'Intermediate'
+          level: "Intermediate",
         },
         {
-          title: 'Docker',
+          title: "Docker",
           icon: SiDocker,
-          level: 'Intermediate'
+          level: "Intermediate",
         },
         {
-          title: 'Kubernetes',
+          title: "Kubernetes",
           icon: SiKubernetes,
-          level: 'Beginner'
+          level: "Beginner",
         },
         {
-          title: 'GitHub Actions',
+          title: "GitHub Actions",
           icon: SiGithubactions,
-          level: 'Beginner'
+          level: "Beginner",
         },
-      ]
+      ],
     },
     {
-      section: 'Backend Dev',
+      section: "Backend Dev",
       techStack: [
         {
-          title: 'Node.js',
+          title: "Node.js",
           icon: FaNodeJs,
-          level: 'Intermediate'
+          level: "Intermediate",
         },
         {
-          title: 'Express.js',
+          title: "Express.js",
           icon: SiExpress,
-          level: 'Intermediate'
-        },{
-          title: 'FastApi',
+          level: "Intermediate",
+        },
+        {
+          title: "FastApi",
           icon: SiFastapi,
-          level: 'Intermediate'
+          level: "Intermediate",
         },
         {
-          title: 'Php',
+          title: "Php",
           icon: SiPhp,
-          level: 'Intermediate'
+          level: "Intermediate",
         },
-      ]
+      ],
     },
     {
-      section: 'Database',
+      section: "Database",
       techStack: [
         {
-          title: 'MongoDB',
+          title: "MongoDB",
           icon: SiMongodb,
-          level: 'Intermediate'
+          level: "Intermediate",
         },
         {
-          title: 'Sql',
+          title: "Sql",
           icon: SiSqlite,
-          level: 'Intermediate'
+          level: "Intermediate",
         },
         {
-          title: 'Appwrite',
+          title: "Appwrite",
           icon: SiAppwrite,
-          level: 'Intermediate'
+          level: "Intermediate",
         },
         {
-          title: 'PostgreSQL',
+          title: "PostgreSQL",
           icon: SiPostgresql,
-          level: 'Intermediate'
-        }
-      ]
+          level: "Intermediate",
+        },
+      ],
     },
     {
-      section: 'Deployment',
+      section: "Deployment",
       techStack: [
         {
-          title: 'Vercel',
+          title: "Vercel",
           icon: SiVercel,
-          level: 'Intermediate'
+          level: "Intermediate",
         },
         {
-          title: 'Github Pages',
+          title: "Github Pages",
           icon: SiGithubpages,
-          level: 'Intermediate'
+          level: "Intermediate",
         },
         {
-          title: 'Streamlit',
+          title: "Streamlit",
           icon: SiStreamlit,
-          level: 'Intermediate'
+          level: "Intermediate",
         },
-      ]
+      ],
     },
-  ]
-}
+  ],
+};
