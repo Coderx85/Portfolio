@@ -1,8 +1,8 @@
 "use client"
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import { ProjectData } from '@/constants'
 import { motion, useInView } from 'framer-motion'
-import ProjectCard from '@/components/project/ProjectCard'
+import ProjectCard from '@/app/work/_components/ProjectCard'
 
 const ProjectSection = () => {
     const ref = useRef(null);
