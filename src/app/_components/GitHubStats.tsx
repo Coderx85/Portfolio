@@ -18,6 +18,7 @@ export default function GitHubStats() {
           blockMargin={5}
           fontSize={10}
           colorScheme="dark"
+          year={new Date().getFullYear()}
         />
       </CardContent>
     </Card>
