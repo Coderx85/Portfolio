@@ -8,7 +8,6 @@ import ProfilePicPage from '@/components/ProfilePic';
 import Link from 'next/link';
 import { FlipWords } from '@/components/animation/Flipword';
 import { motion } from 'framer-motion';
-import GitHubCalendar from 'react-github-calendar'
 import GitHubStats from '@/components/GitHubStats';
 
 const HeroSection = () => {
@@ -64,15 +63,6 @@ const HeroSection = () => {
                             </Button>
                         </Link>
                     </div>
-                    {/* <div className='p-4 my-4 border-4 bg-accent/15 border-accent overflow-x-auto rounded-xl'>
-                        <GitHubCalendar 
-                            username={'Coderx85'}
-                            blockSize={8}
-                            blockMargin={4}
-                            fontSize={12}
-                            colorScheme={'dark'}
-                        />
-                    </div> */}
                     <GitHubStats />
                 </div>  
                 {/* Image Scetion */}

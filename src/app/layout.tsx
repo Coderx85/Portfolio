@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body className={font.className}>
         <ThemeProvider 
           attribute={"class"}
@@ -44,7 +44,7 @@ export default function RootLayout({
           <Analytics />
           <SpeedInsights />
         </ThemeProvider>
-      </body>
+        </body>
     </html>
   )
 }
