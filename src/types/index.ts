@@ -11,36 +11,20 @@ export interface NavlinksProps {
   title: string
 }
 
-export interface TechStackItemProps {
-  [key: string]: IconType;
-}
-
-interface ChallengesProps {
-  title: string;
-  solution: string;
-}
-
-export interface ProjectProps{
-  id: number,
-  title: string,
-  description: string,
-  imgUrl: string,
-  gitUrl: string,
-  previewUrl: string,
-  techStack: TechStackItemProps,
-  challengesFaced: ChallengesProps[],
-  lessonsLearned: string[],
-}
-
 export interface IconProps {
   url: string;
   icon: string; 
 }
 
 export interface Tab {
-    active: boolean,
-    selectTab: React.MouseEventHandler<HTMLButtonElement>,
-    children: React.ReactNode
+  active: boolean,
+  selectTab: React.MouseEventHandler<HTMLButtonElement>,
+  children: React.ReactNode
+}
+
+export interface DataProps {
+  title: string;
+  description: string;
 }
 
 export interface AchievementProps {
@@ -50,44 +34,10 @@ export interface AchievementProps {
   prefix?: string
 }
 
-export interface ProjectTagProps {
-  tag: string,
-  name: string
-}
-
 export interface SocialLinksProps {
   name: string,
   url: string,
-  icon: React.ReactNode | string
+  icon: IconType | string
 }
 
-export interface ExpProps{
-  id: number;
-  title: string;
-  company: string;
-  duration: string;
-  description: string;
-  location?: string;
-  projects?: ExpProjectProps[];
-}
-
-export interface ExpProjectProps{
-  name: string;
-  description: string;
-  link: string;
-}
-
-export interface SkillProps{
-  title: string;
-  description: string;
-  items: {
-    section: string;
-    techStack: SkillItemProps[];
-  }[]
-}
-
-export interface SkillItemProps{
-  title: string;
-  icon: IconType;
-  level: 'Beginner' | 'Intermediate' | 'Advanced';
-}
+export * from "./resume"

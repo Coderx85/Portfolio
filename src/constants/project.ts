@@ -1,8 +1,6 @@
 import { SiAppwrite, SiMongodb, SiNextdotjs, SiPostgresql, SiPrisma, SiTailwindcss, SiTypescript, SiVercel } from "react-icons/si";
-import { ProjectProps } from "../types";
+import { ProjectProps } from "@/app/work/types";
 import { BsCloudDrizzle } from "react-icons/bs";
-import { GiGemini } from "react-icons/gi";
-import { CloudDrizzle } from "lucide-react";
 import { FiCloudDrizzle } from "react-icons/fi";
 
 // Project Data
