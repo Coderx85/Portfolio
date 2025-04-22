@@ -7,6 +7,7 @@ import Navbar from '@/components/menubar/Navbar';
 import { Toaster } from '@/components/ui/toaster';
 import PageTransition from '@/components/animation/PageTransition';
 import StairTransition from '@/components/animation/StairTransition';
+import { ThemeProvider } from '@/components/ThemeProvider';
 
 const font = JetBrains_Mono({ 
   subsets: ['latin'],
@@ -26,17 +27,24 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={font.className}>
-        <Navbar />
-        <StairTransition />
-        <PageTransition>
-          {children}
-        </PageTransition>
-        <Toaster/>
-        <Analytics />
-        <SpeedInsights />
-        </body>
+        <ThemeProvider 
+          attribute={"class"}
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          <StairTransition />
+          <PageTransition>
+            {children}
+          </PageTransition>
+          <Toaster/>
+          <Analytics />
+          <SpeedInsights />
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
