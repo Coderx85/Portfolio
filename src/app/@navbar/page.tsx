@@ -5,6 +5,7 @@ import MenuOverlay from "@/components/menubar/MenuOverlay";
 import { navLinks } from "@/constants";
 import { usePathname } from "next/navigation";
 import { FiCrosshair, FiMenu } from "react-icons/fi";
+import { Button } from "@react-email/components";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -19,19 +20,19 @@ const Navbar = () => {
         </Link>
         <div className="mobile-menu mt-8 block md:hidden">
           {!navbarOpen ? (
-            <button
+            <Button
               onClick={() => setNavbarOpen(true)}
               className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
             >
               <FiMenu className="h-5 w-5" />
-            </button>
+            </Button>
           ) : (
-            <button
+            <Button
               onClick={() => setNavbarOpen(false)}
               className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
             >
               <FiCrosshair className="h-5 w-5" />
-            </button>
+            </Button>
           )}
         </div>
         <div 
@@ -49,7 +50,7 @@ const Navbar = () => {
             ))}
         </div>
       </div>
-      {navbarOpen ? <MenuOverlay /> : null}
+      {navbarOpen ? <MenuOverlay setNavbarOpen={setNavbarOpen} /> : null}
     </nav>
   )
 }
