@@ -4,12 +4,16 @@ import Navlink from "@/components/menubar/Navlink"
 
 const links = navLinks
 
-const MenuOverlay = () => {
+interface MenuOverlayProps {
+  setNavbarOpen: (open: boolean) => void;
+}
+
+const MenuOverlay = ({ setNavbarOpen }: MenuOverlayProps) => {
   return (
     <ul className="flex flex-col items-center pt-20">  
         {links.map((link, index) => (
             <li key={index}>
-                <Navlink href={link.href} title={link.title} />
+                <Navlink href={link.href} title={link.title} setNavbarOpen={setNavbarOpen} />
             </li>
         ))}
     </ul>

@@ -2,13 +2,24 @@ import Link from 'next/link'
 import React from 'react'
 import { NavlinksProps } from '@/types'
 
-const Navlink = (link: NavlinksProps) => {
+interface NavlinkProps extends NavlinksProps {
+  setNavbarOpen?: (open: boolean) => void;
+}
+
+const Navlink = ({ href, title, setNavbarOpen }: NavlinkProps) => {
+  const handleClick = () => {
+    if (setNavbarOpen) {
+      setNavbarOpen(false);
+    }
+  };
+
   return (
     <Link
-    href={link.href}
-    className="block py-2 pl-3 pr-4 text-white hover:text-[#166466] hover:bg-[#166466] sm:text-xl rounded md:p-0 focus:bg-white focus:text-black"
+      href={href}
+      className="block py-2 pl-3 pr-4 text-white hover:text-[#166466] hover:bg-[#166466] sm:text-xl rounded md:p-0 focus:bg-white focus:text-black"
+      onClick={handleClick}
     >
-    {link.title}
+      {title}
     </Link>
   )
 }
