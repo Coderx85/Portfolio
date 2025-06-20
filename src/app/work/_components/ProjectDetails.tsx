@@ -4,7 +4,7 @@ import { ProjectProps } from "../types";
 import Image from "next/image";
 import Link from "next/link";
 import { FaTools, FaExclamationCircle, FaGithub } from "react-icons/fa";
-import { LucideView, SidebarClose, X } from "lucide-react";
+import { LucideView, X } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -29,19 +29,6 @@ const ProjectDetails = ({
     project;
   const projectImage = `https://opengraph.githubassets.com/1/${username}/${project.title}`;
   const projectImageAlt = `${title} project image`;
-  // const silde = [{
-  //   title: project.title,
-  //   button: "View Project",
-  //   src: projectImage,
-  // },{
-  //   title: project.title,
-  //   button: "View Project",
-  //   src: projectImage,
-  // },{
-  //   title: project.title,
-  //   button: "View Project",
-  //   src: projectImage,
-  // }]
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
@@ -71,7 +58,7 @@ const ProjectDetails = ({
               >
                 <Dialog.Panel className="relative bg-gradient-to-br my-2 from-slate-800 via-slate-900 to-slate-800 border-2 rounded-xl md:m-0 m-5 md:w-[1200px] max-h-[90vh] h-[90vh] md:h-fit overflow-y-auto transform p-6 text-left shadow-2xl transition-all flex flex-col gap-5">
                   <X
-                    className="absolute z-16 p-1.5 w-10 h-10 top-0 right-0 bg-white/25 hover:bg-black text-xl font-extrabold text-white hover:text-black hover:cursor-pointer"
+                    className="absolute z-16 p-1.5 w-10 h-10 top-0 right-0 text-xl font-extrabold text-white cursor-pointer"
                     onClick={closeModal}
                     stroke={"white"}
                     size={24}
@@ -102,7 +89,7 @@ const ProjectDetails = ({
                                 key={name}
                                 className="flex items-center animate-pulse bg-primary/25 max-w-max p-2 gap-2 rounded-xs"
                               >
-                                <Icon />
+                                <Icon className="text-primary"/>
                                 <span>{name}</span>
                               </div>
                             ),

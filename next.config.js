@@ -1,4 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+    "images":{
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'opengraph.githubassets.com',
+            }
+        ]
+    }
+}
 
 module.exports = nextConfig
