@@ -12,6 +12,7 @@ import {
   AccordionTrigger,
 } from "../../../components/ui/accordion";
 import { config } from "@/lib/config";
+import { getIconByName } from "@/utils/iconMapping";
 
 interface ProjectDetailsProps {
   project: ProjectProps;
@@ -81,18 +82,20 @@ const ProjectDetails = ({
                         <p className="text-xl font-bold">
                           <FaTools className="inline-block text-white mr-2" />{" "}
                           Technologies Used:
-                        </p>
-                        <div className="flex justify-stretch flex-wrap gap-2 text-white">
+                        </p>                        <div className="flex justify-stretch flex-wrap gap-2 text-white">
                           {Object.entries(techStack).map(
-                            ([name, Icon]) => (
+                            ([name, iconName]) => {
+                              const Icon = getIconByName(iconName);
+                              return (
                               <div
                                 key={name}
                                 className="flex items-center animate-pulse bg-primary/25 max-w-max p-2 gap-2 rounded-xs"
                               >
-                                <Icon className="text-primary"/>
+                                {Icon && <Icon className="text-primary"/>}
                                 <span>{name}</span>
                               </div>
-                            ),
+                              );
+                            },
                           )}
                         </div>
                       </div>

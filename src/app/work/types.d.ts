@@ -1,5 +1,3 @@
-import { IconType } from "react-icons/lib";
-
 export interface ProjectProps{
   id: number,
   title: string,
@@ -18,5 +16,5 @@ interface ChallengesProps {
 }
 
 export interface TechStackItemProps {
-  [key: string]: IconType;
+  [key: string]: string;
 }
