@@ -14,10 +14,9 @@ import { useRouter } from "next/navigation";
 const HeroSection = () => {
   const { username, description, name } = config;
 	const router = useRouter()
-
   useEffect(() => {
     window.document.title = `${name} | Portfolio`;
-  }), []
+  }, [])
 
   return (
     <motion.section

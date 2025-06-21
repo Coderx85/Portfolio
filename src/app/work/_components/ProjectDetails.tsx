@@ -78,11 +78,11 @@ const ProjectDetails = ({
                       </div>
 
                       {/* Tech Stack */}
-                      <div className="hidden md:block mt-3">
-                        <p className="text-xl font-bold">
+                      <div className="hidden md:block mt-3">                        <p className="text-xl font-bold">
                           <FaTools className="inline-block text-white mr-2" />{" "}
                           Technologies Used:
-                        </p>                        <div className="flex justify-stretch flex-wrap gap-2 text-white">
+                        </p>
+                        <div className="flex justify-stretch flex-wrap gap-2 text-white">
                           {Object.entries(techStack).map(
                             ([name, iconName]) => {
                               const Icon = getIconByName(iconName);

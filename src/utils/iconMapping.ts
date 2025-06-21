@@ -18,26 +18,26 @@ import { FaShieldAlt } from "react-icons/fa";
 // Icon mapping object
 export const iconMap: Record<string, IconType> = {
   // React Icons - Si (Simple Icons)
-  SiAppwrite: SiAppwrite,
-  SiClerk: SiClerk,
-  SiMongodb: SiMongodb,
-  SiNextdotjs: SiNextdotjs,
-  SiPostgresql: SiPostgresql,
-  SiPrisma: SiPrisma,
-  SiReact: SiReact,
-  SiTailwindcss: SiTailwindcss,
-  SiTypescript: SiTypescript,
-  SiVercel: SiVercel,
+  SiAppwrite,
+  SiClerk,
+  SiMongodb,
+  SiNextdotjs,
+  SiPostgresql,
+  SiPrisma,
+  SiReact,
+  SiTailwindcss,
+  SiTypescript,
+  SiVercel,
   
   // Bootstrap Icons
-  BsCloudDrizzle: BsCloudDrizzle,
-  BsFileImage: BsFileImage,
+  BsCloudDrizzle,
+  BsFileImage,
   
   // Feather Icons
-  FiCloudDrizzle: FiCloudDrizzle,
+  FiCloudDrizzle,
   
   // Font Awesome Icons
-  FaShieldAlt: FaShieldAlt,
+  FaShieldAlt,
 };
 
 // Helper function to get icon component by name
