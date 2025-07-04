@@ -1,0 +1,33 @@
+{
+  "rules": {
+    "no-unused-vars": "error"
+  },
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.ts",
+        "**/*.tsx"
+      ],
+      "rules": {
+        "@typescript-eslint/no-unused-vars": "error",
+        "@typescript-eslint/no-explicit-any": "off",
+        "no-console": "warn"
+      }
+    }
+  ],
+  "plugins": [
+    "nextjs",
+    "react",
+    "typescript",
+    "jsx-a11y",
+    "import",
+    "eslint",
+    "node",
+    "promise"
+  ],
+  "ignorePatterns": ["node_modules", ".next", "**/*.config.**/*"]
+}
