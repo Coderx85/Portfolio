@@ -11,10 +11,9 @@ import {
   Text,
   Row,
   Column,
-  Heading
+  Heading,
+  Tailwind
 } from "@react-email/components";
-
-import { Tailwind } from '@react-email/components';
 
 // Define the type for the props that the Email component will receive
 type EmailProps = {

@@ -5,9 +5,9 @@ import MenuOverlay from "@/components/menubar/MenuOverlay";
 import { navLinks } from "@/constants";
 import { usePathname } from "next/navigation";
 import { FiCrosshair, FiMenu } from "react-icons/fi";
-import { Button } from "@react-email/components";
+import { Button } from "@/components/ui/button";
 
-const Navbar = () => {
+const DefaultNavbarPage = () => {
   const pathname = usePathname();
   const [navbarOpen, setNavbarOpen] = useState(false)
 
@@ -55,4 +55,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar;
+export default DefaultNavbarPage;
