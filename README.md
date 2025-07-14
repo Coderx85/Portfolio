@@ -35,6 +35,8 @@ A modern, animated portfolio website built with Next.js 14, React 18, and TypeSc
 
 ## 🚀 Quick Start
 
+### Standard Setup
+
 1. **Clone & Install**
 ```bash
 git clone https://github.com/Coderx85/portfolio.git
@@ -60,6 +62,22 @@ Visit [http://localhost:3000](http://localhost:3000)
 npm run build
 npm start
 ```
+
+### Docker Setup
+
+You can also run this portfolio using Docker:
+
+```bash
+# Build Docker image
+docker build -t portfolio .
+
+# Run Docker container
+docker run -p 3000:3000 -e RESEND_API_KEY=your_resend_api_key portfolio
+```
+
+Visit [http://localhost:3000](http://localhost:3000)
+
+For detailed Docker instructions, see [README.docker.md](README.docker.md).
 
 ## 📄 License
 
