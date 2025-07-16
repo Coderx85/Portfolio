@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portfolio-deployment
+  namespace: portfolio
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: portfolio
+  template:
+    metadata:
+      labels:
+        app: portfolio
+    spec:
+      containers:
+      - name: portfolio
+        image: coderx85/portfolio:latest
+        ports:
+        - containerPort: 3000
+        resources:
+          limits:
+            cpu: 500m
+            memory: 512Mi
+          requests:
+            cpu: 200m
+            memory: 256Mi
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 10
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 10

@@ -1,195 +1,116 @@
-# Docker Guide for Portfolio Website
+# Architecture & Containerization Guide for Portfolio Website
 
-This guide explains how to containerize and run the portfolio website using Docker, with detailed explanations of each step in the Dockerfile.
+This document describes the architecture of the Next.js portfolio application and how Docker and Kubernetes are orchestrated to build, run, and scale it.
 
-## Prerequisites
+## Table of Contents
+1. [Architecture Overview](#architecture-overview)
+2. [Docker Multi-Stage Build](#docker-multi-stage-build)
+3. [Kubernetes Manifests](#kubernetes-manifests)
+4. [Local Debugging with Docker](#local-debugging-with-docker)
+5. [Deploying to Kubernetes](#deploying-to-kubernetes)
+6. [Environment Variables](#environment-variables)
+7. [Troubleshooting](#troubleshooting)
+8. [Support](#support)
 
-- [Docker](https://www.docker.com/get-started) installed on your machine
-- [Git](https://git-scm.com/downloads) for cloning the repository
+## Architecture Overview
+The portfolio application is a Next.js 14 project (App Router, TypeScript, React 18) styled with TailwindCSS and animated via Framer Motion and Radix UI. At build time, Next.js outputs:
+- A standalone server bundle (`.next/standalone`)
+- Static assets (`.next/static`, `public`)
 
-## Understanding the Dockerfile
+At runtime, a minimal Node.js container serves the application on port 3000.
 
-The Dockerfile uses a multi-stage build process to create an optimized container image. Let's break down each section:
+In Kubernetes, traffic flows as:
+```
+Client → Ingress → Service → Deployment → Pod (Node.js + Next.js)
+```
 
-### Stage 1: Builder
+## Docker Multi-Stage Build
+To optimize image size and security, the Dockerfile uses two stages:
 
+### 1. Builder Stage
 ```dockerfile
 FROM node:24-slim AS builder
-
-# Set the working directory
 WORKDIR /app
-
-# Copy package.json and pnpm-lock.yaml
-COPY package.json .
-
-# Install Node.js dependencies
+COPY package.json pnpm-lock.yaml* ./
 RUN npm install --legacy-peer-deps
-
-# Copy the rest of the application code
 COPY . .
-
-# Build the Next.js application
 RUN npm run build
 ```
+- Installs dependencies and builds the Next.js application into a standalone server bundle.
 
-**Explanation:**
-1. **`FROM node:24-slim AS builder`**: Uses the Node.js 24 slim image as the base for our build stage, named "builder"
-2. **`WORKDIR /app`**: Sets the working directory inside the container to `/app`
-3. **`COPY package.json .`**: Copies only the package.json file first (to leverage Docker's layer caching for dependencies)
-4. **`RUN npm install --legacy-peer-deps`**: Installs dependencies with the `--legacy-peer-deps` flag to handle dependency conflicts
-5. **`COPY . .`**: Copies all remaining project files into the container
-6. **`RUN npm run build`**: Runs the Next.js build process, creating optimized production files
-
-### Stage 2: Runner
-
+### 2. Runner Stage
 ```dockerfile
 FROM node:24-slim AS runner
-
-# Set the working directory
 WORKDIR /app
-
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
-COPY --from=builder /app/package.json ./
 COPY --from=builder /app/public ./public
-
-# Environment variable for API key
 ENV RESEND_API_KEY=
-
-# Expose the port the app runs on
-EXPOSE 3000 
-
-# Start the Next.js application
+EXPOSE 3000
 CMD ["node", "server.js"]
 ```
+- Copies only the production bundle and static assets into a fresh image.
+- Defines a default environment variable for the Resend API key.
+- Exposes port 3000 and launches the standalone Next.js server.
 
-**Explanation:**
-1. **`FROM node:24-slim AS runner`**: Creates a fresh container using the Node.js 24 slim image
-2. **`WORKDIR /app`**: Sets the working directory inside the container
-3. **Copy statements**: 
-   - **`COPY --from=builder /app/.next/standalone ./`**: Copies the standalone Next.js build
-   - **`COPY --from=builder /app/.next/static ./.next/static`**: Copies static assets
-   - **`COPY --from=builder /app/package.json ./`**: Copies package.json for reference
-   - **`COPY --from=builder /app/public ./public`**: Copies public assets like images
-4. **`ENV RESEND_API_KEY=`**: Defines an environment variable for the Resend API key (empty by default)
-5. **`EXPOSE 3000`**: Informs Docker that the container listens on port 3000
-6. **`CMD ["node", "server.js"]`**: Specifies the command to run when the container starts
+## Kubernetes Manifests
+All Kubernetes manifests are stored in the `k8s/` directory:
+- **deployment.yml**: Defines a Deployment with 3 replicas, CPU/memory requests and limits, and health probes (`livenessProbe`, `readinessProbe`).
+- **service.yml**: Creates a ClusterIP Service exposing port 80, forwarding to container port 3000.
+- **ingress.yml**: Configures an NGINX Ingress to route `portfolio.local` host traffic to the Service.
 
-## Benefits of Multi-Stage Builds
-
-This multi-stage build approach provides several advantages:
-
-1. **Smaller final image size**: The final image only contains what's needed to run the application
-2. **Improved security**: Build tools and development dependencies aren't included in the final image
-3. **Faster deployment**: Smaller images are faster to download and deploy
-
-## Step-by-Step Guide
-
-### 1. Clone the Repository
-
+Apply all manifests:
 ```bash
-git clone https://github.com/Priyanshu085/portfolio.git
-cd portfolio
+kubectl apply -f k8s/
 ```
 
-### 2. Build the Docker Image
-
-```bash
-docker build -t portfolio .
+## Local Debugging with Docker
+Build and run the container locally for development:
+```pwsh
+docker build -t portfolio:local .
+docker run --rm -p 3000:3000 `
+  -e RESEND_API_KEY=$env:RESEND_API_KEY `
+  portfolio:local
 ```
+Browse http://localhost:3000 to verify functionality.
 
-This builds the Docker image following the instructions in the Dockerfile.
+## Deploying to Kubernetes
+1. Build, tag, and push your image:
+   ```bash
+   docker build -t portfolio:prod .
+   docker tag portfolio:prod yourrepo/portfolio:latest
+   docker push yourrepo/portfolio:latest
+   ```
 
-### 3. Run the Container
-
-```bash
-docker run -p 3000:3000 -e RESEND_API_KEY=your_resend_api_key portfolio
-```
-
-Parameters explained:
-- **`-p 3000:3000`**: Maps port 3000 from the container to port 3000 on your host
-- **`-e RESEND_API_KEY=your_resend_api_key`**: Sets the environment variable for the contact form
-- **`portfolio`**: The name of the image to run
-
-### 4. Access the Website
-
-Once running, access the portfolio at:
-[http://localhost:3000](http://localhost:3000)
+2. Update `image:` in `k8s/deployment.yml`:
+   ```yaml
+   containers:
+     - name: portfolio
+       image: yourrepo/portfolio:latest
+   ```
+3. Apply or update manifests:
+   ```bash
+   kubectl apply -f k8s/
+   ```
 
 ## Environment Variables
+| Variable       | Description                          | Required |
+|----------------|--------------------------------------|----------|
+| RESEND_API_KEY | API key for Resend email service     | Yes      |
 
-The application requires the following environment variables:
-
-| Variable | Description | Required |
-|----------|-------------|----------|
-| RESEND_API_KEY | API key for the Resend email service | Yes |
-
-You can provide environment variables in several ways:
-
-1. **Directly in the run command**:
-   ```bash
-   docker run -p 3000:3000 -e RESEND_API_KEY=your_key portfolio
-   ```
-
-2. **Using an env file**:
-   ```bash
-   # Create a .env file
-   echo "RESEND_API_KEY=your_key" > .env
-   
-   # Run with the env file
-   docker run -p 3000:3000 --env-file .env portfolio
-   ```
-
-## Optimizing the Docker Image
-
-To further optimize the Docker image:
-
-1. **Use .dockerignore** to exclude unnecessary files:
-   ```
-   node_modules
-   .git
-   .github
-   .next
-   README.md
-   ```
-
-2. **Minimize layers** by combining related RUN commands:
-   ```dockerfile
-   RUN npm install --legacy-peer-deps && npm run build
-   ```
-
-3. **Consider using Alpine** for an even smaller base image:
-   ```dockerfile
-   FROM node:24-alpine AS builder
-   ```
+Override at runtime in Docker or via Kubernetes Secrets/ConfigMaps.
 
 ## Troubleshooting
+**Container exits immediately**
+- Inspect logs: `docker logs <container-id>`
+- Verify `RESEND_API_KEY` is set correctly
 
-### Common Issues
+**Port conflicts**
+- Map to a different host port: `-p 8080:3000`
 
-1. **Container exits immediately**:
-   - Check logs: `docker logs <container_id>`
-   - Verify environment variables are correctly set
-
-2. **Port conflicts**:
-   - Map to a different host port: `docker run -p 8080:3000 portfolio`
-
-3. **Build failures**:
-   - Ensure Docker has enough resources allocated
-   - Try building with `--no-cache`: `docker build --no-cache -t portfolio .`
-
-### Debugging
-
-For debugging inside the container:
-
-```bash
-# Start container with interactive shell
-docker run -it portfolio /bin/bash
-
-# Or connect to a running container
-docker exec -it <container_id> /bin/bash
-```
+**Ingress routing fails**
+- Ensure `portfolio.local` is added to your `/etc/hosts` or DNS
+- Check Ingress details: `kubectl describe ingress portfolio-ingress`
 
 ## Support
-
-For issues related to Docker setup, please create an issue in the GitHub repository or contact the maintainer at [abpriyanshu085@gmail.com](mailto:abpriyanshu085@gmail.com).
+If you encounter issues with containerization or Kubernetes deployment, please open an issue at the [GitHub repository](https://github.com/Coderx85/portfolio) or contact the maintainer at <abpriyanshu085@gmail.com>.
