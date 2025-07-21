@@ -5,7 +5,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
 export default function GitHubStats() {
   return (
-    <Card className="my-4 border-4 bg-accent/15 border-accent overflow-x-auto rounded-xl">
+    <Card className="my-4 border-4 bg-gradient-to-br from-black/35 to-black/50 border-accent overflow-x-auto rounded-xl">
       <CardHeader>
         <CardTitle className="text-md font-bold text-center">
           GitHub Contributions

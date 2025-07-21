@@ -29,7 +29,7 @@ const achievementsList: AchievementProps[] = [
 
 const AchievementsSection = () => {
   return (
-    <section className="pt-4 pb-12 xl:pt-24 xl:pb-0">
+    <section className="pt-4 pb-12 xl:pt-16 xl:pb-0">
       <div className="primary-bd container mx-auto">
         <div className="flex flex-wrap gap-6 max-w-[80vw] mx-auto xl:max-w-none">
           {achievementsList.map((achievement, index) => {

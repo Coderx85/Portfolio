@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import type { Metadata } from 'next'
 import { Dialog, Transition } from "@headlessui/react";
 import { ProjectProps } from "../types";
 import Image from "next/image";
@@ -18,6 +19,32 @@ interface ProjectDetailsProps {
   project: ProjectProps;
   isOpen: boolean;
   closeModal: () => void;
+}
+
+export async function generateMetadata({ project }: { project: ProjectProps }): Promise<Metadata> {
+  return {
+    title: project.title,
+    description: project.description,
+    openGraph: {
+      title: project.title,
+      description: project.description,
+      images: [
+        {
+          url: `https://opengraph.githubassets.com/1/Coderx85/${project.title}`,
+          width: 1200,
+          height: 630,
+          alt: `${project.title} project image`,
+        },
+      ],
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: project.title,
+      description: project.description,
+      images: [`https://opengraph.githubassets.com/1/Coderx85/${project.title}`],
+    },
+  }
 }
 
 const ProjectDetails = ({
@@ -74,7 +101,7 @@ const ProjectDetails = ({
                         </h2>
                       </div>
                       <div className="relative border-4 border-accent h-72 bg-transparent bg-no-repeat bg-cover rounded-lg overflow-hidden">
-                        <Image src={projectImage} alt={projectImageAlt} fill />
+                        <Image src={projectImage} alt={projectImageAlt} fill loading="lazy" />
                       </div>
 
                       {/* Tech Stack */}

@@ -25,9 +25,9 @@ const HeroSection = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.5, ease: "easeIn" },
       }}
-      className="h-full"
+      className="min-h-[calc(100vh-100px)] bg-gradient-to-b from-zic-900 via-slate-800/25 to-white/5"
     >
-      <div className="px-20 mx-auto h-full">
+      <div className="px-20 pt-10 mx-auto h-full" >
         <div className="flex xl:flex-row flex-col items-center sm:px-5 justify-between">
           {/* Text Section */}
           <div className="text-center xl:text-left order-2 xl:order-none">
