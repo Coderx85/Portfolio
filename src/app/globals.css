@@ -1,64 +1,147 @@
-@tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+@import "tailwindcss";
 
-  @layer base {
-    :root {
-      --background: 222.2 84% 4.9%;
-      --foreground: 210 40% 98%;
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 960px;
+  --breakpoint-xl: 1200px;
 
-      --card: 222.2 84% 4.9%;
-      --card-foreground: 210 40% 98%;
+  --font-*: initial;
+  --font-primary: var(--font-primary);
 
-      --popover: 222.2 84% 4.9%;
-      --popover-foreground: 210 40% 98%;
+  --color-primary: #0f172a;
+  --color-primary-foreground: hsl(var(--primary-foreground));
 
-      --primary: 210 40% 98%;
-      --primary-foreground: 222.2 47.4% 11.2%;
+  --color-accent: #166466;
+  --color-accent-foreground: hsl(var(--accent-foreground));
 
-      --secondary: 217.2 32.6% 17.5%;
-      --secondary-foreground: 210 40% 98%;
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
 
-      --muted: 217.2 32.6% 17.5%;
-      --muted-foreground: 215 20.2% 65.1%;
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
 
-      --accent: 217.2 32.6% 17.5%;
-      --accent-foreground: 210 40% 98%;
-
-      --destructive: 0 62.8% 30.6%;
-      --destructive-foreground: 210 40% 98%;
-
-      --border: 217.2 32.6% 17.5%;
-      --input: 217.2 32.6% 17.5%;
-      --ring: 212.7 26.8% 83.9%;
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
     }
   }
-
-  @layer base {
-    * {
-      @apply text-white transition-all duration-300 ;
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
     }
-    body {
-      @apply  font-primary bg-zinc-950 text-white;
-    }
-
-    h1{
-      @apply text-[48px] xl:text-[80px] leading-[1.1] font-semibold;
-    }
-
-    h2{
-      @apply text-[36px] xl:text-[48px] leading-[1.1] font-semibold;
-    }
-
-    h3{
-      @apply text-[20px] xl:text-[24sspx] leading-[1.1] font-semibold;
-    }
-    
-    .text-outline{
-      -webkit-text-stroke: 1px #ffffff;
-    }
-  
-    .text-outline-hover{
-      -webkit-text-stroke: 1px #166466;
+    to {
+      height: 0;
     }
   }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--color-gray-400);
+  }
+  button:not(:disabled), [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@layer base {
+  :root {
+    /* --background: linear-gradient(90deg, rgba(0, 36, 8, 0.72) 0%, rgba(9, 121, 87, 1) 35%, rgba(0, 212, 255, 1) 100%); */
+    --background: bg-gradient-to-b from-gray-400 via-zinc-500 to-zinc-600;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    color: #fff;
+    transition-property: all;
+    transition-duration: 300ms;
+  }
+  body {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    background-color: #18181b; /* bg-zinc-950 */
+    color: #fff;
+  }
+  h1 {
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: 600;
+  }
+  @media (min-width: 1280px) {
+    h1 {
+      font-size: 80px;
+    }
+  }
+  h2 {
+    font-size: 36px;
+    line-height: 1.1;
+    font-weight: 600;
+  }
+  @media (min-width: 1280px) {
+    h2 {
+      font-size: 48px;
+    }
+  }
+  h3 {
+    font-size: 20px;
+    line-height: 1.1;
+    font-weight: 600;
+  }
+  @media (min-width: 1280px) {
+    h3 {
+      font-size: 24px;
+    }
+  }
+  .text-outline {
+    -webkit-text-stroke: 1px #ffffff;
+  }
+  .text-outline-hover {
+    -webkit-text-stroke: 1px #166466;
+  }
+}
+
+
+/* .glassmorphism {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+   */

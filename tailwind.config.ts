@@ -6,22 +6,17 @@ const config = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-	],
+  ],
   prefix: "",
   theme: {
-    container: {
-      center: true,
-      padding: "15px",
-    },
+    // Container utility is now customized via @utility in CSS (see globals.css)
     screens: {
       sm: "640px",
       md: "768px",
       lg: "960px",
       xl: "1200px",
     },
-    fontFamily: {
-      primary: "var(--font-primary)",
-    },
+    // Font family is set via CSS variable in globals.css and JetBrains_Mono in layout.tsx
     extend: {
       colors: {
         primary: {
