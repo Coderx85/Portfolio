@@ -1,0 +1,16 @@
+{
+  "name": "Priyanshu Portfolio",
+  "short_name": "Portfolio",
+  "description": "Modern, animated portfolio website built with Next.js 14, React 18, and TypeScript.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#0ea5e9",
+  "icons": [
+    {
+      "src": "/images/hero.png",
+      "sizes": "1200x630",
+      "type": "image/png"
+    }
+  ]
+}
