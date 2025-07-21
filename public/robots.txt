@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://coderx85.vercel.app/sitemap.xml
