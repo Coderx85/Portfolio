@@ -4,6 +4,16 @@
 			"type": "stdio",
 			"command": "npx",
 			"args": ["@eslint/mcp@latest"]
+		},
+		"kubernetes": {
+			"command": "docker",
+			"args": [
+				"run",
+				"-i",
+				"--rm",
+				"mcp/kubernetes"
+			],
+			"type": "stdio"
 		}
 	}
 }
