@@ -43,7 +43,13 @@
 
 @utility container {
   margin-inline: auto;
-  padding-inline: 2rem;
+  padding-inline: 1rem;
+}
+
+@utility bg-project {
+  background-image: url('/bg.jpg');
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 @layer base {
@@ -65,8 +71,7 @@
 
 @layer base {
   :root {
-    /* --background: linear-gradient(90deg, rgba(0, 36, 8, 0.72) 0%, rgba(9, 121, 87, 1) 35%, rgba(0, 212, 255, 1) 100%); */
-    --background: bg-gradient-to-b from-gray-400 via-zinc-500 to-zinc-600;
+    --bg-image: url('/bg.jpg');
     --foreground: 210 40% 98%;
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
@@ -96,8 +101,9 @@
   }
   body {
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    background-color: #18181b; /* bg-zinc-950 */
+    /* background-color: #18181b; bg-zinc-950 */
     color: #fff;
+    background: var(--bg-image) no-repeat center center fixed;
   }
   h1 {
     font-size: 48px;

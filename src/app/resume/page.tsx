@@ -29,7 +29,7 @@ const ResumePage = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.5, ease: "easeIn" },
       }}
-      className="flex min-h-[80vh] justify-center py-12 xl:py-0 gap-[60px]"
+      className="flex min-h-[80vh] justify-center py-12 xl:py-0 gap-[60px] mt-10"
     >
       <div className="container mx-auto">
         <Tabs
