@@ -7,6 +7,7 @@ import { Toaster } from '@/components/ui/toaster';
 import PageTransition from '@/components/animation/PageTransition';
 import StairTransition from '@/components/animation/StairTransition';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import Navbar from '@/components/Navbar';
 
 const font = JetBrains_Mono({ 
   subsets: ['latin'],
@@ -76,10 +77,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  navbar
 }: {
-  children: React.ReactNode,
-  navbar: React.ReactNode
+  children: React.ReactNode
 }) {
   return (
     <html lang="en">
@@ -90,7 +89,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {navbar}
+          <Navbar />
           <StairTransition />
           <PageTransition>
             {children}
