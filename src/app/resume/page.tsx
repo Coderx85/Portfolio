@@ -53,10 +53,7 @@ const ResumePage = () => {
                 <h3 className="font-bold text-outline space-x-1 tracking-[5px] text-transparent text-4xl uppercase border-white border-b-2 pb-2">
                   {aboutData.title}
                 </h3>
-                <p className="max-w-[680px] break-all text-white/60 mx-auto xl:mx-0">
-                  {aboutData.description}
-                </p>
-                <ul className="grid grid-cols-1 xl:grid-cols-2 max-w-[850px] gap-y-4 gap-14 mx-auto xl:mx-0">
+                <ul className="grid grid-cols-1 xl:grid-cols-2 max-w-[850px] gap-y-4 gap-14 mx-auto xl:mx-0 bg-zinc-800 rounded-xl py-6 px-2">
                   {/* About Section items */}
                   {aboutData.info.map((item, index) => {
                     return (
@@ -81,9 +78,6 @@ const ResumePage = () => {
                 <h3 className="font-bold text-outline space-x-1 tracking-[5px] text-transparent text-4xl uppercase border-white border-b-2 pb-2">
                   {experienceData.title}
                 </h3>
-                {/* <p className='max-w-[680px] break-all text-white/60 mx-auto xl:mx-0'>
-                  {experienceData.description}
-                </p> */}
                 <ScrollArea className="h-[480px]">
                   {/* Experience items */}
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
@@ -91,14 +85,14 @@ const ResumePage = () => {
                       return (
                         <li
                           key={index}
-                          className="bg-slate-900 items-center py-6 px-10 rounded-xl flex flex-col justify-center lg:items-start gap-1"
+                          className="bg-zinc-800 items-center py-6 px-10 rounded-xl flex flex-col justify-center lg:items-start gap-1"
                         >
                           <span className="text-accent">{item.duration}</span>
                           <h4 className="text-xl max-w-[300px] min-h-[60px] text-center lg:text-left">
                             {item.title}
                           </h4>
                           <div className="flex items-center gap-3">
-                            <span className="w-[6px] h-[6px] rounded-full bg-accent-"></span>
+                            <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
                             <p className="text-white/60">{item.company}</p>
                           </div>
                           {/* <p>{item.description}</p> */}
@@ -126,7 +120,7 @@ const ResumePage = () => {
                       return (
                         <li
                           key={index}
-                          className="bg-slate-900 items-center py-6 px-10 rounded-xl flex flex-col justify-center lg:items-start gap-1"
+                          className="bg-zinc-800 items-center py-6 px-10 rounded-xl flex flex-col justify-center lg:items-start gap-1"
                         >
                           <span className="text-accent">{item.duration}</span>
                           <h4 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
@@ -155,7 +149,7 @@ const ResumePage = () => {
                   {skillsData.items.map((item, index) => {
                     return (
                       <li key={index}>
-                        <Card className="bg-slate-900">
+                        <Card className="bg-zinc-800">
                           <CardHeader>
                             <CardTitle className="mx-auto text-accent text-left">
                               {item.section}
@@ -191,20 +185,6 @@ const ResumePage = () => {
                     );
                   })}
                 </ul>
-                {/* 
-                        <TooltipProvider delayDuration={100}>
-                          <Tooltip>
-                            <TooltipTrigger className='w-full h-[150px] bg-accent rounded-xl flex justify-center items-center group'>
-                              <div className='text-6xl group-hover:text-accent transition-all duration-300'>
-                                {item.icon}                                
-                              </div>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                              <p>{item.title}</p>
-                            </TooltipContent>
-                          </Tooltip>
-                        </TooltipProvider>
-                      */}
               </div>
             </TabsContent>
           </div>

@@ -1,5 +1,6 @@
 import {
   SiAppwrite,
+  SiArgo,
   SiCplusplus,
   SiDocker,
   SiExpress,
@@ -8,13 +9,18 @@ import {
   SiGithub,
   SiGithubactions,
   SiGithubpages,
+  SiGrafana,
+  SiHelm,
   SiKubernetes,
   SiMongodb,
   SiNextdotjs,
   SiPhp,
   SiPostgresql,
+  SiPrometheus,
+  SiPulumi,
   SiSqlite,
   SiStreamlit,
+  SiTerraform,
   SiTypescript,
   SiVercel,
   SiVite,
@@ -26,6 +32,7 @@ import {
   FaNodeJs,
   FaPython,
   FaReact,
+  FaVectorSquare,
 } from "react-icons/fa";
 import { AbtData, EduProps, ExpProps, SkillProps } from "@/types";
 
@@ -139,9 +146,9 @@ export const skillsData: SkillProps = {
       section: "Languages",
       techStack: [
         {
-          title: "TypeScript",
-          icon: SiTypescript,
-          level: "Advanced",
+          title: "JavaScript",
+          icon: FaJs,
+          level: "Intermediate",
         },
         {
           title: "Python",
@@ -153,11 +160,6 @@ export const skillsData: SkillProps = {
           icon: SiCplusplus,
           level: "Intermediate",
         },
-        {
-          title: "JavaScript",
-          icon: FaJs,
-          level: "Intermediate",
-        },
       ],
     },
     {
@@ -167,16 +169,6 @@ export const skillsData: SkillProps = {
           title: "Next.js",
           icon: SiNextdotjs,
           level: "Advanced",
-        },
-        {
-          title: "Vite.js",
-          icon: SiVite,
-          level: "Advanced",
-        },
-        {
-          title: "React.js",
-          icon: FaReact,
-          level: "Intermediate",
         },
         {
           title: "Html",
@@ -191,13 +183,33 @@ export const skillsData: SkillProps = {
       ],
     },
     {
-      section: "DevOps & VCS",
+      section: "GitOps",
       techStack: [
         {
-          title: "Github",
-          icon: SiGithub,
+          title: "GitOps",
+          icon: SiArgo,
           level: "Intermediate",
         },
+        // {
+        //   title: "Terrafrom",
+        //   icon: SiTerraform,
+        //   level: "Beginner",
+        // },
+        {
+          title: "Pulumi",
+          icon: SiPulumi,
+          level: "Beginner",
+        },
+        {
+          title: "Helm",
+          icon: SiHelm,
+          level: "Beginner",
+        },
+      ],
+    },
+    {
+      section: "DevOps & VCS",
+      techStack: [
         {
           title: "Git",
           icon: SiGit,
@@ -213,9 +225,19 @@ export const skillsData: SkillProps = {
           icon: SiKubernetes,
           level: "Beginner",
         },
+      ],
+    },
+    {
+      section: "Obs & Monitoring",
+      techStack: [
         {
-          title: "GitHub Actions",
-          icon: SiGithubactions,
+          title: "Grafana",
+          icon: SiGrafana,
+          level: "Beginner",
+        },
+        {
+          title: "Prometheus",
+          icon: SiPrometheus,
           level: "Beginner",
         },
       ],
@@ -226,11 +248,6 @@ export const skillsData: SkillProps = {
         {
           title: "Node.js",
           icon: FaNodeJs,
-          level: "Intermediate",
-        },
-        {
-          title: "Express.js",
-          icon: SiExpress,
           level: "Intermediate",
         },
         {
@@ -254,11 +271,6 @@ export const skillsData: SkillProps = {
           level: "Intermediate",
         },
         {
-          title: "Sql",
-          icon: SiSqlite,
-          level: "Intermediate",
-        },
-        {
           title: "Appwrite",
           icon: SiAppwrite,
           level: "Intermediate",
@@ -266,26 +278,6 @@ export const skillsData: SkillProps = {
         {
           title: "PostgreSQL",
           icon: SiPostgresql,
-          level: "Intermediate",
-        },
-      ],
-    },
-    {
-      section: "Deployment",
-      techStack: [
-        {
-          title: "Vercel",
-          icon: SiVercel,
-          level: "Intermediate",
-        },
-        {
-          title: "Github Pages",
-          icon: SiGithubpages,
-          level: "Intermediate",
-        },
-        {
-          title: "Streamlit",
-          icon: SiStreamlit,
           level: "Intermediate",
         },
       ],
