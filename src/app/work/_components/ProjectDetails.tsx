@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
-import type { Metadata } from 'next'
+import type { Metadata } from "next";
 import { Dialog, Transition } from "@headlessui/react";
-import { ProjectProps } from "../types";
+import { TProject } from "@/types/resume";
 import Image from "next/image";
 import Link from "next/link";
 import { FaTools, FaExclamationCircle, FaGithub } from "react-icons/fa";
@@ -16,12 +16,16 @@ import { config } from "@/lib/config";
 import { getIconByName } from "@/utils/iconMapping";
 
 interface ProjectDetailsProps {
-  project: ProjectProps;
+  project: TProject;
   isOpen: boolean;
   closeModal: () => void;
 }
 
-export async function generateMetadata({ project }: { project: ProjectProps }): Promise<Metadata> {
+export async function generateMetadata({
+  project,
+}: {
+  project: TProject;
+}): Promise<Metadata> {
   return {
     title: project.title,
     description: project.description,
@@ -36,15 +40,17 @@ export async function generateMetadata({ project }: { project: ProjectProps }): 
           alt: `${project.title} project image`,
         },
       ],
-      type: 'article',
+      type: "article",
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title: project.title,
       description: project.description,
-      images: [`https://opengraph.githubassets.com/1/Coderx85/${project.title}`],
+      images: [
+        `https://opengraph.githubassets.com/1/Coderx85/${project.title}`,
+      ],
     },
-  }
+  };
 }
 
 const ProjectDetails = ({
@@ -101,29 +107,34 @@ const ProjectDetails = ({
                         </h2>
                       </div>
                       <div className="relative border-4 border-accent h-72 bg-transparent bg-no-repeat bg-cover rounded-lg overflow-hidden">
-                        <Image src={projectImage} alt={projectImageAlt} fill loading="lazy" />
+                        <Image
+                          src={projectImage}
+                          alt={projectImageAlt}
+                          fill
+                          loading="lazy"
+                        />
                       </div>
 
                       {/* Tech Stack */}
-                      <div className="hidden md:block mt-3">                        <p className="text-xl font-bold">
+                      <div className="hidden md:block mt-3">
+                        {" "}
+                        <p className="text-xl font-bold">
                           <FaTools className="inline-block text-white mr-2" />{" "}
                           Technologies Used:
                         </p>
                         <div className="flex justify-stretch flex-wrap gap-2 text-white">
-                          {Object.entries(techStack).map(
-                            ([name, iconName]) => {
-                              const Icon = getIconByName(iconName);
-                              return (
+                          {Object.entries(techStack).map(([name, iconName]) => {
+                            const Icon = getIconByName(iconName);
+                            return (
                               <div
                                 key={name}
                                 className="flex items-center animate-pulse bg-primary/25 max-w-max p-2 gap-2 rounded-xs"
                               >
-                                {Icon && <Icon className="text-primary"/>}
+                                {Icon && <Icon className="text-primary" />}
                                 <span>{name}</span>
                               </div>
-                              );
-                            },
-                          )}
+                            );
+                          })}
                         </div>
                       </div>
 

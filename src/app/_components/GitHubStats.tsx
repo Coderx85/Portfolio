@@ -1,6 +1,6 @@
 "use client";
 
-import GitHubCalendar from "react-github-calendar";
+import { GitHubCalendar } from "react-github-calendar";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
 export default function GitHubStats() {
