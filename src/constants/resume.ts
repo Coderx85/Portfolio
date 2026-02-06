@@ -43,7 +43,7 @@ export const educationData: EduProps = {
   items: [
     {
       title: "B-Tech Computer Science",
-      duration: "2021 - Present",
+      duration: "2021 - 2025",
       institute: "GCET, Noida",
     },
     {
@@ -99,6 +99,15 @@ export const experienceData: ExpProps = {
   description: "I have worked as a web developer at XYZ company for 2 years.",
   items: [
     {
+      id: 0,
+      title: "Full Stack Web Intern",
+      company: "Websmiths",
+      duration: "09/2023 - 11/2025",
+      description:
+        "Developed responsive web applications, collaborated with designers, and optimized performance, enhancing user experience.",
+      linkedin: "https://www.linkedin.com/company/websmiths",
+    },
+    {
       id: 1,
       title: "Frontend Web Intern",
       company: "JarGoan",
@@ -115,24 +124,6 @@ export const experienceData: ExpProps = {
       description:
         "Enhanced AI proficiency, crafted a chatbot increasing user interaction by 50%, and actively participated in AI sessions.",
       linkedin: "https://www.linkedin.com/company/Tublian",
-    },
-    {
-      id: 3,
-      title: "Open Source Contributor",
-      company: "Tublian",
-      duration: "09/2023 - 11/2023",
-      description:
-        "Outperformed 91% of users, engaged in AI challenges, and enhanced AI technology proficiency by 30%.",
-      linkedin: "https://www.linkedin.com/company/Tublian",
-    },
-    {
-      id: 4,
-      title: "Open Source Contributor",
-      company: "Hacktoberfest 2023",
-      duration: "09/2023 - 10/2023",
-      description:
-        "Contributed 4 PRs accepted in open source projects, collaborated with global developers, improving community engagement.",
-      linkedin: "https://www.linkedin.com/company/Hacktoberfest",
     },
   ],
 };

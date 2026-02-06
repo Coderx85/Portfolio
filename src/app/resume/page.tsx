@@ -16,6 +16,12 @@ import {
 import { motion } from "framer-motion";
 import React, { useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const ResumePage = () => {
   useEffect(() => {
@@ -80,22 +86,61 @@ const ResumePage = () => {
                 </h3>
                 <ScrollArea className="h-[480px]">
                   {/* Experience items */}
-                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                  <ul className="flex flex-col gap-[30px]">
                     {experienceData.items.map((item, index) => {
                       return (
                         <li
                           key={index}
-                          className="bg-zinc-800 items-center py-6 px-10 rounded-xl flex flex-col justify-center lg:items-start gap-1"
+                          className="bg-zinc-800 items-center py-2 px-3 rounded-3xl flex justify-center lg:items-start gap-1"
                         >
-                          <span className="text-accent">{item.duration}</span>
+                          {/* <span className="text-accent">{item.duration}</span>
                           <h4 className="text-xl max-w-[300px] min-h-[60px] text-center lg:text-left">
                             {item.title}
                           </h4>
                           <div className="flex items-center gap-3">
                             <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
                             <p className="text-white/60">{item.company}</p>
-                          </div>
-                          {/* <p>{item.description}</p> */}
+                          </div> */}
+                          <Accordion
+                            type="single"
+                            collapsible
+                            className="w-full"
+                          >
+                            <AccordionItem value={`item-${index}`}>
+                              <AccordionTrigger className="w-full text-left flex gap-1">
+                                <div className="flex items-center gap-3">
+                                  <p className="text-white/60">
+                                    {item.company}
+                                  </p>
+                                  {"|"}
+                                  <h4 className="text-xl max-w-[300px]">
+                                    {item.title}
+                                  </h4>
+                                </div>
+                              </AccordionTrigger>
+                              <AccordionContent>
+                                <p className="mt-4 text-white/80">
+                                  {item.description}
+                                </p>
+                                <div className="flex items-center gap-3">
+                                  <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                                  <span className="text-accent">
+                                    {item.duration}
+                                  </span>
+                                </div>
+                                {item.linkedin && (
+                                  <a
+                                    href={item.linkedin}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="mt-2 inline-block text-accent underline"
+                                  >
+                                    View Company LinkedIn
+                                  </a>
+                                )}
+                              </AccordionContent>
+                            </AccordionItem>
+                          </Accordion>
                         </li>
                       );
                     })}

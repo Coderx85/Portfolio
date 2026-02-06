@@ -40,4 +40,4 @@ export interface SocialLinksProps {
   icon: IconType | string;
 }
 
-export * from "./resume"
+export * from "./resume";

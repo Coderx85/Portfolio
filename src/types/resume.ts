@@ -1,6 +1,6 @@
 import { IconType } from "react-icons/lib";
 import { DataProps } from ".";
-type LEVEL = "Beginner" | "Intermediate" | "Advanced"; 
+type LEVEL = "Beginner" | "Intermediate" | "Advanced";
 
 export interface EduProps extends DataProps {
   items: {
@@ -38,3 +38,15 @@ export interface SkillProps extends DataProps {
     }[];
   }[];
 }
+
+export type TProject = {
+  id: number;
+  title: string;
+  description: string;
+  imgUrl: string;
+  gitUrl: string;
+  previewUrl: string;
+  techStack: Record<string, string>;
+  challengesFaced: { title: string; solution: string }[];
+  lessonsLearned: string[];
+};

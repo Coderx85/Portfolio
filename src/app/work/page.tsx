@@ -18,13 +18,15 @@ const ProjectSection = () => {
   };
 
   return (
-    <section className="container mt-5
-    ">
+    <section
+      className="container mt-5
+    "
+    >
       <h2 className="font-bold text-outline space-x-1 tracking-[5px] text-transparent text-5xl uppercase border-white border-b-2 pb-2 sm:mt-0 mt-10">
         My Projects
       </h2>
 
-      <div className="md:primary-bd md:border-4 rounded-2xl mt-5 p-10">
+      <div className="sm:border-0 border-2 rounded-2xl mt-5 p-10">
         <ul
           ref={ref}
           className="w-full rounded-xl grid md:grid-cols-2 gap-8 md:gap-12"

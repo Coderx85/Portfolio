@@ -13,10 +13,10 @@ import { config } from "@/lib/config";
 import { useRouter } from "next/navigation";
 const HeroSection = () => {
   const { username, description, name } = config;
-	const router = useRouter()
+  const router = useRouter();
   useEffect(() => {
     window.document.title = `${name} | Portfolio`;
-  }, [])
+  }, []);
 
   return (
     <motion.section
@@ -25,13 +25,13 @@ const HeroSection = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.5, ease: "easeIn" },
       }}
-      className="min-h-[calc(100vh-90px)] bg-project"
+      className="bg-project"
     >
-      <div className="px-20 pt-10 mx-auto h-full" >
+      <div className="px-20 pt-10 mx-auto h-full">
         <div className="flex xl:flex-row flex-col items-center sm:px-5 justify-between">
           {/* Text Section */}
           <div className="text-center xl:text-left order-2 xl:order-none">
-            <span className="text-lg my-4 xl:text-left">
+            <span className="text-lg my-4 xl:text-left text-center text-white/70 uppercase tracking-widest sm:hidden">
               Full Stack Developer | Software Engineer | Open Source Contributor
             </span>
             <h1 className="text-white text-4xl mb-4 sm:text-5xl lg:text-4xl text-extrabold">
@@ -42,7 +42,7 @@ const HeroSection = () => {
                 className="text-2xl/normal sm:text-3xl/normal md:text-4xl/normal lg:text-5xl/normal"
               />
             </h1>
-            <p className="max-w-[500px] pt-2 my-4 md:mx-0 mx-auto text-white/80">
+            <p className="max-w-[500px] pt-2 my-4 md:mx-0 mx-auto text-white/80 sm:hidden">
               {description}
             </p>
             <div className="flex flex-col xl:flex-row gap-8 items-center">
@@ -60,14 +60,15 @@ const HeroSection = () => {
                   Checkout My CV <FiDownload className="text-sm text-accent" />
                 </Button>
               </Link>
-								<Button
-									variant="outline"
-									size="lg"
-									onClick={() => router.push('/contact/#contact')}
-									className="uppercase items-center gap-2 text-white bg-accent border-accent rounded-full hover:bg-transparent transition-all duration-300 ease-in-out "
-								>
-									Hire Me
-								</Button>
+              <Button
+                variant="outline"
+                size="lg"
+                aria-label="Hire Me"
+                onClick={() => router.push("/contact/#contact")}
+                className="uppercase items-center gap-2 text-white bg-accent border-accent rounded-full hover:bg-transparent transition-all duration-300 ease-in-out "
+              >
+                Hire Me
+              </Button>
             </div>
             <GitHubStats />
           </div>
