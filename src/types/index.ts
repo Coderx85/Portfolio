@@ -6,7 +6,7 @@ export interface DataMenuProps {
   content: React.ReactNode;
 }
 
-export interface NavlinksProps {
+export interface INavlinks {
   href: string;
   title: string;
 }

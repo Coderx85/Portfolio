@@ -1,6 +1,6 @@
-import { NavlinksProps } from '../types'
+import { INavlinks } from "../types";
 
-export const navLinks: NavlinksProps[] = [
+export const navLinks: INavlinks[] = [
   { title: "Home", href: "/" },
   { title: "Resume", href: "/resume" },
   { title: "Work", href: "/work" },
