@@ -55,7 +55,8 @@
     "sharp": "^0.34.5",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.18",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "use-scramble": "^2.2.15"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.3",
