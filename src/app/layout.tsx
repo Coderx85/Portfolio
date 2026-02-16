@@ -20,12 +20,12 @@ export const metadata: Metadata = {
     template: "%s | Priyanshu",
   },
   description:
-    "Modern, animated portfolio website built with Next.js 14, React 18, and TypeScript. Showcasing projects, skills, and contact info.",
+    "Modern, animated portfolio website built with Next.js, React, and TypeScript. Showcasing projects, skills, and contact info.",
   metadataBase: new URL("https://coderx85.vercel.app"),
   openGraph: {
     title: "Priyanshu | Portfolio",
     description:
-      "Modern, animated portfolio website built with Next.js 14, React 18, and TypeScript.",
+      "Modern, animated portfolio website built with Next.js, React, and TypeScript.",
     url: "https://coderx85.vercel.app",
     siteName: "Priyanshu Portfolio",
     images: [
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Priyanshu | Portfolio",
     description:
-      "Modern, animated portfolio website built with Next.js 14, React 18, and TypeScript.",
+      "Modern, animated portfolio website built with Next.js, React, and TypeScript.",
     creator: "@Coderx85",
     images: ["/images/hero.png"],
   },
@@ -90,10 +90,17 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <section className="min-h-screen">
+          {/* Ambient Background Orbs */}
+          <div className="orb orb-1" aria-hidden="true" />
+          <div className="orb orb-2" aria-hidden="true" />
+          <div className="orb orb-3" aria-hidden="true" />
+
+          <section className="min-h-screen flex flex-col">
             <Navbar />
             <StairTransition />
-            <PageTransition>{children}</PageTransition>
+            <PageTransition>
+              <main className="flex-1">{children}</main>
+            </PageTransition>
           </section>
           <Toaster />
         </ThemeProvider>
