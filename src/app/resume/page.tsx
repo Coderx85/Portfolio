@@ -35,7 +35,7 @@ const ResumePage = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 2.4, duration: 0.5, ease: "easeIn" }}
-      className="flex flex-col min-h-[80vh] justify-center mx-30 py-12 xl:py-0 gap-10 mt-10 pb-16"
+      className="flex flex-col min-h-[80vh] justify-center mx-30 py-12 xl:py-0 gap-10 my-10"
     >
       {/* ── Mode toggle ── */}
       <ModeToggle mode={mode} setMode={setMode} />

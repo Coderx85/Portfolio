@@ -7,6 +7,7 @@ import { convertLevelIntoNumber } from "@/lib/convertLevel";
 import { Separator } from "@radix-ui/react-select";
 import { config, SocialLink } from "@/constants";
 import { FaBookOpen, FaUser } from "react-icons/fa6";
+import GitHubStats from "@/app/_components/GitHubStats";
 
 export default function WebView() {
   return (
@@ -176,6 +177,10 @@ export default function WebView() {
             </motion.p>
           </div>
         </div>
+      </motion.div>
+
+      <motion.div>
+        <GitHubStats />
       </motion.div>
 
       {/* Expertise */}
