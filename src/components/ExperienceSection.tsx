@@ -14,13 +14,18 @@ const EXP_COLORS = [
   "#fbbf24", // warm amber
 ] as const;
 
-const ExperienceSection = () => {
+type TMode = "half" | "full";
+
+const ExperienceSection = ({ mode = "half" }: { mode?: TMode }) => {
   const sortedItems = [...experienceData.items].sort(
     (a, b) => b.startDate.getTime() - a.startDate.getTime(),
   );
 
+  const visibleItems = mode === "half" ? sortedItems.slice(0, 2) : sortedItems;
+  const colorsArray = mode === "half" ? EXP_COLORS.slice(0, 2) : EXP_COLORS;
+
   return (
-    <div className="h-full my-40 flex flex-col gap-7">
+    <div className="h-full flex flex-col gap-7">
       {/* Section Header */}
       <div className="flex gap-3 justify-between text-accent">
         <div>
@@ -89,13 +94,13 @@ const ExperienceSection = () => {
         <div
           className="absolute left-[7px] top-2 bottom-2 w-[2px]"
           style={{
-            background: `linear-gradient(to bottom, ${EXP_COLORS.join(", ")}, transparent)`,
+            background: `linear-gradient(to bottom, ${colorsArray.join(", ")}, transparent)`,
           }}
         />
 
         <div className="flex flex-col gap-8">
-          {sortedItems.map((exp, index) => {
-            const color = EXP_COLORS[index % EXP_COLORS.length];
+          {visibleItems.map((exp, index) => {
+            const color = colorsArray[index % colorsArray.length];
             const dateRange = `${formatDate(exp.startDate)} – ${exp.isCurrent ? "Present" : formatDate(exp.endDate)}`;
             const duration = calcDuration(
               exp.startDate,

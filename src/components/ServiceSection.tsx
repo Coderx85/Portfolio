@@ -1,12 +1,14 @@
+"use client";
 import { SiWorkplace } from "react-icons/si";
 import { motion } from "framer-motion";
 import { services } from "@/constants";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
 
-type Props = "Home" | "Services";
+type Props = "full" | "half";
 
 export default function ServiceSection({ page }: { page: Props }) {
+  const servicesArray = page === "half" ? services.slice(0, 6) : services;
   return (
     <motion.div
       className="mx-auto h-full mt-10 flex flex-col gap-7"
@@ -34,7 +36,7 @@ export default function ServiceSection({ page }: { page: Props }) {
             Whats I Offer
           </motion.h2>
         </div>
-        {page === "Services" && (
+        {page === "full" && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -52,76 +54,41 @@ export default function ServiceSection({ page }: { page: Props }) {
         )}
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10 gap-7">
-        {page === "Home"
-          ? services.slice(0, 6).map((service, index) => (
-              <motion.div
-                key={index + service.title}
-                className="group relative flex flex-col gap-3 py-5 px-5 rounded-xl glass-card glass-card-hover overflow-hidden"
-                style={{
-                  borderLeft: `3px solid ${service.color}`,
-                  background: `linear-gradient(135deg, ${service.color}12 0%, transparent 60%), rgba(15, 23, 42, 0.5)`,
-                }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  delay: 2.4 + index * 0.1,
-                  duration: 0.4,
-                  ease: "easeOut",
-                }}
-              >
-                <motion.h3 className="flex items-center gap-4 text-white/90 font-semibold">
-                  <service.icon
-                    className="text-xl"
-                    style={{ fill: service.color }}
-                  />
-                  {service.title}
-                </motion.h3>
-                <p className="text-white/70 text-sm leading-relaxed">
-                  {service.description}
-                </p>
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-xl"
-                  style={{
-                    background: `radial-gradient(circle at top left, ${service.color}15, transparent 70%)`,
-                  }}
-                />
-              </motion.div>
-            ))
-          : services.map((service, index) => (
-              <motion.div
-                key={index + service.title}
-                className="group relative flex flex-col gap-3 py-5 px-5 rounded-xl glass-card glass-card-hover overflow-hidden"
-                style={{
-                  borderLeft: `3px solid ${service.color}`,
-                  background: `linear-gradient(135deg, ${service.color}12 0%, transparent 60%), rgba(15, 23, 42, 0.5)`,
-                }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  delay: 2.4 + index * 0.1,
-                  duration: 0.4,
-                  ease: "easeOut",
-                }}
-              >
-                <motion.h3 className="flex items-center gap-4 text-white/90 font-semibold">
-                  <service.icon
-                    className="text-xl"
-                    style={{ fill: service.color }}
-                  />
-                  {service.title}
-                </motion.h3>
-                <p className="text-white/70 text-sm leading-relaxed">
-                  {service.description}
-                </p>
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-xl"
-                  style={{
-                    background: `radial-gradient(circle at top left, ${service.color}15, transparent 70%)`,
-                  }}
-                />
-              </motion.div>
-            ))}
-        {page === "Home" && (
+        {servicesArray.map((service, index) => (
+          <motion.div
+            key={index + service.title}
+            className="group relative flex flex-col gap-3 py-5 px-5 rounded-xl glass-card glass-card-hover overflow-hidden"
+            style={{
+              borderLeft: `3px solid ${service.color}`,
+              background: `linear-gradient(135deg, ${service.color}12 0%, transparent 60%), rgba(15, 23, 42, 0.5)`,
+            }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 2.4 + index * 0.1,
+              duration: 0.4,
+              ease: "easeOut",
+            }}
+          >
+            <motion.h3 className="flex items-center gap-4 text-white/90 font-semibold">
+              <service.icon
+                className="text-xl"
+                style={{ fill: service.color }}
+              />
+              {service.title}
+            </motion.h3>
+            <p className="text-white/70 text-sm leading-relaxed">
+              {service.description}
+            </p>
+            <div
+              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-xl"
+              style={{
+                background: `radial-gradient(circle at top left, ${service.color}15, transparent 70%)`,
+              }}
+            />
+          </motion.div>
+        ))}
+        {page === "half" && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
