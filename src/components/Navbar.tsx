@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import MenuOverlay from "@/components/menubar/MenuOverlay";
 import { navLinks } from "@/constants";
 import { usePathname } from "next/navigation";
@@ -23,7 +23,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`py-4 text-white sticky top-0 z-50 transition-all duration-500 gradient-border-bottom ${
+      className={`py-4 text-white sticky top-0 transition-all duration-500 gradient-border-bottom ${
         scrolled
           ? "glass shadow-lg shadow-black/10"
           : "bg-black/10 backdrop-blur-sm"

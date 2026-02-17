@@ -1,24 +1,25 @@
 import { SocialLink } from "@/constants";
-import { SocialLinksProps } from "@/types";
+import { ISocialLinks } from "@/types";
 import Link from "next/link";
-import React from "react";
 
 const Social = () => {
   return (
-    <div className="flex gap-4 sm:gap-6 justify-center items-center flex-wrap mt-4 sm:mt-8">
-      {SocialLink.map((link: SocialLinksProps, index: number) => (
+    <div className="flex gap-3 sm:gap-4 justify-center items-center flex-wrap mt-4 sm:mt-6">
+      {SocialLink.map((link: ISocialLinks, index: number) => (
         <Link
           key={index}
-          className="flex items-center z-1 gap-2 rounded-full justify-center w-10 h-10 sm:w-12 sm:h-12 border-accent text-base border-2
-            hover:bg-accent hover:text-primary group hover:transition-all duration-500"
+          className="flex items-center z-1 gap-2 rounded-full justify-center w-10 h-10 sm:w-11 sm:h-11
+            border border-accent/40 bg-accent/5 text-base
+            hover:bg-accent hover:border-accent hover:shadow-lg hover:shadow-accent/20
+            hover:scale-110 active:scale-95
+            group transition-all duration-300 ease-out"
           href={link.url}
-          about="Social Link"
           target="_blank"
           aria-label={link.name}
           rel="noopener noreferrer"
-          title={link.url}
+          title={link.name}
         >
-          <span className="text-xl sm:text-2xl group-hover:scale-150">
+          <span className="text-lg sm:text-xl text-white/70 group-hover:text-white transition-colors duration-300">
             <link.icon />
           </span>
         </Link>

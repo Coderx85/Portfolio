@@ -1,6 +1,6 @@
 import { TTechStackLevel } from "@/types";
 
-export const covertLevelIntoNumber = (lvl: TTechStackLevel) => {
+export const convertLevelIntoNumber = (lvl: TTechStackLevel) => {
   switch (lvl) {
     case "Beginner":
       return 35;
