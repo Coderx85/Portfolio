@@ -18,26 +18,27 @@ const ProjectSection = () => {
   };
 
   return (
-    <section
-      className="container mt-5
-    "
-    >
-      <h2 className="font-bold text-outline space-x-1 tracking-[5px] text-transparent text-5xl uppercase border-white border-b-2 pb-2 sm:mt-0 mt-10">
-        My Projects
-      </h2>
+    <section className="container mt-5 pb-16">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 1 }}
+      >
+        <h2 className="font-bold gradient-text text-5xl uppercase sm:mt-0 mt-10 mb-2">
+          My Projects
+        </h2>
+        <div className="w-20 h-1 bg-gradient-to-r from-accent to-transparent rounded-full mb-8" />
+      </motion.div>
 
-      <div className="sm:border-0 border-2 rounded-2xl mt-5 p-10">
-        <ul
-          ref={ref}
-          className="w-full rounded-xl grid md:grid-cols-2 gap-8 md:gap-12"
-        >
+      <div className="mt-5">
+        <ul ref={ref} className="w-full grid md:grid-cols-2 gap-8 md:gap-10">
           {ProjectData.sort((a, b) => b.id - a.id).map((project, index) => (
             <motion.li
               key={project.id}
               variants={cardVariants}
               initial="initial"
               animate={isInView ? "animate" : "initial"}
-              transition={{ duration: 1, delay: index * 1.0 }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
             >
               <ProjectCard key={project.id} project={project} />
             </motion.li>

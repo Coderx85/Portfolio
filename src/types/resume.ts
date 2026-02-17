@@ -17,14 +17,18 @@ export interface AbtData extends DataProps {
   }[];
 }
 
-export interface ExpProps extends DataProps {
+export interface IExperience extends DataProps {
   items: {
     id: number;
     title: string;
     company: string;
-    duration: string;
-    description: string;
+    startDate: Date;
+    endDate: Date;
+    description: string[];
+    techStack?: SkillProps["items"][number]["techStack"];
+    companyUrl?: string;
     linkedin?: string;
+    isCurrent?: boolean;
   }[];
 }
 
@@ -39,6 +43,35 @@ export interface SkillProps extends DataProps {
   }[];
 }
 
+export type TTechStackLevel = "Advanced" | "Intermediate" | "Beginner";
+
+export interface DevIconProps extends React.SVGProps<SVGElement> {
+  size?: string | number;
+}
+
+export type TTech = {
+  title: string;
+  icon: React.FC<DevIconProps>;
+  level: TTechStackLevel;
+  color: string;
+};
+
+export type TCategory =
+  | "Languages"
+  | "Frontend"
+  | "Backend"
+  | "Database"
+  | "DevOps & Cloud"
+  | "Monitoring"
+  | "Infrastructure"
+  | "Frameworks";
+
+export type TTechStack = {
+  title: TCategory;
+  icon: IconType;
+  techStack: readonly TTech[];
+};
+
 export type TProject = {
   id: number;
   title: string;
@@ -50,3 +83,19 @@ export type TProject = {
   challengesFaced: { title: string; solution: string }[];
   lessonsLearned: string[];
 };
+
+export type PdfComponentsType = {
+  PDFViewer: React.ComponentType<{
+    width: string;
+    height: string;
+    showToolbar: boolean;
+    style: React.CSSProperties;
+    children: React.ReactNode;
+  }>;
+  PDFDownloadLink: React.ComponentType<{
+    document: React.ReactElement;
+    fileName: string;
+    children: (props: { loading: boolean }) => React.ReactNode;
+  }>;
+  ResumePDF: React.ComponentType;
+} | null;

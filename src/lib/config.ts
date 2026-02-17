@@ -1,2 +1,2 @@
-import { configData } from "@/constants/config";
+import { config as configData } from "@/constants/config";
 export const config = configData;
