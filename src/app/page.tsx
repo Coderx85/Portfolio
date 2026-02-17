@@ -123,9 +123,7 @@ const HeroSection = () => {
           </motion.div>
         </motion.div>
 
-        <ServiceSection page="Home" />
-
-        <Separator className="bg-gray-500 size-0.5 min-w-screen" />
+        <ServiceSection page="half" />
 
         <motion.section
           initial={{ opacity: 0 }}
