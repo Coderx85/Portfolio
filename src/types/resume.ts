@@ -24,7 +24,7 @@ export interface IExperience extends DataProps {
     company: string;
     startDate: Date;
     endDate: Date;
-    description: string;
+    description: string[];
     techStack?: SkillProps["items"][number]["techStack"];
     companyUrl?: string;
     linkedin?: string;
@@ -45,12 +45,13 @@ export interface SkillProps extends DataProps {
 
 export type TTechStackLevel = "Advanced" | "Intermediate" | "Beginner";
 
-interface Props extends React.SVGProps<SVGElement> {
+export interface DevIconProps extends React.SVGProps<SVGElement> {
   size?: string | number;
 }
+
 export type TTech = {
   title: string;
-  icon: React.FC<Props>;
+  icon: React.FC<DevIconProps>;
   level: TTechStackLevel;
   color: string;
 };
@@ -67,6 +68,7 @@ export type TCategory =
 
 export type TTechStack = {
   title: TCategory;
+  icon: IconType;
   techStack: readonly TTech[];
 };
 

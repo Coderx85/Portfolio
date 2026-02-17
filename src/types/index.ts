@@ -1,4 +1,4 @@
-import type { IconType } from "react-icons/lib";
+import { DevIconProps } from "./resume";
 
 export interface DataMenuProps {
   title: string;
@@ -34,10 +34,14 @@ export interface AchievementProps {
   prefix?: string;
 }
 
-export interface SocialLinksProps {
-  name: string;
+type TSocialLinksName = "Email" | "LinkedIn" | "Twitter" | "Github" | "Reddit";
+
+export interface ISocialLinks {
+  name: TSocialLinksName;
   url: string;
-  icon: IconType | string;
+  icon: React.FC<DevIconProps>;
+  username: string;
+  color: string;
 }
 
 export * from "./resume";

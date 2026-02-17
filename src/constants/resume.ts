@@ -39,7 +39,6 @@ import {
   IExperience,
   SkillProps,
   TCategory,
-  TTech,
   TTechStack,
 } from "@/types";
 import {
@@ -444,7 +443,7 @@ export const skillsData: SkillProps = {
 // ─── Color scheme for tech category cards ───
 export const categoryColors: Record<
   TCategory,
-  { text: string; border: string; bg: string; fill?: string }
+  { text: string; border: string; bg: string; fill: string }
 > = {
   Frontend: {
     text: "text-cyan-400",
