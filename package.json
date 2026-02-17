@@ -31,6 +31,7 @@
     "@react-email/preview": "^0.0.14",
     "@react-email/render": "^2.0.4",
     "@react-email/tailwind": "^2.0.4",
+    "@react-pdf/renderer": "^4.3.2",
     "@tailwindcss/postcss": "^4.1.18",
     "autoprefixer": "10.4.24",
     "babel-plugin-react-compiler": "19.1.0-rc.2",

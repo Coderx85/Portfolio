@@ -89,8 +89,9 @@ export default function WebView() {
                         delay: 0.3 + catIndex * 0.15,
                         duration: 0.4,
                       }}
-                      className={`text-lg font-semibold ${colors.text} tracking-wide`}
+                      className={`text-lg flex items-center gap-2 font-semibold ${colors.text} tracking-wide`}
                     >
+                      <category.icon className={`${colors.fill}`} />
                       {category.title}
                     </motion.h4>
                     <div className="flex gap-4 flex-wrap md:justify-start justify-center">
@@ -170,8 +171,9 @@ export default function WebView() {
                         delay: 0.3 + catIndex * 0.15,
                         duration: 0.4,
                       }}
-                      className={`text-lg font-semibold ${colors.text} tracking-wide`}
+                      className={`text-lg flex items-center gap-2 font-semibold ${colors.text} tracking-wide`}
                     >
+                      <category.icon className={`${colors.fill}`} />
                       {category.title}
                     </motion.h4>
                     <div className="grid md:grid-cols-4 grid-cols-2 whitespace-nowrap self-center md:gap-3">
