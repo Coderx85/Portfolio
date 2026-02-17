@@ -108,7 +108,13 @@ const ResumePDF = () => (
                   </Text>
                 </View>
                 <Text style={styles.expCompany}>{exp.company}</Text>
-                <Text style={styles.expDesc}>{exp.description}</Text>
+                <View style={{ marginTop: 2 }}>
+                  {exp.description.map((point, i) => (
+                    <Text key={i} style={styles.expDesc}>
+                      • {point}
+                    </Text>
+                  ))}
+                </View>
                 {exp.techStack && exp.techStack.length > 0 && (
                   <View style={styles.techRow}>
                     {exp.techStack.map((t, i) => (
