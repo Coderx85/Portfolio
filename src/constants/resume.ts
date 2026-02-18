@@ -80,7 +80,13 @@ import {
   BunOriginalIcon,
   DenojsOriginalIcon,
 } from "@devicon/react";
-import { FaAsymmetrik, FaBuilding, FaCloud, FaDatabase } from "react-icons/fa6";
+import {
+  FaAsymmetrik,
+  FaBuilding,
+  FaCloud,
+  FaDatabase,
+  FaServer,
+} from "react-icons/fa6";
 
 export const educationData: EduProps = {
   title: "education",
@@ -543,7 +549,7 @@ export const tech: readonly TTechStack[] = [
   },
   {
     title: "Backend",
-    icon: SiServerless,
+    icon: FaServer,
     techStack: [
       {
         title: "Node JS",
@@ -555,7 +561,7 @@ export const tech: readonly TTechStack[] = [
         title: "Bun",
         icon: BunOriginalIcon,
         level: "Intermediate",
-        color: "#000000",
+        color: "#fbf0df",
       },
       {
         title: "Go",
