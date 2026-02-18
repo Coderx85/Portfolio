@@ -62,6 +62,7 @@ export type TCategory =
   | "Backend"
   | "Database"
   | "DevOps & Cloud"
+  | "Testing"
   | "Monitoring"
   | "Infrastructure"
   | "Frameworks";
