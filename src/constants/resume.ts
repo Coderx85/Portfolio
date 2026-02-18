@@ -10,6 +10,7 @@ import {
   SiGithub,
   SiGrafana,
   SiHelm,
+  SiHono,
   SiKubernetes,
   SiLanguagetool,
   SiMongodb,
@@ -76,6 +77,8 @@ import {
   VuejsOriginalIcon,
   JestPlainIcon,
   HelmOriginalIcon,
+  BunOriginalIcon,
+  DenojsOriginalIcon,
 } from "@devicon/react";
 import { FaAsymmetrik, FaBuilding, FaCloud, FaDatabase } from "react-icons/fa6";
 
@@ -493,6 +496,12 @@ export const categoryColors: Record<
     bg: "bg-fuchsia-400/5",
     fill: "fill-fuchsia-400",
   },
+  Testing: {
+    text: "text-green-400",
+    border: "border-green-400/30",
+    bg: "bg-green-400/5",
+    fill: "fill-green-400",
+  },
 };
 
 export const tech: readonly TTechStack[] = [
@@ -502,6 +511,12 @@ export const tech: readonly TTechStack[] = [
     techStack: [
       {
         title: "React",
+        icon: ReactOriginalIcon,
+        level: "Advanced",
+        color: "#61DAFB",
+      },
+      {
+        title: "React JS",
         icon: ReactOriginalIcon,
         level: "Advanced",
         color: "#61DAFB",
@@ -521,7 +536,7 @@ export const tech: readonly TTechStack[] = [
       {
         title: "Vue JS",
         icon: VuejsOriginalIcon,
-        level: "Advanced",
+        level: "Beginner",
         color: "#4FC08D",
       },
     ],
@@ -537,6 +552,12 @@ export const tech: readonly TTechStack[] = [
         color: "#339933",
       },
       {
+        title: "Bun",
+        icon: BunOriginalIcon,
+        level: "Intermediate",
+        color: "#000000",
+      },
+      {
         title: "Go",
         icon: GoOriginalIcon,
         level: "Beginner",
@@ -549,10 +570,10 @@ export const tech: readonly TTechStack[] = [
         color: "#009688",
       },
       {
-        title: "Jest",
-        icon: JestPlainIcon,
-        level: "Advanced",
-        color: "#99425B",
+        title: "Deno",
+        icon: DenojsOriginalIcon,
+        level: "Intermediate",
+        color: "#000000",
       },
     ],
   },
