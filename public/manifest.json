@@ -1,11 +1,13 @@
 {
-  "name": "Priyanshu Portfolio",
-  "short_name": "Portfolio",
-  "description": "Modern, animated portfolio website built with Next.js 14, React 18, and TypeScript.",
+  "name": "Priyanshu | Full Stack Developer Portfolio",
+  "short_name": "Priyanshu",
+  "description": "Full Stack Developer with 1+ years of experience building scalable web applications using React, Node.js, and Next.js. Passionate about clean architecture, open-source contributions, and delivering production-ready solutions.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#0ea5e9",
+  "orientation": "portrait-primary",
+  "categories": ["portfolio", "web development", "software engineering"],
   "icons": [
     {
       "src": "/images/hero.png",
