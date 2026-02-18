@@ -11,6 +11,7 @@ import {
   SiGrafana,
   SiHelm,
   SiHono,
+  SiHono,
   SiKubernetes,
   SiLanguagetool,
   SiMongodb,
@@ -561,7 +562,7 @@ export const tech: readonly TTechStack[] = [
         title: "Bun",
         icon: BunOriginalIcon,
         level: "Intermediate",
-        color: "#fbf0df",
+        color: "#000000",
       },
       {
         title: "Go",
