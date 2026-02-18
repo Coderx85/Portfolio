@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     "Priyanshu",
     "Coderx85",
     "Priyanshu085",
+    "PriyanshuX085",
     "Full Stack Developer",
     "Software Engineer",
     "Web Developer",

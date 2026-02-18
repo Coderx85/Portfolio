@@ -45,7 +45,7 @@ export function getPortfolioJsonLd() {
         "@type": "Person",
         "@id": "https://coderx85.vercel.app/#person",
         name: "Priyanshu",
-        alternateName: ["Coderx85", "Priyanshu085"],
+        alternateName: ["Coderx85", "Priyanshu085", "PRiyanshuX085"],
         url: "https://coderx85.vercel.app",
         image: "https://coderx85.vercel.app/images/hero.png",
         jobTitle: "Full Stack Developer",
