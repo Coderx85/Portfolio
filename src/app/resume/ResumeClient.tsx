@@ -15,18 +15,18 @@ const ResumePage = () => {
   useEffect(() => {
     setIsClient(true);
 
-    Promise.all([
-      import("@react-pdf/renderer"),
-      import("@/components/resume/ResumePDF"),
-    ]).then(([pdfRenderer, resumePdf]) => {
+    (async () => {
+      const pdfRenderer = await import("@react-pdf/renderer");
+      const resumePdfModule = await import("@/components/resume/ResumePDF");
+
       setPdfComponents({
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         PDFViewer: pdfRenderer.PDFViewer as any,
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         PDFDownloadLink: pdfRenderer.PDFDownloadLink as any,
-        ResumePDF: resumePdf.default,
+        ResumePDF: resumePdfModule.default,
       });
-    });
+    })();
   }, []);
 
   return (

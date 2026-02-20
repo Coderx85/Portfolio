@@ -17,7 +17,7 @@ export default function WebView() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.4, ease: "easeInOut" }}
-      className="flex flex-col gap-[60px]"
+      className="flex flex-col gap-15"
     >
       {/* About Me */}
       <motion.div
@@ -77,7 +77,7 @@ export default function WebView() {
                 // use grey shade for background
                 "linear-gradient(90deg, rgba(22, 22, 22, 0.4), rgba(22, 22, 22, 0.4), 0.5)",
             }}
-            className="flex flex-col gap-3 lg:w-[260px] justify-end shrink-0 rounded-xl p-4"
+            className="flex flex-col gap-3 lg:w-65 justify-end shrink-0 rounded-xl p-4"
           >
             {SocialLink.filter(
               (l) =>
@@ -242,7 +242,7 @@ export default function WebView() {
                             delay: 0.35 + catIndex * 0.15 + techIndex * 0.08,
                             duration: 0.4,
                           }}
-                          className="w-[80px] transition-colors border-white/10 hover:border-white/30 duration-300 rounded-xl p-3 flex flex-col gap-2 items-center text-center"
+                          className="w-20 transition-colors border-white/10 hover:border-white/30 duration-300 rounded-xl p-3 flex flex-col gap-2 items-center text-center"
                           style={{ borderColor: `${techItem.color}20` }}
                           onMouseEnter={(e) => {
                             e.currentTarget.style.borderColor = `${techItem.color}60`;
@@ -324,7 +324,7 @@ export default function WebView() {
                             delay: 0.35 + catIndex * 0.15 + techIndex * 0.08,
                             duration: 0.4,
                           }}
-                          className="w-[80px] transition-colors border-white/10 hover:border-white/30 duration-300 rounded-xl p-3 flex flex-col gap-2 items-center text-center"
+                          className="w-20 transition-colors border-white/10 hover:border-white/30 duration-300 rounded-xl p-3 flex flex-col gap-2 items-center text-center"
                           style={{ borderColor: `${techItem.color}/20` }}
                           onMouseEnter={(e) => {
                             e.currentTarget.style.borderColor = `${techItem.color}/60`;

@@ -522,12 +522,6 @@ export const tech: readonly TTechStack[] = [
         color: "#61DAFB",
       },
       {
-        title: "React JS",
-        icon: ReactOriginalIcon,
-        level: "Advanced",
-        color: "#61DAFB",
-      },
-      {
         title: "HTML",
         icon: Html5OriginalIcon,
         level: "Advanced",
