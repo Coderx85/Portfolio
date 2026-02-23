@@ -13,6 +13,9 @@
   --color-primary: #0f172a;
   --color-primary-foreground: hsl(var(--primary-foreground));
 
+  --color-secondary: oklch(65.5% 0.15027 50.57);
+  --color-secondary-foreground: oklch(0.9619 0.058 95.6174);
+
   --color-accent: #166466;
   --color-accent-hover: #1a8385;
   --color-accent-glow: rgba(22, 100, 102, 0.4);
@@ -227,8 +230,8 @@
     --popover-foreground: 210 40% 98%;
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: oklch(65.5% 0.15027 50.57);
+    --secondary-foreground: var(--color-secondary-foreground);
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
     --accent: 217.2 32.6% 17.5%;

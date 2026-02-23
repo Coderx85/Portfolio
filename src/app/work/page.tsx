@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ProjectSection from "./WorkClient";
+import ProjectSection from "./_components/ProjectSection";
 
 export const metadata: Metadata = {
   title: "Projects & Work",

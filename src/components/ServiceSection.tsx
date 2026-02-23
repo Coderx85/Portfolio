@@ -1,14 +1,16 @@
 "use client";
-import { SiWorkplace } from "react-icons/si";
+import { SiOpenaigym, SiWorkplace } from "react-icons/si";
 import { motion } from "framer-motion";
 import { services } from "@/constants";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
+import Heading from "./Heading";
 
 type Props = "full" | "half";
 
 export default function ServiceSection({ page }: { page: Props }) {
   const servicesArray = page === "half" ? services.slice(0, 6) : services;
+  const fullPage = page === "full";
   return (
     <motion.div
       className="mx-auto h-full mt-10 flex flex-col gap-7"
@@ -17,26 +19,13 @@ export default function ServiceSection({ page }: { page: Props }) {
       transition={{ delay: 2.4, duration: 0.5, ease: "easeIn" }}
     >
       <div className="flex gap-3 justify-between">
-        <div className="flex gap-3 flex-col text-accent">
-          <motion.h3
-            className="flex gap-3 text-accent text-3xl"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 2.4, duration: 0.5, ease: "easeIn" }}
-          >
-            <SiWorkplace className="fill-accent" />
-            Services
-          </motion.h3>
-          <motion.h2
-            className="text-white"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 2.4, duration: 0.5, ease: "easeIn" }}
-          >
-            Whats I Offer
-          </motion.h2>
-        </div>
-        {!!!(page === "full") ? (
+        <Heading
+          icon={SiOpenaigym}
+          title="Service"
+          type="section"
+          description={"Showcasing my expertise and offerings"}
+        />
+        {!!!fullPage ? (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -44,10 +33,10 @@ export default function ServiceSection({ page }: { page: Props }) {
             className="flex gap-3 items-center"
           >
             <Link
-              href="/contact"
+              href="/experience#experience"
               className="flex items-center gap-2 px-4 py-2 border-b-2 border-white/25 hover:bg-white/15 transition-colors duration-300"
             >
-              View my experienes
+              View my experiences
               <FaArrowRight className="text-sm items-center justify-center" />
             </Link>
           </motion.div>
@@ -68,7 +57,7 @@ export default function ServiceSection({ page }: { page: Props }) {
           </motion.div>
         )}
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10 gap-7">
+      <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 "}>
         {servicesArray.map((service, index) => (
           <motion.div
             key={index + service.title}

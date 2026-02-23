@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 const ServicesPage = () => {
   return (
-    <section className="min-h-screen px-20">
+    <section className="min-h-screen px-24">
       <ServiceSection page="full" />
     </section>
   );

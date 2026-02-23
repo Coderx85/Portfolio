@@ -6,6 +6,7 @@ import { HiBriefcase, HiCalendarDays } from "react-icons/hi2";
 import Link from "next/link";
 import { calcDuration, formatDate } from "@/lib/dayjs";
 import { FaArrowRight } from "react-icons/fa6";
+import Heading from "./Heading";
 
 // Unique accent color per experience card — curated minimal palette
 const EXP_COLORS = [
@@ -28,28 +29,13 @@ const ExperienceSection = ({ mode = "half" }: { mode?: TMode }) => {
   return (
     <div className="h-full flex flex-col gap-7">
       {/* Section Header */}
-      <div className="flex gap-3 justify-between text-accent">
-        <div>
-          <motion.h3
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="flex gap-3 text-accent text-3xl"
-          >
-            <HiBriefcase className="fill-accent" />
-            Work Experience
-          </motion.h3>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-white"
-          >
-            Where I&apos;ve Worked
-          </motion.h2>
-        </div>
+      <div className="flex gap-3 justify-between text-accent" id="experience">
+        <Heading
+          title={"Work Experience"}
+          icon={HiBriefcase}
+          type="section"
+          description={"Where I've Worked"}
+        />{" "}
         <div className="flex justify-end">
           <motion.div
             initial={{ opacity: 0 }}
@@ -58,7 +44,7 @@ const ExperienceSection = ({ mode = "half" }: { mode?: TMode }) => {
             className="flex gap-3 items-center"
           >
             <Link
-              href="/projects"
+              href="/work#projects"
               className="flex items-center gap-2 px-4 py-2 border-b-2 border-white/25 hover:bg-white/15 transition-colors duration-300"
             >
               {"My Projects" as const}
@@ -69,10 +55,10 @@ const ExperienceSection = ({ mode = "half" }: { mode?: TMode }) => {
       </div>
 
       {/* Timeline */}
-      <div className="relative mt-6">
+      <div className="relative">
         {/* Vertical Line — gradient through card colours */}
         <div
-          className="absolute left-1.75 top-2 bottom-2 w-0.5"
+          className="absolute left-1.75 top-1 bottom-2 w-0.5 rounded-t-full"
           style={{
             background: `linear-gradient(to bottom, ${colorsArray.join(", ")}, transparent)`,
           }}
@@ -101,7 +87,7 @@ const ExperienceSection = ({ mode = "half" }: { mode?: TMode }) => {
                 className="relative pl-10"
               >
                 {/* Timeline Dot */}
-                <div className="absolute left-0 top-5 z-10">
+                <div className="absolute left-0 top-2 z-10">
                   <div
                     className="w-3.5 h-3.5 rounded-full border-2 transition-all duration-300"
                     style={{
@@ -248,36 +234,35 @@ const ExperienceSection = ({ mode = "half" }: { mode?: TMode }) => {
             );
           })}
         </div>
-
-        {/* "View All" Button for half mode */}
-        {mode === "half" && experienceData.items.length > 2 && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              delay: 2.4 + 5 * 0.1,
-              duration: 0.4,
-              ease: "easeOut",
-            }}
-            className="pl-5 h-full w-fit justify-start flex items-start "
-          >
-            <Link
-              href="/experience"
-              className="text-white flex gap-2 px-4 py-2 rounded-xl border-2 border-white hover:border-white/50 hover:bg-white/10 transition-colors duration-300"
-            >
-              View more experiences
-              <motion.span
-                initial={{ x: 0 }}
-                animate={{ x: 5 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                className="flex items-center"
-              >
-                <FaArrowRight className="text-sm items-center" />
-              </motion.span>
-            </Link>
-          </motion.div>
-        )}
       </div>
+      {/* "View All" Button for half mode */}
+      {mode === "half" && experienceData.items.length > 2 && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 2.4 + 5 * 0.1,
+            duration: 0.4,
+            ease: "easeOut",
+          }}
+          className="pl-5 h-full w-fit justify-start flex items-start mt-8"
+        >
+          <Link
+            href="/experience"
+            className="text-white flex gap-2 px-4 py-2 rounded-xl border-2 border-white hover:border-white/50 hover:bg-white/10 transition-colors duration-300"
+          >
+            View more experiences
+            <motion.span
+              initial={{ x: 0 }}
+              animate={{ x: 5 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="flex items-center"
+            >
+              <FaArrowRight className="text-sm items-center" />
+            </motion.span>
+          </Link>
+        </motion.div>
+      )}
     </div>
   );
 };

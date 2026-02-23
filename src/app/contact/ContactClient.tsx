@@ -96,11 +96,11 @@ const ContactPage = () => {
       >
         <form
           onSubmit={handleSubmit}
-          className="glass-card px-6 py-3 xl:py-6 flex flex-col gap-3"
+          className="bg-secondary/5 px-6 py-3 xl:py-6 flex flex-col gap-3"
         >
           {/* ── Header ── */}
           <div className="py-2">
-            <h2 className="text-2xl xl:text-3xl font-bold gradient-text">
+            <h2 className="text-2xl xl:text-3xl font-bold text-secondary mb-1">
               Let&apos;s Work Together
             </h2>
             <p className="text-white/75 leading-relaxed text-sm">
@@ -118,7 +118,7 @@ const ContactPage = () => {
               {/* Name */}
               <div className="relative group">
                 <div className="absolute left-4 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
-                  <FaUser className="text-xs text-white/25 group-focus-within:text-accent transition-colors duration-300" />
+                  <FaUser className="text-xs text-white/25 group-focus-within:text-secondary transition-colors duration-300" />
                 </div>
                 <Input
                   type="text"
@@ -127,7 +127,7 @@ const ContactPage = () => {
                   required
                   className="glass border-white/10 rounded-xl h-10 pl-10 pr-4 text-sm w-full
                         placeholder:text-white/95
-                        focus:border-accent/50 focus:shadow-[0_0_15px_rgba(22,100,102,0.1)]
+                        focus:border-secondary/50 focus:shadow-[0_0_15px_rgba(22,100,102,0.1)]
                         transition-all duration-300"
                   onChange={(e) => {
                     setFormData({ ...formData, name: e.target.value });
@@ -138,7 +138,7 @@ const ContactPage = () => {
               {/* Email */}
               <div className="relative group">
                 <div className="absolute left-4 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
-                  <FaEnvelope className="text-xs text-white/25 group-focus-within:text-accent transition-colors duration-300" />
+                  <FaEnvelope className="text-xs text-white/25 group-focus-within:text-secondary transition-colors duration-300" />
                 </div>
                 <Input
                   type="email"
@@ -158,7 +158,7 @@ const ContactPage = () => {
               {/* Company */}
               <div className="relative group">
                 <div className="absolute left-4 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
-                  <FaBuilding className="text-xs text-white/25 group-focus-within:text-accent transition-colors duration-300" />
+                  <FaBuilding className="text-xs text-white/25 group-focus-within:text-secondary transition-colors duration-300" />
                 </div>
                 <Input
                   type="text"
@@ -167,7 +167,7 @@ const ContactPage = () => {
                   required
                   className="glass border-white/10 rounded-xl h-10 pl-10 pr-4 text-sm w-full
                         placeholder:text-white/95
-                        focus:border-accent/50 focus:shadow-[0_0_15px_rgba(22,100,102,0.1)]
+                        focus:border-secondary/50 focus:shadow-[0_0_15px_rgba(22,100,102,0.1)]
                         transition-all duration-300"
                   onChange={(e) => {
                     setFormData({ ...formData, company: e.target.value });
@@ -178,7 +178,7 @@ const ContactPage = () => {
               {/* Phone */}
               <div className="relative group">
                 <div className="absolute left-4 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
-                  <FaPhone className="text-xs text-white/25 group-focus-within:text-accent transition-colors duration-300" />
+                  <FaPhone className="text-xs text-white/25 group-focus-within:text-secondary transition-colors duration-300" />
                 </div>
                 <Input
                   type="text"
@@ -187,7 +187,7 @@ const ContactPage = () => {
                   required
                   className="glass border-white/10 rounded-xl h-10 pl-10 pr-4 text-sm w-full
                         placeholder:text-white/95
-                        focus:border-accent/50 focus:shadow-[0_0_15px_rgba(22,100,102,0.1)]
+                        focus:border-secondary/50 focus:shadow-[0_0_15px_rgba(22,100,102,0.1)]
                         transition-all duration-300"
                   onChange={(e) => {
                     setFormData({ ...formData, phone: e.target.value });
@@ -199,14 +199,14 @@ const ContactPage = () => {
 
           {/* ── Project Details Group ── */}
           <div className="space-y-2">
-            <p className="text-xs uppercase tracking-[0.15em] text-accent font-semibold">
+            <p className="text-xs uppercase tracking-[0.15em] text-secondary font-semibold">
               Project Details
             </p>
 
             {/* Role Select - full width */}
             <div className="relative group">
               <div className="absolute left-4 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
-                <HiOutlineBriefcase className="text-sm text-white/25 group-focus-within:text-accent transition-colors duration-300" />
+                <HiOutlineBriefcase className="text-sm text-white/25 group-focus-within:text-secondary transition-colors duration-300" />
               </div>
               <Select
                 name="role"
@@ -218,9 +218,9 @@ const ContactPage = () => {
                 <SelectTrigger
                   className="w-1/3 glass border-white/10 rounded-xl h-10 pl-10 pr-4 text-sm
                         text-white/95 
-                        focus:border-accent/50 focus:shadow-[0_0_15px_rgba(22,100,102,0.1)]
+                        focus:border-secondary/50 focus:shadow-[0_0_15px_rgba(22,100,102,0.1)]
                         transition-all duration-300
-                        [&>span]:text-white/95 data-[state=open]:border-accent/50"
+                        [&>span]:text-white/95 data-[state=open]:border-secondary/50"
                 >
                   <SelectValue placeholder="Select Role" />
                 </SelectTrigger>
@@ -228,19 +228,19 @@ const ContactPage = () => {
                   <SelectGroup>
                     <SelectItem
                       value="Software Developer Engineer"
-                      className="focus:bg-accent/10 focus:text-white rounded-lg"
+                      className="focus:bg-secondary/10 focus:text-white rounded-lg"
                     >
                       Software Developer Engineer
                     </SelectItem>
                     <SelectItem
                       value="Backend Developer"
-                      className="focus:bg-accent/10 focus:text-white rounded-lg"
+                      className="focus:bg-secondary/10 focus:text-white rounded-lg"
                     >
                       Backend Developer
                     </SelectItem>
                     <SelectItem
                       value="Fullstack Developer"
-                      className="focus:bg-accent/10 focus:text-white rounded-lg"
+                      className="focus:bg-secondary/10 focus:text-white rounded-lg"
                     >
                       Fullstack Developer
                     </SelectItem>
@@ -254,9 +254,9 @@ const ContactPage = () => {
               <Textarea
                 name="message"
                 id="message"
-                className="glass border-white/10 rounded-xl min-h-[140px] p-3 text-sm
+                className="glass border-white/10 rounded-xl min-h-35 p-3 text-sm
                       placeholder:text-white/95
-                      focus:border-accent/50 focus:shadow-[0_0_15px_rgba(22,100,102,0.1)]
+                      focus:border-secondary/50 focus:shadow-[0_0_15px_rgba(22,100,102,0.1)]
                       transition-all duration-300 resize-none"
                 placeholder="Tell me about your project, timeline, and how I can help..."
                 required
@@ -274,8 +274,8 @@ const ContactPage = () => {
           <Button
             type="submit"
             size="lg"
-            className="w-full bg-accent hover:bg-accent-hover text-white font-semibold rounded-xl h-11
-                  hover:shadow-lg hover:shadow-accent/25 
+            className="w-full bg-secondary hover:bg-secondary-hover text-white font-semibold rounded-xl h-11
+                  hover:shadow-lg hover:shadow-secondary/25 
                   active:scale-[0.98]
                   transition-all duration-300
                   flex items-center justify-center gap-3 group"
@@ -308,8 +308,8 @@ const ContactPage = () => {
                 className="glass-card glass-card-hover p-5 flex items-center gap-5"
               >
                 <div
-                  className="w-12 h-12 xl:w-14 xl:h-14 rounded-xl bg-accent/10 border border-accent/20 
-                        text-accent flex items-center justify-center shrink-0"
+                  className="w-12 h-12 xl:w-14 xl:h-14 rounded-xl bg-secondary/10 border border-secondary/20 
+                        text-secondary flex items-center justify-center shrink-0"
                 >
                   <div className="text-xl">{info.icon}</div>
                 </div>

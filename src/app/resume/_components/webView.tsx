@@ -1,13 +1,15 @@
 import { categoryColors, tech as techData } from "@/constants/resume";
 import { Progress } from "@/components/ui/progress";
-import { SiAboutdotme } from "react-icons/si";
+import { SiAboutdotme, SiOpenaigym } from "react-icons/si";
 import { motion } from "framer-motion";
 import ExperienceSection from "@/components/ExperienceSection";
 import { convertLevelIntoNumber } from "@/lib/convertLevel";
 import { Separator } from "@radix-ui/react-select";
 import { config, SocialLink } from "@/constants";
-import { FaBookOpen, FaUser } from "react-icons/fa6";
+import { Fa1, FaBookOpen, FaGithub, FaUser } from "react-icons/fa6";
 import GitHubStats from "@/app/_components/GitHubStats";
+import Heading from "@/components/Heading";
+import { FaRegUserCircle, FaUserCircle } from "react-icons/fa";
 
 export default function WebView() {
   return (
@@ -24,22 +26,12 @@ export default function WebView() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.1, duration: 0.5, ease: "easeIn" }}
-        className="py-8 px-8 h-full flex flex-col gap-8"
+        className="py-8 h-full flex flex-col gap-8"
       >
         {/* ── Profile ── */}
         <div className="flex flex-col lg:flex-row gap-6 w-full justify-between">
           <div>
-            <motion.h3
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.15, duration: 0.5 }}
-              className="flex items-center gap-3 text-white mb-5"
-            >
-              <FaUser className="text-lg fill-accent" />
-              Profile
-            </motion.h3>
-
-            {/* Profile Highlights */}
+            <Heading title="Profile" icon={FaRegUserCircle} />
             <motion.ul
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -58,8 +50,8 @@ export default function WebView() {
                   }}
                   className="flex items-left gap-3 group"
                 >
-                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent group-hover:scale-150 transition-transform duration-300 shrink-0" />
-                  <p className="text-white/70 text-sm md:text-base leading-relaxed">
+                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-secondary group-hover:scale-150 transition-transform duration-300 shrink-0" />
+                  <p className="text-white text-sm md:text-base leading-relaxed">
                     {item}
                   </p>
                 </motion.li>
@@ -105,10 +97,10 @@ export default function WebView() {
                   <link.icon className="w-4 h-4" />
                 </span>
                 <div className="flex flex-col">
-                  <span className="text-white/80 text-xs font-medium group-hover:text-white transition-colors">
+                  <span className="text-white text-xs font-medium group-hover:text-white transition-colors">
                     {link.name}
                   </span>
-                  <span className="text-white/40 text-[11px]">
+                  <span className="text-secondary-foreground text-[11px]">
                     {link.username}
                   </span>
                 </div>
@@ -128,15 +120,7 @@ export default function WebView() {
 
         {/* ── About Me ── */}
         <div>
-          <motion.h3
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.5 }}
-            className="flex items-center gap-3 mb-5"
-          >
-            <FaBookOpen className="text-lg fill-accent" />
-            About me
-          </motion.h3>
+          <Heading title="About Me" icon={FaBookOpen} />
           <div className="flex flex-col gap-4">
             <motion.p
               initial={{ opacity: 0, y: 15 }}
@@ -179,24 +163,19 @@ export default function WebView() {
         </div>
       </motion.div>
 
-      <motion.div>
+      <motion.div className="py-3 flex flex-col">
+        <Heading
+          title="GitHub Contributions"
+          icon={FaGithub}
+          type="subsection"
+        />
         <GitHubStats />
       </motion.div>
 
       {/* Expertise */}
       <div id="skills">
-        <motion.h3
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.15, duration: 0.5 }}
-          className="flex gap-4 pb-6"
-        >
-          <span className="text-accent">
-            <SiAboutdotme />
-          </span>
-          Expertise
-        </motion.h3>
-
+        <Heading title="Expertise" icon={SiOpenaigym} type="section" />
+        {/* Profile Highlights */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

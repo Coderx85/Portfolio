@@ -53,8 +53,8 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 2.6, duration: 0.5 }}
           >
-            <span className="inline-flex gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-[0.2em] border border-gray-100/30 bg-gray-100/5 text-gray-100">
-              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+            <span className="inline-flex gap-2 px-4 py-1.5  items-center rounded-full text-xs font-semibold uppercase tracking-[0.2em] border border-gray-100/30 bg-gray-100/5 text-gray-100">
+              <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
               Available for work
             </span>
           </motion.div>

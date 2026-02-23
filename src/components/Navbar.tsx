@@ -46,7 +46,7 @@ const Navbar = () => {
             onClick={() => setNavbarOpen(!navbarOpen)}
             variant="ghost"
             size="sm"
-            className="relative w-10 h-10 rounded-full border border-white/10 hover:border-accent transition-all duration-300"
+            className="relative w-10 h-10 rounded-full border border-white/10 hover:border-secondary transition-all duration-300"
             aria-label={navbarOpen ? "Close menu" : "Open menu"}
           >
             <AnimatePresence mode="wait">
@@ -84,19 +84,19 @@ const Navbar = () => {
             <Link
               href={link.href}
               key={index}
-              className={`relative px-4 py-2 rounded-full text-sm font-semibold tracking-wider
+              className={`relative px-4 py-2 rounded-lg text-sm font-semibold tracking-wider
                 transition-all duration-300 ease-out
                 ${
                   link.href === pathname
-                    ? "text-accent bg-accent/10"
-                    : "text-white/70 hover:text-white hover:bg-white/5"
+                    ? "text-secondary bg-secondary/10"
+                    : "text-secondary-foreground/50 hover:text-white hover:bg-white/5"
                 }`}
             >
               {link.title}
               {link.href === pathname && (
                 <motion.div
                   layoutId="activeNavIndicator"
-                  className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-accent"
+                  className="absolute bottom-0 left-1/2 -translate-x-1/2 w-14 h-px rounded-full bg-secondary "
                   style={{ boxShadow: "0 0 8px rgba(22, 100, 102, 0.8)" }}
                   transition={{
                     type: "spring",
