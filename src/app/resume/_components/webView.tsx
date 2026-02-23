@@ -184,7 +184,7 @@ export default function WebView() {
       </motion.div>
 
       {/* Expertise */}
-      <div>
+      <div id="skills">
         <motion.h3
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

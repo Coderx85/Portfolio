@@ -5,6 +5,7 @@ import { experienceData } from "@/constants";
 import { HiBriefcase, HiCalendarDays } from "react-icons/hi2";
 import Link from "next/link";
 import { calcDuration, formatDate } from "@/lib/dayjs";
+import { FaArrowRight } from "react-icons/fa6";
 
 // Unique accent color per experience card — curated minimal palette
 const EXP_COLORS = [
@@ -49,42 +50,21 @@ const ExperienceSection = ({ mode = "half" }: { mode?: TMode }) => {
             Where I&apos;ve Worked
           </motion.h2>
         </div>
-        <div className="flex  justify-end">
-          <Link
-            href="/work"
-            className="group relative flex items-center justify-between glass-card glass-card-hover p-4 overflow-hidden"
+        <div className="flex justify-end">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2.4, duration: 0.5, ease: "easeIn" }}
+            className="flex gap-3 items-center"
           >
-            <div className="flex flex-col items-center gap-2 text-accent shrink-0">
-              <div className="flex items-center">
-                <h2 className="text-sm">Explore my projects</h2>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-sm font-medium underline hidden sm:inline opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  View Projects
-                </span>
-                <svg
-                  className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div
-              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-              style={{
-                background:
-                  "radial-gradient(circle at right center, rgba(22, 100, 102, 0.15), transparent 70%)",
-              }}
-            />
-          </Link>
+            <Link
+              href="/projects"
+              className="flex items-center gap-2 px-4 py-2 border-b-2 border-white/25 hover:bg-white/15 transition-colors duration-300"
+            >
+              {"My Projects" as const}
+              <FaArrowRight className="text-sm items-center justify-center" />
+            </Link>
+          </motion.div>
         </div>
       </div>
 
@@ -92,7 +72,7 @@ const ExperienceSection = ({ mode = "half" }: { mode?: TMode }) => {
       <div className="relative mt-6">
         {/* Vertical Line — gradient through card colours */}
         <div
-          className="absolute left-[7px] top-2 bottom-2 w-[2px]"
+          className="absolute left-1.75 top-2 bottom-2 w-0.5"
           style={{
             background: `linear-gradient(to bottom, ${colorsArray.join(", ")}, transparent)`,
           }}
@@ -123,7 +103,7 @@ const ExperienceSection = ({ mode = "half" }: { mode?: TMode }) => {
                 {/* Timeline Dot */}
                 <div className="absolute left-0 top-5 z-10">
                   <div
-                    className="w-[14px] h-[14px] rounded-full border-2 transition-all duration-300"
+                    className="w-3.5 h-3.5 rounded-full border-2 transition-all duration-300"
                     style={{
                       borderColor: color,
                       backgroundColor: exp.isCurrent ? color : "#0a0a0a",
@@ -268,6 +248,35 @@ const ExperienceSection = ({ mode = "half" }: { mode?: TMode }) => {
             );
           })}
         </div>
+
+        {/* "View All" Button for half mode */}
+        {mode === "half" && experienceData.items.length > 2 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 2.4 + 5 * 0.1,
+              duration: 0.4,
+              ease: "easeOut",
+            }}
+            className="pl-5 h-full w-fit justify-start flex items-start "
+          >
+            <Link
+              href="/experience"
+              className="text-white flex gap-2 px-4 py-2 rounded-xl border-2 border-white hover:border-white/50 hover:bg-white/10 transition-colors duration-300"
+            >
+              View more experiences
+              <motion.span
+                initial={{ x: 0 }}
+                animate={{ x: 5 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                className="flex items-center"
+              >
+                <FaArrowRight className="text-sm items-center" />
+              </motion.span>
+            </Link>
+          </motion.div>
+        )}
       </div>
     </div>
   );

@@ -11,7 +11,6 @@ import { useRouter } from "next/navigation";
 import { categoryColors, tech } from "@/constants";
 import { convertLevelIntoNumber } from "@/lib/convertLevel";
 import { FiDownload, FiArrowRight } from "react-icons/fi";
-import { Separator } from "@radix-ui/react-select";
 import { FaCode } from "react-icons/fa6";
 import { HiForward } from "react-icons/hi2";
 
@@ -19,7 +18,7 @@ const HeroSection = () => {
   const { description } = config;
   const router = useRouter();
 
-  const text = [
+  const ROLES = [
     "Full Stack Developer",
     "Problem Solver",
     "Software Engineer",
@@ -30,6 +29,8 @@ const HeroSection = () => {
     "NextJS Developer",
     "AI Engineer",
   ] as const;
+
+  const WELCOME_MESSAGE = "Hi, I'm a" as const;
 
   return (
     <>
@@ -45,7 +46,7 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2.4, duration: 0.5, ease: "easeIn" }}
-          className="mx-auto mt-32 pb-12 text-left order-2 xl:order-0 py-0 h-full min-h-[400px] flex flex-col gap-3"
+          className="mx-auto mt-32 pb-12 text-left order-2 xl:order-0 py-0 h-full min-h-100 flex flex-col gap-3"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -64,10 +65,10 @@ const HeroSection = () => {
             transition={{ delay: 2.7, duration: 0.6 }}
             className="text-white text-4xl xl:text-5xl py-2 font-bold leading-[1.4]"
           >
-            <p className="py-1 ">{"I'm a "}</p>
+            <p className="py-1 ">{WELCOME_MESSAGE}</p>
             <ScrambleText
-              text={text}
-              className="text-accent min-h-[50px]"
+              text={ROLES}
+              className="text-accent min-h-12.5"
               speed={0.4}
               playOnMount
               replayOnHover
@@ -79,7 +80,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 2.9, duration: 0.5 }}
-            className="max-w-[520px] md:mx-0 mx-auto text-white/60 text-base leading-relaxed"
+            className="max-w-130 md:mx-0 mx-auto text-white/60 text-base leading-relaxed"
           >
             {description}
           </motion.p>
@@ -127,6 +128,7 @@ const HeroSection = () => {
             transition: { delay: 2.4, duration: 0.5, ease: "easeIn" },
           }}
           className="flex flex-col gap-5 mt-14 mb-36"
+          id="skills"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -199,7 +201,7 @@ const HeroSection = () => {
                             delay: 0.35 + index * 0.15 + techIndex * 0.08,
                             duration: 0.4,
                           }}
-                          className="w-[80px] transition-colors border-white/10 hover:border-white/30 duration-300 rounded-xl p-3 flex flex-col gap-2 items-center text-center"
+                          className="w-20 transition-colors border-white/10 hover:border-white/30 duration-300 rounded-xl p-3 flex flex-col gap-2 items-center text-center"
                           style={{ borderColor: `${techItem.color}20` }}
                           onMouseEnter={(e) => {
                             e.currentTarget.style.borderColor = `${techItem.color}60`;
@@ -241,7 +243,7 @@ const HeroSection = () => {
                       onClick={() => {
                         router.push("/resume");
                       }}
-                      className="w-[80px] transition-colors border-white/10 hover:border-white/30 duration-30 hover:bg-white/10 pointer rounded-xl p-3 flex flex-col gap-2 items-center text-center"
+                      className="w-20 transition-colors border-white/10 hover:border-white/30 duration-30 hover:bg-white/10 pointer rounded-xl p-3 flex flex-col gap-2 items-center text-center"
                     >
                       <HiForward className="text-3xl" />
                       <p className="text-xs font-medium uppercase">View All</p>
@@ -253,7 +255,7 @@ const HeroSection = () => {
           </motion.div>
           <motion.div className="flex px-5">
             <Button
-              onClick={() => router.push("/resume")}
+              onClick={() => router.push("/resume#skills")}
               className="text-white rounded-xl bg-transparent border-white hover:bg-white/10 border-2"
             >
               View all skills.

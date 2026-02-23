@@ -36,7 +36,22 @@ export default function ServiceSection({ page }: { page: Props }) {
             Whats I Offer
           </motion.h2>
         </div>
-        {page === "full" && (
+        {!!!(page === "full") ? (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2.4, duration: 0.5, ease: "easeIn" }}
+            className="flex gap-3 items-center"
+          >
+            <Link
+              href="/contact"
+              className="flex items-center gap-2 px-4 py-2 border-b-2 border-white/25 hover:bg-white/15 transition-colors duration-300"
+            >
+              View my experienes
+              <FaArrowRight className="text-sm items-center justify-center" />
+            </Link>
+          </motion.div>
+        ) : (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
