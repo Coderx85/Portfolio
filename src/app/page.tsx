@@ -34,7 +34,7 @@ const HeroSection = () => {
     <>
       <motion.section
         initial={{ opacity: 0 }}
-        className="xs:px-7 px-20"
+        className="px-6 sm:px-12 md:px-16 lg:px-20"
         animate={{
           opacity: 1,
           transition: { delay: 2.4, duration: 0.5, ease: "easeIn" },
@@ -44,7 +44,7 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2.4, duration: 0.5, ease: "easeIn" }}
-          className="mx-auto mt-32 pb-12 text-left order-2 xl:order-0 py-0 h-full min-h-[400px] flex flex-col gap-3"
+          className="mx-auto mt-20 sm:mt-24 md:mt-32 pb-12 text-left order-2 xl:order-0 py-0 h-full min-h-[400px] flex flex-col gap-3"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -61,7 +61,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 2.7, duration: 0.6 }}
-            className="text-white text-4xl xl:text-5xl py-2 font-bold leading-[1.4]"
+            className="text-white text-3xl sm:text-4xl xl:text-5xl py-2 font-bold leading-[1.4]"
           >
             <p className="py-1 ">{"I'm a "}</p>
             <ScrambleText
@@ -78,7 +78,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 2.9, duration: 0.5 }}
-            className="max-w-[520px] md:mx-0 mx-auto text-white/60 text-base leading-relaxed"
+            className="max-w-[520px] md:mx-0 mx-auto xl:mx-0 text-white/60 text-sm sm:text-base leading-relaxed"
           >
             {description}
           </motion.p>
@@ -87,7 +87,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 3.1, duration: 0.5 }}
-            className="flex w-full mt-5 xl:w-fit gap-4 justify-between items-center"
+            className="flex flex-col sm:flex-row w-full mt-5 xl:w-fit gap-4 justify-between items-center"
           >
             <Link
               href="/Resume.pdf"

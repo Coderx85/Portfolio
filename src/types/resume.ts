@@ -67,6 +67,7 @@ export type TCategory =
 
 export type TTechStack = {
   title: TCategory;
+  icon: IconType;
   techStack: readonly TTech[];
 };
 
