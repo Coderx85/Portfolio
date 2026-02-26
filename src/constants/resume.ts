@@ -27,6 +27,22 @@ import {
   SiVercel,
   SiVite,
   SiVitest,
+  SiRedis,
+  SiRabbitmq,
+  SiApache,
+  SiNginx,
+  SiUbuntu,
+  SiJest,
+  SiHtml5,
+  SiReact,
+  SiTailwindcss,
+  SiVuedotjs,
+  SiNodedotjs,
+  SiGo,
+  SiJavascript,
+  SiPython,
+  SiGnubash,
+  SiJenkins,
 } from "react-icons/si";
 import {
   FaCss3,
@@ -379,53 +395,62 @@ export const skillsData: SkillProps = {
 // ─── Color scheme for tech category cards ───
 export const categoryColors: Record<
   TCategory,
-  { text: string; border: string; bg: string }
+  { text: string; border: string; bg: string; fill: string }
 > = {
   Frontend: {
     text: "text-cyan-400",
     border: "border-cyan-400/30",
     bg: "bg-cyan-400/5",
+    fill: "fill-cyan-400",
   },
   Backend: {
     text: "text-emerald-400",
     border: "border-emerald-400/30",
     bg: "bg-emerald-400/5",
+    fill: "fill-emerald-400",
   },
   Languages: {
     text: "text-amber-400",
     border: "border-amber-400/30",
     bg: "bg-amber-400/5",
+    fill: "fill-amber-400",
   },
   Database: {
     text: "text-violet-400",
     border: "border-violet-400/30",
     bg: "bg-violet-400/5",
+    fill: "fill-violet-400",
   },
   "DevOps & Cloud": {
     text: "text-sky-400",
     border: "border-sky-400/30",
     bg: "bg-sky-400/5",
+    fill: "fill-sky-400",
   },
   Monitoring: {
     text: "text-orange-400",
     border: "border-orange-400/30",
     bg: "bg-orange-400/5",
+    fill: "fill-orange-400",
   },
   Infrastructure: {
     text: "text-rose-400",
     border: "border-rose-400/30",
     bg: "bg-rose-400/5",
+    fill: "fill-rose-400",
   },
   Frameworks: {
     text: "text-fuchsia-400",
     border: "border-fuchsia-400/30",
     bg: "bg-fuchsia-400/5",
+    fill: "fill-fuchsia-400",
   },
 };
 
 export const tech: readonly TTechStack[] = [
   {
     title: "Frontend",
+    icon: SiReact,
     techStack: [
       {
         title: "React",
@@ -455,6 +480,7 @@ export const tech: readonly TTechStack[] = [
   },
   {
     title: "Backend",
+    icon: SiNodedotjs,
     techStack: [
       {
         title: "Node JS",
@@ -484,6 +510,7 @@ export const tech: readonly TTechStack[] = [
   },
   {
     title: "Languages",
+    icon: SiJavascript,
     techStack: [
       {
         title: "Javascript",
@@ -513,6 +540,7 @@ export const tech: readonly TTechStack[] = [
   },
   {
     title: "Database",
+    icon: SiPostgresql,
     techStack: [
       {
         title: "PostgreSQL",
@@ -542,6 +570,7 @@ export const tech: readonly TTechStack[] = [
   },
   {
     title: "DevOps & Cloud",
+    icon: SiDocker,
     techStack: [
       {
         title: "Docker",
@@ -571,6 +600,7 @@ export const tech: readonly TTechStack[] = [
   },
   {
     title: "Infrastructure",
+    icon: SiNginx,
     techStack: [
       {
         title: "Nginx",
@@ -594,6 +624,7 @@ export const tech: readonly TTechStack[] = [
   },
   {
     title: "Monitoring",
+    icon: SiGrafana,
     techStack: [
       {
         title: "Grafana",
@@ -617,6 +648,7 @@ export const tech: readonly TTechStack[] = [
   },
   {
     title: "Frameworks",
+    icon: SiNextdotjs,
     techStack: [
       {
         title: "Fastify",
@@ -669,20 +701,3 @@ export const tech: readonly TTechStack[] = [
     ],
   },
 ];
-
-/**
- * 
- * techStack: {
-    title: string;
-    icon: IconType;
-    level: LEVEL;
-  }[];
- * 
-
-  const tech[] = [
-    {
-      title: 
-    }
-  ]
-
- */

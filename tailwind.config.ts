@@ -11,6 +11,7 @@ const config = {
   theme: {
     // Container utility is now customized via @utility in CSS (see globals.css)
     screens: {
+      xs: "475px",
       sm: "640px",
       md: "768px",
       lg: "960px",

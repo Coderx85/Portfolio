@@ -29,7 +29,7 @@ const ServicePage = () => {
               >
                 <div className='w-full justify-between items-center flex'>
                   <div className='text-5xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500'>
-                    {service.num}
+                   {index + 1 < 10 ? `0${index + 1}` : index + 1}
                   </div>
                   <Link 
                     href={service.title}

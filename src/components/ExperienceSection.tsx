@@ -57,7 +57,7 @@ const calcDuration = (start: Date, end: Date) => {
 
 const ExperienceSection = () => {
   return (
-    <div className="mx-auto h-full mt-40 flex flex-col gap-7">
+    <div className="mx-auto h-full mt-20 sm:mt-24 md:mt-32 lg:mt-40 flex flex-col gap-7">
       {/* Section Header */}
       <div className="flex gap-3 flex-col text-accent">
         <motion.h3
@@ -65,7 +65,7 @@ const ExperienceSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="flex gap-3 text-accent text-3xl"
+          className="flex gap-3 text-accent text-2xl sm:text-3xl"
         >
           <HiBriefcase className="fill-accent" />
           Work Experience
@@ -75,7 +75,7 @@ const ExperienceSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-white"
+          className="text-white text-3xl sm:text-4xl"
         >
           Where I&apos;ve Worked
         </motion.h2>
@@ -109,7 +109,7 @@ const ExperienceSection = () => {
                     delay: index * 0.15,
                     ease: "easeOut",
                   }}
-                  className="relative pl-10"
+                  className="relative pl-8 sm:pl-10"
                 >
                   {/* Timeline Dot */}
                   <div className="absolute left-0 top-5 z-10">
@@ -123,13 +123,13 @@ const ExperienceSection = () => {
                   </div>
 
                   {/* Card */}
-                  <div className="glass-card glass-card-hover px-6 py-5 sm:px-8 sm:py-6 group cursor-default bg-zinc-600/10 hover:bg-zinc-600/20">
+                  <div className="glass-card glass-card-hover px-5 py-4 sm:px-8 sm:py-6 group cursor-default bg-zinc-600/10 hover:bg-zinc-600/20">
                     {/* Top Row: Title + Badge + Date */}
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-4">
+                    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-1 lg:gap-4">
                       <h3 className="text-white font-semibold text-lg sm:text-xl">
                         {exp.title}
                       </h3>
-                      <div className="flex items-center gap-2.5 shrink-0">
+                      <div className="flex flex-wrap items-center gap-2.5 shrink-0 mt-1 lg:mt-0">
                         {/* Timeline Badge + date range */}
 
                         {exp.isCurrent && (
@@ -144,7 +144,7 @@ const ExperienceSection = () => {
                     </div>
 
                     {/* Company + Duration pill */}
-                    <div className="flex items-center gap-3 mt-1">
+                    <div className="flex flex-wrap items-center gap-3 mt-2">
                       {exp.linkedin ? (
                         <Link
                           href={exp.linkedin}
