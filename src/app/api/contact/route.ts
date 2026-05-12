@@ -1,25 +1,50 @@
 // import { EmailTemplate } from '../../../components/EmailTemplate';
 import Email from '@/components/EmailPreview';
-import { NextRequest } from 'next/server';
+import type { NextRequest } from 'next/server';
 import React from 'react';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+interface ContactPayload {
+  email: string;
+  name: string;
+  company: string;
+  phone: string;
+  message: string;
+  role: string;
+}
 
-export const POST = async (req: NextRequest) =>{
+const getResendClient = () => {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    return null;
+  }
+
+  return new Resend(apiKey);
+};
+
+export const POST = async (req: NextRequest) => {
   try {
-    const { email, name, company, phone, message, role } = await req.json();
+    const resend = getResendClient();
+    if (!resend) {
+      return Response.json(
+        { error: 'Missing RESEND_API_KEY' },
+        { status: 500 }
+      );
+    }
+
+    const { email, name, company, phone, message, role } =
+      (await req.json()) as ContactPayload;
     const res = await resend.emails.send({
-    from: 'S <onboarding@resend.dev>',
-    to: 'abpriyanshu007@gmail.com',
-    subject: `Contact for ${role} from ${name}`,
-    react: React.createElement(Email, {
-      email: email as string,
-      name: name as string,
-      company: company as string,
-      phone: phone as string,
-      message: message as string,
-      role: role as string,
+      from: 'S <onboarding@resend.dev>',
+      to: 'abpriyanshu007@gmail.com',
+      subject: `Contact for ${role} from ${name}`,
+      react: React.createElement(Email, {
+        email,
+        name,
+        company,
+        phone,
+        message,
+        role,
       }),
     });
 
@@ -38,4 +63,4 @@ export const POST = async (req: NextRequest) =>{
     console.log(error);
     return Response.json({ error }, { status: 500 });
   }
-}
+};

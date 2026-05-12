@@ -1,7 +1,7 @@
 import {
-  SiAmazonec2,
   SiAppwrite,
   SiArgo,
+  SiCloudinary,
   SiCplusplus,
   SiDocker,
   SiFastapi,
@@ -192,8 +192,8 @@ export const experienceData: IExperience = {
           level: "Advanced",
         },
         {
-          title: "AWS",
-          icon: SiAmazonec2,
+          title: "Cloudinary",
+          icon: SiCloudinary,
           level: "Advanced",
         },
       ],
