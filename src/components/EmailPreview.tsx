@@ -1,10 +1,7 @@
-import * as React from 'react';
 import { 
   Html, 
-  Button,
   Body,
   Head,
-  Hr,
   Container,
   Preview,
   Section,
@@ -13,7 +10,7 @@ import {
   Column,
   Heading,
   Tailwind
-} from "@react-email/components";
+} from "react-email";
 
 // Define the type for the props that the Email component will receive
 type EmailProps = {
