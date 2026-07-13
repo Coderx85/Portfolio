@@ -3,6 +3,7 @@ import {
   SiArgo,
   SiCloudinary,
   SiCplusplus,
+  SiDevbox,
   SiDocker,
   SiElasticcloud,
   SiFastapi,
@@ -23,6 +24,7 @@ import {
   SiPulumi,
   SiServerless,
   SiStreamlit,
+  SiTailwindcss,
   SiTypescript,
   SiVitest,
 } from "react-icons/si";
@@ -154,10 +156,10 @@ export const experienceData: IExperience = {
   items: [
     {
       id: 0,
-      title: "Full Stack Web Intern",
+      title: "Full Stack Developer - I (Intern) ",
       company: "Websmiths",
       startDate: new Date("2025-09-01"),
-      endDate: new Date("2025-11-01"),
+      endDate: new Date("2025-12-01"),
       companyUrl: "https://www.websmiths.io/",
       description: [
         "Built and deployed full-stack web applications using Next.js and Fastify, serving 500+ daily active users",
@@ -202,10 +204,10 @@ export const experienceData: IExperience = {
     },
     {
       id: 1,
-      title: "Frontend Web Intern",
+      title: "Frontend Developer",
       company: "JarGoan",
       startDate: new Date("2024-05-01"),
-      endDate: new Date("2024-06-01"),
+      endDate: new Date("2024-06-31"),
       companyUrl: "https://www.jargoan.com/",
       description: [
         "Improved platform usability by 20.6% through responsive redesigns and accessibility enhancements",
@@ -221,25 +223,40 @@ export const experienceData: IExperience = {
           level: "Advanced",
         },
         {
-          title: "HTML",
-          icon: FaHtml5,
-          level: "Advanced",
-        },
-        {
-          title: "CSS",
-          icon: FaCss3,
-          level: "Advanced",
-        },
-        {
           title: "JavaScript",
           icon: FaJs,
           level: "Intermediate",
         },
+        {
+          title: "Vitest",
+          icon: SiVitest,
+          level: "Intermediate",
+        },
+        {
+          title: "Tailwind CSS",
+          icon: SiTailwindcss,
+          level: "Advanced",
+        },
+        {
+          title: "Docker",
+          icon: SiDocker,
+          level: "Intermediate",
+        },
+        {
+          title: "MongoDB",
+          icon: SiMongodb,
+          level: "Intermediate",
+        },
+        {
+          title: "CI/CD Pipelines",
+          icon: SiDevbox,
+          level: "Intermediate",
+        }
       ],
     },
     {
       id: 2,
-      title: "AI Intern",
+      title: "Core Backend Engineer",
       company: "Tublian",
       startDate: new Date("2024-04-01"),
       endDate: new Date("2024-06-01"),
@@ -273,7 +290,7 @@ export const experienceData: IExperience = {
       title: "Contributor",
       company: "Winter of Code Social 2025",
       startDate: new Date("2025-11-01"),
-      endDate: new Date("2026-01-31"),
+      endDate: new Date("2026-02-28"),
       description: [
         "Contributed 15+ pull requests to open-source repositories, improving documentation and fixing bugs",
         "Collaborated with a global team of 50+ developers using Git-based workflows and code reviews",
