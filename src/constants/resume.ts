@@ -4,6 +4,7 @@ import {
   SiCloudinary,
   SiCplusplus,
   SiDocker,
+  SiElasticcloud,
   SiFastapi,
   SiFastify,
   SiGit,
@@ -14,6 +15,7 @@ import {
   SiKubernetes,
   SiLanguagetool,
   SiMongodb,
+  SiMoonrepo,
   SiNextdotjs,
   SiPhp,
   SiPostgresql,
@@ -298,6 +300,83 @@ export const experienceData: IExperience = {
         },
       ],
     },
+    {
+      id: 4,
+      title: "Founding Engineer",
+      company: "Adleia Labs Private Limited",
+      startDate: new Date("2026-07-15"),
+      endDate: new Date("2026-09-15"),
+      isCurrent: true,
+      companyUrl: "https://adleia.com/",
+      description: [
+        "Migrated legacy workflow engine to a microservices architecture using Fastify, Next.js, React Native, and PostgreSQL, improving scalability and maintainability",
+        "Implemented CI/CD pipelines with GitHub Actions, reducing deployment time by 40%",
+        "Developed a real-time analytics dashboard using React and D3.js, providing actionable insights to stakeholders",
+        "Integrated third-party APIs for payment processing and user authentication, enhancing platform functionality",
+      ], 
+      techStack: [
+        {
+          icon: FaReact,
+          title: "React",
+          level: "Advanced",
+        },
+        {
+          icon: SiNextdotjs,
+          title: "Next.js",
+          level: "Advanced",
+        },
+        {
+          icon: SiFastify,
+          title: "Fastify",
+          level: "Advanced",
+        },
+        {
+          icon: SiPostgresql,
+          title: "PostgreSQL",
+          level: "Intermediate",
+        },
+        {
+          icon: SiDocker,
+          title: "Docker",
+          level: "Intermediate",
+        },
+        {
+          icon: SiKubernetes,
+          title: "Kubernetes",
+          level: "Beginner",
+        },
+        {
+          icon: SiPulumi,
+          title: "Pulumi",
+          level: "Beginner",
+        },
+        {
+          icon: SiHelm,
+          title: "Helm",
+          level: "Beginner",
+        },
+        {
+          icon: SiGit,
+          title: "Git",
+          level: "Intermediate",
+        },
+        { 
+          icon: SiMoonrepo,
+          title: "Moonrepo",
+          level: "Intermediate",
+        },
+        {
+          icon: SiElasticcloud,
+          title: "AWS Elastic Cloud",
+          level: "Intermediate",
+        },
+        {
+          icon: SiServerless,
+          title: "Serverless",
+          level: "Intermediate",
+        }
+      ]
+    }
   ],
 };
 
