@@ -1,4 +1,5 @@
 import { TProject } from "@/types";
+import { SiNodedotjs } from "react-icons/si";
 
 // Project Data
 export const ProjectData: TProject[] = [
@@ -241,4 +242,70 @@ export const ProjectData: TProject[] = [
     ],
     lessonsLearned: ["Lesson 1", "Lesson 2"],
   },
+  { 
+    id: 9,
+    title: "Wave - Payment Orchestration Platform",
+    description:
+      "Wave is a payment orchestration platform that simplifies the payment process for businesses. It provides a unified interface to manage multiple payment gateways, ensuring seamless transactions and improved customer experience.",
+    imgUrl: "",
+    gitUrl: "github.com/coderx85/wave.git",
+    previewUrl: "https://wave.vercel.app/",
+    techStack: {
+      "Next.js": "SiNextdotjs",
+      TypeScript: "SiTypescript",
+      TailwindCSS: "SiTailwindcss",
+      Vercel: "SiVercel",
+      tRPC: "SiTrpc ",
+      Inngest: "SiInngest",
+    },
+    challengesFaced: [
+      {
+        title: "Designing a user-friendly interface",
+        solution:
+          "Conducted user research to understand needs and iterated on designs based on feedback.",
+      },
+      {
+        title: "Configured the SAGA pattern for payment orchestration with PostgreSQL and Tigerbeetle",
+        solution:
+          "Implemented a distributed transaction management system using the SAGA pattern, ensuring data consistency across multiple services." + 
+          "PostgreSQL is act as a source of truth for transactional data, while Tigerbeetle is used for high-performance storage.",
+      },
+      {
+        title: "Integrating rust microservices for payment processing",
+        solution:
+          "Implemented a microservices architecture using Rust for high-performance payment processing, ensuring secure and efficient transactions.",
+      },
+    ],
+    lessonsLearned: ["Lesson 1", "Lesson 2"],
+  }, 
+  {
+    id: 10,
+    title: "Zig Crypto Library - A Node.js library using N-API and Zig.",
+    description:
+      "Zig Crypto Library is a Node.js library that provides cryptographic functions using the Zig programming language and N-API. It offers a simple and efficient way to perform cryptographic operations in Node.js applications.",
+    imgUrl: "",
+    gitUrl: "https://github.com/coderx85/zig-crypto-library.git",
+    previewUrl: "",
+    challengesFaced: [
+      {
+        title: "Understanding N-API and Zig for Node.js integration",
+        solution:
+          "Studied the N-API documentation and Zig language features to effectively integrate Zig with Node.js, enabling the creation of native modules.",
+      },
+      {
+        title: "Configured types for the Zig and TypeScript integration",
+        solution: "Used comptime features of Zig and make a similar types for TypeScript to ensure type safety."
+      }
+    ],
+    lessonsLearned: [
+      "Learnt about uuid, snowflake, and nanoid for generating unique identifiers in Zig", 
+      "Configured a universal build system for Zig for all platforms (Windows, Linux, MacOS) using Zig's cross-compilation capabilities",
+      "Implemented cryptographic functions in Zig and exposed them to Node.js using N-API, ensuring high performance and security."
+    ],
+    techStack: {
+      NodeJS: "SiNodedotjs",
+      Zig: "SiZig",
+      TypeScript: "SiTypescript"
+    }
+  }
 ];

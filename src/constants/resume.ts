@@ -18,15 +18,20 @@ import {
   SiMongodb,
   SiMoonrepo,
   SiNextdotjs,
+  SiOpentelemetry,
   SiPhp,
   SiPostgresql,
   SiPrometheus,
   SiPulumi,
+  SiRazorpay,
   SiServerless,
   SiStreamlit,
   SiTailwindcss,
+  SiTokio,
   SiTypescript,
   SiVitest,
+  SiZap,
+  SiZig,
 } from "react-icons/si";
 import {
   FaCss3,
@@ -83,6 +88,12 @@ import {
   HelmOriginalIcon,
   BunOriginalIcon,
   DenojsOriginalIcon,
+  ApachekafkaOriginalIcon,
+  ZigOriginalIcon,
+  PulumiOriginalIcon,
+  ArchlinuxOriginalIcon,
+  OpentelemetryOriginalIcon,
+  GithubOriginalIcon,
 } from "@devicon/react";
 import {
   FaAsymmetrik,
@@ -207,7 +218,7 @@ export const experienceData: IExperience = {
       title: "Frontend Developer",
       company: "JarGoan",
       startDate: new Date("2024-05-01"),
-      endDate: new Date("2024-06-31"),
+      endDate: new Date("2024-07-31"),
       companyUrl: "https://www.jargoan.com/",
       description: [
         "Improved platform usability by 20.6% through responsive redesigns and accessibility enhancements",
@@ -258,8 +269,8 @@ export const experienceData: IExperience = {
       id: 2,
       title: "Core Backend Engineer",
       company: "Tublian",
-      startDate: new Date("2024-04-01"),
-      endDate: new Date("2024-06-01"),
+      startDate: new Date("2024-06-01"),
+      endDate: new Date("2025-06-01"),
       description: [
         "Developed an AI-powered chatbot using Python and FastAPI, increasing user interaction by 50%",
         "Built and deployed Streamlit dashboards for real-time model performance monitoring",
@@ -324,6 +335,7 @@ export const experienceData: IExperience = {
       startDate: new Date("2026-07-15"),
       endDate: new Date("2026-09-15"),
       isCurrent: true,
+      linkedin: "https://www.linkedin.com/company/adleia-labs-private-limited",
       companyUrl: "https://adleia.com/",
       description: [
         "Migrated legacy workflow engine to a microservices architecture using Fastify, Next.js, React Native, and PostgreSQL, improving scalability and maintainability",
@@ -353,11 +365,6 @@ export const experienceData: IExperience = {
           level: "Intermediate",
         },
         {
-          icon: SiDocker,
-          title: "Docker",
-          level: "Intermediate",
-        },
-        {
           icon: SiKubernetes,
           title: "Kubernetes",
           level: "Beginner",
@@ -372,24 +379,9 @@ export const experienceData: IExperience = {
           title: "Helm",
           level: "Beginner",
         },
-        {
-          icon: SiGit,
-          title: "Git",
-          level: "Intermediate",
-        },
         { 
           icon: SiMoonrepo,
           title: "Moonrepo",
-          level: "Intermediate",
-        },
-        {
-          icon: SiElasticcloud,
-          title: "AWS Elastic Cloud",
-          level: "Intermediate",
-        },
-        {
-          icon: SiServerless,
-          title: "Serverless",
           level: "Intermediate",
         }
       ]
@@ -624,7 +616,7 @@ export const tech: readonly TTechStack[] = [
         color: "#E34F26",
       },
       {
-        title: "Taiwind",
+        title: "Tailwind CSS",
         icon: TailwindcssOriginalIcon,
         level: "Advanced",
         color: "#06B6D4",
@@ -651,25 +643,13 @@ export const tech: readonly TTechStack[] = [
         title: "Bun",
         icon: BunOriginalIcon,
         level: "Intermediate",
-        color: "#000000",
+        color: "#FCD000",
       },
       {
-        title: "Go",
-        icon: GoOriginalIcon,
-        level: "Beginner",
-        color: "#00ADD8",
-      },
-      {
-        title: "FastAPI",
-        icon: FastapiOriginalIcon,
+        title: "Tokio",
+        icon: SiTokio,
         level: "Intermediate",
-        color: "#009688",
-      },
-      {
-        title: "Deno",
-        icon: DenojsOriginalIcon,
-        level: "Intermediate",
-        color: "#000000",
+        color: "#DDD",
       },
     ],
   },
@@ -678,16 +658,16 @@ export const tech: readonly TTechStack[] = [
     icon: SiLanguagetool,
     techStack: [
       {
-        title: "Javascript",
-        icon: JavascriptOriginalIcon,
-        level: "Intermediate",
-        color: "#F7DF1E",
-      },
-      {
         title: "Typescript",
         icon: TypescriptOriginalIcon,
-        level: "Intermediate",
+        level: "Advanced",
         color: "#3178C6",
+      },
+      {
+        title: "Zig",
+        icon: ZigOriginalIcon,
+        level: "Intermediate",
+        color: "#F7A41D",
       },
       {
         title: "Shell",
@@ -761,6 +741,12 @@ export const tech: readonly TTechStack[] = [
         level: "Intermediate",
         color: "#FF9900",
       },
+      {
+        title: "Arch Linux",
+        icon: ArchlinuxOriginalIcon,
+        level: "Intermediate",
+        color: "#1793D1",
+      },
     ],
   },
   {
@@ -774,10 +760,10 @@ export const tech: readonly TTechStack[] = [
         color: "#009639",
       },
       {
-        title: "Apache",
-        icon: ApacheOriginalIcon,
-        level: "Intermediate",
-        color: "#D22128",
+        title: "Apache Kafka",
+        icon: ApachekafkaOriginalIcon,
+        level: "Beginner",
+        color: "#231F20",
       },
       {
         title: "Ubuntu",
@@ -785,6 +771,18 @@ export const tech: readonly TTechStack[] = [
         level: "Intermediate",
         color: "#E95420",
       },
+      {
+        title: "Helm",
+        icon: HelmOriginalIcon,
+        level: "Intermediate",
+        color: "#0F1C2E",
+      },
+      {
+        title: "Pulumi",
+        icon: PulumiOriginalIcon,
+        level: "Beginner",
+        color: "#6F2C91",
+      }
     ],
   },
   {
@@ -804,11 +802,11 @@ export const tech: readonly TTechStack[] = [
         color: "#E6522C",
       },
       {
-        title: "Jenkins",
-        icon: JenkinsOriginalIcon,
+        title: "OpenTelemetry",
+        icon: OpentelemetryOriginalIcon,
         level: "Intermediate",
-        color: "#D24939",
-      },
+        color: "#DD0031",
+      }
     ],
   },
   {
@@ -822,34 +820,10 @@ export const tech: readonly TTechStack[] = [
         color: "#FFFFFF",
       },
       {
-        title: "NestJS",
-        icon: NestjsOriginalIcon,
-        level: "Intermediate",
-        color: "#E0234E",
-      },
-      {
         title: "NextJS",
         icon: NextjsOriginalIcon,
         level: "Advanced",
         color: "#FFFFFF",
-      },
-      {
-        title: "Express",
-        icon: ExpressOriginalIcon,
-        level: "Advanced",
-        color: "#FFFFFF",
-      },
-      {
-        title: "RabbitMQ",
-        icon: RabbitmqOriginalIcon,
-        level: "Advanced",
-        color: "#FF6600",
-      },
-      {
-        title: "Webpack",
-        icon: WebpackOriginalIcon,
-        level: "Advanced",
-        color: "#8DD6F9",
       },
       {
         title: "Vite",
@@ -858,11 +832,11 @@ export const tech: readonly TTechStack[] = [
         color: "#646CFF",
       },
       {
-        title: "Helm",
-        icon: HelmOriginalIcon,
-        level: "Advanced",
-        color: "#263238",
-      },
+        title: "NestJS",
+        icon: NestjsOriginalIcon,
+        level: "Intermediate",
+        color: "#E0234E",
+      }
     ],
   },
 ];
