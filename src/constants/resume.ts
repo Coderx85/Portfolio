@@ -1,3 +1,4 @@
+import type { IconType } from "react-icons/lib";
 import {
   SiAppwrite,
   SiArgo,
@@ -79,6 +80,9 @@ import {
   HelmOriginalIcon,
   BunOriginalIcon,
   DenojsOriginalIcon,
+  Html5PlainIcon,
+  Css3PlainIcon,
+  JavascriptPlainIcon,
 } from "@devicon/react";
 import {
   FaAsymmetrik,
@@ -151,6 +155,43 @@ export const experienceData: IExperience = {
   description: "I have worked as a web developer at XYZ company for 2 years.",
   items: [
     {
+      id: 4,
+      title: "Backend Engineering Intern",
+      company: "Sample Co",
+      startDate: new Date("2026-02-01"),
+      endDate: new Date("2026-02-01"),
+      companyUrl: "https://example.com/",
+      description: [
+        "Designed REST APIs with Hono and MongoDB, cutting average response time by 30%",
+        "Automated the deploy pipeline with Docker, reducing release time from 40 minutes to 8",
+        "Wrote TypeScript services with end-to-end type safety across the API boundary",
+        "Paired with the frontend team to define and version the shared API contract",
+      ],
+      isCurrent: true,
+      techStack: [
+        {
+          title: "Hono",
+          icon: SiHono,
+          level: "Intermediate",
+        },
+        {
+          title: "MongoDB",
+          icon: SiMongodb,
+          level: "Intermediate",
+        },
+        {
+          title: "TypeScript",
+          icon: SiTypescript,
+          level: "Advanced",
+        },
+        {
+          title: "Docker",
+          icon: SiDocker,
+          level: "Intermediate",
+        },
+      ],
+    },
+    {
       id: 0,
       title: "Full Stack Web Intern",
       company: "Websmiths",
@@ -219,18 +260,26 @@ export const experienceData: IExperience = {
           level: "Advanced",
         },
         {
+          // react-icons' FaHtml5 has a non-square viewBox (384x512) that
+          // rendered clipped/garbled when baked onto the cube's square
+          // canvas tiles (TechShowcasePanel's createFeatureTexture) — the
+          // devicon Plain variant has a clean 128x128 viewBox and still
+          // respects the `color` prop (currentColor fill), unlike the
+          // devicon "Original" variants, which hardcode brand colors. The
+          // cast matches how every other devicon icon in this file is
+          // already structurally incompatible with react-icons' IconType.
           title: "HTML",
-          icon: FaHtml5,
+          icon: Html5PlainIcon as unknown as IconType,
           level: "Advanced",
         },
         {
           title: "CSS",
-          icon: FaCss3,
+          icon: Css3PlainIcon as unknown as IconType,
           level: "Advanced",
         },
         {
           title: "JavaScript",
-          icon: FaJs,
+          icon: JavascriptPlainIcon as unknown as IconType,
           level: "Intermediate",
         },
       ],
@@ -278,7 +327,6 @@ export const experienceData: IExperience = {
         "Refactored legacy TypeScript modules, improving type safety and reducing runtime errors by 25%",
         "Mentored junior contributors on Git best practices, branching strategies, and CI/CD pipelines",
       ],
-      linkedin: "https://www.linkedin.com/company/websmiths",
       isCurrent: false,
       techStack: [
         {
