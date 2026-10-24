@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 const ExperiencePage = () => {
   return (
-    <section className="mx-24 min-h-screen mt-10">
+    <section className="mx-4 sm:mx-8 lg:mx-24 min-h-screen mt-10">
       <ExperienceSection mode="full" />
     </section>
   );
