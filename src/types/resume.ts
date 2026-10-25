@@ -26,6 +26,7 @@ export interface IExperience extends DataProps {
     endDate: Date;
     description: string[];
     techStack?: SkillProps["items"][number]["techStack"];
+    imgUrl?: string;
     companyUrl?: string;
     linkedin?: string;
     isCurrent?: boolean;

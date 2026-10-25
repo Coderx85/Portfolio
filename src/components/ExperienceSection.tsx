@@ -9,9 +9,12 @@ import { calcDuration, formatDate } from "@/lib/dayjs";
 import { FaArrowRight } from "react-icons/fa6";
 import Heading from "./Heading";
 import TechShowcasePanel from "./experience/TechShowcasePanel";
+import Image from "next/image";
+import { Briefcase } from "lucide-react";
 
 // Unique accent color per experience card — curated minimal palette
 const EXP_COLORS = [
+  "#fb7185", // rose
   "#38bdf8", // sky blue
   "#a78bfa", // soft violet
   "#4ade80", // sage green
@@ -45,14 +48,20 @@ function renderCard(
       <div className="flex flex-col gap-3">
         <div className="flex items-start gap-3">
           <div
-            className="w-8 h-8 shrink-0 rounded-lg border flex items-center justify-center"
+            className="shrink-0 rounded-lg border flex items-center justify-center"
             style={{ backgroundColor: `${color}0d`, borderColor: `${color}33` }}
           >
-            <HiBriefcase
-              className="w-3.5 h-3.5"
-              style={{ opacity: 0.6 }}
-              aria-hidden="true"
-            />
+            {!!!exp.imgUrl ? (
+              <Briefcase />
+            ) : (
+              <Image
+                src={exp.imgUrl ?? "/images/experience/default-company.png"}
+                alt={`${exp.company} logo`}
+                width={48}
+                height={48}
+                className="object-contain rounded-2xl"
+              />
+            )}
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
