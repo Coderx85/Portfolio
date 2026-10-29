@@ -42,7 +42,7 @@ function renderCard(
         borderBottom: linked ? `1px solid ${color}40` : undefined,
         borderLeft: `3px solid ${color}`,
         boxShadow: linked ? `0 0 28px -10px ${color}66` : undefined,
-        background: `linear-gradient(135deg, ${color}12 0%, transparent 60%), rgba(15, 23, 42, 0.5)`,
+        background: `linear-gradient(135deg, ${color}12 0%, transparent 60%), var(--card-tint)`,
       }}
     >
       <div className="flex flex-col gap-3">
@@ -66,7 +66,7 @@ function renderCard(
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2">
-              <h3 className="text-white/90 font-semibold text-sm sm:text-base truncate">
+              <h3 className="text-foreground font-semibold text-sm sm:text-base truncate">
                 {exp.title}
               </h3>
               <div className="flex items-center gap-2 shrink-0">
@@ -82,7 +82,7 @@ function renderCard(
                     Current
                   </span>
                 )}
-                <span className="text-white/50 text-xs whitespace-nowrap">
+                <span className="text-muted-foreground text-xs whitespace-nowrap">
                   {dateRange}
                 </span>
               </div>
@@ -126,7 +126,7 @@ function renderCard(
           {exp.description.map((point, i) => (
             <li
               key={i}
-              className="flex items-start gap-2 text-white/65 leading-relaxed"
+              className="flex items-start gap-2 text-muted-foreground leading-relaxed"
             >
               <span
                 className="mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full"
@@ -282,7 +282,7 @@ const ExperienceSection = ({ mode = "half" }: { mode?: TMode }) => {
             className="pointer-events-none absolute bottom-0 left-0 right-0 h-16 rounded-b-2xl"
             style={{
               background:
-                "linear-gradient(to bottom, transparent, rgba(10,10,12,0.9))",
+                "linear-gradient(to bottom, transparent, rgba(var(--canvas-scrim-rgb), 0.9))",
             }}
             aria-hidden="true"
           />
@@ -290,7 +290,7 @@ const ExperienceSection = ({ mode = "half" }: { mode?: TMode }) => {
 
         {visibleItems.length > 1 && (
           <div className="flex items-center justify-center gap-3">
-            <span className="text-xs text-white/50 tabular-nums">
+            <span className="text-xs text-muted-foreground tabular-nums">
               {activeCardIndex + 1}/{visibleItems.length}
             </span>
             <div className="flex gap-1 px-2 py-1.5 rounded-full glass">
@@ -374,7 +374,9 @@ const ExperienceSection = ({ mode = "half" }: { mode?: TMode }) => {
                   className="exp-dot"
                   style={{
                     borderColor: color,
-                    backgroundColor: exp.isCurrent ? color : "#0a0a0a",
+                    backgroundColor: exp.isCurrent
+                      ? color
+                      : "rgb(var(--canvas-scrim-rgb))",
                     boxShadow: exp.isCurrent ? `0 0 12px ${color}99` : "none",
                   }}
                 />
@@ -398,7 +400,7 @@ const ExperienceSection = ({ mode = "half" }: { mode?: TMode }) => {
         >
           <Link
             href="/experience"
-            className="text-white flex gap-2 px-4 py-2 rounded-xl border-2 border-white hover:border-white/50 hover:bg-white/10 transition-colors duration-300"
+            className="text-foreground flex gap-2 px-4 py-2 rounded-xl border-2 border-black dark:border-white hover:border-black/50 dark:hover:border-white/50 hover:bg-black/10 dark:hover:bg-white/10 transition-colors duration-300"
           >
             View more experiences
             <motion.span
@@ -432,7 +434,7 @@ const ExperienceSection = ({ mode = "half" }: { mode?: TMode }) => {
         >
           <Link
             href="/work#projects"
-            className="flex items-center gap-2 px-4 py-2 border-b-2 border-white/25 hover:bg-white/15 transition-colors duration-300"
+            className="flex items-center gap-2 px-4 py-2 border-b-2 border-black/25 dark:border-white/25 hover:bg-black/5 dark:hover:bg-white/15 transition-colors duration-300"
           >
             {"My Projects" as const}
             <FaArrowRight className="text-sm items-center justify-center" />

@@ -3,6 +3,7 @@ import { Progress } from "@/components/ui/progress";
 import { motion } from "framer-motion";
 import ExperienceSection from "@/components/ExperienceSection";
 import { convertLevelIntoNumber } from "@/lib/convertLevel";
+import { levelBarColor } from "@/lib/levelBarColor";
 import { config, SocialLink } from "@/constants";
 import { FaBookOpen, FaGithub, FaLayerGroup } from "react-icons/fa6";
 import GitHubStats from "@/app/_components/GitHubStats";
@@ -14,13 +15,7 @@ import { webPanelId, webTabId } from "./webmodeToggle";
 // design system's Glow-Means-Active rule they get the plain glass border at
 // rest and no hover treatment (rest + hover are the same state).
 const techTileClassName =
-  "w-20 border border-white/10 rounded-xl p-3 flex flex-col gap-2 items-center text-center";
-
-// Tier semantics for the mastery bars: one signal fill for Advanced, a
-// neutral fill for everything else. Brand colors stay on the icons only.
-export function levelBarColor(level: string): string {
-  return level === "Advanced" ? "#166466" : "rgba(255, 255, 255, 0.35)";
-}
+  "w-20 border border-black/10 dark:border-white/10 rounded-xl p-3 flex flex-col gap-2 items-center text-center";
 
 export default function WebView() {
   return (
@@ -67,7 +62,7 @@ export default function WebView() {
                   className="flex items-start gap-3 group"
                 >
                   <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-secondary group-hover:scale-150 transition-transform duration-300 shrink-0" />
-                  <p className="text-white text-sm md:text-base leading-relaxed">
+                  <p className="text-foreground text-sm md:text-base leading-relaxed">
                     {item}
                   </p>
                 </motion.li>
@@ -80,9 +75,7 @@ export default function WebView() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.5 }}
             style={{
-              background:
-                // use grey shade for background
-                "linear-gradient(90deg, rgba(22, 22, 22, 0.4), rgba(22, 22, 22, 0.4), 0.5)",
+              background: "var(--card-tint)",
             }}
             className="flex flex-col gap-3 lg:w-65 justify-end shrink-0 rounded-xl p-4"
           >
@@ -100,7 +93,7 @@ export default function WebView() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.4 }}
-                className="flex items-start gap-3 px-1 py-2 rounded-lg transition-all duration-300 hover:bg-white/5 group"
+                className="flex items-start gap-3 px-1 py-2 rounded-lg transition-all duration-300 hover:bg-black/5 dark:hover:bg-white/5 group"
               >
                 <span
                   className="flex items-center justify-center w-8 h-8 rounded-lg transition-all duration-300 group-hover:scale-110"
@@ -112,7 +105,7 @@ export default function WebView() {
                   <link.icon className="w-4 h-4" />
                 </span>
                 <div className="flex flex-col">
-                  <span className="text-white text-xs font-medium group-hover:text-white transition-colors">
+                  <span className="text-foreground text-xs font-medium transition-colors">
                     {link.name}
                   </span>
                   <span className="text-secondary-foreground text-[11px]">
@@ -129,7 +122,7 @@ export default function WebView() {
           className="w-full h-px"
           style={{
             background:
-              "linear-gradient(90deg, transparent, rgba(22, 100, 102, 0.4), transparent)",
+              "linear-gradient(90deg, transparent, rgba(255, 122, 26, 0.4), transparent)",
           }}
         />
 
@@ -141,7 +134,7 @@ export default function WebView() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.4, ease: "easeOut" }}
-              className="text-white/70 text-sm md:text-base leading-relaxed"
+              className="text-muted-foreground text-sm md:text-base leading-relaxed"
             >
               Full-stack and DevOps engineer with a B-Tech in Computer Science
               (2021–25). I work across the whole stack — React and Next.js
@@ -152,7 +145,7 @@ export default function WebView() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.45, duration: 0.4, ease: "easeOut" }}
-              className="text-white/70 text-sm md:text-base leading-relaxed"
+              className="text-muted-foreground text-sm md:text-base leading-relaxed"
             >
               As a Forward Deployed Engineer at Adleia Labs, I took an
               AI-driven healthcare SaaS from zero to production in 10 weeks
@@ -167,7 +160,7 @@ export default function WebView() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.4, ease: "easeOut" }}
-              className="text-white/70 text-sm md:text-base leading-relaxed"
+              className="text-muted-foreground text-sm md:text-base leading-relaxed"
             >
               As a Frontend Developer Intern at JarGoan, my redesigns improved
               usability by 20.6% and cut the initial bundle size by 18%.
@@ -221,9 +214,9 @@ export default function WebView() {
                         duration: 0.4,
                         ease: "easeOut",
                       }}
-                      className="text-lg flex items-center gap-2 font-semibold text-white tracking-wide"
+                      className="text-lg flex items-center gap-2 font-semibold text-foreground tracking-wide"
                     >
-                      <category.icon className="text-white/70" />
+                      <category.icon className="text-muted-foreground" />
                       {category.title}
                     </motion.h4>
                     <div className="flex gap-4 flex-wrap md:justify-start justify-center">
@@ -251,13 +244,13 @@ export default function WebView() {
                           <div className="w-full">
                             <Progress
                               value={convertLevelIntoNumber(techItem.level)}
-                              className="bg-white/10 h-1.5 rounded-full"
+                              className="bg-black/10 dark:bg-white/10 h-1.5 rounded-full"
                               aria-label={`${techItem.title}: ${techItem.level}`}
                               indicatorStyle={{
                                 backgroundColor: levelBarColor(techItem.level),
                               }}
                             />
-                            <p className="mt-1 text-[10px] md:text-[11px] text-white/50 tracking-wide uppercase">
+                            <p className="mt-1 text-[10px] md:text-[11px] text-muted-foreground tracking-wide uppercase">
                               {techItem.level}
                             </p>
                           </div>
@@ -299,9 +292,9 @@ export default function WebView() {
                         duration: 0.4,
                         ease: "easeOut",
                       }}
-                      className="text-lg flex items-center gap-2 font-semibold text-white tracking-wide"
+                      className="text-lg flex items-center gap-2 font-semibold text-foreground tracking-wide"
                     >
-                      <category.icon className="text-white/70" />
+                      <category.icon className="text-muted-foreground" />
                       {category.title}
                     </motion.h4>
                     <div className="grid md:grid-cols-4 grid-cols-2 whitespace-nowrap self-center md:gap-3">
@@ -329,13 +322,13 @@ export default function WebView() {
                           <div className="w-full">
                             <Progress
                               value={convertLevelIntoNumber(techItem.level)}
-                              className="bg-white/10 h-1.5 rounded-full"
+                              className="bg-black/10 dark:bg-white/10 h-1.5 rounded-full"
                               aria-label={`${techItem.title}: ${techItem.level}`}
                               indicatorStyle={{
                                 backgroundColor: levelBarColor(techItem.level),
                               }}
                             />
-                            <p className="mt-1 text-[10px] md:text-[11px] text-white/50 tracking-wide uppercase">
+                            <p className="mt-1 text-[10px] md:text-[11px] text-muted-foreground tracking-wide uppercase">
                               {techItem.level}
                             </p>
                           </div>
@@ -349,9 +342,9 @@ export default function WebView() {
         </motion.div>
       </div>
 
-      {/* Plain section divider — low-key, in line with the glass language
-          (border-white/10); the teal gradient above is the emphasis device. */}
-      <div className="h-px w-full border-t border-white/10" />
+      {/* Plain section divider — low-key, in line with the glass language;
+          the amber gradient above is the emphasis device. */}
+      <div className="h-px w-full border-t border-black/10 dark:border-white/10" />
 
       {/* ── Experience section ── */}
       <ExperienceSection />

@@ -48,7 +48,7 @@ const ProjectSection = () => {
               className="flex items-center gap-2 h-10 px-4 py-2 rounded-full bg-white/95 text-[#0f172a]
                 border border-white/10 transition-all duration-300
                 hover:bg-white hover:border-secondary/40 hover:-translate-y-0.5
-                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a8385]"
+                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff9142]"
             >
               Contact Me
             </Link>

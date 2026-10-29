@@ -71,7 +71,7 @@ const HeroSection = () => {
           className="mx-auto mt-32 pb-12 text-left order-2 xl:order-0 py-0 h-full min-h-100 flex flex-col gap-3"
         >
           <motion.div variants={heroItemVariants}>
-            <span className="inline-flex gap-2 px-4 py-1.5  items-center rounded-full text-xs font-semibold uppercase tracking-[0.2em] border border-gray-100/30 bg-gray-100/5 text-gray-100">
+            <span className="inline-flex gap-2 px-4 py-1.5  items-center rounded-full text-xs font-semibold uppercase tracking-[0.2em] border border-black/15 dark:border-gray-100/30 bg-black/5 dark:bg-gray-100/5 text-foreground">
               <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
               Available for work
             </span>
@@ -79,7 +79,7 @@ const HeroSection = () => {
 
           <motion.h1
             variants={heroItemVariants}
-            className="text-white text-4xl xl:text-5xl py-2 font-bold leading-[1.4]"
+            className="text-foreground text-4xl xl:text-5xl py-2 font-bold leading-[1.4]"
           >
             <p className="py-1 ">{WELCOME_MESSAGE}</p>
             <ScrambleText
@@ -94,7 +94,7 @@ const HeroSection = () => {
 
           <motion.p
             variants={heroItemVariants}
-            className="max-w-130 md:mx-0 mx-auto text-white/60 text-base leading-relaxed"
+            className="max-w-130 md:mx-0 mx-auto text-muted-foreground text-base leading-relaxed"
           >
             {description}
           </motion.p>
@@ -114,10 +114,10 @@ const HeroSection = () => {
                 download="Resume/Priyanshu.pdf"
                 target="_blank"
                 aria-label="Download Resume"
-                className="uppercase inline-flex px-5 items-center whitespace-nowrap rounded-xl text-sm font-medium ring-offset-background focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 justify-center border-2 py-3 mx-auto w-full gap-2 text-white border-accent/50 hover:bg-accent hover:border-accent hover:shadow-lg hover:shadow-accent/20 transition-all duration-400 ease-out group"
+                className="uppercase inline-flex px-5 items-center whitespace-nowrap rounded-xl text-sm font-medium ring-offset-background focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 justify-center border-2 py-3 mx-auto w-full gap-2 text-foreground border-accent/50 hover:bg-accent hover:border-accent hover:text-primary hover:shadow-lg hover:shadow-accent/20 transition-all duration-400 ease-out group"
               >
                 Checkout My CV{" "}
-                <FiDownload className="text-sm text-accent group-hover:text-white transition-colors duration-300" />
+                <FiDownload className="text-sm text-accent group-hover:text-primary transition-colors duration-300" />
               </Link>
             </motion.div>
 
@@ -131,7 +131,7 @@ const HeroSection = () => {
                 size="lg"
                 aria-label="Hire Me"
                 onClick={() => router.push("/contact/#contact")}
-                className="uppercase w-full items-center gap-2 text-white bg-accent border-accent rounded-xl hover:bg-accent/80 hover:shadow-lg hover:shadow-accent/25
+                className="uppercase w-full items-center gap-2 text-primary bg-accent border-accent rounded-xl hover:bg-accent/80 hover:shadow-lg hover:shadow-accent/25
                   transition-all duration-400 ease-out group"
               >
                 Hire Me
@@ -163,7 +163,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2.6, duration: 0.5 }}
-              className="text-2xl flex gap-3 font-bold text-white"
+              className="text-2xl flex gap-3 font-bold text-foreground"
             >
               <FaCode className="fill-accent" />
               Skills
@@ -172,7 +172,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2.6, duration: 0.5 }}
-              className="text-white/60 text-base leading-relaxed"
+              className="text-muted-foreground text-base leading-relaxed"
             >
               Here's a glimpse of my skills set
             </motion.p>
@@ -203,9 +203,9 @@ const HeroSection = () => {
                       delay: 0.1 + index * 0.06,
                       duration: 0.4,
                     }}
-                    className="flex items-center gap-2 text-lg font-semibold text-white tracking-wide"
+                    className="flex items-center gap-2 text-lg font-semibold text-foreground tracking-wide"
                   >
-                    <skill.icon className="text-white/70" />
+                    <skill.icon className="text-muted-foreground" />
                     {skill.title}
                   </motion.h4>
                   <div className="flex gap-4 flex-wrap md:justify-start justify-center">
@@ -222,7 +222,7 @@ const HeroSection = () => {
                             delay: 0.12 + index * 0.06 + techIndex * 0.04,
                             duration: 0.4,
                           }}
-                          className="w-20 transition-colors border-white/10 hover:border-white/30 hover:bg-white/5 duration-300 rounded-xl p-3 flex flex-col gap-2 items-center text-center"
+                          className="w-20 transition-colors border-black/10 dark:border-white/10 hover:border-black/30 dark:hover:border-white/30 hover:bg-black/5 dark:hover:bg-white/5 duration-300 rounded-xl p-3 flex flex-col gap-2 items-center text-center"
                         >
                           <span
                             className="text-3xl"
@@ -236,13 +236,13 @@ const HeroSection = () => {
                           <div className="w-full">
                             <Progress
                               value={convertLevelIntoNumber(techItem.level)}
-                              className="bg-white/10 h-1.5 rounded-full"
+                              className="bg-black/10 dark:bg-white/10 h-1.5 rounded-full"
                               aria-label={`${techItem.title}: ${techItem.level}`}
                               indicatorStyle={{
                                 backgroundColor: levelBarColor(techItem.level),
                               }}
                             />
-                            <p className="mt-1 text-[10px] md:text-[11px] text-white/50 tracking-wide uppercase">
+                            <p className="mt-1 text-[10px] md:text-[11px] text-muted-foreground tracking-wide uppercase text-ellipsis overflow-hidden whitespace-nowrap max-w-full">
                               {techItem.level}
                             </p>
                           </div>
@@ -259,7 +259,7 @@ const HeroSection = () => {
                       onClick={() => {
                         router.push("/resume");
                       }}
-                      className="w-20 transition-colors border-white/10 hover:border-white/30 duration-30 hover:bg-white/10 pointer rounded-xl p-3 flex flex-col gap-2 items-center text-center"
+                      className="w-20 transition-colors border-black/10 dark:border-white/10 hover:border-black/30 dark:hover:border-white/30 duration-30 hover:bg-black/10 dark:hover:bg-white/10 pointer rounded-xl p-3 flex flex-col gap-2 items-center text-center"
                     >
                       <HiForward className="text-3xl" />
                       <p className="text-xs font-medium uppercase">View All</p>
@@ -275,7 +275,7 @@ const HeroSection = () => {
           >
             <Button
               onClick={() => router.push("/resume#skills")}
-              className="text-white rounded-xl bg-transparent border-white hover:bg-white/10 border-2"
+              className="text-foreground rounded-xl bg-transparent border-black dark:border-white hover:bg-black/10 dark:hover:bg-white/10 border-2"
             >
               View all skills.
             </Button>

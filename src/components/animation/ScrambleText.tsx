@@ -48,9 +48,24 @@ export const ScrambleText = ({
   ...props
 }: ScrambleTextProps) => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const [reducedMotion, setReducedMotion] = useState(false);
   const isArray = Array.isArray(text);
   const currentText = isArray ? text[currentTextIndex] : text;
 
+  useEffect(() => {
+    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReducedMotion(query.matches);
+    const onChange = () => setReducedMotion(query.matches);
+    query.addEventListener("change", onChange);
+    return () => query.removeEventListener("change", onChange);
+  }, []);
+
+  // use-scramble already collapses its own per-character jitter to a single
+  // frame when the OS has prefers-reduced-motion set, so no extra handling
+  // is needed there. What it doesn't do is stop THIS wrapper's cycling
+  // interval below, which would otherwise swap the text forever — a WCAG
+  // 2.2.2 (Pause, Stop, Hide) violation for content that auto-updates past
+  // 5s with no control.
   const { ref, replay } = useScramble({
     text: currentText,
     speed,
@@ -63,14 +78,24 @@ export const ScrambleText = ({
   });
 
   useEffect(() => {
-    if (!isArray) return;
+    if (!isArray || reducedMotion) return;
 
+    // Stop after two full passes through the list instead of cycling
+    // forever, so the heading eventually settles rather than running
+    // indefinitely with no pause/stop control.
+    let cycles = 0;
+    const maxCycles = text.length * 2;
     const interval = setInterval(() => {
+      cycles += 1;
+      if (cycles >= maxCycles) {
+        clearInterval(interval);
+        return;
+      }
       setCurrentTextIndex((prev) => (prev + 1) % text.length);
     }, cycleDuration);
 
     return () => clearInterval(interval);
-  }, [isArray, text, cycleDuration]);
+  }, [isArray, text, cycleDuration, reducedMotion]);
 
   return (
     <motion.span

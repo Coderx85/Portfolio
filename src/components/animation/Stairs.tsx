@@ -33,7 +33,8 @@ const Stairs = () => {
             delay: reverseIndex(index) * 0.1,
             ease: "easeInOut",
           }}
-          className="h-full w-full bg-white relative"
+          className="h-full w-full relative"
+          style={{ background: "rgb(var(--canvas-scrim-rgb))" }}
         />
         )}
       )}

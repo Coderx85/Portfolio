@@ -104,7 +104,7 @@ const ContactPage = () => {
             <h2 className="text-2xl xl:text-3xl font-bold text-secondary mb-1">
               Let&apos;s Work Together
             </h2>
-            <p className="text-white/75 leading-relaxed text-sm">
+            <p className="text-muted-foreground leading-relaxed text-sm">
               I&apos;m currently looking for new opportunities. Whether you have
               a question or just want to say hi, I&apos;ll try my best to get
               back to you!
@@ -113,22 +113,22 @@ const ContactPage = () => {
 
           {/* ── Your Details Group ── */}
           <div className="space-y-2">
-            <p className="text-xs text-white/95 font-semibold">Your Details</p>
+            <p className="text-xs text-foreground font-semibold">Your Details</p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {/* Name */}
               <div className="relative group">
                 <div className="absolute left-4 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
-                  <FaUser className="text-xs text-white/25 group-focus-within:text-secondary transition-colors duration-300" />
+                  <FaUser className="text-xs text-black/30 dark:text-white/25 group-focus-within:text-secondary transition-colors duration-300" />
                 </div>
                 <Input
                   type="text"
                   id="name"
                   placeholder="Full Name"
                   required
-                  className="glass border-white/10 rounded-xl h-10 pl-10 pr-4 text-sm w-full
-                        placeholder:text-white/95
-                        focus:border-secondary/50 focus:shadow-[0_0_15px_rgba(22,100,102,0.1)]
+                  className="glass border-black/10 dark:border-white/10 rounded-xl h-10 pl-10 pr-4 text-sm w-full
+                        placeholder:text-black/50 dark:placeholder:text-foreground
+                        focus:border-secondary/50 focus:shadow-[0_0_15px_rgba(255,122,26,0.1)]
                         transition-all duration-300"
                   onChange={(e) => {
                     setFormData({ ...formData, name: e.target.value });
@@ -139,16 +139,16 @@ const ContactPage = () => {
               {/* Email */}
               <div className="relative group">
                 <div className="absolute left-4 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
-                  <FaEnvelope className="text-xs text-white/25 group-focus-within:text-secondary transition-colors duration-300" />
+                  <FaEnvelope className="text-xs text-black/30 dark:text-white/25 group-focus-within:text-secondary transition-colors duration-300" />
                 </div>
                 <Input
                   type="email"
                   id="email"
                   required
                   placeholder="Email address"
-                  className="glass border-white/10 rounded-xl h-10 pl-10 pr-4 text-sm w-full
-                        placeholder:text-white/95
-                        focus:border-accent/50 focus:shadow-[0_0_15px_rgba(22,100,102,0.1)]
+                  className="glass border-black/10 dark:border-white/10 rounded-xl h-10 pl-10 pr-4 text-sm w-full
+                        placeholder:text-black/50 dark:placeholder:text-foreground
+                        focus:border-accent/50 focus:shadow-[0_0_15px_rgba(255,122,26,0.1)]
                         transition-all duration-300"
                   onChange={(e) => {
                     setFormData({ ...formData, email: e.target.value });
@@ -159,16 +159,16 @@ const ContactPage = () => {
               {/* Company */}
               <div className="relative group">
                 <div className="absolute left-4 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
-                  <FaBuilding className="text-xs text-white/25 group-focus-within:text-secondary transition-colors duration-300" />
+                  <FaBuilding className="text-xs text-black/30 dark:text-white/25 group-focus-within:text-secondary transition-colors duration-300" />
                 </div>
                 <Input
                   type="text"
                   id="company"
                   placeholder="Company / Organization"
                   required
-                  className="glass border-white/10 rounded-xl h-10 pl-10 pr-4 text-sm w-full
-                        placeholder:text-white/95
-                        focus:border-secondary/50 focus:shadow-[0_0_15px_rgba(22,100,102,0.1)]
+                  className="glass border-black/10 dark:border-white/10 rounded-xl h-10 pl-10 pr-4 text-sm w-full
+                        placeholder:text-black/50 dark:placeholder:text-foreground
+                        focus:border-secondary/50 focus:shadow-[0_0_15px_rgba(255,122,26,0.1)]
                         transition-all duration-300"
                   onChange={(e) => {
                     setFormData({ ...formData, company: e.target.value });
@@ -179,16 +179,16 @@ const ContactPage = () => {
               {/* Phone */}
               <div className="relative group">
                 <div className="absolute left-4 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
-                  <FaPhone className="text-xs text-white/25 group-focus-within:text-secondary transition-colors duration-300" />
+                  <FaPhone className="text-xs text-black/30 dark:text-white/25 group-focus-within:text-secondary transition-colors duration-300" />
                 </div>
                 <Input
                   type="text"
                   id="phone"
                   placeholder="Phone number"
                   required
-                  className="glass border-white/10 rounded-xl h-10 pl-10 pr-4 text-sm w-full
-                        placeholder:text-white/95
-                        focus:border-secondary/50 focus:shadow-[0_0_15px_rgba(22,100,102,0.1)]
+                  className="glass border-black/10 dark:border-white/10 rounded-xl h-10 pl-10 pr-4 text-sm w-full
+                        placeholder:text-black/50 dark:placeholder:text-foreground
+                        focus:border-secondary/50 focus:shadow-[0_0_15px_rgba(255,122,26,0.1)]
                         transition-all duration-300"
                   onChange={(e) => {
                     setFormData({ ...formData, phone: e.target.value });
@@ -207,7 +207,7 @@ const ContactPage = () => {
             {/* Role Select - full width */}
             <div className="relative group">
               <div className="absolute left-4 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
-                <HiOutlineBriefcase className="text-sm text-white/25 group-focus-within:text-secondary transition-colors duration-300" />
+                <HiOutlineBriefcase className="text-sm text-black/30 dark:text-white/25 group-focus-within:text-secondary transition-colors duration-300" />
               </div>
               <Select
                 name="role"
@@ -217,15 +217,15 @@ const ContactPage = () => {
                 }}
               >
                 <SelectTrigger
-                  className="w-1/3 glass border-white/10 rounded-xl h-10 pl-10 pr-4 text-sm
-                        text-white/95 
-                        focus:border-secondary/50 focus:shadow-[0_0_15px_rgba(22,100,102,0.1)]
+                  className="w-1/3 bg-primary border-white/10 rounded-xl h-10 pl-10 pr-4 text-sm
+                        text-white
+                        focus:border-secondary/50 focus:shadow-[0_0_15px_rgba(255,122,26,0.1)]
                         transition-all duration-300
-                        [&>span]:text-white/95 data-[state=open]:border-secondary/50"
+                        [&>span]:text-white data-[state=open]:border-secondary/50"
                 >
                   <SelectValue placeholder="Select Role" />
                 </SelectTrigger>
-                <SelectContent className="glass border-white/10 rounded-xl backdrop-blur-xl">
+                <SelectContent className="bg-primary text-white border-white/10 rounded-xl backdrop-blur-xl">
                   <SelectGroup>
                     <SelectItem
                       value="Software Developer Engineer"
@@ -255,9 +255,9 @@ const ContactPage = () => {
               <Textarea
                 name="message"
                 id="message"
-                className="glass border-white/10 rounded-xl min-h-35 p-3 text-sm
-                      placeholder:text-white/95
-                      focus:border-secondary/50 focus:shadow-[0_0_15px_rgba(22,100,102,0.1)]
+                className="glass border-black/10 dark:border-white/10 rounded-xl min-h-35 p-3 text-sm
+                      placeholder:text-black/50 dark:placeholder:text-foreground
+                      focus:border-secondary/50 focus:shadow-[0_0_15px_rgba(255,122,26,0.1)]
                       transition-all duration-300 resize-none"
                 placeholder="Tell me about your project, timeline, and how I can help..."
                 required
@@ -265,7 +265,7 @@ const ContactPage = () => {
                   setFormData({ ...formData, message: e.target.value });
                 }}
               />
-              <p className="text-white/20 text-[11px] mt-1 text-right">
+              <p className="text-muted-foreground text-[11px] mt-1 text-right">
                 Be as detailed as possible for a quicker response
               </p>
             </div>
@@ -285,7 +285,7 @@ const ContactPage = () => {
             <FiSend className="text-base group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300" />
           </Button>
 
-          <p className="text-white/20 text-xs text-center">
+          <p className="text-muted-foreground text-xs text-center">
             I typically respond within 24–48 hours
           </p>
         </form>
@@ -315,10 +315,10 @@ const ContactPage = () => {
                   <div className="text-xl">{info.icon}</div>
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-white/40 text-sm font-medium uppercase tracking-wider">
+                  <p className="text-muted-foreground text-sm font-medium uppercase tracking-wider">
                     {info.title}
                   </p>
-                  <h3 className="text-base font-medium text-white/90 truncate">
+                  <h3 className="text-base font-medium text-foreground truncate">
                     {info.description}
                   </h3>
                 </div>

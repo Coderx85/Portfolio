@@ -32,7 +32,7 @@ const sanitizeUrl = (url: string): string | null => {
 };
 
 const linkButtonClass =
-  "inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white/90 transition-colors duration-300 hover:border-secondary/40 hover:bg-secondary/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a8385] [&_svg]:h-4 [&_svg]:w-4";
+  "inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white/90 transition-colors duration-300 hover:border-secondary/40 hover:bg-secondary/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff9142] [&_svg]:h-4 [&_svg]:w-4";
 
 const ProjectDetails = ({
   project,
@@ -78,7 +78,7 @@ const ProjectDetails = ({
                   type="button"
                   onClick={closeModal}
                   aria-label="Close details"
-                  className="absolute top-4 right-4 flex h-10 w-10 items-center justify-center rounded-md border border-white/10 text-white/70 transition-colors duration-300 hover:border-secondary/40 hover:bg-secondary/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a8385]"
+                  className="absolute top-4 right-4 flex h-10 w-10 items-center justify-center rounded-md border border-white/10 text-white/70 transition-colors duration-300 hover:border-secondary/40 hover:bg-secondary/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff9142]"
                 >
                   <X size={20} />
                 </button>

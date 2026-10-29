@@ -23,22 +23,22 @@ const Footer = () => {
               <span className="gradient-text">{name}</span>
               <span className="text-accent animate-pulse">.</span>
             </h3>
-            <p className="text-white/50 text-sm leading-relaxed">
+            <p className="text-muted-foreground text-sm leading-relaxed">
               {description}
             </p>
           </div>
 
           {/* CTA / Tagline */}
           <div className="flex flex-col items-start md:items-end gap-2">
-            <p className="text-white/30 text-xs uppercase tracking-[0.2em] font-medium">
+            <p className="text-muted-foreground text-xs uppercase tracking-[0.2em] font-medium">
               Let&apos;s build something great
             </p>
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full 
-                border border-accent/40 bg-accent/10 
+              className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full
+                border border-accent/40 bg-accent/10
                 hover:bg-accent/20 hover:border-accent/70
-                transition-all duration-300 text-sm font-medium text-accent hover:text-white"
+                transition-all duration-300 text-sm font-medium text-accent hover:text-foreground"
             >
               Get in Touch
               <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
@@ -49,7 +49,7 @@ const Footer = () => {
         </div>
 
         {/* ── Divider ── */}
-        <div className="w-full h-px bg-linear-to-r from-transparent via-white/10 to-transparent mb-10" />
+        <div className="w-full h-px bg-linear-to-r from-transparent via-black/10 dark:via-white/10 to-transparent mb-10" />
 
         {/* ── Middle Section: 3 Columns ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-12">
@@ -63,7 +63,7 @@ const Footer = () => {
                 <Link
                   key={index}
                   href={link.href}
-                  className="group flex items-center gap-2 text-white/50 hover:text-white 
+                  className="group flex items-center gap-2 text-muted-foreground hover:text-foreground
                     transition-all duration-300 text-sm w-fit"
                 >
                   <span
@@ -86,35 +86,35 @@ const Footer = () => {
             <div className="flex flex-col gap-3">
               <a
                 href={`mailto:${config.email}`}
-                className="group flex items-center gap-3 text-white/50 hover:text-white 
+                className="group flex items-center gap-3 text-muted-foreground hover:text-foreground
                   transition-colors duration-300 text-sm"
               >
                 <span
-                  className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 
-                  flex items-center justify-center group-hover:border-accent/40 
+                  className="w-8 h-8 rounded-lg bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10
+                  flex items-center justify-center group-hover:border-accent/40
                   group-hover:bg-accent/10 transition-all duration-300 shrink-0"
                 >
-                  <FaEnvelope className="text-xs text-white/40 group-hover:text-accent transition-colors duration-300" />
+                  <FaEnvelope className="text-xs text-muted-foreground group-hover:text-accent transition-colors duration-300" />
                 </span>
                 {config.email}
               </a>
 
-              <div className="group flex items-center gap-3 text-white/50 text-sm">
+              <div className="group flex items-center gap-3 text-muted-foreground text-sm">
                 <span
-                  className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 
+                  className="w-8 h-8 rounded-lg bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10
                   flex items-center justify-center shrink-0"
                 >
-                  <FaPhone className="text-xs text-white/40" />
+                  <FaPhone className="text-xs text-muted-foreground" />
                 </span>
                 +91 {config.phone}
               </div>
 
-              <div className="group flex items-center gap-3 text-white/50 text-sm">
+              <div className="group flex items-center gap-3 text-muted-foreground text-sm">
                 <span
-                  className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 
+                  className="w-8 h-8 rounded-lg bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10
                   flex items-center justify-center shrink-0"
                 >
-                  <FaLocationDot className="text-xs text-white/40" />
+                  <FaLocationDot className="text-xs text-muted-foreground" />
                 </span>
                 {config.location}
               </div>
@@ -134,20 +134,20 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={link.name}
-                  className="group flex items-center gap-3 text-white/50 hover:text-white 
+                  className="group flex items-center gap-3 text-muted-foreground hover:text-foreground
                     transition-all duration-300 text-sm w-fit"
                 >
                   <span
-                    className="w-8 h-8 rounded-lg border border-white/10 bg-white/5
+                    className="w-8 h-8 rounded-lg border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5
                       flex items-center justify-center
-                      group-hover:border-accent/40 group-hover:bg-accent/10 
+                      group-hover:border-accent/40 group-hover:bg-accent/10
                       transition-all duration-300 shrink-0"
                   >
-                    <link.icon className="text-xs text-white/40 group-hover:text-accent transition-colors duration-300" />
+                    <link.icon className="text-xs text-muted-foreground group-hover:text-accent transition-colors duration-300" />
                   </span>
                   <span className="flex flex-col">
                     <span className="text-sm leading-tight">{link.name}</span>
-                    <span className="text-[11px] text-white/30 leading-tight">
+                    <span className="text-[11px] text-muted-foreground leading-tight">
                       @{link.username}
                     </span>
                   </span>
@@ -158,16 +158,16 @@ const Footer = () => {
         </div>
 
         {/* ── Bottom Divider ── */}
-        <div className="w-full h-px bg-linear-to-r from-transparent via-white/10 to-transparent mb-6" />
+        <div className="w-full h-px bg-linear-to-r from-transparent via-black/10 dark:via-white/10 to-transparent mb-6" />
 
         {/* ── Bottom Bar ── */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-white/30 text-xs">
-            © {year} <span className="text-white/50">{name}</span>. All rights
+          <p className="text-muted-foreground text-xs">
+            © {year} <span className="text-foreground/70">{name}</span>. All rights
             reserved.
           </p>
 
-          <p className="text-white/20 text-xs flex items-center gap-1.5">
+          <p className="text-muted-foreground text-xs flex items-center gap-1.5">
             Crafted with
             <span className="text-red-400 text-sm animate-pulse">♥</span>
             using Next.js & TypeScript
@@ -187,7 +187,7 @@ const Footer = () => {
           transition-all duration-300 
           backdrop-blur-sm group"
       >
-        <FaArrowUp className="text-xs text-accent group-hover:text-white transition-colors duration-300" />
+        <FaArrowUp className="text-xs text-accent group-hover:text-foreground transition-colors duration-300" />
       </button>
     </footer>
   );

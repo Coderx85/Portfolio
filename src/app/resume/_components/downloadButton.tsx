@@ -21,10 +21,10 @@ import { PdfComponentsType } from "@/types/resume";
 // system. On mobile this row is centered under the toggle (placement is
 // secondary there); on sm+ ResumeClient absolutely-positions it right.
 const DOWNLOAD_SPAN =
-  "inline-flex items-center gap-2 px-5 sm:px-7 py-3 min-h-11 rounded-xl text-sm font-semibold text-white bg-white/10 border border-white/15 hover:bg-white/15 hover:border-accent/50 transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-[rgba(22,100,102,0.55)] focus-visible:border-accent";
+  "inline-flex items-center gap-2 px-5 sm:px-7 py-3 min-h-11 rounded-xl text-sm font-semibold text-foreground bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/15 hover:bg-black/10 dark:hover:bg-white/15 hover:border-accent/50 transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-[rgba(255,122,26,0.55)] focus-visible:border-accent";
 
 const RETRY_BUTTON =
-  "inline-flex items-center gap-2 px-5 py-3 min-h-11 rounded-xl text-sm font-semibold text-white bg-white/10 border border-white/15 hover:bg-white/15 hover:border-accent/50 transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-[rgba(22,100,102,0.55)] focus-visible:border-accent";
+  "inline-flex items-center gap-2 px-5 py-3 min-h-11 rounded-xl text-sm font-semibold text-foreground bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/15 hover:bg-black/10 dark:hover:bg-white/15 hover:border-accent/50 transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-[rgba(255,122,26,0.55)] focus-visible:border-accent";
 
 export const DownloadPanel = ({
   pdfStatus,
@@ -46,7 +46,7 @@ export const DownloadPanel = ({
       <div
         className={`inline-flex items-center justify-center gap-3 ${className}`}
       >
-        <p className="text-white/60 text-xs">PDF unavailable</p>
+        <p className="text-muted-foreground text-xs">PDF unavailable</p>
         <button onClick={onRetryPdf} className={RETRY_BUTTON}>
           <HiArrowPath className="w-4 h-4" />
           Retry
@@ -82,7 +82,7 @@ export const DownloadPanel = ({
   // carries the state.
   return (
     <span
-      className={`inline-flex items-center gap-2 px-5 sm:px-7 py-3 min-h-11 rounded-xl text-sm font-semibold bg-white/5 text-white/50 border border-white/10 cursor-wait ${className}`}
+      className={`inline-flex items-center gap-2 px-5 sm:px-7 py-3 min-h-11 rounded-xl text-sm font-semibold bg-black/5 dark:bg-white/5 text-muted-foreground border border-black/10 dark:border-white/10 cursor-wait ${className}`}
     >
       <HiArrowDownTray className="w-4 h-4" />
       Preparing…

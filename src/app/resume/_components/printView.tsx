@@ -42,17 +42,17 @@ export const PrintView = ({
       <div role="status" className="flex flex-col items-center gap-3">
         {pdfStatus === "error" ? (
           <div className="flex flex-col items-center gap-3 px-6 text-center">
-            <p className="text-white/80 text-sm">
+            <p className="text-foreground text-sm">
               Couldn&apos;t prepare the PDF.
             </p>
             <button
               onClick={onRetryPdf}
-              className="inline-flex items-center gap-2 px-5 py-3 min-h-11 rounded-xl text-sm font-semibold text-white bg-white/10 border border-white/15 hover:bg-white/15 hover:border-accent/50 transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-[rgba(22,100,102,0.55)] focus-visible:border-accent"
+              className="inline-flex items-center gap-2 px-5 py-3 min-h-11 rounded-xl text-sm font-semibold text-foreground bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/15 hover:bg-black/10 dark:hover:bg-white/15 hover:border-accent/50 transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-[rgba(255,122,26,0.55)] focus-visible:border-accent"
             >
               <HiArrowPath className="w-4 h-4" />
               Retry
             </button>
-            <p className="text-white/60 text-xs">
+            <p className="text-muted-foreground text-xs">
               Or press Cmd/Ctrl+P to print this page directly.
             </p>
           </div>
@@ -62,14 +62,14 @@ export const PrintView = ({
             fileName="Priyanshu_Resume.pdf"
           >
             {({ loading }) => (
-              <span className="inline-flex items-center gap-2 px-7 py-3 min-h-11 rounded-xl text-sm font-semibold text-white bg-white/10 border border-white/15 hover:bg-white/15 hover:border-accent/50 transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-[rgba(22,100,102,0.55)] focus-visible:border-accent">
+              <span className="inline-flex items-center gap-2 px-7 py-3 min-h-11 rounded-xl text-sm font-semibold text-foreground bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/15 hover:bg-black/10 dark:hover:bg-white/15 hover:border-accent/50 transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-[rgba(255,122,26,0.55)] focus-visible:border-accent">
                 <HiArrowDownTray className="w-4 h-4" />
                 {loading ? "Preparing…" : "Download PDF"}
               </span>
             )}
           </PdfComponents.PDFDownloadLink>
         ) : (
-          <span className="inline-flex items-center gap-2 px-7 py-3 min-h-11 rounded-xl text-sm font-semibold bg-white/5 text-white/50 border border-white/10 cursor-wait">
+          <span className="inline-flex items-center gap-2 px-7 py-3 min-h-11 rounded-xl text-sm font-semibold bg-black/5 dark:bg-white/5 text-muted-foreground border border-black/10 dark:border-white/10 cursor-wait">
             <HiArrowDownTray className="w-4 h-4" />
             Loading…
           </span>
@@ -82,7 +82,7 @@ export const PrintView = ({
       initial={{ opacity: 0, scale: 0.97 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ ...tabSwap, delay: 0 }}
-      className="w-full max-w-4xl rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/40"
+      className="w-full max-w-4xl rounded-2xl overflow-hidden border border-black/10 dark:border-white/10 shadow-2xl shadow-black/40"
       style={{ height: "80vh" }}
     >
       {/* Screen-reader status only: announces the loading → ready/error
@@ -107,14 +107,14 @@ export const PrintView = ({
             <PdfComponents.ResumePDF />
           </PdfComponents.PDFViewer>
         ) : pdfStatus === "error" ? (
-          <div className="flex items-center justify-center h-full bg-white/5">
+          <div className="flex items-center justify-center h-full bg-black/5 dark:bg-white/5">
             <div className="flex flex-col items-center gap-3 px-6 text-center">
-              <p className="text-white/80 text-sm">
+              <p className="text-foreground text-sm">
                 Couldn&apos;t prepare the PDF.
               </p>
               <button
                 onClick={onRetryPdf}
-                className="inline-flex items-center gap-2 px-5 py-3 min-h-11 rounded-xl text-sm font-semibold text-white bg-white/10 border border-white/15 hover:bg-white/15 hover:border-accent/50 transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-[rgba(22,100,102,0.55)] focus-visible:border-accent"
+                className="inline-flex items-center gap-2 px-5 py-3 min-h-11 rounded-xl text-sm font-semibold text-foreground bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/15 hover:bg-black/10 dark:hover:bg-white/15 hover:border-accent/50 transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-[rgba(255,122,26,0.55)] focus-visible:border-accent"
               >
                 <HiArrowPath className="w-4 h-4" />
                 Retry
@@ -122,10 +122,10 @@ export const PrintView = ({
             </div>
           </div>
         ) : (
-          <div className="flex items-center justify-center h-full bg-white/5">
+          <div className="flex items-center justify-center h-full bg-black/5 dark:bg-white/5">
             <div className="flex flex-col items-center gap-3">
               <div className="w-8 h-8 border-2 border-accent/30 border-t-accent rounded-full animate-spin" />
-              <p className="text-white/70 text-sm">Building PDF…</p>
+              <p className="text-muted-foreground text-sm">Building PDF…</p>
             </div>
           </div>
         )}

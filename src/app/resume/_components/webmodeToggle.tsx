@@ -19,9 +19,9 @@ export const webTabId = `${TABLIST_ID}-tab-web`;
 export const printTabId = `${TABLIST_ID}-tab-print`;
 
 // Tab-style toggle between the interactive resume and the PDF destination.
-// Active state uses the teal signal (teal-tinted bg + teal icon); the label
-// itself stays white on the teal tint so it clears 4.5:1 on near-black,
-// matching the site nav's active treatment structure.
+// Active state uses the amber signal (amber-tinted bg + amber icon); the
+// label follows the theme foreground color, matching the site nav's active
+// treatment structure.
 export const ModeToggle = ({
   mode,
   setMode,
@@ -86,7 +86,7 @@ export const ModeToggle = ({
         role="tablist"
         aria-label="Resume view mode"
         onKeyDown={handleKeyDown}
-        className="inline-flex p-1 bg-white/5 border border-white/10 rounded-2xl"
+        className="inline-flex p-1 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-2xl"
       >
         {tabs.map((tab, index) => {
           const active = mode === tab.id;
@@ -103,10 +103,10 @@ export const ModeToggle = ({
               aria-controls={tab.id === "web" ? webPanelId : printPanelId}
               tabIndex={active ? 0 : -1}
               onClick={() => setMode(tab.id)}
-              className={`flex items-center gap-2 px-6 min-h-11 rounded-xl text-sm font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-[rgba(22,100,102,0.55)] focus-visible:border-accent ${
+              className={`flex items-center gap-2 px-6 min-h-11 rounded-xl text-sm font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-[rgba(255,122,26,0.55)] focus-visible:border-accent ${
                 active
-                  ? "bg-accent/15 border border-accent/40 text-white [&_svg]:text-accent"
-                  : "bg-transparent border border-transparent text-white/70 hover:text-white hover:bg-white/5"
+                  ? "bg-accent/15 border border-accent/40 text-foreground [&_svg]:text-accent"
+                  : "bg-transparent border border-transparent text-muted-foreground hover:text-foreground hover:bg-black/5 dark:hover:bg-white/5"
               }`}
             >
               <Icon className="text-lg" />

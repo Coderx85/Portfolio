@@ -587,8 +587,8 @@ export const skillsData: SkillProps = {
 // were removed: signal color is reserved; brand icons on tiles keep their
 // own recognition colors. Headings render white, icons white/70.
 export const categoryGlass = {
-  bg: "bg-slate-900/40",
-  border: "border border-white/10",
+  bg: "bg-black/5 dark:bg-slate-900/40",
+  border: "border border-black/10 dark:border-white/10",
 } as const;
 
 export const tech: readonly TTechStack[] = [

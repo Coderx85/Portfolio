@@ -8,6 +8,7 @@ const config = {
     './src/**/*.{ts,tsx}',
   ],
   prefix: "",
+  darkMode: "class",
   theme: {
     // Container utility is now customized via @utility in CSS (see globals.css)
     screens: {
@@ -24,8 +25,7 @@ const config = {
           foreground: "hsl(var(--primary-foreground))",
         },
         accent: {
-          DEFAULT: "#166466",
-          // DEFAULT: "#00ff99",
+          DEFAULT: "#ff7a1a",
           foreground: "hsl(var(--accent-foreground))",
         },
       },

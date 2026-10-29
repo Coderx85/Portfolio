@@ -39,7 +39,7 @@ export default function ServiceSection({ page }: { page: Props }) {
           >
             <Link
               href="/experience#experience"
-              className="flex items-center gap-2 px-4 py-2 border-b-2 border-white/25 hover:bg-white/15 transition-colors duration-300"
+              className="flex items-center gap-2 px-4 py-2 border-b-2 border-black/25 dark:border-white/25 hover:bg-black/5 dark:hover:bg-white/15 transition-colors duration-300"
             >
               View my experiences
               <FaArrowRight className="text-sm items-center justify-center" />
@@ -54,7 +54,7 @@ export default function ServiceSection({ page }: { page: Props }) {
           >
             <Link
               href="/contact"
-              className="flex items-center gap-2 px-4 py-2 border-b-2 border-white/25 hover:bg-white/15 transition-colors duration-300"
+              className="flex items-center gap-2 px-4 py-2 border-b-2 border-black/25 dark:border-white/25 hover:bg-black/5 dark:hover:bg-white/15 transition-colors duration-300"
             >
               Contact Me
               <FaArrowRight className="text-sm items-center justify-center" />
@@ -69,7 +69,7 @@ export default function ServiceSection({ page }: { page: Props }) {
             className="group relative flex flex-col gap-3 py-5 px-5 rounded-xl glass-card glass-card-hover overflow-hidden"
             style={{
               borderLeft: `3px solid ${service.color}`,
-              background: `linear-gradient(135deg, ${service.color}12 0%, transparent 60%), rgba(15, 23, 42, 0.5)`,
+              background: `linear-gradient(135deg, ${service.color}12 0%, transparent 60%), var(--card-tint)`,
             }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -79,14 +79,14 @@ export default function ServiceSection({ page }: { page: Props }) {
               ease: "easeOut",
             }}
           >
-            <motion.h3 className="flex items-center gap-4 text-white/90 font-semibold">
+            <motion.h3 className="flex items-center gap-4 text-foreground font-semibold">
               <service.icon
                 className="text-xl"
                 style={{ fill: service.color }}
               />
               {service.title}
             </motion.h3>
-            <p className="text-white/70 text-sm leading-relaxed">
+            <p className="text-muted-foreground text-sm leading-relaxed">
               {service.description}
             </p>
             <div
@@ -110,7 +110,7 @@ export default function ServiceSection({ page }: { page: Props }) {
           >
             <Link
               href="/service"
-              className="text-white flex gap-2 px-4 py-2 rounded-xl border-2 border-white hover:border-white/50 hover:bg-white/10 transition-colors duration-300"
+              className="text-foreground flex gap-2 px-4 py-2 rounded-xl border-2 border-black dark:border-white hover:border-black/50 dark:hover:border-white/50 hover:bg-black/5 dark:hover:bg-white/10 transition-colors duration-300"
             >
               View more services
               <motion.span

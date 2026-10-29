@@ -5,7 +5,7 @@
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
-  "theme_color": "#0ea5e9",
+  "theme_color": "#ff7a1a",
   "orientation": "portrait-primary",
   "categories": ["portfolio", "web development", "software engineering"],
   "icons": [

@@ -6,6 +6,7 @@ import { navLinks } from "@/constants";
 import { usePathname } from "next/navigation";
 import { FiX, FiMenu } from "react-icons/fi";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
@@ -23,7 +24,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`py-4 text-white sticky top-0 transition-all duration-500 gradient-border-bottom ${
+      className={`py-4 text-foreground sticky top-0 transition-all duration-500 gradient-border-bottom ${
         scrolled
           ? "glass shadow-lg shadow-black/10"
           : "bg-black/10 backdrop-blur-sm"
@@ -35,18 +36,19 @@ const Navbar = () => {
           className="text-2xl xl:text-3xl group font-bold tracking-tight"
         >
           <span className="gradient-text">Priyanshu</span>{" "}
-          <span className="text-accent group-hover:text-white transition-colors duration-300">
+          <span className="text-accent group-hover:text-foreground transition-colors duration-300">
             .
           </span>
         </Link>
 
         {/* Mobile menu button */}
-        <div className="block lg:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
+          <ThemeToggle />
           <Button
             onClick={() => setNavbarOpen(!navbarOpen)}
             variant="ghost"
             size="sm"
-            className="relative w-10 h-10 rounded-full border border-white/10 hover:border-secondary transition-all duration-300"
+            className="relative w-10 h-10 rounded-full border border-black/10 dark:border-white/10 hover:border-secondary transition-all duration-300"
             aria-label={navbarOpen ? "Close menu" : "Open menu"}
           >
             <AnimatePresence mode="wait">
@@ -77,7 +79,7 @@ const Navbar = () => {
 
         {/* Desktop navigation */}
         <div
-          className="menu hidden lg:flex text-white uppercase items-center gap-1"
+          className="menu hidden lg:flex text-foreground uppercase items-center gap-1"
           id="navbar"
         >
           {navLinks.map((link, index) => (
@@ -88,16 +90,16 @@ const Navbar = () => {
                 transition-all duration-300 ease-out
                 ${
                   link.href === pathname
-                    ? "text-secondary bg-secondary/10"
-                    : "text-secondary-foreground/50 hover:text-white hover:bg-white/5"
+                    ? "text-accent bg-accent/10"
+                    : "text-secondary-foreground/65 hover:text-foreground hover:bg-black/5 dark:hover:bg-white/5"
                 }`}
             >
               {link.title}
               {link.href === pathname && (
                 <motion.div
                   layoutId="activeNavIndicator"
-                  className="absolute bottom-0 left-1/2 -translate-x-1/2 w-14 h-px rounded-full bg-secondary "
-                  style={{ boxShadow: "0 0 8px rgba(22, 100, 102, 0.8)" }}
+                  className="absolute bottom-0 left-1/2 -translate-x-1/2 w-14 h-px rounded-full bg-accent "
+                  style={{ boxShadow: "0 0 8px rgba(255, 122, 26, 0.8)" }}
                   transition={{
                     type: "spring",
                     stiffness: 300,
@@ -107,6 +109,7 @@ const Navbar = () => {
               )}
             </Link>
           ))}
+          <ThemeToggle className="ml-2" />
         </div>
       </div>
 

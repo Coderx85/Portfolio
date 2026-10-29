@@ -43,7 +43,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           "transition-all duration-500",
           // System hover language: teal border shift + small lift + documented card hover shadow
           "hover:-translate-y-0.5 hover:border-accent/30 focus-visible:outline-none",
-          "hover:shadow-[0_8px_32px_rgba(22,100,102,0.15),0_0_0_1px_rgba(22,100,102,0.1)]",
+          "hover:shadow-[0_8px_32px_rgba(255,122,26,0.15),0_0_0_1px_rgba(255,122,26,0.1)]",
           "md:hover:-translate-y-1",
         )}
       >
@@ -124,11 +124,11 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
       {/* Title area — rest state information lives here */}
       <div className="mt-3 px-1">
-        <h5 className="text-lg font-semibold text-white group-hover:text-accent transition-colors duration-300">
+        <h5 className="text-lg font-semibold text-foreground group-hover:text-accent transition-colors duration-300">
           {project.title}
         </h5>
         {project.description && (
-          <p className="text-sm text-white/60 mt-1 line-clamp-2">
+          <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
             {project.description}
           </p>
         )}

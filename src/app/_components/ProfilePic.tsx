@@ -45,7 +45,7 @@ const ProfilePicPage = () => {
               cx="253"
               cy="253"
               r="250"
-              stroke="#166466"
+              style={{ stroke: "var(--accent-signal)" }}
               strokeWidth="4"
               strokeLinecap={"round"}
               strokeLinejoin={"round"}

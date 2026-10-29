@@ -114,8 +114,8 @@ export const metadata: Metadata = {
     // google: "your-google-verification-code",
   },
   other: {
-    "theme-color": "#0ea5e9",
-    "color-scheme": "dark",
+    "theme-color": "#ff7a1a",
+    "color-scheme": "light dark",
     "mobile-web-app-capable": "yes",
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "black-translucent",
