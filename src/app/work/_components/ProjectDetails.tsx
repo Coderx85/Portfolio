@@ -1,18 +1,15 @@
 import React, { Fragment } from "react";
-import type { Metadata } from "next";
 import { Dialog, Transition } from "@headlessui/react";
 import { TProject } from "@/types/resume";
 import Image from "next/image";
-import Link from "next/link";
-import { FaTools, FaExclamationCircle, FaGithub } from "react-icons/fa";
-import { LucideView, X } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
+import { Eye, X } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "../../../components/ui/accordion";
-import { config } from "@/lib/config";
 import { getIconByName } from "@/utils/iconMapping";
 
 interface ProjectDetailsProps {
@@ -21,208 +18,186 @@ interface ProjectDetailsProps {
   closeModal: () => void;
 }
 
-export async function generateMetadata({
-  project,
-}: {
-  project: TProject;
-}): Promise<Metadata> {
-  return {
-    title: project.title,
-    description: project.description,
-    openGraph: {
-      title: project.title,
-      description: project.description,
-      images: [
-        {
-          url: `https://opengraph.githubassets.com/1/Coderx85/${project.title}`,
-          width: 1200,
-          height: 630,
-          alt: `${project.title} project image`,
-        },
-      ],
-      type: "article",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: project.title,
-      description: project.description,
-      images: [
-        `https://opengraph.githubassets.com/1/Coderx85/${project.title}`,
-      ],
-    },
-  };
-}
+/** Accept only well-formed http(s) URLs; bare strings like "fiverplus" never render as links. */
+const sanitizeUrl = (url: string): string | null => {
+  if (!url) return null;
+  try {
+    const parsed = new URL(url);
+    return parsed.protocol === "https:" || parsed.protocol === "http:"
+      ? parsed.toString()
+      : null;
+  } catch {
+    return null;
+  }
+};
+
+const linkButtonClass =
+  "inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white/90 transition-colors duration-300 hover:border-secondary/40 hover:bg-secondary/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a8385] [&_svg]:h-4 [&_svg]:w-4";
 
 const ProjectDetails = ({
   project,
   isOpen,
   closeModal,
 }: ProjectDetailsProps) => {
-  const { username } = config;
   const { title, description, challengesFaced, techStack, previewUrl, gitUrl } =
     project;
-  const projectImage = `https://opengraph.githubassets.com/1/${username}/${project.title}`;
-  const projectImageAlt = `${title} project image`;
+
+  const gitHref = sanitizeUrl(gitUrl);
+  const previewHref = sanitizeUrl(previewUrl);
+  const projectImageAlt = `${title} project screenshot`;
+
   return (
-    <>
-      <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={closeModal}>
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-10"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <div className="fixed inset-0 bg-black/5 bg-opacity-25" />
-          </Transition.Child>
+    <Transition appear show={isOpen} as={Fragment}>
+      <Dialog as="div" className="relative z-50" onClose={closeModal}>
+        <Transition.Child
+          as={Fragment}
+          enter="ease-out duration-300"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="ease-in duration-200"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
+          {/* Dimmed, teal-tinted overlay — provides the panel's depth instead of a drop shadow */}
+          <div className="fixed inset-0 bg-black/70 backdrop-blur-sm" />
+        </Transition.Child>
 
-          <div className="fixed inset-0 overflow-y-auto backdrop-blur-md">
-            <div className="flex min-h-full items-center justify-center p-4 text-center">
-              <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="ease-out duration-300"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
-              >
-                <Dialog.Panel className="relative bg-gradient-to-br my-2 from-slate-800 via-slate-900 to-slate-800 border-2 rounded-xl md:m-0 m-5 md:w-[1200px] max-h-[90vh] h-[90vh] md:h-fit overflow-y-auto transform p-6 text-left shadow-2xl transition-all flex flex-col gap-5">
-                  <X
-                    className="absolute z-16 p-1.5 w-10 h-10 top-0 right-0 text-xl font-extrabold text-white cursor-pointer"
-                    onClick={closeModal}
-                    stroke={"white"}
-                    size={24}
-                  />
+        <div className="fixed inset-0 overflow-y-auto">
+          <div className="flex min-h-full items-center justify-center p-4 text-left">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 scale-95"
+              enterTo="opacity-100 scale-100"
+              leave="ease-out duration-300"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-95"
+            >
+              <Dialog.Panel className="my-2 max-h-[90vh] w-full max-w-3xl transform overflow-y-auto rounded-2xl border border-white/10 bg-[rgba(15,23,42,0.85)] p-6 backdrop-blur-xl transition-all md:my-8 md:max-w-4xl">
+                <button
+                  type="button"
+                  onClick={closeModal}
+                  aria-label="Close details"
+                  className="absolute top-4 right-4 flex h-10 w-10 items-center justify-center rounded-md border border-white/10 text-white/70 transition-colors duration-300 hover:border-secondary/40 hover:bg-secondary/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a8385]"
+                >
+                  <X size={20} />
+                </button>
 
-                  <div className="grid lg:grid-cols-2 flex-col">
-                    <div className="flex-1 flex flex-col gap-3 mr-5 py-5 md:h-fit h-[800px] ">
-                      {/* Section 01 */}
-                      <div className="flex-1 flex flex-col gap-2 w-1/2">
-                        <h2 className="font-extrabold text-7xl capitalize">
-                          {title}
-                        </h2>
-                      </div>
-                      <div className="relative border-4 border-accent h-72 bg-transparent bg-no-repeat bg-cover rounded-lg overflow-hidden">
-                        <Image
-                          src={projectImage}
-                          alt={projectImageAlt}
-                          fill
-                          loading="lazy"
-                        />
-                      </div>
-
-                      {/* Tech Stack */}
-                      <div className="hidden md:block mt-3">
-                        {" "}
-                        <p className="text-xl font-bold">
-                          <FaTools className="inline-block text-white mr-2" />{" "}
-                          Technologies Used:
-                        </p>
-                        <div className="flex justify-stretch flex-wrap gap-2 text-white">
-                          {Object.entries(techStack).map(([name, iconName]) => {
-                            const Icon = getIconByName(iconName);
-                            return (
-                              <div
-                                key={name}
-                                className="flex items-center animate-pulse bg-primary/25 max-w-max p-2 gap-2 rounded-xs"
-                              >
-                                {Icon && <Icon className="text-primary" />}
-                                <span>{name}</span>
-                              </div>
-                            );
-                          })}
-                        </div>
-                      </div>
-
-                      {/* Links */}
-                      <div className="flex grid-cols-3 gap-8 mt-5 ">
-                        <Link
-                          href={
-                            !gitUrl
-                              ? `https://github.com/${username}/${title}`
-                              : gitUrl
-                          }
-                          className="w-fit text-right text-white border-2 primary-bd hover:bg-[#166466] rounded-lg hover:transition-all hover:duration-300 hover:font-semibold
-                          hover:ease-in-out hover:transform hover:scale-105 hover:text-black"
-                          target="_blank"
-                        >
-                          <div className="flex gap-2 object-center my-2 px-4">
-                            <FaGithub
-                              className="content-center items-center"
-                              height={20}
-                              width={20}
-                            />
-                            <p className="md:block hidden">GitHub Link</p>
-                          </div>
-                        </Link>
-                        {previewUrl ? (
-                          <Link
-                            href={previewUrl}
-                            className="w-fit border-2 text-white primary-bd rounded-lg 
-                                hover:bg-[#166466] hover:transition-all hover:duration-300 hover:font-semibold 
-                                  hover:ease-in-out hover:transform hover:scale-105 hover:text-black"
-                            target="_blank"
-                          >
-                            <div className="flex gap-2 py-2 px-4">
-                              <LucideView
-                                className="items-center"
-                                height={20}
-                                width={20}
-                              />
-                              <p className="md:block hidden">Preview Link</p>
-                            </div>
-                          </Link>
-                        ) : null}
-                      </div>
-                    </div>
-                    <div className="flex flex-col gap-2">
-                      <div className="primary-bd mt-5 md:mt-0 p-5 py-5 w-full h-full text-white font-semibold">
-                        {/* Project Description */}
-                        <div>
-                          <h2 className="text-2xl underline primary mb-2">
-                            Description:
-                          </h2>
-                          <p className="text-accent">{description}</p>
-                        </div>
-
-                        {/* Challenges Encountered */}
-                        <div className="hidden md:block mt-3">
-                          <p className="text-xl">
-                            <FaExclamationCircle className="inline-block mr-2" />
-                            <span className="font-bold">
-                              Challenges Encountered:
-                            </span>
-                          </p>
-                          <Accordion type="single" collapsible>
-                            {challengesFaced.map((challenge, index) => (
-                              <AccordionItem key={index} value={"c-" + index}>
-                                <AccordionTrigger className="text-lg">
-                                  {index + 1 + "." + challenge.title}
-                                </AccordionTrigger>
-                                <AccordionContent>
-                                  {challenge.solution}
-                                </AccordionContent>
-                              </AccordionItem>
-                            ))}
-                          </Accordion>
-                        </div>
-
-                        <div></div>
-                      </div>
-                      <div></div>
-                    </div>
+                <div className="flex flex-col gap-6">
+                  {/* Title */}
+                  <div>
+                    <p className="text-xs font-semibold tracking-wider text-white/60 uppercase">
+                      Project
+                    </p>
+                    <Dialog.Title
+                      as="h2"
+                      className="mt-1 text-3xl font-bold text-white md:text-4xl"
+                    >
+                      {title}
+                    </Dialog.Title>
                   </div>
-                </Dialog.Panel>
-              </Transition.Child>
-            </div>
+
+                  {/* Screenshot — only when the project actually has an image */}
+                  {project.imgUrl ? (
+                    <div className="relative h-64 overflow-hidden rounded-lg border border-white/10 md:h-80">
+                      <Image
+                        src={project.imgUrl}
+                        alt={projectImageAlt}
+                        fill
+                        className="object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                  ) : null}
+
+                  {/* Description */}
+                  {description ? (
+                    <div>
+                      <p className="text-xs font-semibold tracking-wider text-white/60 uppercase">
+                        Description
+                      </p>
+                      <p className="mt-2 text-white/80">{description}</p>
+                    </div>
+                  ) : null}
+
+                  {/* Technologies */}
+                  {Object.keys(techStack).length > 0 ? (
+                    <div>
+                      <p className="text-xs font-semibold tracking-wider text-white/60 uppercase">
+                        Technologies
+                      </p>
+                      <div className="mt-2 flex flex-wrap gap-2">
+                        {Object.entries(techStack).map(([name, iconName]) => {
+                          const Icon = getIconByName(iconName);
+                          return (
+                            <div
+                              key={name}
+                              className="flex items-center gap-2 rounded-full border border-white/10 bg-secondary/10 px-3 py-1 text-xs text-white/80"
+                            >
+                              {Icon && <Icon className="text-white/70" />}
+                              <span>{name}</span>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ) : null}
+
+                  {/* Challenges */}
+                  {challengesFaced.length > 0 ? (
+                    <div>
+                      <p className="text-xs font-semibold tracking-wider text-white/60 uppercase">
+                        Challenges
+                      </p>
+                      <Accordion type="single" collapsible className="mt-2">
+                        {challengesFaced.map((challenge, index) => (
+                          <AccordionItem key={index} value={"c-" + index}>
+                            <AccordionTrigger className="text-sm">
+                              {`${index + 1}. ${challenge.title}`}
+                            </AccordionTrigger>
+                            <AccordionContent className="text-white/80">
+                              {challenge.solution}
+                            </AccordionContent>
+                          </AccordionItem>
+                        ))}
+                      </Accordion>
+                    </div>
+                  ) : null}
+
+                  {/* Links */}
+                  {gitHref || previewHref ? (
+                    <div className="flex flex-wrap gap-3">
+                      {gitHref ? (
+                        <a
+                          href={gitHref}
+                          target="_blank"
+                          rel="noreferrer"
+                          className={linkButtonClass}
+                        >
+                          <FaGithub />
+                          Source Code
+                        </a>
+                      ) : null}
+                      {previewHref ? (
+                        <a
+                          href={previewHref}
+                          target="_blank"
+                          rel="noreferrer"
+                          className={linkButtonClass}
+                        >
+                          <Eye />
+                          Live Demo
+                        </a>
+                      ) : null}
+                    </div>
+                  ) : null}
+                </div>
+              </Dialog.Panel>
+            </Transition.Child>
           </div>
-        </Dialog>
-      </Transition>
-    </>
+        </div>
+      </Dialog>
+    </Transition>
   );
 };
 
