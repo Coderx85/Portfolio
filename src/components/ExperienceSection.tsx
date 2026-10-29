@@ -51,7 +51,7 @@ function renderCard(
             className="shrink-0 rounded-lg border flex items-center justify-center"
             style={{ backgroundColor: `${color}0d`, borderColor: `${color}33` }}
           >
-            {!!!exp.imgUrl ? (
+            {!exp.imgUrl ? (
               <Briefcase />
             ) : (
               <Image
@@ -60,6 +60,7 @@ function renderCard(
                 width={48}
                 height={48}
                 className="object-contain rounded-2xl"
+                style={{ width: "auto", height: "auto" }}
               />
             )}
           </div>
@@ -190,8 +191,11 @@ const ExperienceSection = ({ mode = "half" }: { mode?: TMode }) => {
         let bestIndex: number | null = null;
         let bestRatio = 0;
         entries.forEach((entry) => {
-          if (!entry.isIntersecting || entry.intersectionRatio <= bestRatio) return;
-          const index = cardRefs.current.indexOf(entry.target as HTMLDivElement);
+          if (!entry.isIntersecting || entry.intersectionRatio <= bestRatio)
+            return;
+          const index = cardRefs.current.indexOf(
+            entry.target as HTMLDivElement,
+          );
           if (index !== -1) {
             bestIndex = index;
             bestRatio = entry.intersectionRatio;
@@ -257,8 +261,15 @@ const ExperienceSection = ({ mode = "half" }: { mode?: TMode }) => {
                   className="w-full"
                   initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 56 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, root: scrollContainerRef, margin: "-10% 0px" }}
-                  transition={{ duration: prefersReducedMotion ? 0 : 0.45, ease: [0.23, 1, 0.32, 1] }}
+                  viewport={{
+                    once: true,
+                    root: scrollContainerRef,
+                    margin: "-10% 0px",
+                  }}
+                  transition={{
+                    duration: prefersReducedMotion ? 0 : 0.45,
+                    ease: [0.23, 1, 0.32, 1],
+                  }}
                 >
                   {renderCard(exp, color, isActive)}
                 </motion.div>
@@ -270,7 +281,8 @@ const ExperienceSection = ({ mode = "half" }: { mode?: TMode }) => {
           <div
             className="pointer-events-none absolute bottom-0 left-0 right-0 h-16 rounded-b-2xl"
             style={{
-              background: "linear-gradient(to bottom, transparent, rgba(10,10,12,0.9))",
+              background:
+                "linear-gradient(to bottom, transparent, rgba(10,10,12,0.9))",
             }}
             aria-hidden="true"
           />
@@ -291,7 +303,10 @@ const ExperienceSection = ({ mode = "half" }: { mode?: TMode }) => {
                     const card = cardRefs.current[index];
                     const container = scrollContainerRef.current;
                     if (card && container) {
-                      container.scrollTo({ top: card.offsetTop, behavior: "smooth" });
+                      container.scrollTo({
+                        top: card.offsetTop,
+                        behavior: "smooth",
+                      });
                     }
                   }}
                   className="w-8 h-8 flex items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
@@ -301,7 +316,8 @@ const ExperienceSection = ({ mode = "half" }: { mode?: TMode }) => {
                     style={{
                       backgroundColor: colorsArray[index % colorsArray.length],
                       opacity: index === activeCardIndex ? 1 : 0.3,
-                      transform: index === activeCardIndex ? "scale(1.3)" : "scale(1)",
+                      transform:
+                        index === activeCardIndex ? "scale(1.3)" : "scale(1)",
                     }}
                   />
                 </button>
@@ -374,7 +390,7 @@ const ExperienceSection = ({ mode = "half" }: { mode?: TMode }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
-            delay: 2.4 + 5 * 0.1,
+            delay: 0.5,
             duration: 0.4,
             ease: "easeOut",
           }}
@@ -411,7 +427,7 @@ const ExperienceSection = ({ mode = "half" }: { mode?: TMode }) => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 2.4, duration: 0.5, ease: "easeIn" }}
+          transition={{ delay: 0.5, duration: 0.5, ease: "easeOut" }}
           className="flex gap-3 items-center"
         >
           <Link

@@ -1,15 +1,26 @@
-import { categoryColors, tech as techData } from "@/constants/resume";
+import { categoryGlass, tech as techData } from "@/constants/resume";
 import { Progress } from "@/components/ui/progress";
-import { SiAboutdotme, SiOpenaigym } from "react-icons/si";
 import { motion } from "framer-motion";
 import ExperienceSection from "@/components/ExperienceSection";
 import { convertLevelIntoNumber } from "@/lib/convertLevel";
-import { Separator } from "@radix-ui/react-select";
 import { config, SocialLink } from "@/constants";
-import { Fa1, FaBookOpen, FaGithub, FaUser } from "react-icons/fa6";
+import { FaBookOpen, FaGithub, FaLayerGroup } from "react-icons/fa6";
 import GitHubStats from "@/app/_components/GitHubStats";
 import Heading from "@/components/Heading";
-import { FaRegUserCircle, FaUserCircle } from "react-icons/fa";
+import { FaRegUserCircle } from "react-icons/fa";
+import { webPanelId, webTabId } from "./webmodeToggle";
+
+// Skill tiles are inert decoration, not interactive controls — per the
+// design system's Glow-Means-Active rule they get the plain glass border at
+// rest and no hover treatment (rest + hover are the same state).
+const techTileClassName =
+  "w-20 border border-white/10 rounded-xl p-3 flex flex-col gap-2 items-center text-center";
+
+// Tier semantics for the mastery bars: one signal fill for Advanced, a
+// neutral fill for everything else. Brand colors stay on the icons only.
+export function levelBarColor(level: string): string {
+  return level === "Advanced" ? "#166466" : "rgba(255, 255, 255, 0.35)";
+}
 
 export default function WebView() {
   return (
@@ -18,7 +29,12 @@ export default function WebView() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.4, ease: "easeInOut" }}
+      // Matches PrintView so the tab swap is an instant crossfade.
+      transition={{ duration: 0.15, ease: "easeInOut" }}
+      // Pane of the mode toggle's WAI-APG tabs pattern (see webmodeToggle).
+      role="tabpanel"
+      id={webPanelId}
+      aria-labelledby={webTabId}
       className="flex flex-col gap-15"
     >
       {/* About Me */}
@@ -44,11 +60,11 @@ export default function WebView() {
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{
-                    delay: 0.35 + index * 0.1,
+                    delay: 0.25,
                     duration: 0.4,
-                    ease: "easeInOut",
+                    ease: "easeOut",
                   }}
-                  className="flex items-left gap-3 group"
+                  className="flex items-start gap-3 group"
                 >
                   <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-secondary group-hover:scale-150 transition-transform duration-300 shrink-0" />
                   <p className="text-white text-sm md:text-base leading-relaxed">
@@ -64,7 +80,6 @@ export default function WebView() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.5 }}
             style={{
-              boxShadow: "0px 0px 20px rgba(255, 255, 255, 0.1)",
               background:
                 // use grey shade for background
                 "linear-gradient(90deg, rgba(22, 22, 22, 0.4), rgba(22, 22, 22, 0.4), 0.5)",
@@ -84,8 +99,8 @@ export default function WebView() {
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.45 + index * 0.08, duration: 0.4 }}
-                className="flex items-left gap-3 px-1 py-2 rounded-lg transition-all duration-300 hover:bg-white/5 group"
+                transition={{ delay: 0.3, duration: 0.4 }}
+                className="flex items-start gap-3 px-1 py-2 rounded-lg transition-all duration-300 hover:bg-white/5 group"
               >
                 <span
                   className="flex items-center justify-center w-8 h-8 rounded-lg transition-all duration-300 group-hover:scale-110"
@@ -125,45 +140,44 @@ export default function WebView() {
             <motion.p
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.65, duration: 0.4 }}
+              transition={{ delay: 0.4, duration: 0.4, ease: "easeOut" }}
               className="text-white/70 text-sm md:text-base leading-relaxed"
             >
-              Driven by a passion for technology, I&apos;ve been building
-              software from an early age — with web development and the
-              ecosystem around it as my home base from the start. Especially in
-              an era increasingly driven and accelerated by AI, I firmly believe
-              that standing still means falling behind: I never stop learning,
-              exploring, and pushing myself forward.
+              Full-stack and DevOps engineer with a B-Tech in Computer Science
+              (2021–25). I work across the whole stack — React and Next.js
+              frontends, Node.js and Fastify backends, and the
+              Docker/Kubernetes/cloud infrastructure they run on.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7, duration: 0.4 }}
+              transition={{ delay: 0.45, duration: 0.4, ease: "easeOut" }}
               className="text-white/70 text-sm md:text-base leading-relaxed"
             >
-              I don&apos;t just focus on the technical side — I own the full
-              stack, from architecture to delivery. Client experience,
-              usability, and user experience are equally important. As a
-              realistic perfectionist, I have a clear view of what&apos;s
-              feasible and deliver quality work efficiently.
+              As a Forward Deployed Engineer at Adleia Labs, I took an
+              AI-driven healthcare SaaS from zero to production in 10 weeks
+              (40+ shipped features), building a multimodal LangGraph +
+              Gemini Vision pipeline served over WhatsApp and Telegram. At
+              Websmiths I built a multi-tenant SaaS backend for 100+
+              enterprise organizations and 5k+ users — including a Kafka
+              notification microservice handling 450 req/sec — and cut
+              production MTTR by 24%.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.75, duration: 0.4 }}
+              transition={{ delay: 0.5, duration: 0.4, ease: "easeOut" }}
               className="text-white/70 text-sm md:text-base leading-relaxed"
             >
-              Every project comes with genuine passion and empathy. Understand
-              first, then build — I love diving into a client&apos;s business
-              logic and developing the right solution for it. I thrive in an
-              informal atmosphere with clear goals — where professionalism and a
-              good team dynamic go hand in hand.
+              As a Frontend Developer Intern at JarGoan, my redesigns improved
+              usability by 20.6% and cut the initial bundle size by 18%.
             </motion.p>
           </div>
         </div>
       </motion.div>
 
-      <motion.div className="py-3 flex flex-col">
+      {/* GitHub widget is interactive/embedded — excluded from printing. */}
+      <motion.div className="py-3 flex flex-col print:hidden">
         <Heading
           title="GitHub Contributions"
           icon={FaGithub}
@@ -174,7 +188,7 @@ export default function WebView() {
 
       {/* Expertise */}
       <div id="skills">
-        <Heading title="Expertise" icon={SiOpenaigym} type="section" />
+        <Heading title="Expertise" icon={FaLayerGroup} type="section" />
         {/* Profile Highlights */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -187,28 +201,29 @@ export default function WebView() {
             {techData
               .filter((t) => t.title === "Frameworks")
               .map((category, catIndex) => {
-                const colors = categoryColors[category.title];
                 return (
                   <motion.div
                     key={catIndex}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
-                      delay: 0.25 + catIndex * 0.15,
+                      delay: 0.3,
                       duration: 0.5,
+                      ease: "easeOut",
                     }}
-                    className={`${colors.bg} ${colors.border} rounded-2xl p-5 flex flex-col gap-4`}
+                    className={`${categoryGlass.bg} ${categoryGlass.border} rounded-2xl p-5 flex flex-col gap-4`}
                   >
                     <motion.h4
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{
-                        delay: 0.3 + catIndex * 0.15,
+                        delay: 0.35,
                         duration: 0.4,
+                        ease: "easeOut",
                       }}
-                      className={`text-lg flex items-center gap-2 font-semibold ${colors.text} tracking-wide`}
+                      className="text-lg flex items-center gap-2 font-semibold text-white tracking-wide"
                     >
-                      <category.icon className={`${colors.fill}`} />
+                      <category.icon className="text-white/70" />
                       {category.title}
                     </motion.h4>
                     <div className="flex gap-4 flex-wrap md:justify-start justify-center">
@@ -218,20 +233,11 @@ export default function WebView() {
                           initial={{ opacity: 0, y: 15 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{
-                            delay: 0.35 + catIndex * 0.15 + techIndex * 0.08,
+                            delay: 0.4,
                             duration: 0.4,
+                            ease: "easeOut",
                           }}
-                          className="w-20 transition-colors border-white/10 hover:border-white/30 duration-300 rounded-xl p-3 flex flex-col gap-2 items-center text-center"
-                          style={{ borderColor: `${techItem.color}20` }}
-                          onMouseEnter={(e) => {
-                            e.currentTarget.style.borderColor = `${techItem.color}60`;
-                            e.currentTarget.style.backgroundColor = `${techItem.color}80`;
-                          }}
-                          onMouseLeave={(e) => {
-                            e.currentTarget.style.borderColor = `${techItem.color}80`;
-                            e.currentTarget.style.backgroundColor =
-                              "transparent";
-                          }}
+                          className={techTileClassName}
                         >
                           <span
                             className="text-3xl"
@@ -246,10 +252,14 @@ export default function WebView() {
                             <Progress
                               value={convertLevelIntoNumber(techItem.level)}
                               className="bg-white/10 h-1.5 rounded-full"
+                              aria-label={`${techItem.title}: ${techItem.level}`}
                               indicatorStyle={{
-                                backgroundColor: techItem.color,
+                                backgroundColor: levelBarColor(techItem.level),
                               }}
                             />
+                            <p className="mt-1 text-[10px] md:text-[11px] text-white/50 tracking-wide uppercase">
+                              {techItem.level}
+                            </p>
                           </div>
                         </motion.div>
                       ))}
@@ -269,28 +279,29 @@ export default function WebView() {
             {techData
               .filter((category) => category.title !== "Frameworks")
               .map((category, catIndex) => {
-                const colors = categoryColors[category.title];
                 return (
                   <motion.div
                     key={catIndex}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
-                      delay: 0.25 + catIndex * 0.15,
+                      delay: 0.3,
                       duration: 0.5,
+                      ease: "easeOut",
                     }}
-                    className={`${colors.bg} ${colors.border} rounded-2xl p-5 flex flex-col gap-4`}
+                    className={`${categoryGlass.bg} ${categoryGlass.border} rounded-2xl p-5 flex flex-col gap-4`}
                   >
                     <motion.h4
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{
-                        delay: 0.3 + catIndex * 0.15,
+                        delay: 0.35,
                         duration: 0.4,
+                        ease: "easeOut",
                       }}
-                      className={`text-lg flex items-center gap-2 font-semibold ${colors.text} tracking-wide`}
+                      className="text-lg flex items-center gap-2 font-semibold text-white tracking-wide"
                     >
-                      <category.icon className={`${colors.fill}`} />
+                      <category.icon className="text-white/70" />
                       {category.title}
                     </motion.h4>
                     <div className="grid md:grid-cols-4 grid-cols-2 whitespace-nowrap self-center md:gap-3">
@@ -300,20 +311,11 @@ export default function WebView() {
                           initial={{ opacity: 0, y: 15 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{
-                            delay: 0.35 + catIndex * 0.15 + techIndex * 0.08,
+                            delay: 0.4,
                             duration: 0.4,
+                            ease: "easeOut",
                           }}
-                          className="w-20 transition-colors border-white/10 hover:border-white/30 duration-300 rounded-xl p-3 flex flex-col gap-2 items-center text-center"
-                          style={{ borderColor: `${techItem.color}/20` }}
-                          onMouseEnter={(e) => {
-                            e.currentTarget.style.borderColor = `${techItem.color}/60`;
-                            e.currentTarget.style.backgroundColor = `${techItem.color}50`;
-                          }}
-                          onMouseLeave={(e) => {
-                            e.currentTarget.style.borderColor = `${techItem.color}/80`;
-                            e.currentTarget.style.backgroundColor =
-                              "transparent";
-                          }}
+                          className={techTileClassName}
                         >
                           <span
                             className="text-3xl"
@@ -328,10 +330,14 @@ export default function WebView() {
                             <Progress
                               value={convertLevelIntoNumber(techItem.level)}
                               className="bg-white/10 h-1.5 rounded-full"
+                              aria-label={`${techItem.title}: ${techItem.level}`}
                               indicatorStyle={{
-                                backgroundColor: techItem.color,
+                                backgroundColor: levelBarColor(techItem.level),
                               }}
                             />
+                            <p className="mt-1 text-[10px] md:text-[11px] text-white/50 tracking-wide uppercase">
+                              {techItem.level}
+                            </p>
                           </div>
                         </motion.div>
                       ))}
@@ -343,7 +349,9 @@ export default function WebView() {
         </motion.div>
       </div>
 
-      <Separator className="size-0.5 bg-white w-screen" />
+      {/* Plain section divider — low-key, in line with the glass language
+          (border-white/10); the teal gradient above is the emphasis device. */}
+      <div className="h-px w-full border-t border-white/10" />
 
       {/* ── Experience section ── */}
       <ExperienceSection />

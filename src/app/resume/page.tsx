@@ -4,7 +4,7 @@ import ResumePage from "./ResumeClient";
 export const metadata: Metadata = {
   title: "Resume & Skills",
   description:
-    "Explore Priyanshu's resume — Full Stack Developer skilled in React, Node.js, Next.js, TypeScript, and DevOps. View technical expertise, education, and download the resume as PDF.",
+    "Explore Priyanshu's resume — Full Stack Developer skilled in React, Node.js, Next.js, TypeScript, and DevOps. View technical expertise, education, or download the resume as PDF.",
   alternates: {
     canonical: "https://coderx85.vercel.app/resume",
   },

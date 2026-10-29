@@ -11,12 +11,17 @@ type Props = "full" | "half";
 export default function ServiceSection({ page }: { page: Props }) {
   const servicesArray = page === "half" ? services.slice(0, 6) : services;
   const fullPage = page === "full";
+  // On the homepage this section sits below the hero's own cascading
+  // reveal (which runs through ~3.1s), so it waits to match. As the sole
+  // content of the standalone /service page there's nothing to wait on —
+  // reusing the homepage delay there left the page blank for 2.4s+.
+  const baseDelay = fullPage ? 0 : 2.4;
   return (
     <motion.div
       className="mx-auto h-full mt-10 flex flex-col gap-7"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ delay: 2.4, duration: 0.5, ease: "easeIn" }}
+      transition={{ delay: baseDelay, duration: 0.5, ease: "easeIn" }}
     >
       <div className="flex gap-3 justify-between">
         <Heading
@@ -29,7 +34,7 @@ export default function ServiceSection({ page }: { page: Props }) {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 2.4, duration: 0.5, ease: "easeIn" }}
+            transition={{ delay: baseDelay, duration: 0.5, ease: "easeIn" }}
             className="flex gap-3 items-center"
           >
             <Link
@@ -44,7 +49,7 @@ export default function ServiceSection({ page }: { page: Props }) {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 2.4, duration: 0.5, ease: "easeIn" }}
+            transition={{ delay: baseDelay, duration: 0.5, ease: "easeIn" }}
             className="flex gap-3 items-center"
           >
             <Link
@@ -69,7 +74,7 @@ export default function ServiceSection({ page }: { page: Props }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
-              delay: 2.4 + index * 0.1,
+              delay: baseDelay + index * 0.1,
               duration: 0.4,
               ease: "easeOut",
             }}

@@ -35,7 +35,7 @@ export function getPortfolioJsonLd() {
         url: "https://coderx85.vercel.app",
         name: "Priyanshu | Full Stack Developer Portfolio",
         description:
-          "Full Stack Developer with 1+ years of experience building scalable web applications using React, Node.js, and Next.js. Passionate about clean architecture, open-source contributions, and delivering production-ready solutions.",
+          "Full Stack Developer and DevOps Engineer with 2+ years of experience building production AI-driven SaaS and multi-tenant web applications using React, Node.js, and Next.js.",
         publisher: {
           "@id": "https://coderx85.vercel.app/#person",
         },
@@ -48,10 +48,15 @@ export function getPortfolioJsonLd() {
         alternateName: ["Coderx85", "Priyanshu085", "PRiyanshuX085"],
         url: "https://coderx85.vercel.app",
         image: "https://coderx85.vercel.app/images/hero.png",
-        jobTitle: "Full Stack Developer",
+        jobTitle: "Forward Deployed Engineer",
         description:
-          "Full Stack Developer with 1+ years of experience building scalable web applications using React, Node.js, and Next.js. Passionate about clean architecture, open-source contributions, and delivering production-ready solutions.",
+          "Full Stack Developer and DevOps Engineer with 2+ years of experience building production AI-driven SaaS and multi-tenant web applications using React, Node.js, and Next.js.",
         email: "work.priyanshu085@gmail.com",
+        worksFor: {
+          "@type": "Organization",
+          name: "Adleia Labs",
+          url: "https://adleia.com/",
+        },
         address: {
           "@type": "PostalAddress",
           addressCountry: "IN",
