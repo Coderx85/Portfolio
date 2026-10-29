@@ -1,7 +1,7 @@
 export const config = {
   name: "Priyanshu",
   description:
-    "A passionate web developer skilled in front-end and back-end technologies. With experience in React, Node.js, and DevOps tools.",
+    "Full-stack and DevOps engineer with production experience across AI-driven SaaS, multi-tenant backends, and the Node.js/Next.js/Kubernetes stack they run on.",
   profile: [
     "Software engineer with 1+ years of experience, including 10+ personal projects.",
     "Experience in full stack web development using modern technologies.",

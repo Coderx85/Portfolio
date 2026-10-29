@@ -60,17 +60,17 @@ export const services: TServices[] = [
     color: "#38bdf8", // sky blue
   },
   {
-    title: "Framework-development",
+    title: "Framework Development",
     icon: SiFramer,
     description:
-      "Leverage modern frameworks like Next.js, Node.js, Fastify. to build scalable and maintainable applications.",
+      "Leverage modern frameworks like Next.js, Node.js, and Fastify to build scalable and maintainable applications.",
     color: "#e879f9", // orchid
   },
   {
     title: "Code Reviewer",
     icon: SiCodefactor,
     description:
-      "Detailed code using best code writing pratices, security guidelines, industry standards and also using the AI tools.",
+      "Detailed code review using best coding practices, security guidelines, and industry standards, assisted by AI tools.",
     color: "#818cf8", // slate indigo
   },
   {

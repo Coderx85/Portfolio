@@ -24,16 +24,17 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/components/ui/use-toast";
+import { config } from "@/constants/config";
 
 const contactInfo = [
   {
     title: "Email",
-    description: "work.priyanshu085@gmail.com",
+    description: config.email,
     icon: <FaEnvelope />,
   },
   {
     title: "Phone",
-    description: "(+91) 707 191 5785",
+    description: `+91 ${config.phone}`,
     icon: <FaPhone />,
   },
   {
@@ -82,7 +83,7 @@ const ContactPage = () => {
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+        transition: { delay: 0, duration: 0.4, ease: "easeIn" },
       }}
       className="py-3 flex xl:flex-row flex-col justify-between"
     >
@@ -90,7 +91,7 @@ const ContactPage = () => {
       <motion.div
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 2.6, duration: 0.5 }}
+        transition={{ delay: 0.1, duration: 0.5 }}
         className="px-8 py-8"
         id="contact"
       >
@@ -294,7 +295,7 @@ const ContactPage = () => {
       <motion.div
         initial={{ opacity: 0, x: 30 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 2.8, duration: 0.5 }}
+        transition={{ delay: 0.2, duration: 0.5 }}
         className="flex flex-1 items-start xl:justify-end order-1 xl:order-0 pr-8 my-8 xl:mb-0"
       >
         <ul className="flex flex-col gap-6 ">
@@ -304,7 +305,7 @@ const ContactPage = () => {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 2.9 + index * 0.1, duration: 0.4 }}
+                transition={{ delay: 0.3 + index * 0.1, duration: 0.4 }}
                 className="glass-card glass-card-hover p-5 flex items-center gap-5"
               >
                 <div

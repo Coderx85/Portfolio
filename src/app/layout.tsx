@@ -22,13 +22,15 @@ export const metadata: Metadata = {
     template: "%s | Priyanshu — Full Stack Developer",
   },
   description:
-    "Full Stack Developer with 1+ years of experience building scalable web applications using React, Node.js, and Next.js. Passionate about clean architecture, open-source contributions, and delivering production-ready solutions.",
+    "Full Stack Developer and DevOps Engineer with 2+ years of experience building production AI-driven SaaS and multi-tenant web applications using React, Node.js, and Next.js.",
   keywords: [
     "Priyanshu",
     "Coderx85",
     "Priyanshu085",
     "PriyanshuX085",
     "Full Stack Developer",
+    "Forward Deployed Engineer",
+    "DevOps Engineer",
     "Software Engineer",
     "Web Developer",
     "React Developer",
@@ -49,7 +51,7 @@ export const metadata: Metadata = {
     title:
       "Priyanshu | Full Stack Developer — React, Node.js & Next.js Portfolio",
     description:
-      "Full Stack Developer with 1+ years of experience building scalable web applications using React, Node.js, and Next.js. Passionate about clean architecture, open-source contributions, and delivering production-ready solutions.",
+      "Full Stack Developer and DevOps Engineer with 2+ years of experience building production AI-driven SaaS and multi-tenant web applications using React, Node.js, and Next.js.",
     url: "https://coderx85.vercel.app",
     siteName: "Priyanshu — Full Stack Developer Portfolio",
     images: [
@@ -67,7 +69,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Priyanshu | Full Stack Developer",
     description:
-      "Full Stack Developer with 1+ years of experience building scalable web applications using React, Node.js, and Next.js.",
+      "Full Stack Developer and DevOps Engineer with 2+ years of experience building production AI-driven SaaS using React, Node.js, and Next.js.",
     creator: "@Priyanshux085",
     site: "@Priyanshux085",
     images: [

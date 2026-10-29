@@ -3,10 +3,8 @@ import {
   SiAppwrite,
   SiArgo,
   SiBetterauth,
-  SiClaude,
   SiCloudinary,
   SiCplusplus,
-  SiCypress,
   SiDatadog,
   SiDocker,
   SiFastapi,
@@ -28,8 +26,6 @@ import {
   SiPostgresql,
   SiPrometheus,
   SiPulumi,
-  SiRailway,
-  SiRedis,
   SiServerless,
   SiSqlite,
   SiStreamlit,
@@ -37,6 +33,8 @@ import {
   SiTypescript,
   SiVitest,
   SiWhatsapp,
+  SiGithubactions,
+  SiGooglegemini,
 } from "react-icons/si";
 import {
   FaCss3,
@@ -97,6 +95,7 @@ import {
   Html5PlainIcon,
   Css3PlainIcon,
   JavascriptPlainIcon,
+  PlaywrightOriginalIcon,
 } from "@devicon/react";
 import {
   FaAsymmetrik,
@@ -127,7 +126,7 @@ export const educationData: EduProps = {
 export const aboutData: AbtData = {
   title: "About Me",
   description:
-    "I have a B-Tech in Computer Science (2021-25) and Intermediate (2019-21).",
+    "Full-stack and DevOps engineer with a B-Tech in Computer Science (2021–25). I work across the whole stack — React and Next.js frontends, Node.js and Fastify backends, and the Docker/Kubernetes/cloud infrastructure they run on. As a Forward Deployed Engineer at Adleia Labs, I took an AI-driven healthcare SaaS from zero to production in 10 weeks (40+ shipped features), building a multimodal LangGraph + Gemini Vision pipeline served over WhatsApp and Telegram. At Websmiths I built a multi-tenant SaaS backend for 100+ enterprise organizations and 5k+ users, backed by a Kafka notification microservice handling 450 req/sec, and cut production MTTR by 24%; as a Frontend Developer Intern at JarGoan my redesigns improved usability by 20.6% and cut the initial bundle size by 18%.",
   info: [
     {
       fieldName: "Name",
@@ -166,7 +165,13 @@ export const aboutData: AbtData = {
 
 export const experienceData: IExperience = {
   title: "experience",
-  description: "I have worked as a web developer at XYZ company for 2 years.",
+  // NOTE: `description` has no consumer in the codebase — ExperienceSection
+  // and ResumePDF render only per-item bullet descriptions, and every Heading
+  // call passes its own literal. The former "web developer at XYZ company"
+  // placeholder was fabricated copy, so it's replaced with a factual
+  // one-liner consistent with the entries below until the field sees use.
+  description:
+    "Full-stack and DevOps engineering experience across two developer internships and a current Forward Deployed Engineer role.",
   items: [
     {
       id: 4,
@@ -175,21 +180,25 @@ export const experienceData: IExperience = {
       imgUrl: "https://adleia.com/adleia-logo.jpg",
       linkedin: "https://www.linkedin.com/company/adleia-labs/",
       startDate: new Date("2026-07-01"),
-      endDate: new Date("2026-04-01"),
+      // Current role: the renderers substitute "Present" (ResumePDF.tsx /
+      // ExperienceSection.tsx) and use new Date() for the duration whenever
+      // isCurrent is true, so endDate is never read. The type requires a
+      // Date, so it's set equal to the start date — there is no real end
+      // date yet and nothing was fabricated.
+      endDate: new Date("2026-07-01"),
       companyUrl: "https://adleia.com/",
       description: [
-        "Owned end-to-end engineering across two greenfield products, driving requirements discovery, system architecture, development, testing, deployment, and iterative improvements through direct stakeholder collaboration.",
-        "Built multimodal LLM integrations using LangChain and Google Gemini, alongside WhatsApp and Telegram bot integrations for AI-powered workflows.",
-        "Automated cloud infrastructure and GitOps deployments using GCP, Pulumi, Kubernetes, and Argo CD.",
-        "Applied TDD and established unit, end-to-end, and load-testing workflows using Vitest, Playwright, Cypress, and k6.",
-        "Improved client-management and planning workflows, saving approximately one working day per week.",
+        "Architected an AI-driven healthcare SaaS in Node.js, Fastify, and PostgreSQL, taking it from zero to production in 10 weeks with 40+ shipped features.",
+        "Engineered a multimodal LangGraph and Gemini Vision pipeline converting food photos and health-report PDFs into nutrition insights, served via WhatsApp and Telegram chatbots.",
+        "Re-architected a legacy backend into a hexagonal, feature-based design with InversifyJS, enabling a 4-tier test strategy from Vitest unit to Playwright end-to-end tests.",
+        "Executed 5 live production migrations — including React to Next.js, Better Auth, database schema, and S3 storage — gated by GitHub Actions CI/CD.",
       ],
       isCurrent: true,
       techStack: [
         {
-          title: "Railway",
-          icon: SiRailway,
-          level: "Intermediate",
+          title: "Node.js",
+          icon: NodejsOriginalIcon as unknown as IconType,
+          level: "Advanced",
         },
         {
           title: "Next.js",
@@ -197,48 +206,48 @@ export const experienceData: IExperience = {
           level: "Advanced",
         },
         {
-          title: "ArgoCD",
-          icon: SiArgo,
-          level: "Intermediate",
-        },
-        {
-          title: "PostgreSQL",
-          icon: SiPostgresql,
-          level: "Intermediate",
-        },
-        {
           title: "Fastify",
           icon: SiFastify,
           level: "Advanced",
         },
         {
+          title: "PostgreSQL",
+          icon: SiPostgresql,
+          level: "Advanced",
+        },
+        {
+          title: "LangGraph",
+          icon: SiLanggraph,
+          level: "Advanced",
+        },
+        {
+          title: "Gemini Vision",
+          icon: SiGooglegemini,
+          level: "Intermediate",
+        },
+        {
+          title: "Better-auth",
+          icon: SiBetterauth,
+          level: "Advanced",
+        },
+        {
           title: "Vitest",
           icon: SiVitest,
-          level: "Intermediate",
-        },
-        {
-          title: "Pulumi",
-          icon: SiPulumi,
-          level: "Intermediate",
-        },
-        {
-          title: "Docker",
-          icon: SiDocker,
           level: "Advanced",
         },
         {
-          title: "Cypress",
-          icon: SiCypress,
+          title: "Playwright",
+          icon: PlaywrightOriginalIcon as unknown as IconType,
           level: "Intermediate",
         },
         {
-          title: "Redis",
-          icon: SiRedis,
-          level: "Advanced",
+          title: "AWS S3",
+          icon: AmazonwebservicesOriginalWordmarkIcon as unknown as IconType,
+          level: "Intermediate",
         },
         {
-          title: "Kubernetes",
-          icon: SiKubernetes,
+          title: "GitHub Actions",
+          icon: SiGithubactions,
           level: "Advanced",
         },
         {
@@ -251,31 +260,21 @@ export const experienceData: IExperience = {
           icon: SiTelegram,
           level: "Advanced",
         },
-        {
-          title: "Claude Code",
-          icon: SiClaude,
-          level: "Intermediate",
-        },
-        {
-          title: "OpenAI LLM",
-          icon: SiOpenai,
-          level: "Intermediate",
-        },
       ],
     },
     {
       id: 0,
-      title: "Software Developer Engineer",
+      title: "Software Developer Engineer - I (Intern)",
       company: "Websmiths",
       imgUrl: "https://websmiths.io/images/logo/logo-dark.png",
       startDate: new Date("2025-09-01"),
-      endDate: new Date("2026-04-01"),
+      endDate: new Date("2025-12-01"),
       companyUrl: "https://www.websmiths.io/",
       description: [
-        "Architected a secure, multi-tenant SaaS backend in Node.js and Fastify, implementing robust tenant isolation and a Role, and Attribute-Based Access Control system to onboard over 100+ enterprise organizations and 5k+ users securely.",
+        "Architected a secure, multi-tenant SaaS backend in Node.js and Fastify, implementing robust tenant isolation and a Role- and Attribute-Based Access Control system to onboard over 100+ enterprise organizations and 5k+ users securely.",
         "Engineered a high-throughput, event-driven notification microservice via Apache Kafka, reliably processing 1k+ concurrent activities at 450 req/sec with zero performance degradation.",
-        "Migrated legacy backend structure to a modular monolith architecture, improving testability by 3\\times, reducing cross-module dependencies by 60%, and accelerating feature development.",
-        "Stood up a comprehensive AWS observability and telemetry pipeline integrating Grafana, Loki, and Vector to centralize structured logging, successfully reducing production debugging latency and MTTR by 24%",
+        "Migrated legacy backend structure to a modular monolith architecture, improving testability by 3×, reducing cross-module dependencies by 60%, and accelerating feature development.",
+        "Stood up a comprehensive AWS observability and telemetry pipeline integrating Grafana, Loki, and Vector to centralize structured logging, successfully reducing production debugging latency and MTTR by 24%.",
       ],
       linkedin: "https://www.linkedin.com/company/websmiths",
       isCurrent: false,
@@ -374,9 +373,9 @@ export const experienceData: IExperience = {
     },
     {
       id: 2,
-      title: "Core Contributor",
+      title: "Core Open Source Contributor",
       company: "Tublian",
-      startDate: new Date("2025-08-01"),
+      startDate: new Date("2024-08-01"),
       endDate: new Date("2025-08-01"),
       description: [
         "Owned and extended internal LLM infrastructure, optimizing prompt execution pipelines and token consumption to reduce inference overhead and API costs significantly.",
@@ -458,12 +457,12 @@ export const skillsData: SkillProps = {
           level: "Advanced",
         },
         {
-          title: "Html",
+          title: "HTML",
           icon: FaHtml5,
           level: "Advanced",
         },
         {
-          title: "Css",
+          title: "CSS",
           icon: FaCss3,
           level: "Advanced",
         },
@@ -490,7 +489,7 @@ export const skillsData: SkillProps = {
         {
           title: "Helm",
           icon: SiHelm,
-          level: "Beginner",
+          level: "Intermediate",
         },
       ],
     },
@@ -503,14 +502,24 @@ export const skillsData: SkillProps = {
           level: "Intermediate",
         },
         {
+          // Docker level unified to "Advanced": both experience entries and
+          // the tech showcase record it as Advanced (it's used heavily in
+          // production work at Websmiths/Adleia), so skillsData's earlier
+          // "Intermediate" was the contradiction.
           title: "Docker",
           icon: SiDocker,
-          level: "Intermediate",
+          level: "Advanced",
         },
         {
+          // Kubernetes level unified to "Intermediate": the skills showcase
+          // said "Beginner", but the experience entries record hands-on
+          // production usage (Kubernetes + Pulumi + Argo CD automation at
+          // Adleia), which makes "Beginner" an undersell. "Intermediate" is
+          // the honest middle — production usage, but not the "Advanced"
+          // depth Docker is marked at — so both sources now agree.
           title: "Kubernetes",
           icon: SiKubernetes,
-          level: "Beginner",
+          level: "Intermediate",
         },
       ],
     },
@@ -538,12 +547,12 @@ export const skillsData: SkillProps = {
           level: "Intermediate",
         },
         {
-          title: "FastApi",
+          title: "FastAPI",
           icon: SiFastapi,
           level: "Intermediate",
         },
         {
-          title: "Php",
+          title: "PHP",
           icon: SiPhp,
           level: "Intermediate",
         },
@@ -572,66 +581,15 @@ export const skillsData: SkillProps = {
   ],
 };
 
-// ─── Color scheme for tech category cards ───
-export const categoryColors: Record<
-  TCategory,
-  { text: string; border: string; bg: string; fill: string }
-> = {
-  Frontend: {
-    text: "text-cyan-400",
-    border: "border-cyan-400/30",
-    bg: "bg-cyan-400/5",
-    fill: "fill-cyan-400",
-  },
-  Backend: {
-    text: "text-emerald-400",
-    border: "border-emerald-400/30",
-    bg: "bg-emerald-400/5",
-    fill: "fill-emerald-400",
-  },
-  Languages: {
-    text: "text-amber-400",
-    border: "border-amber-400/30",
-    bg: "bg-amber-400/5",
-    fill: "fill-amber-400",
-  },
-  Database: {
-    text: "text-violet-400",
-    border: "border-violet-400/30",
-    bg: "bg-violet-400/5",
-    fill: "fill-violet-400",
-  },
-  "DevOps & Cloud": {
-    text: "text-sky-400",
-    border: "border-sky-400/30",
-    bg: "bg-sky-400/5",
-    fill: "fill-sky-400",
-  },
-  Monitoring: {
-    text: "text-orange-400",
-    border: "border-orange-400/30",
-    bg: "bg-orange-400/5",
-    fill: "fill-orange-400",
-  },
-  Infrastructure: {
-    text: "text-rose-400",
-    border: "border-rose-400/30",
-    bg: "bg-rose-400/5",
-    fill: "fill-rose-400",
-  },
-  Frameworks: {
-    text: "text-fuchsia-400",
-    border: "border-fuchsia-400/30",
-    bg: "bg-fuchsia-400/5",
-    fill: "fill-fuchsia-400",
-  },
-  Testing: {
-    text: "text-green-400",
-    border: "border-green-400/30",
-    bg: "bg-green-400/5",
-    fill: "fill-green-400",
-  },
-};
+// ─── Night Lab glass treatment for tech category cards ───
+// One shared glass panel for every category (border-white/10, dark glass
+// background = rgba(15, 23, 42, 0.4) via slate-900/40). Per-category hues
+// were removed: signal color is reserved; brand icons on tiles keep their
+// own recognition colors. Headings render white, icons white/70.
+export const categoryGlass = {
+  bg: "bg-slate-900/40",
+  border: "border border-white/10",
+} as const;
 
 export const tech: readonly TTechStack[] = [
   {
@@ -651,7 +609,7 @@ export const tech: readonly TTechStack[] = [
         color: "#E34F26",
       },
       {
-        title: "Taiwind",
+        title: "Tailwind",
         icon: TailwindcssOriginalIcon,
         level: "Advanced",
         color: "#06B6D4",
@@ -674,11 +632,16 @@ export const tech: readonly TTechStack[] = [
         level: "Advanced",
         color: "#339933",
       },
+      // Brand colors on the near-black canvas must stay legible. Bun/Deno
+      // ship a pure-black brand icon (#000000) and Helm a near-black slate
+      // (#263238) — all invisible here — so they use lighter
+      // brand-appropriate substitutes (Bun's cream #FBF0DF, Deno's pale
+      // green #70FFB7, a lightened Helm blue) that clear a 4.5:1 minimum.
       {
         title: "Bun",
         icon: BunOriginalIcon,
         level: "Intermediate",
-        color: "#000000",
+        color: "#FBF0DF",
       },
       {
         title: "Go",
@@ -696,7 +659,7 @@ export const tech: readonly TTechStack[] = [
         title: "Deno",
         icon: DenojsOriginalIcon,
         level: "Intermediate",
-        color: "#000000",
+        color: "#70FFB7",
       },
     ],
   },
@@ -713,7 +676,7 @@ export const tech: readonly TTechStack[] = [
       {
         title: "Typescript",
         icon: TypescriptOriginalIcon,
-        level: "Intermediate",
+        level: "Advanced",
         color: "#3178C6",
       },
       {
@@ -887,8 +850,8 @@ export const tech: readonly TTechStack[] = [
       {
         title: "Helm",
         icon: HelmOriginalIcon,
-        level: "Advanced",
-        color: "#263238",
+        level: "Intermediate",
+        color: "#4B9CC4",
       },
     ],
   },

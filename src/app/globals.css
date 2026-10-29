@@ -191,15 +191,6 @@
     0 0 60px rgba(22, 100, 102, 0.1);
 }
 
-@utility text-shimmer {
-  background: linear-gradient(90deg, #166466, #22d3ee, #166466);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: shimmer 3s linear infinite;
-}
-
 /* ── Base Layer ── */
 
 @layer base {
@@ -228,8 +219,9 @@
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Primary = Primary Ink surface (#0f172a); foreground = light text (H2 in ProjectDetails, buttons). */
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
     --secondary: oklch(65.5% 0.15027 50.57);
     --secondary-foreground: var(--color-secondary-foreground);
     --muted: 217.2 32.6% 17.5%;
@@ -389,7 +381,7 @@
 .orb-3 {
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, #0f766e, transparent 70%);
+  background: radial-gradient(circle, #166466, transparent 70%);
   bottom: 5%;
   left: 40%;
   animation: orb-float-1 18s ease-in-out infinite reverse;
@@ -459,4 +451,47 @@ select:focus {
   outline: none;
   border-color: #166466 !important;
   box-shadow: 0 0 0 3px rgba(22, 100, 102, 0.2);
+}
+
+/* ── Print ── */
+/* Physical printing of the resume WEB view (Cmd+P). The dark-lab aesthetic is
+   screen-only: force a white canvas with black ink, keep colored UI accents
+   that print as backgrounds (print-color-adjust: exact), and strip site chrome
+   so the document is the content. Framer Motion writes opacity/transform as
+   inline styles, so neutralizing them requires !important here. */
+@media print {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Cover the layer-base wildcard (`* { color: #fff }`) and body gradients. */
+  body {
+    color: #000 !important;
+    background: none !important;
+  }
+
+  /* Motion wrappers: framer-motion sets entrance opacity/translate inline —
+     force fully opaque, unshifted content so nothing prints half-visible. */
+  [style] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Site chrome: nav, footer, decorative orbs, and fixed overlays
+     (page transitions, mobile menu). */
+  nav,
+  footer,
+  .orb,
+  .fixed {
+    display: none !important;
+  }
 }

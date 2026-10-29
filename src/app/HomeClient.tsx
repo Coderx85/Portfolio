@@ -5,11 +5,12 @@ import Footer from "@/components/Footer";
 import ServiceSection from "@/components/ServiceSection";
 import ScrambleText from "@/components/animation/ScrambleText";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, MotionConfig } from "framer-motion";
 import { config } from "@/lib/config";
 import { useRouter } from "next/navigation";
-import { categoryColors, tech } from "@/constants";
+import { categoryGlass, tech } from "@/constants";
 import { convertLevelIntoNumber } from "@/lib/convertLevel";
+import { levelBarColor } from "@/lib/levelBarColor";
 import { FiDownload, FiArrowRight } from "react-icons/fi";
 import { FaCode } from "react-icons/fa6";
 import { HiForward } from "react-icons/hi2";
@@ -20,6 +21,7 @@ const HeroSection = () => {
 
   const ROLES = [
     "Full Stack Developer",
+    "Forward Deployed Engineer",
     "Problem Solver",
     "Software Engineer",
     "NodeJS Developer",
@@ -32,8 +34,28 @@ const HeroSection = () => {
 
   const WELCOME_MESSAGE = "Hi, I'm a" as const;
 
+  const heroItemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "spring", stiffness: 420, damping: 38, mass: 0.9 },
+    },
+  } as const;
+
+  const tapFeedback = {
+    scale: 0.97,
+  } as const;
+
+  const tapTransition = {
+    type: "spring",
+    stiffness: 500,
+    damping: 30,
+    mass: 0.5,
+  } as const;
+
   return (
-    <>
+    <MotionConfig reducedMotion="user">
       <motion.section
         initial={{ opacity: 0 }}
         className="xs:px-7 px-20"
@@ -43,16 +65,12 @@ const HeroSection = () => {
         }}
       >
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2.4, duration: 0.5, ease: "easeIn" }}
+          initial="hidden"
+          animate="visible"
+          transition={{ staggerChildren: 0.08, delayChildren: 0.05 }}
           className="mx-auto mt-32 pb-12 text-left order-2 xl:order-0 py-0 h-full min-h-100 flex flex-col gap-3"
         >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2.6, duration: 0.5 }}
-          >
+          <motion.div variants={heroItemVariants}>
             <span className="inline-flex gap-2 px-4 py-1.5  items-center rounded-full text-xs font-semibold uppercase tracking-[0.2em] border border-gray-100/30 bg-gray-100/5 text-gray-100">
               <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
               Available for work
@@ -60,9 +78,7 @@ const HeroSection = () => {
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2.7, duration: 0.6 }}
+            variants={heroItemVariants}
             className="text-white text-4xl xl:text-5xl py-2 font-bold leading-[1.4]"
           >
             <p className="py-1 ">{WELCOME_MESSAGE}</p>
@@ -77,45 +93,51 @@ const HeroSection = () => {
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2.9, duration: 0.5 }}
+            variants={heroItemVariants}
             className="max-w-130 md:mx-0 mx-auto text-white/60 text-base leading-relaxed"
           >
             {description}
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 3.1, duration: 0.5 }}
+            variants={heroItemVariants}
             className="flex w-full mt-5 xl:w-fit gap-4 justify-between items-center pb-32"
           >
-            <Link
-              href="/Resume.pdf"
-              type="button"
-              download="Resume/Priyanshu.pdf"
-              target="_blank"
-              aria-label="Download Resume"
-              className="uppercase inline-flex px-5 items-center whitespace-nowrap rounded-xl text-sm font-medium ring-offset-background focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 justify-center border-2 py-3 mx-auto w-full gap-2 text-white border-accent/50 hover:bg-accent hover:border-accent hover:shadow-lg hover:shadow-accent/20 transition-all duration-400 ease-out group"
+            <motion.div
+              whileTap={tapFeedback}
+              transition={tapTransition}
+              className="w-full"
             >
-              {/* <Button variant="outline" size="lg"> */}
-              Checkout My CV{" "}
-              <FiDownload className="text-sm text-accent group-hover:text-white transition-colors duration-300" />
-              {/* </Button> */}
-            </Link>
+              <Link
+                href="/Resume.pdf"
+                type="button"
+                download="Resume/Priyanshu.pdf"
+                target="_blank"
+                aria-label="Download Resume"
+                className="uppercase inline-flex px-5 items-center whitespace-nowrap rounded-xl text-sm font-medium ring-offset-background focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 justify-center border-2 py-3 mx-auto w-full gap-2 text-white border-accent/50 hover:bg-accent hover:border-accent hover:shadow-lg hover:shadow-accent/20 transition-all duration-400 ease-out group"
+              >
+                Checkout My CV{" "}
+                <FiDownload className="text-sm text-accent group-hover:text-white transition-colors duration-300" />
+              </Link>
+            </motion.div>
 
-            <Button
-              variant="outline"
-              size="lg"
-              aria-label="Hire Me"
-              onClick={() => router.push("/contact/#contact")}
-              className="uppercase w-full items-center gap-2 text-white bg-accent border-accent rounded-xl hover:bg-accent/80 hover:shadow-lg hover:shadow-accent/25
-                  transition-all duration-400 ease-out group"
+            <motion.div
+              whileTap={tapFeedback}
+              transition={tapTransition}
+              className="w-full"
             >
-              Hire Me
-              <FiArrowRight className="text-sm group-hover:translate-x-1 transition-transform duration-300" />
-            </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                aria-label="Hire Me"
+                onClick={() => router.push("/contact/#contact")}
+                className="uppercase w-full items-center gap-2 text-white bg-accent border-accent rounded-xl hover:bg-accent/80 hover:shadow-lg hover:shadow-accent/25
+                  transition-all duration-400 ease-out group"
+              >
+                Hire Me
+                <FiArrowRight className="text-sm group-hover:translate-x-1 transition-transform duration-300" />
+              </Button>
+            </motion.div>
           </motion.div>
         </motion.div>
 
@@ -163,28 +185,27 @@ const HeroSection = () => {
             className="flex flex-wrap grid-cols-2 gap-6"
           >
             {tech.slice(0, 6).map((skill, index) => {
-              const colors = categoryColors[skill.title];
               return (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
-                    delay: 0.25 + index * 0.15,
+                    delay: 0.08 + index * 0.06,
                     duration: 0.5,
                   }}
-                  className={`${colors.bg} ${colors.border} rounded-2xl p-5 flex flex-col gap-4`}
+                  className={`${categoryGlass.bg} ${categoryGlass.border} rounded-2xl p-5 flex flex-col gap-4`}
                 >
                   <motion.h4
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{
-                      delay: 0.3 + index * 0.15,
+                      delay: 0.1 + index * 0.06,
                       duration: 0.4,
                     }}
-                    className={`flex items-center gap-2 text-lg font-semibold ${colors.text} tracking-wide`}
+                    className="flex items-center gap-2 text-lg font-semibold text-white tracking-wide"
                   >
-                    <skill.icon className={`${colors.fill}`} />
+                    <skill.icon className="text-white/70" />
                     {skill.title}
                   </motion.h4>
                   <div className="flex gap-4 flex-wrap md:justify-start justify-center">
@@ -198,20 +219,10 @@ const HeroSection = () => {
                           initial={{ opacity: 0, y: 15 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{
-                            delay: 0.35 + index * 0.15 + techIndex * 0.08,
+                            delay: 0.12 + index * 0.06 + techIndex * 0.04,
                             duration: 0.4,
                           }}
-                          className="w-20 transition-colors border-white/10 hover:border-white/30 duration-300 rounded-xl p-3 flex flex-col gap-2 items-center text-center"
-                          style={{ borderColor: `${techItem.color}20` }}
-                          onMouseEnter={(e) => {
-                            e.currentTarget.style.borderColor = `${techItem.color}60`;
-                            e.currentTarget.style.backgroundColor = `${techItem.color}80`;
-                          }}
-                          onMouseLeave={(e) => {
-                            e.currentTarget.style.borderColor = `${techItem.color}80`;
-                            e.currentTarget.style.backgroundColor =
-                              "transparent";
-                          }}
+                          className="w-20 transition-colors border-white/10 hover:border-white/30 hover:bg-white/5 duration-300 rounded-xl p-3 flex flex-col gap-2 items-center text-center"
                         >
                           <span
                             className="text-3xl"
@@ -226,10 +237,14 @@ const HeroSection = () => {
                             <Progress
                               value={convertLevelIntoNumber(techItem.level)}
                               className="bg-white/10 h-1.5 rounded-full"
+                              aria-label={`${techItem.title}: ${techItem.level}`}
                               indicatorStyle={{
-                                backgroundColor: techItem.color,
+                                backgroundColor: levelBarColor(techItem.level),
                               }}
                             />
+                            <p className="mt-1 text-[10px] md:text-[11px] text-white/50 tracking-wide uppercase">
+                              {techItem.level}
+                            </p>
                           </div>
                         </motion.div>
                       ))}
@@ -237,9 +252,10 @@ const HeroSection = () => {
                       initial={{ opacity: 0, y: 15 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{
-                        delay: 0.35 + index * 0.15 + 3 * 0.08,
+                        delay: 0.12 + index * 0.06 + 3 * 0.04,
                         duration: 0.4,
                       }}
+                      whileTap={{ ...tapFeedback, transition: tapTransition }}
                       onClick={() => {
                         router.push("/resume");
                       }}
@@ -253,7 +269,10 @@ const HeroSection = () => {
               );
             })}
           </motion.div>
-          <motion.div className="flex px-5">
+          <motion.div
+            whileTap={{ ...tapFeedback, transition: tapTransition }}
+            className="flex px-5"
+          >
             <Button
               onClick={() => router.push("/resume#skills")}
               className="text-white rounded-xl bg-transparent border-white hover:bg-white/10 border-2"
@@ -264,7 +283,7 @@ const HeroSection = () => {
         </motion.section>
       </motion.section>
       <Footer />
-    </>
+    </MotionConfig>
   );
 };
 

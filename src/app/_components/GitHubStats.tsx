@@ -1,11 +1,19 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { GitHubCalendar } from "react-github-calendar";
 import { motion } from "framer-motion";
-import { FaGithub } from "react-icons/fa";
 import { config } from "@/lib/config";
 
 export default function GitHubStats() {
+  // react-activity-calendar serializes date/SVG internals during data
+  // resolution, so the SSR pass and the first client render disagree
+  // (hydration mismatch → whole subtree regenerated). The card is data-
+  // driven anyway: render a stable SSR skeleton, mount the real calendar
+  // after hydration.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -24,18 +32,29 @@ export default function GitHubStats() {
             GitHub Contributions
           </h3>
           <p className="text-white/70 text-xs">
-            {`@${config.username?.toLocaleLowerCase() || "coderx85"} · ${new Date().getFullYear()} activity`}
+            {mounted
+              ? `@${config.username?.toLocaleLowerCase() || "coderx85"} · ${new Date().getFullYear()} activity`
+              : `@${config.username?.toLocaleLowerCase() || "coderx85"} activity`}
           </p>
         </div>
-        <GitHubCalendar
-          className="w-full bg-white/5 rounded-xl p-4"
-          username={config.username || "coderx85"}
-          blockSize={11}
-          blockMargin={4}
-          fontSize={11}
-          colorScheme="dark"
-          year={new Date().getFullYear()}
-        />
+        {mounted ? (
+          <GitHubCalendar
+            className="w-full bg-white/5 rounded-xl p-4"
+            username={config.username || "coderx85"}
+            blockSize={11}
+            blockMargin={4}
+            fontSize={11}
+            colorScheme="dark"
+            year={new Date().getFullYear()}
+          />
+        ) : (
+          // SSR skeleton sized like a loaded calendar so the card doesn't
+          // jump when the real grid mounts.
+          <div
+            className="w-full h-[104px] bg-white/5 rounded-xl p-4 animate-pulse"
+            aria-hidden="true"
+          />
+        )}
       </div>
 
       {/* Hover glow */}

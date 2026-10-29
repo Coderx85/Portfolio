@@ -1,6 +1,23 @@
 import { TProject } from "@/types";
 
 // Project Data
+
+/**
+ * Curated strongest-first display order for the Projects grid.
+ * Strongest = live preview URL + a real GitHub repo + a serious backend stack
+ * (PostgreSQL/Drizzle/Prisma/Appwrite). Projects with a live demo but no repo
+ * come next; projects with no live preview and no public repo go last.
+ */
+export const FeaturedOrder: number[] = [
+  2, // Bux — live preview, public repo, PostgreSQL + Drizzle ORM + Appwrite
+  4, // SensAI — live preview, public repo, PostgreSQL + Drizzle + Prisma
+  5, // Droxy — live preview, public repo, PostgreSQL + Drizzle ORM + Clerk
+  8, // Collaro — live preview, public repo, PostgreSQL + Drizzle
+  7, // Neotion — live preview, public repo, Convex + Clerk
+  6, // Byte — live preview, public repo, tRPC + Inngest
+  1, // PromptHub — live preview, but no public repo (MongoDB stack)
+];
+
 export const ProjectData: TProject[] = [
   {
     id: 1,
@@ -11,7 +28,7 @@ export const ProjectData: TProject[] = [
     gitUrl: "",
     previewUrl: "https://prompthub-085.vercel.app",
     techStack: {
-      NextJs: "SiNextdotjs",
+      "Next.js": "SiNextdotjs",
       AuthJS: "FaShieldAlt",
       TailwindCSS: "SiTailwindcss",
       MongoDB: "SiMongodb",
@@ -29,7 +46,7 @@ export const ProjectData: TProject[] = [
           "Implemented a community moderation system where users can upvote or downvote prompts.",
       },
     ],
-    lessonsLearned: ["Lesson 1", "Lesson 2"],
+    lessonsLearned: [],
   },
   {
     id: 2,
@@ -65,9 +82,10 @@ export const ProjectData: TProject[] = [
   {
     id: 3,
     title: "Fiverplus",
-    description: "",
+    description:
+      "A full-stack web platform built with Next.js, TypeScript, PostgreSQL, and Drizzle ORM.",
     imgUrl: "",
-    gitUrl: "fiverplus",
+    gitUrl: "",
     previewUrl: "",
     techStack: {
       "Next.js": "SiNextdotjs",
@@ -126,7 +144,7 @@ export const ProjectData: TProject[] = [
     id: 8,
     title: "Collaro",
     description:
-      "Collaro is a developer-centric collaboration platform that integrates real-time communication, live streaming, and structured meetings. It allows users to create or join workspaces, invite members. Designed for remote teams. DevnTalk enhances productivity by providing a seamless environment for discussions, and project tracking.",
+      "Collaro is a developer-centric collaboration platform that integrates real-time communication, live streaming, and structured meetings. It allows users to create or join workspaces, invite members. Designed for remote teams. Collaro enhances productivity by providing a seamless environment for discussions, and project tracking.",
     imgUrl: "/images/projects/collaro.png",
     gitUrl: "https://github.com/coderx85/collaro.git",
     previewUrl: "https://devntalk.vercel.app/",
@@ -149,7 +167,7 @@ export const ProjectData: TProject[] = [
           "Implemented a community moderation system where users can upvote or downvote prompts.",
       },
     ],
-    lessonsLearned: ["Lesson 1", "Lesson 2"],
+    lessonsLearned: [],
   },
   {
     id: 5,
@@ -157,12 +175,12 @@ export const ProjectData: TProject[] = [
     description:
       "Droxy is a web application designed to help users manage their personal finances. It provides features for tracking expenses, creating budgets, and generating financial reports.",
     imgUrl: "/images/projects/droxy.png",
-    gitUrl: "htpps://github.com/coderx85/droxy.git",
+    gitUrl: "https://github.com/coderx85/droxy.git",
     previewUrl: "https://droxy.vercel.app/",
     techStack: {
       "Next.js": "SiNextdotjs",
       React: "SiReact",
-      ClerksJS: "SiClerk",
+      Clerk: "SiClerk",
       TypeScript: "SiTypescript",
       TailwindCSS: "SiTailwindcss",
       PostgreSQL: "SiPostgresql",
@@ -182,7 +200,7 @@ export const ProjectData: TProject[] = [
           "Implemented a community moderation system where users can upvote or downvote prompts.",
       },
     ],
-    lessonsLearned: ["Lesson 1", "Lesson 2"],
+    lessonsLearned: [],
   },
   {
     id: 7,
@@ -195,7 +213,7 @@ export const ProjectData: TProject[] = [
     techStack: {
       "Next.js": "SiNextdotjs",
       React: "SiReact",
-      ClerkJS: "SiClerk",
+      Clerk: "SiClerk",
       TypeScript: "SiTypescript",
       TailwindCSS: "SiTailwindcss",
       Convex: "FiCloudDrizzle",
@@ -209,13 +227,12 @@ export const ProjectData: TProject[] = [
           "Convex provides real-time sync, serverless scaling, and TypeScript-first development experience, eliminating complex backend setup while ensuring instant collaboration features.",
       },
     ],
-    lessonsLearned: ["Lesson 1", "Lesson 2"],
+    lessonsLearned: [],
   },
   {
     id: 6,
     title: "Byte",
-    description:
-      "A lovable clone built with Next.js, trpc, sandbox and inngest.",
+    description: "A lovable clone built with Next.js, tRPC, and Inngest.",
     imgUrl: "/images/projects/byte.png",
     gitUrl: "https://github.com/coderx85/byte.git",
     previewUrl: "https://byte-delta.vercel.app/",
@@ -224,7 +241,7 @@ export const ProjectData: TProject[] = [
       TypeScript: "SiTypescript",
       TailwindCSS: "SiTailwindcss",
       Vercel: "SiVercel",
-      tRPC: "SiTrpc ",
+      tRPC: "SiTrpc",
       Inngest: "SiInngest",
     },
     challengesFaced: [
@@ -239,6 +256,6 @@ export const ProjectData: TProject[] = [
           "Implemented a community moderation system where users can upvote or downvote prompts.",
       },
     ],
-    lessonsLearned: ["Lesson 1", "Lesson 2"],
+    lessonsLearned: [],
   },
 ];
