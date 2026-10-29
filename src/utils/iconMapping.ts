@@ -1,15 +1,16 @@
 import { IconType } from "react-icons/lib";
-import { 
-  SiAppwrite, 
-  SiClerk, 
-  SiMongodb, 
-  SiNextdotjs, 
-  SiPostgresql, 
-  SiPrisma, 
-  SiReact, 
-  SiTailwindcss, 
-  SiTypescript, 
-  SiVercel 
+import {
+  SiAppwrite,
+  SiClerk,
+  SiMongodb,
+  SiNextdotjs,
+  SiPostgresql,
+  SiPrisma,
+  SiReact,
+  SiTailwindcss,
+  SiTrpc,
+  SiTypescript,
+  SiVercel,
 } from "react-icons/si";
 import { BsCloudDrizzle, BsFileImage } from "react-icons/bs";
 import { FiCloudDrizzle } from "react-icons/fi";
@@ -26,16 +27,17 @@ export const iconMap: Record<string, IconType> = {
   SiPrisma,
   SiReact,
   SiTailwindcss,
+  SiTrpc,
   SiTypescript,
   SiVercel,
-  
+
   // Bootstrap Icons
   BsCloudDrizzle,
   BsFileImage,
-  
+
   // Feather Icons
   FiCloudDrizzle,
-  
+
   // Font Awesome Icons
   FaShieldAlt,
 };

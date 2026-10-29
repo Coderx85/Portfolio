@@ -60,6 +60,7 @@ The site reads as a late-night engineering workspace: a near-black gradient canv
 This is a Persuade-leaning Experience surface for a technical audience (recruiters, engineers): the craft of the UI itself is part of the pitch, so motion and glow are deliberate, not decorative filler. Light, flat, corporate SaaS treatments are an explicit rejection — the dark, atmospheric register is the identity, not a theme option.
 
 **Key Characteristics:**
+
 - Dark gradient canvas with drifting blurred orbs for ambient depth
 - Glassmorphism panels (backdrop-blur + translucent dark fill) as the primary surface material
 - One signal color (deep lab teal) reserved for interactive/active state, not general decoration
@@ -71,18 +72,22 @@ This is a Persuade-leaning Experience surface for a technical audience (recruite
 The palette is near-monochrome (black, white, muted slate) with exactly one glowing signal color and one warm counter-accent; color is a signal, not a palette to fill space with.
 
 ### Primary
+
 - **Deep Lab Teal** (`#166466`, hover `#1a8385`, glow `rgba(22, 100, 102, 0.4)`): the system's one true signal color. Used for active nav state, hover glows, gradient text, section dividers, focus rings, and the shimmer animation. Appears in gradients up to **Cyan Highlight** (`#22d3ee`) for emphasis moments (gradient-text, border-glow).
 
 ### Secondary
+
 - **Warm Amber Signal** (`oklch(65.5% 0.15027 50.57)`, foreground `oklch(0.9619 0.058 95.6174)`): the warm counterpoint to the cool teal base. Used for secondary text emphasis and the `--secondary` role.
 
 ### Neutral
+
 - **Primary Ink** (`#0f172a`, slate-950-adjacent): base surface fill for primary buttons and glass panel tint.
 - **Canvas Black** (`#0a0a0a` → `#141416` layered gradient): the body background, built from stacked radial gradients plus a diagonal linear gradient for subtle directional light.
 - **Surface Glass** (`rgba(15, 23, 42, 0.5–0.7)` with `blur(12–16px)`): the glass panel fill, darkening and sharpening its border on hover.
 - White (`#fff`) is the default text color throughout; there is no light-mode neutral in this system.
 
 ### Named Rules
+
 **The One Signal Rule.** Deep Lab Teal (and its cyan extension) is the only color that means "active" or "interactive." It never appears as passive decoration — only on hover states, the current nav item, focus rings, and emphasis text.
 
 **The Section-Heading Secondary Exception.** Every `Heading` component rendered with `type="section"` (`src/components/Heading.tsx`) — the "WORK EXPERIENCE", "Expertise", "Projects", and "Services" headings across Resume, Work, Service, and Experience — renders its icon and `<h2>` in Warm Amber Signal (`text-secondary`/`fill-secondary`), not Deep Lab Teal. This is a sitewide structural convention, not a per-page slip: it marks "section-level heading" the same way everywhere, using the system's documented secondary color for that one fixed role. It is not an interactive/active-state signal and does not expand under the One Signal Rule — Deep Lab Teal still means "active" everywhere else.
@@ -99,6 +104,7 @@ The showcase's 3D cube (`TechShowcasePanel.tsx`) participates in this exception 
 **Character:** Monospace everywhere gives the whole site a code-editor voice: headlines read like terminal output, body copy keeps the same technical cadence. There is no serif/sans contrast pairing — the typeface itself is the brand statement.
 
 ### Hierarchy
+
 - **H1** (700, 48px → 80px at ≥1280px, line-height 1.1, letter-spacing -0.02em): page-level hero headings.
 - **H2** (700, 36px → 48px at ≥1280px, line-height 1.1, letter-spacing -0.01em): section headings.
 - **H3** (600, 20px → 24px at ≥1280px, line-height 1.1): subsection/card headings.
@@ -106,6 +112,7 @@ The showcase's 3D cube (`TechShowcasePanel.tsx`) participates in this exception 
 - **Body**: JetBrains Mono at base size, white on dark, no max-width constraint currently enforced.
 
 ### Named Rules
+
 **The Monospace-Only Rule.** No second typeface is introduced for body copy or UI text; monospace is the system's voice at every level, not just a code-sample affordance.
 
 ## Layout
@@ -117,11 +124,13 @@ Breakpoints are custom, not Tailwind defaults: `sm: 640px`, `md: 768px`, `lg: 96
 Depth is conveyed through glass layering plus glow, not conventional drop shadows — the **glow is structural**: it specifically signals interactive or active state (hover lift, current nav item, focus), not generic atmosphere. Resting surfaces are flat-glass (translucent fill + blur, no shadow); state changes add glow and a small upward translate.
 
 ### Shadow Vocabulary
+
 - **Glass card hover** (`box-shadow: 0 8px 32px rgba(22,100,102,0.15), 0 0 0 1px rgba(22,100,102,0.1)` + `translateY(-4px)`): the primary "this is now active/focused" signal for cards.
 - **Pulse glow** (`0 0 20px rgba(22,100,102,0.2)` → `0 0 40px rgba(22,100,102,0.5)`, animated): used for elements that need sustained attention (e.g. CTAs).
 - **Accent glow ring** (`0 0 20px rgba(22,100,102,0.3), 0 0 60px rgba(22,100,102,0.1)`): `.glow-accent` utility for emphasis blocks.
 
 ### Named Rules
+
 **The Glow-Means-Active Rule.** Shadows and glow never appear on inert, non-interactive surfaces at rest. They appear only in response to hover, focus, or "this is the current page/section."
 
 ## Shapes
@@ -131,12 +140,14 @@ Radius is generous and varies by role: pill buttons (`rounded-full`) for primary
 ## Components
 
 ### Buttons
+
 - **Shape:** pill (`rounded-full`) for the default size; `rounded-md` for sm/md/lg sized variants; square icon buttons at `h-10 w-10`.
 - **Primary:** `bg-primary` (Primary Ink) with `text-primary-foreground`, `h-10 px-4 py-2`, 90%-opacity darken on hover.
 - **Secondary / Outline / Ghost:** outline uses a thin `border-input` with accent-tinted hover fill; ghost is transparent until hover, then fills with the accent/accent-foreground pair.
 - **Hover / Focus:** color-only transition (no glow) on the base button primitive; custom instances (like the mobile menu toggle) layer in a border-color shift to Warm Amber Signal and glow on `:focus-visible`.
 
 ### Cards
+
 - **Corner Style:** 16px (`.glass-card`'s `border-radius: 16px`).
 - **Background:** `rgba(15, 23, 42, 0.5)` with `blur(12px)`.
 - **Shadow Strategy:** flat at rest; see Elevation & Depth's Glow-Means-Active Rule for the hover state.
@@ -144,26 +155,31 @@ Radius is generous and varies by role: pill buttons (`rounded-full`) for primary
 - **Internal Padding:** 24px (`p-6`) header/content/footer blocks.
 
 ### Inputs / Fields
+
 - **Style:** `h-[48px]`, `rounded-md`, `border-white/10`, `bg-primary` fill, light-weight text, white placeholder.
-- **Focus:** border shifts to Deep Lab Teal plus a `0 0 0 3px rgba(22,100,102,0.2)` ring — the same signal-color language as everything else interactive.
+- **Focus:** border shifts to Deep Lab Teal plus a `0 0 0 3px rgba(22,100,102,0.55)` ring — the same signal-color language as everything else interactive. (Bumped from 0.2: 0.55 clears the 3:1 focus-indicator contrast floor on the near-black canvas.)
 
 ### Navigation
+
 - **Style:** sticky top nav, transitions from `bg-black/10 backdrop-blur-sm` to full `.glass` treatment plus shadow once scrolled past 20px. Links are uppercase, semibold, wide letter-spacing, `px-4 py-2` with `rounded-lg` hit areas.
 - **Active state:** teal-tinted background (`bg-secondary/10`), teal text, and an animated underline dot (`layoutId="activeNavIndicator"`) that slides between items via Framer Motion spring transition.
 - **Mobile:** collapses below `lg` (960px) to a hamburger button that opens a `.glass` dropdown panel (`rounded-2xl`), animated in with Framer Motion.
 
 ### Background Orbs (signature component)
+
 Three fixed, large (300–400px) radial-gradient circles (`#166466`, `#22d3ee`, `#0f766e`), heavily blurred (`blur(80px)`) and low-opacity (0.15), drifting via slow (18–25s) `translate`/`scale` keyframe loops behind all content. This is the system's signature ambient device — it's what makes the dark canvas feel alive rather than merely dark.
 
 ## Do's and Don'ts
 
 ### Do:
+
 - **Do** keep JetBrains Mono as the only typeface across every hierarchy level — don't introduce a serif or humanist sans for contrast.
 - **Do** reserve Deep Lab Teal glow/lift exclusively for interactive or active states (hover, focus, current nav item) per the Glow-Means-Active Rule.
 - **Do** use glass (translucent fill + blur + thin low-opacity border) as the default surface material for any new panel, card, or overlay.
 - **Do** keep background orbs and gradient canvas as the ambient layer behind new pages — it's the signature device, not a homepage-only flourish.
 
 ### Don't:
+
 - **Don't** introduce a light or flat corporate-SaaS visual mode — the dark, atmospheric register is the identity, confirmed as an explicit rejection, not a theme toggle.
 - **Don't** apply the teal glow/shadow treatment to resting, non-interactive surfaces — glow always means "active now."
 - **Don't** add hard, opaque drop shadows in the Material sense; depth comes from glass layering and glow, not conventional elevation shadows.

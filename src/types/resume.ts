@@ -1,4 +1,5 @@
 import { IconType } from "react-icons/lib";
+import type { PDFViewer, PDFDownloadLink } from "@react-pdf/renderer";
 import { DataProps } from ".";
 type LEVEL = "Beginner" | "Intermediate" | "Advanced";
 
@@ -87,17 +88,9 @@ export type TProject = {
 };
 
 export type PdfComponentsType = {
-  PDFViewer: React.ComponentType<{
-    width: string;
-    height: string;
-    showToolbar: boolean;
-    style: React.CSSProperties;
-    children: React.ReactNode;
-  }>;
-  PDFDownloadLink: React.ComponentType<{
-    document: React.ReactElement;
-    fileName: string;
-    children: (props: { loading: boolean }) => React.ReactNode;
-  }>;
+  // The library's own classes, kept narrow via `typeof` — the dynamic-import
+  // wiring in ResumeClient is checked against these real signatures, no `any`.
+  PDFViewer: typeof PDFViewer;
+  PDFDownloadLink: typeof PDFDownloadLink;
   ResumePDF: React.ComponentType;
 } | null;

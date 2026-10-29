@@ -42,6 +42,7 @@ Full-stack + DevOps ownership: he owns the stack end to end, from client-side UI
 Real, resume-backed facts already in the codebase (treat as the only legitimate proof points; do not invent testimonials, client logos, or additional metrics beyond these):
 
 - **Websmiths** — Full Stack Web Intern (Sep–Nov 2025): built/deployed Next.js + Fastify apps serving 500+ daily active users; PostgreSQL API work cutting avg query response time by 35%; Dockerized services on AWS EC2 at 99.9% uptime; Vitest coverage 90%+.
+- **Websmiths (confirmed 2026-10, per user)** — current role: Forward Deployed Engineer at Adleia Labs. Built a multi-tenant SaaS backend serving 100+ enterprise organizations and 5k+ users (also recorded in `src/constants/resume.ts` `experienceData`). A Kafka notification microservice on that backend handles 450 req/sec — scoped to the message/notification service, NOT the whole backend. Cut production MTTR by 24%.
 - **JarGoan** — Frontend Web Intern (May–Jun 2024): usability improved 20.6% via responsive/accessibility redesigns; user engagement up 26.53% via interactive React UI; bundle size cut 18% via lazy-loading.
 - **Education**: B-Tech Computer Science, GCET Noida (2021–2025); Intermediate (2019–2021).
 - **GitHub activity**: live contribution/stats widget on the site, pulling real data from the Coderx85 account — this stands in for testimonials/case studies since none exist.
