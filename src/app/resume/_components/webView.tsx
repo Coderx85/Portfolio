@@ -147,14 +147,13 @@ export default function WebView() {
               transition={{ delay: 0.45, duration: 0.4, ease: "easeOut" }}
               className="text-muted-foreground text-sm md:text-base leading-relaxed"
             >
-              As a Forward Deployed Engineer at Adleia Labs, I took an
-              AI-driven healthcare SaaS from zero to production in 10 weeks
-              (40+ shipped features), building a multimodal LangGraph +
-              Gemini Vision pipeline served over WhatsApp and Telegram. At
-              Websmiths I built a multi-tenant SaaS backend for 100+
-              enterprise organizations and 5k+ users — including a Kafka
-              notification microservice handling 450 req/sec — and cut
-              production MTTR by 24%.
+              As a Forward Deployed Engineer at Adleia Labs, I took an AI-driven
+              healthcare SaaS from zero to production in 10 weeks (40+ shipped
+              features), building a multimodal LangGraph + Gemini Vision
+              pipeline served over WhatsApp and Telegram. At Websmiths I built a
+              multi-tenant SaaS backend for 100+ enterprise organizations and
+              5k+ users — including a Kafka notification microservice handling
+              450 req/sec — and cut production MTTR by 24%.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 15 }}
@@ -267,7 +266,7 @@ export default function WebView() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-between space-y-4"
           >
             {techData
               .filter((category) => category.title !== "Frameworks")
@@ -297,7 +296,7 @@ export default function WebView() {
                       <category.icon className="text-muted-foreground" />
                       {category.title}
                     </motion.h4>
-                    <div className="grid md:grid-cols-4 grid-cols-2 whitespace-nowrap self-center md:gap-3">
+                    <div className="flex flex-wrap gap-y-2.5 justify-between">
                       {category.techStack.map((techItem, techIndex) => (
                         <motion.div
                           key={techIndex}
@@ -316,7 +315,7 @@ export default function WebView() {
                           >
                             <techItem.icon />
                           </span>
-                          <p className="text-xs font-medium uppercase">
+                          <p className="text-xs font-medium uppercase wrap-break-word">
                             {techItem.title}
                           </p>
                           <div className="w-full">

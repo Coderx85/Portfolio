@@ -232,19 +232,19 @@ const ExperienceSection = ({ mode = "half" }: { mode?: TMode }) => {
 
   const showcase = (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start mt-8">
-      <div className="order-1 lg:sticky lg:top-28 h-[220px] lg:h-[560px] flex items-center justify-center [overflow-anchor:none]">
+      <div className="order-1 lg:sticky lg:top-28 h-55 lg:h-140 flex items-center justify-center [overflow-anchor:none]">
         <TechShowcasePanel
           activeIndex={activeCardIndex}
           activeItem={activeItem}
           colors={colorsArray}
           scrollProgressRef={scrollProgressRef}
-          className="h-full w-full max-w-[420px]"
+          className="h-full w-full max-w-105"
         />
       </div>
       <div className="order-2 relative flex flex-col gap-4">
         <div
           ref={scrollContainerRef}
-          className="relative h-[480px] lg:h-[560px] overflow-y-auto overscroll-contain snap-y snap-mandatory rounded-2xl [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="relative h-120 lg:h-140 overflow-y-auto overscroll-contain snap-y snap-mandatory rounded-2xl scrollbar-none [&::-webkit-scrollbar]:hidden"
         >
           {visibleItems.map((exp, index) => {
             const color = colorsArray[index % colorsArray.length];
@@ -309,7 +309,7 @@ const ExperienceSection = ({ mode = "half" }: { mode?: TMode }) => {
                       });
                     }
                   }}
-                  className="w-8 h-8 flex items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                  className="w-8 h-8 flex items-center justify-center focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-accent"
                 >
                   <span
                     className="w-2.5 h-2.5 rounded-full transition-all duration-300 shadow-sm"

@@ -210,8 +210,8 @@ const HeroSection = () => {
                   </motion.h4>
                   <div className="flex gap-4 flex-wrap md:justify-start justify-center">
                     {skill.techStack
-                      // Filter out Beginner level tech stack
-                      .filter((techItem) => techItem.level !== "Beginner")
+                      // Filter out New level tech stack
+                      .filter((techItem) => techItem.level !== "New.")
                       .slice(0, 3)
                       .map((techItem, techIndex) => (
                         <motion.div

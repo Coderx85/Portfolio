@@ -45,7 +45,7 @@ export interface SkillProps extends DataProps {
   }[];
 }
 
-export type TTechStackLevel = "Advanced" | "Intermediate" | "Beginner";
+export type TTechStackLevel = "Adv." | "Mid." | "New.";
 
 export interface DevIconProps extends React.SVGProps<SVGElement> {
   size?: string | number;
@@ -62,7 +62,7 @@ export type TCategory =
   | "Languages"
   | "Frontend"
   | "Backend"
-  | "Database"
+  | "Database & ORMs"
   | "DevOps & Cloud"
   | "Testing"
   | "Monitoring"

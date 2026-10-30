@@ -2,11 +2,11 @@ import { TTechStackLevel } from "@/types";
 
 export const convertLevelIntoNumber = (lvl: TTechStackLevel) => {
   switch (lvl) {
-    case "Beginner":
+    case "New.":
       return 35;
-    case "Intermediate":
+    case "Mid.":
       return 55;
-    case "Advanced":
+    case "Adv.":
       return 85;
     default:
       return 0;
